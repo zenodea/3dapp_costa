@@ -3,8 +3,8 @@
     <head>
         <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
         <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/custom.css">
         <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-sm" style="background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(0,0,0,0.4));">
             <!-- Brand -->
         <div class="logo">
-            <a class="navbar-brand"  href="https://www.coca-cola.co.uk">
+            <a class="navbar-brand"  onclick="location.href = '../index.html';">
                 <div id="costa_logo">
                     <h3>COSTA</h3>
                     <h4>COFFEE</h4>
@@ -54,32 +54,26 @@
                 </div>  
         </nav>
 
-        <!-- First -->
+        <!-- Original Content -->
         <div class="row">
-            <!-- Future 3d Model-->
-            <div class="col-sm-4" style="padding-left: 50px;">
-                <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4  class="card-title">Extraordinary <br>Every day</h4>
+                <div div class="card" id="item_card" style="width: 58rem;">
+                    <h4  class="card-title">Iced Latte Every day</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Indulge in your favorites</h3>
                     </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button href="#"  id="mainpage_button">Find a Costa ></button>
-                    </div>
                 </div>
-            </div>
-
-            <div class="col-sm-8">
-                <img src="/models/costa_cup/logo.png" width="700" height="400" style="position: absolute; top: 105px; right: 90px;">
-            </div>
         </div>
 
-        <!-- Iced Latte Info -->
-        <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, transparent, rgba(190, 231, 190,0.5))">
+        <div class="row" style="padding-top: 50px;">
             
             <!-- Future 3d Model-->
             <div class="col-sm-6" >
-                <img src="/models/costa_iced_cup/costa_iced_cup.png" width="850" height="500" >
+                <x3d> 
+                    <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
+                            <inline nameSpaceName="sprite"  url="../models/costa_cup/costa_cup.x3d" render="true" >  </inline>
+                            <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
+                    </scene>
+                </x3d>
             </div>
 
             <div class="col-sm-6">
@@ -88,97 +82,99 @@
                     <div class="card-body">
                         <h5 id="latte_description"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
                     </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="location.href = 'temp/temp_iced.html';" id="mainpage_button">Learn More ></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
+                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Viewpoint</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
+                    <div class="card-body">
+                            <nav class="navbar sticky-top navbar-expand-sm" style="width: 25%;">
+                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white">
+                                    Front
+                                </button>
+                                <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white">
+                                    Back
+                                </button>
+                                <button type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white">
+                                    Left
+                                </button>
+                                <button type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white">
+                                    Right
+                                </button>
+                                <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white">
+                                    Top
+                                </button>
+                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white">
+                                    On
+                                </button>
+                            </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
+                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Lighting Control</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title" style="text-align: center; padding: 30px">Lighting Control</h3>
+                            <input type="checkbox"  onclick="lightSwitch('point')">
+                                <label>point light</label><br>
+                            <input type="checkbox"  onclick="lightSwitch('spot')">
+                                <label>spot light</label><br>
+                            <input type="checkbox"  onclick="lightSwitch('directional')">
+                                <label>directional light</label><br>
+                            <input type="checkbox" checked="true" onclick="headlight('head')">
+                                <label>headlight</label><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
+                <div class="card" style="background-color: transparent;">
+                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
+                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#" aria-controls="" aria-selected="">Render</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Animation</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title" style="text-align: center; padding: 30px">Animation</h3>
+                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin('sprite');">RotX</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotY</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotZ</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="stopRotation();">Stop</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Hot Latte Info -->
-        <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(190, 231, 190,0.5), rgba(247, 247, 220, 0.5))">
-            <!-- Future 3d Model-->
-
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4 id="latte_title" class="card-title">Latte</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h3>
-                    </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="location.href = 'temp/temp_latte.html';" id="mainpage_button">Learn More ></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6" >
-                <img src="/models/costa_cup/costa_cup.png" width="850" height="500" style="margin: 0 auto;" >
-            </div>
-        </div>
-
-        <!-- Cold Can Info -->
-        <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
-            <div class="col-sm-6" >
-                <img src="/models/costa_re_product/costa_re_product.png" width="850" height="500" >
-            </div>
-
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4 id="latte_title" class="card-title">Latte in a Can</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> Experience the rich, smooth taste of a Costa latte in the convenience of a can! Made with premium espresso and creamy milk, our canned Costa latte is the perfect on-the-go pick-me-up for busy mornings or when you need a delicious coffee break. Savor the authentic taste of Costa in every sip, anytime, anywhere.</h3>
-                    </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="location.href = 'temp/temp_can.html';" id="mainpage_button">Learn More ></button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- What's New -->
-        <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),rgba(252, 187, 187, 0.5))">
-            <div class="col-sm-12">
-                <h4 id="latte_title">What's New</h4>
-            </div>
-        </div>
-        <div class="row" id="footer_info" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
-            <div class="col-sm-4" style="padding: 50px;">
-                <div div class="card" id="what_new_card">
-                    <img src="/models/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title">Iced Latte</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
-                    </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More > </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" style="padding: 50px;">
-                <div div class="card" id="what_new_card">
-                    <img src="/models/costa_cup/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title">Latte</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h3>
-                    </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More > </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" style="padding: 50px;">
-                <div div class="card" id="what_new_card">
-                    <img src="/models/costa_re_product/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title">Latte in a Can</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> Experience the rich, smooth taste of a Costa latte in the convenience of a can! Made with premium espresso and creamy milk, our canned Costa latte is the perfect on-the-go pick-me-up for busy mornings or when you need a delicious coffee break. Savor the authentic taste of Costa in every sip, anytime, anywhere.</h3>
-                    </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More > </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Footer -->
 
         <div class="row" style="background-color: #ce0041;">
             <div class="col-sm-2" style="padding: 30px;"> 
@@ -242,7 +238,7 @@
                 </div>
             </div>
         </div>
-  <nav class="navbar navbar-expand-sm footer" style="background-color: #810029;">
+        <nav class="navbar navbar-expand-sm footer" style="background-color: #810029;">
     <div class="container">
         <div class="navbar-text float-left copyright">
             <p><span class="align-baseline"></span>2023 mobile web 3d application</p>
@@ -254,6 +250,6 @@
             <a href="#"><i class="fab fa-github-square fa-2x"></i></a>
         </div>
     </div>
-  </nav>
+        </nav>
     </body>
 </html>
