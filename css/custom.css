@@ -19,6 +19,11 @@ body {
 	position: relative;
 	bottom: 30px;
 }
+#header_item:hover{
+	font-family: costa;
+	color: #6d1f37;
+}
+
 X3D, x3d {
     border-radius: 10px;
 	bottom: 50px;
@@ -31,21 +36,32 @@ X3D, x3d {
 	border-color: transparent;
 	margin: auto;
 }
+
 #costa_logo
 {
 	padding: 20px;
 	padding-left: 90px;
 }
 
+
 #costa_logo h3{
+	transition: 0.3s;
 	font-size: 70px;
 	text-align: center;
 	font-family: costa;
 	color: #ffffff;
 	font-weight: bold;
 }
+
+#costa_logo:hover h3, #costa_logo:hover h4
+{
+	color: #6d1f37;
+	transition: 0.3s;
+}
+
 #costa_logo h4{
 	position: relative;
+	transition: 0.3s;
 	bottom: 20px;
 	font-family: costa;
 	text-align: center;
@@ -95,3 +111,12 @@ h4
 	width: 180px;
 	height: 60px;
 }
+
+#what_new_card {
+	height: 800px;
+	overflow-y: auto;
+  }
+
+  #what_new_title{
+	top: -80px;
+  }
