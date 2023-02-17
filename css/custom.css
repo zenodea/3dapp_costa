@@ -1,10 +1,11 @@
 body {
-	background-image: linear-gradient(to top, rgba(255,0,0,0), lightblue);
+	background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(74, 210, 255));
   }
 @font-face {
 	font-family: costa;
 	src: url(/assets/fonts/CostaPtfBold.otf);
 }
+
 #header_item{
 	font-family: costa;
 	font-size: 20px;
