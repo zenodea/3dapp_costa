@@ -236,7 +236,7 @@
 							          emissiveColor="0.000 0.000 0.000"
 							          ambientIntensity="0.000"
 							          shininess="0.500"
-							          transparency="0.06428587436676025"
+							          transparency="0.3642921447753906"
 							          />
 						</Appearance>
 						<IndexedFaceSet solid="false"
@@ -266,7 +266,14 @@
 				<Group DEF="group_ME_Cylinder_002">
 					<Shape>
 						<Appearance>
-							<Material USE="MA_Material_004" />
+							<Material DEF="MA_Material_004"
+							          diffuseColor="0.800 0.131 0.195"
+							          specularColor="0.802 0.802 0.802"
+							          emissiveColor="0.000 0.000 0.000"
+							          ambientIntensity="0.000"
+							          shininess="1.000"
+							          transparency="0.0"
+							          />
 						</Appearance>
 						<IndexedFaceSet solid="false"
 						                creaseAngle="0.5236"
@@ -332,14 +339,14 @@
 			            />
 		</Transform>
 		<Transform DEF="Camera_TRANSFORM"
-		           translation="-2.061805 3.369849 -11.584650"
+		           translation="3.791984 6.286982 -10.578534"
 		           scale="1.000000 1.000000 1.000000"
-		           rotation="-0.439147 -0.896380 -0.060433 2.912925"
+		           rotation="0.370080 0.880061 0.297545 3.087997"
 		           >
 			<Viewpoint DEF="CA_Camera"
 			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 -0.00"
-			           orientation="0.07 0.12 -0.99 0.00"
+			           position="0.00 0.00 0.00"
+			           orientation="0.71 0.00 -0.71 0.00"
 			           fieldOfView="0.691"
 			           />
 		</Transform>
