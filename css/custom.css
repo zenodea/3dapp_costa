@@ -1,5 +1,9 @@
 body {
-	background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(74, 210, 255));
+	 background: radial-gradient(circle at 100% 50%,
+	 transparent 20%, #e9f5fb 21%, #e9f5fb 34%, transparent 35%, transparent),
+	 radial-gradient(circle at 0% 50%, transparent 20%, #e9f5fb 21%, #e9f5fb 34%, transparent 35%, transparent) 0 -50px;
+	 background-color: #d7f2ff;
+	 background-size: 75px 100px;
   }
 @font-face {
 	font-family: costa;
