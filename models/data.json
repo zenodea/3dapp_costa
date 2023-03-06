@@ -1,0 +1,53 @@
+{
+    "pageTextData": [
+    {
+        "title": "Coca Cola Great Britain",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "title": "Coca Cola",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "title": "Sprite",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "title": "Dr Pepper",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "x3dModelTitle": "Coca Cola X3D Model",
+        "x3dCreationMethod": "",
+        "title": "",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "x3dModelTitle": "Sprite X3D Model",
+        "x3dCreationMethod": "",
+        "title": "",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "x3dModelTitle": "Dr Pepper X3D Model",
+        "x3dCreationMethod": "",
+        "title": "",
+        "subTitle": "",
+        "description": ""
+    },
+    {
+        "gallerTitle": "3D Images",
+        "galleryDescription": ""
+    },
+    {
+        "cameraTitle": "Camera Views",
+        "cameraDescription": ""
+    }
+    ]
+}
