@@ -43,6 +43,26 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Menu function
+    // https://www.w3schools.com/howto/howto_js_search_menu.asp
+    function menu_function() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    li = ul.getElementsByTagName("li");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+        } else {
+        li[i].style.display = "none";
+        }
+    }
+  }
 
 
 
@@ -71,7 +91,7 @@
                         <a class="nav-link" id="header_item" href="javascript:swap('our_coffee_content')">Our coffees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="header_item" href="#" data-toggle="modal" data-target="#exampleModal">Our menu</a>
+                        <a class="nav-link" id="header_item" href="javascript:swap('our_menu_content')">Our menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="header_item" href="#" data-toggle="modal" data-target="#exampleModal">About</a>
@@ -667,6 +687,43 @@
 
         <!--  Extra Feature -->
         <div id="our_menu_content" class="container-fluid main_contents" style="display: none;">
+                <div class="row">
+                    <div div class="card">
+                        <input type="text" id="mySearch" onkeyup="menu_function()" placeholder="Search.." title="Type in a category">
+                    </div>
+                </div>
+            <ul id="myMenu">
+              <li><a>
+                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
+                    <h4 class="card-title" id="what_new_title">Iced Latte</h4>
+                </div>
+                </a>
+              </li>
+              <li><a>
+                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
+                    <h4 class="card-title" id="what_new_title">Espresso</h4>
+                </div>
+                </a>
+              </li>
+              <li><a>
+                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
+                    <h4 class="card-title" id="what_new_title">Latte</h4>
+                </div>
+                </a>
+              </li>
+              <li><a>
+                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
+                    <h4 class="card-title" id="what_new_title">Americano</h4>
+                </div>
+                </a>
+              </li>
+              <li><a>
+                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
+                    <h4 class="card-title" id="what_new_title">Fluid</h4>
+                </div>
+                </a>
+              </li>
+            </ul>
         </div>
 
 
