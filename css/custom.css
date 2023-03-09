@@ -10,6 +10,9 @@ body {
 	src: url(/assets/fonts/CostaPtfBold.otf);
 }
 
+.list-group{
+	flex-direction: row;
+}
 #header_item{
 	font-family: costa;
 	font-size: 20px;
