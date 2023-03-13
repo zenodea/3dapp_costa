@@ -151,18 +151,8 @@
         }
 
         document.getElementById(selected).style.display = "block";
-        if (selected=="iced_latte")
-        {
-            document.getElementById("switcher_iced_latte").setAttribute("whichChoice", 0);
-        }
-        else if (selected="hot_latte")
-        {
-            document.getElementById("switcher_hot_latte").setAttribute("whichChoice", 0);
-        }
-        else if (selected="canned_latte")
-        {
-            document.getElementById("switcher_canned_latte").setAttribute("whichChoice", 0);
-        }
+        document.getElementById("switcher_"+selected).setAttribute("whichChoice", 0);
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -668,7 +658,7 @@
                 <x3d> 
                     <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
                         <Switch whichChoice="0" id="switcher_canned_latte">
-                            <inline nameSpaceName="sprite"  url="../models/costa_re_product/costa_re_product.x3d" render="true" >  </inline>
+                            <inline nameSpaceName="model"  url="../models/costa_re_product/costa_re_product.x3d" render="true" >  </inline>
                             <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
                         </Switch>
                     </scene>
