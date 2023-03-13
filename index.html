@@ -67,6 +67,69 @@
 				}
 			});
     });
+    
+    // Animation for x3d model
+    var spinning = false;
+
+    function spin()
+    {
+        spinning = !spinning;
+        document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+    }
+
+    function stopRotation()
+    {
+        spinning = false;
+        document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+    }
+
+    // Camera Functions
+    function cameraFront()
+    {
+        document.getElementById('model__CA_cameraFront').setAttribute('bind', 'true');
+    }
+
+    function cameraBack()
+    {
+        document.getElementById('model__CA_cameraBack').setAttribute('bind', 'true');
+    }
+
+    function cameraLeft()
+    {
+        document.getElementById('model__CA_cameraLeft').setAttribute('bind', 'true');
+    }
+
+    function cameraRight()
+    {
+        document.getElementById('model__CA_cameraRight').setAttribute('bind', 'true');
+    }
+
+    function cameraTop()
+    {
+        document.getElementById('model__CA_cameraTop').setAttribute('bind', 'true');
+    }
+
+    function cameraBottom()
+    {
+        document.getElementById('model__CA_cameraBottom').setAttribute('bind', 'true');
+    }
+
+    function lightSwitch(id){
+        var light = document.getElementById(id);
+        if(light.getAttribute('on')!='TRUE')
+            light.setAttribute('on','TRUE');
+        else
+            light.setAttribute('on','FALSE');
+    }
+    
+    function headlight(id)
+        {
+            var h = document.getElementById(id);
+            if(h.getAttribute('headlight')=='true')
+            h.setAttribute('headlight', 'false');
+            else
+                h.setAttribute('headlight', 'true');
+        }
 
     function swap(selected)
     {
@@ -350,8 +413,15 @@
                 <x3d> 
                     <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
                         <Switch whichChoice="0" id="switcher_iced_latte">
-                            <inline nameSpaceName="sprite"  url="../models/costa_iced_cup/costa_iced_cup.x3d" render="true" >  </inline>
-                            <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
+                            <transform DEF="ball">
+                                <inline nameSpaceName="model" mapDEFToID="true" url="../models/costa_iced_cup/costa_iced_cup.x3d" render="true" >  </inline>
+                            </transform> 
+                                <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
+                                <directionallight id="directional" direction="0 -1 0" on="FA intensity="2.0" shadowintensity="0.0" color="1,1,1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1">
+                                </directionallight> 
+                                <PointLight id='point' on='FALSE' intensity='5.000' color='0.0 0.6 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
+                                <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
+                                <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
                         </Switch>
                     </scene>
                 </x3d>
@@ -379,22 +449,22 @@
                     <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
                     <div class="card-body">
                             <nav class="navbar sticky-top navbar-expand-sm" style="width: 25%;">
-                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
                                     Front
                                 </button>
-                                <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
                                     Back
                                 </button>
-                                <button type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
                                     Left
                                 </button>
-                                <button type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white" onclick="cameraRight();">
                                     Right
                                 </button>
-                                <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
                                     Top
                                 </button>
-                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraBottom();">
                                     On
                                 </button>
                             </nav>
@@ -439,7 +509,7 @@
                         <h3 class="card-title" style="text-align: center; padding: 30px">Animation</h3>
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin('sprite');">RotX</a>
+                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotX</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotY</a>
