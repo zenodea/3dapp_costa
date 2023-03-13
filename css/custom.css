@@ -13,6 +13,7 @@ body {
 .list-group{
 	flex-direction: row;
 }
+
 #header_item{
 	font-family: costa;
 	font-size: 20px;
@@ -122,4 +123,12 @@ h4
 
   #what_new_title{
 	top: -80px;
+  }
+
+  #goback_button
+  {
+	background-color: #6d1f37;
+	border: 0px;
+	font-family: costa;
+	font-weight: bold;
   }
