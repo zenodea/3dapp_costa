@@ -68,16 +68,16 @@
     // Animation for x3d model
     var spinning = false;
 
-    function spin()
+    function onAnimation()
     {
-        spinning = !spinning;
-        document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+        spinning = true;
+        document.getElementById('animation_timesensor').setAttribute('enabled', spinning.toString());
     }
 
-    function stopRotation()
+    function offAnimation()
     {
         spinning = false;
-        document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+        document.getElementById('animation_timesensor').setAttribute('enabled', spinning.toString());
     }
 
     // Camera Functions
@@ -355,7 +355,7 @@
                     <div class="card-body">
                         <h5 id="latte_description"> Experience the rich, smooth taste of a Costa latte in the convenience of a can! Made with premium espresso and creamy milk, our canned Costa latte is the perfect on-the-go pick-me-up for busy mornings or when you need a delicious coffee break. Savor the authentic taste of Costa in every sip, anytime, anywhere.</h3>
                     </div>
-                    <div class="card-footer mx-auto justify-content-center">
+                    <div class="card-footer mx-auto justify-content-center" style="border: none !important;">
                         <button onclick="javascript:swap('canned_latte')" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
@@ -434,6 +434,15 @@
                             <transform DEF="ball">
                                 <inline nameSpaceName="model" mapDEFToID="true" url="../models/costa_iced_cup/costa_iced_cup.x3d" render="true" >  </inline>
                             </transform> 
+                            
+                                <!-- CONTROLS ROTATION OF THE MODEL-->
+                                <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
+
+                                <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
+                                
+                                <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
+                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
+
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
                                 <directionallight id="directional" direction="0 -1 0" on="FA intensity="2.0" shadowintensity="0.0" color="1,1,1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1">
                                 </directionallight> 
