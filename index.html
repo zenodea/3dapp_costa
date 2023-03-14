@@ -8,9 +8,6 @@
         
         <!-- JQuery -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-	<script>
-		!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
-	</script>
 
         <!-- Fancybox -->
         <script src="/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
@@ -112,6 +109,37 @@
     function cameraBottom()
     {
         document.getElementById('model__CA_cameraBottom').setAttribute('bind', 'true');
+    }
+
+    function cameraNormal()
+    {
+        document.getElementById('model__CA_cameraNormal').setAttribute('bind', 'true');
+    }
+
+    function wireFrame()
+    {
+        var e = document.getElementById('wire');
+        e.runtime.togglePoints(true);
+        e.runtime.togglePoints(true);
+    }
+
+    function normal()
+    {
+        var e = document.getElementById('wire');
+        e.runtime.togglePoints(false);
+        e.runtime.togglePoints(false);
+    }
+
+    function vertex()
+    {
+        var e = document.getElementById('wire');
+        e.runtime.togglePoints(true);
+    }
+
+    function redraw()
+    {
+        var e = document.getElementById('wire');
+        e.element.runtime.triggerRedraw(true);
     }
 
     function lightSwitch(id){
@@ -400,7 +428,7 @@
             
             <!-- Future 3d Model-->
             <div class="col-sm-6" >
-                <x3d> 
+                <x3d id="wire"> 
                     <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
                         <Switch whichChoice="0" id="switcher_iced_latte">
                             <transform DEF="ball">
@@ -454,8 +482,11 @@
                                 <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
                                     Top
                                 </button>
-                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraBottom();">
-                                    On
+                                <button type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
+                                    Bottom
+                                </button>
+                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraNormal();">
+                                    Normal
                                 </button>
                             </nav>
                     </div>
@@ -488,29 +519,36 @@
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#" aria-controls="" aria-selected="">Render</button>
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" href="#animation">Animation</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Animation</button>
+                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" href="#render" >Render</button>
                             </li>
                         </ul>
                     </div>
-                    <div class="card-body">
+                    <div class="tab-content card-body">
+                        <div class="tab-pane active" id="animation">
                         <h3 class="card-title" style="text-align: center; padding: 30px">Animation</h3>
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotX</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotY</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotZ</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="stopRotation();">Stop</a>
-                            </li>
-                        </ul>
+                            <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="onAnimation();">On</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="offAnimation();">Off</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="render">
+                            <h3 class="card-title" style="text-align: center; padding: 30px">Render</h3>
+                            <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
+                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="vertex();">Vertex</a>
+                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
+                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="redraw();">Reset</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -563,7 +601,7 @@
                     <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
                     <div class="card-body">
                             <nav class="navbar sticky-top navbar-expand-sm" style="width: 25%;">
-                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white">
+                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
                                     Front
                                 </button>
                                 <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white">

@@ -15,22 +15,94 @@
 		            groundColor="0.051 0.051 0.051"
 		            skyColor="0.051 0.051 0.051"
 		            />
-		<Transform DEF="Camera_TRANSFORM"
-		           translation="-9.908363 4.960042 -16.473658"
+		<Transform DEF="cameraLeft_TRANSFORM"
+		           translation="-0.166115 -0.098581 -21.472694"
 		           scale="1.000000 1.000000 1.000000"
-		           rotation="-0.035864 -0.990535 -0.132495 2.617676"
+		           rotation="0.000000 1.000000 -0.000000 3.141593"
+		           >
+			<Viewpoint DEF="CA_cameraLeft"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 0.00"
+			           orientation="0.00 1.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraRight_TRANSFORM"
+		           translation="0.093049 -0.357751 18.824171"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 -0.000000 0.000000 0.000000"
+		           >
+			<Viewpoint DEF="CA_cameraRight"
+			           centerOfRotation="0 0 0"
+			           position="0.00 -0.00 0.00"
+			           orientation="1.00 0.00 -0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraFront_TRANSFORM"
+		           translation="-18.040104 -0.369303 0.063803"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 -1.000000 0.000000 1.570796"
+		           >
+			<Viewpoint DEF="CA_cameraFront"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 0.00"
+			           orientation="0.00 0.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraBack_TRANSFORM"
+		           translation="17.822083 -0.347557 -0.088241"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 1.000000 -0.000000 1.570796"
+		           >
+			<Viewpoint DEF="CA_cameraBack"
+			           centerOfRotation="0 0 0"
+			           position="-0.00 0.00 0.00"
+			           orientation="0.00 0.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraTop_TRANSFORM"
+		           translation="-0.054054 14.778309 -0.124879"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<Viewpoint DEF="CA_cameraTop"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 0.00"
+			           orientation="0.00 1.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraBottom_TRANSFORM"
+		           translation="-0.015066 -12.868282 0.080704"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 -0.707107 3.141593"
+		           >
+			<Viewpoint DEF="CA_cameraBottom"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 -0.00"
+			           orientation="0.00 1.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="Camera_TRANSFORM"
+		           translation="-16.119083 9.505806 9.406540"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.393157 -0.892162 -0.222429 1.130304"
 		           >
 			<Viewpoint DEF="CA_Camera"
 			           centerOfRotation="0 0 0"
 			           position="0.00 0.00 0.00"
-			           orientation="-0.76 0.64 -0.11 0.00"
+			           orientation="-0.98 0.16 0.09 0.00"
 			           fieldOfView="0.691"
 			           />
 		</Transform>
 		<Transform DEF="Cylinder_TRANSFORM"
 		           translation="-0.000000 0.000000 0.037810"
 		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           rotation="-0.574439 -0.578801 -0.578801 2.098768"
 		           >
 			<Transform DEF="Cylinder_ifs_TRANSFORM"
 			           translation="0.000000 0.000000 0.000000"
@@ -103,12 +175,12 @@
 		<Transform DEF="Cylinder_001_TRANSFORM"
 		           translation="0.000000 2.802331 0.037967"
 		           scale="1.086480 1.086480 0.070082"
-		           rotation="0.000000 -0.707097 -0.707117 3.141593"
+		           rotation="-0.606808 -0.562035 -0.562051 2.050798"
 		           >
 			<Transform DEF="Cylinder_001_ifs_TRANSFORM"
-			           translation="-0.000000 0.000000 -0.000003"
+			           translation="-0.000000 -0.000000 -0.000001"
 			           scale="1.000000 1.000000 1.000000"
-			           rotation="0.000000 0.000000 -0.000000 0.000000"
+			           rotation="-0.000000 0.000000 -0.000000 0.000000"
 			           >
 				<Group DEF="group_ME_Cylinder_001">
 					<Shape>
