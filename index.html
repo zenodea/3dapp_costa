@@ -40,6 +40,7 @@
     });
     */
 
+    // Jquery for fancybox
     $(document).ready(function() 
     {
         $(".mainpage_images").fancybox({
@@ -54,15 +55,15 @@
     }
         });
 
-        // Gallery feature (with mouse support)
-        $("a[rel=gallery_fancybox]").fancybox({
-                'transitionIn'	: 'elastic',
-                'transitionOut'	: 'elastic',
-				'titlePosition' 	: 'over',
-				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
-					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-				}
-			});
+    // Gallery feature (with mouse support)
+    $("a[rel=gallery_fancybox]").fancybox({
+            'transitionIn'	: 'elastic',
+            'transitionOut'	: 'elastic',
+            'titlePosition' 	: 'over',
+            'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+                return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+            }
+        });
     });
     
     // Animation for x3d model
@@ -142,7 +143,8 @@
         e.element.runtime.triggerRedraw(true);
     }
 
-    function lightSwitch(id){
+    function lightSwitch(id)
+    {
         var light = document.getElementById(id);
         if(light.getAttribute('on')!='TRUE')
             light.setAttribute('on','TRUE');
@@ -151,13 +153,13 @@
     }
     
     function headlight(id)
-        {
-            var h = document.getElementById(id);
-            if(h.getAttribute('headlight')=='true')
-            h.setAttribute('headlight', 'false');
-            else
-                h.setAttribute('headlight', 'true');
-        }
+    {
+        var h = document.getElementById(id);
+        if(h.getAttribute('headlight')=='true')
+        h.setAttribute('headlight', 'false');
+        else
+            h.setAttribute('headlight', 'true');
+    }
 
     function swap(selected)
     {
@@ -167,43 +169,62 @@
         document.getElementById("our_menu_content").style.display = "none";
         document.getElementById("contact_us_content").style.display = "none";
         document.getElementById("iced_latte").style.display = "none";
-        document.getElementById("switcher_iced_latte").setAttribute("whichChoice", -1);
-        document.getElementById("hot_latte").style.display = "none";
-        document.getElementById("switcher_hot_latte").setAttribute("whichChoice", -1);
-        document.getElementById("canned_latte").style.display = "none";
-        document.getElementById("switcher_canned_latte").setAttribute("whichChoice", -1);
+        document.getElementById("sceneSwitch").setAttribute("whichChoice", -1);
 
         if (selected != "main_page")
         {
             document.getElementById("goback_button").style.display = "block";
         }
 
-        document.getElementById(selected).style.display = "block";
-        document.getElementById("switcher_"+selected).setAttribute("whichChoice", 0);
+        if (selected == "iced_latte")
+        {
+            document.getElementById("sceneSwitch").setAttribute("whichChoice", 0);
+            document.getElementById("iced_latte").style.display = "block";
+        }
+
+        else if (selected == "hot_latte")
+        {
+            document.getElementById("sceneSwitch").setAttribute("whichChoice", 1);
+            document.getElementById("iced_latte").style.display = "block";
+        }
+
+        else if (selected == "canned_latte")
+        {
+            document.getElementById("sceneSwitch").setAttribute("whichChoice", 2);
+            document.getElementById("iced_latte").style.display = "block";
+        }
+
+        else
+        {
+            document.getElementById(selected).style.display = "block";
+        }
+
         
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Menu function
     // https://www.w3schools.com/howto/howto_js_search_menu.asp
-    function menu_function() {
-    // Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("mySearch");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myMenu");
-    li = ul.getElementsByTagName("li");
+    function menu_function() 
+    {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myMenu");
+        li = ul.getElementsByTagName("li");
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-        } else {
-        li[i].style.display = "none";
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) 
+        {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+            } else {
+            li[i].style.display = "none";
+            }
         }
     }
-  }
 
 
 
@@ -430,11 +451,20 @@
             <div class="col-sm-6" >
                 <x3d id="wire"> 
                     <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
-                        <Switch whichChoice="0" id="switcher_iced_latte">
-                            <transform DEF="ball">
+                        <Switch whichChoice="0" id="sceneSwitch">
+
+                                <transform>
                                 <inline nameSpaceName="model" mapDEFToID="true" url="../models/costa_iced_cup/costa_iced_cup.x3d" render="true" >  </inline>
-                            </transform> 
-                            
+                                </transform>
+
+                                <transform>
+                                <inline nameSpaceName="model"  url="../models/costa_cup/costa_cup.x3d" render="true" >  </inline>
+                                </transform>
+
+                                <transform>
+                                <inline nameSpaceName="model"  url="../models/costa_re_product/costa_re_product.x3d" render="true" >  </inline>
+                                </transform>
+
                                 <!-- CONTROLS ROTATION OF THE MODEL-->
                                 <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
 
@@ -456,9 +486,13 @@
     
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4 id="latte_title" class="card-title">Iced Latte</h4>
+                    <h4 id="iced_latte_title" class="card-title">Iced Latte</h4>
+                    <h4 id="hot_latte_title" class="card-title">Iced Latte</h4>
+                    <h4 id="canned_latte_title" class="card-title">Iced Latte</h4>
                     <div class="card-body">
-                        <h5 id="latte_description"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
+                        <h5 id="drink_descripiton_iced"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
+                        <h5 id="drink_descripiton_hot"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
+                        <h5 id="drink_descripiton_canned"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
                     </div>
                 </div>
             </div>
@@ -558,254 +592,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- Hot Latte -->
-        <div id="hot_latte" class="container-fluid main_contents" style="display: none;"> 
-            <div class="row"> 
-            <div div class="card" id="item_card" style="width: 58rem;">
-                    <h4  class="card-title">Iced Latte Every day</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
-                    </div>
-                </div>
-            </div>
-
-        <div class="row" style="padding-top: 50px;">
-            
-            <!-- Future 3d Model-->
-            <div class="col-sm-6" >
-                <x3d> 
-                    <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
-                        <Switch whichChoice="0" id="switcher_hot_latte">
-                            <inline nameSpaceName="model"  url="../models/costa_cup/costa_cup.x3d" render="true" >  </inline>
-                            <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                        </Switch>
-                    </scene>
-                </x3d>
-            </div>
-
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4 id="latte_title" class="card-title">Iced Latte</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Viewpoint</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
-                    <div class="card-body">
-                            <nav class="navbar sticky-top navbar-expand-sm" style="width: 25%;">
-                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
-                                    Front
-                                </button>
-                                <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white">
-                                    Back
-                                </button>
-                                <button type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white">
-                                    Left
-                                </button>
-                                <button type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white">
-                                    Right
-                                </button>
-                                <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white">
-                                    Top
-                                </button>
-                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white">
-                                    On
-                                </button>
-                            </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Lighting Control</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="text-align: center; padding: 30px">Lighting Control</h3>
-                            <input type="checkbox"  onclick="lightSwitch('point')">
-                                <label>point light</label><br>
-                            <input type="checkbox"  onclick="lightSwitch('spot')">
-                                <label>spot light</label><br>
-                            <input type="checkbox"  onclick="lightSwitch('directional')">
-                                <label>directional light</label><br>
-                            <input type="checkbox" checked="true" onclick="headlight('head')">
-                                <label>headlight</label><br>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#" aria-controls="" aria-selected="">Render</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Animation</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="text-align: center; padding: 30px">Animation</h3>
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin('sprite');">RotX</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotY</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotZ</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="stopRotation();">Stop</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- Canned Latte -->
-        <div id="canned_latte" class="container-fluid main_contents" style="display: none;">
-            <div class="row">
-                <div div class="card" id="item_card" style="width: 58rem;">
-                    <h4  class="card-title">iced latte every day</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> indulge in your favorites</h3>
-                    </div>
-                </div>
-            </div>
-
-        <div class="row" style="padding-top: 50px;">
-            
-            <!-- Future 3d Model-->
-            <div class="col-sm-6" >
-                <x3d> 
-                    <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
-                        <Switch whichChoice="0" id="switcher_canned_latte">
-                            <inline nameSpaceName="model"  url="../models/costa_re_product/costa_re_product.x3d" render="true" >  </inline>
-                            <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                        </Switch>
-                    </scene>
-                </x3d>
-            </div>
-
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4 id="latte_title" class="card-title">Iced Latte</h4>
-                    <div class="card-body">
-                        <h5 id="latte_description"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Viewpoint</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
-                    <div class="card-body">
-                            <nav class="navbar sticky-top navbar-expand-sm" style="width: 25%;">
-                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white">
-                                    Front
-                                </button>
-                                <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white">
-                                    Back
-                                </button>
-                                <button type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white">
-                                    Left
-                                </button>
-                                <button type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white">
-                                    Right
-                                </button>
-                                <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white">
-                                    Top
-                                </button>
-                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white">
-                                    On
-                                </button>
-                            </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Lighting Control</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="text-align: center; padding: 30px">Lighting Control</h3>
-                            <input type="checkbox"  onclick="lightSwitch('point')">
-                                <label>point light</label><br>
-                            <input type="checkbox"  onclick="lightSwitch('spot')">
-                                <label>spot light</label><br>
-                            <input type="checkbox"  onclick="lightSwitch('directional')">
-                                <label>directional light</label><br>
-                            <input type="checkbox" checked="true" onclick="headlight('head')">
-                                <label>headlight</label><br>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
-                    <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#" aria-controls="" aria-selected="">Render</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" >Animation</button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="text-align: center; padding: 30px">Animation</h3>
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin('sprite');">RotX</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotY</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="spin();">RotZ</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a href="#" class="btn btn-outline-dark btn-responsive" onclick="stopRotation();">Stop</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
