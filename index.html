@@ -203,6 +203,60 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function iced_latte_text()
+    {
+        document.getElementById("iced_latte_page_title").style.display = "block";
+        document.getElementById("iced_latte_page_slogan").style.display = "block";
+        document.getElementById("iced_latte_title").style.display = "block";
+        document.getElementById("drink_description_iced").style.display = "block";
+
+        document.getElementById("hot_latte_page_title").style.display = "none";
+        document.getElementById("hot_latte_page_slogan").style.display = "none";
+        document.getElementById("hot_latte_title").style.display = "none";
+        document.getElementById("drink_description_hot").style.display = "none";
+
+        document.getElementById("canned_latte_page_title").style.display = "none";
+        document.getElementById("canned_latte_page_slogan").style.display = "none";
+        document.getElementById("canned_latte_title").style.display = "none";
+        document.getElementById("drink_description_canned").style.display = "none";
+    }
+
+    function hot_latte_text()
+    {
+        document.getElementById("iced_latte_page_title").style.display = "none";
+        document.getElementById("iced_latte_page_slogan").style.display = "none";
+        document.getElementById("iced_latte_title").style.display = "none";
+        document.getElementById("drink_description_iced").style.display = "none";
+
+        document.getElementById("hot_latte_page_title").style.display = "block";
+        document.getElementById("hot_latte_page_slogan").style.display = "block";
+        document.getElementById("hot_latte_title").style.display = "block";
+        document.getElementById("drink_description_hot").style.display = "block";
+
+        document.getElementById("canned_latte_page_title").style.display = "none";
+        document.getElementById("canned_latte_page_slogan").style.display = "none";
+        document.getElementById("canned_latte_title").style.display = "none";
+        document.getElementById("drink_description_canned").style.display = "none";
+    }
+
+    function canned_latte_text()
+    {
+        document.getElementById("iced_latte_page_title").style.display = "none";
+        document.getElementById("iced_latte_page_slogan").style.display = "none";
+        document.getElementById("iced_latte_title").style.display = "none";
+        document.getElementById("drink_description_iced").style.display = "none";
+
+        document.getElementById("hot_latte_page_title").style.display = "none";
+        document.getElementById("hot_latte_page_slogan").style.display = "none";
+        document.getElementById("hot_latte_title").style.display = "none";
+        document.getElementById("drink_description_hot").style.display = "none";
+
+        document.getElementById("canned_latte_page_title").style.display = "block";
+        document.getElementById("canned_latte_page_slogan").style.display = "block";
+        document.getElementById("canned_latte_title").style.display = "block";
+        document.getElementById("drink_description_canned").style.display = "block";
+    }
+
     // Menu function
     // https://www.w3schools.com/howto/howto_js_search_menu.asp
     function menu_function() 
@@ -304,7 +358,7 @@
                     <h3> Indulge in your favorites</h3>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#"  id="mainpage_button" data-fancybox data-src="#main_page">Find a Costa ></button>
+                        <button href="#"  id="mainpage_button" data-fancybox data-src="#main_page">Find a Costa></button>
                     </div>
                 </div>
             </div>
@@ -333,7 +387,7 @@
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('iced_latte')" id="mainpage_button">Learn More ></button>
+                        <button onclick="javascript:swap('iced_latte'); iced_latte_text();" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -350,7 +404,7 @@
                         <h5 id="latte_main_description"></h3>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('hot_latte')" id="mainpage_button">Learn More ></button>
+                        <button onclick="javascript:swap('hot_latte'); hot_latte_text();" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -377,7 +431,7 @@
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center" style="border: none !important;">
-                        <button onclick="javascript:swap('canned_latte')" id="mainpage_button">Learn More ></button>
+                        <button onclick="javascript:swap('canned_latte'); canned_latte_text();" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -393,12 +447,12 @@
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
                     <img src="/models/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title">Iced Latte</h4>
-                    <div class="card-body">
-                        <h5 id="iced_latte_mini_description"></h3>
+                    <h4 class="card-title" id="what_new_iced"></h4>
+                    <div class="card-body mini-card-body">
+                        <h5 id="iced_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More > </button>
+                        <button href="#" id="mainpage_button">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -406,23 +460,23 @@
                 <div div class="card" id="what_new_card">
                     <img src="/models/costa_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_title">Latte</h4>
-                    <div class="card-body">
-                        <h5 id="latte_mini_description"></h3>
+                    <div class="card-body mini-card-body">
+                        <h5 id="latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More > </button>
+                        <button href="#" id="mainpage_button">Learn More</button>
                     </div>
                 </div>
             </div>
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
                     <img src="/models/costa_re_product/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title">Latte in a Can</h4>
-                    <div class="card-body">
-                        <h5 id="canned_latte_mini_description"></h3>
+                    <h4 class="card-title" id="what_new_canned"></h4>
+                    <div class="card-body mini-card-body">
+                        <h5 id="canned_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More > </button>
+                        <button href="#" id="mainpage_button">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -432,15 +486,21 @@
         <!-- Other Contents -->
 
 
-        <!-- Iced Latte -->
+        <!-- X3D Models -->
         <div id="iced_latte" class="container-fluid main_contents" style="display: none;">
 
             <!-- Original Content -->
             <div class="row">
                 <div div class="card" id="item_card" style="width: 58rem;">
-                    <h4  class="card-title">Iced Latte Every day</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
+                    <div class="card-title card-page-title" >
+                        <h2 id="iced_latte_page_title"></h2>
+                        <h2 id="hot_latte_page_title"></h2>
+                        <h2 id="canned_latte_page_title"></h2>
+                    </div>
+                    <div class="card-body card-page-slogan" style="text-align: center;">
+                        <h3 id="iced_latte_page_slogan"></h3>
+                        <h3 id="hot_latte_page_slogan"></h3>
+                        <h3 id="canned_latte_page_slogan"></h3>
                     </div>
                 </div>
         </div>
@@ -486,13 +546,15 @@
     
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 38rem;">
-                    <h4 id="iced_latte_title" class="card-title">Iced Latte</h4>
-                    <h4 id="hot_latte_title" class="card-title">Iced Latte</h4>
-                    <h4 id="canned_latte_title" class="card-title">Iced Latte</h4>
-                    <div class="card-body">
-                        <h5 id="drink_descripiton_iced"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
-                        <h5 id="drink_descripiton_hot"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
-                        <h5 id="drink_descripiton_canned"> A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.</h3>
+                    <div class="card-title card-latte-title">
+                        <h4 id="iced_latte_title"></h4>
+                        <h4 id="hot_latte_title"></h4>
+                        <h4 id="canned_latte_title"></h4>
+                    </div>
+                    <div class="card-body card-drink-description">
+                        <h3 id="drink_description_iced"></h3>
+                        <h3 id="drink_description_hot"></h3>
+                        <h3 id="drink_description_canned"></h3>
                     </div>
                 </div>
             </div>
@@ -579,6 +641,23 @@
                                 <li class="nav-item" role="presentation">
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="offAnimation();">Off</a>
                                 </li>
+                                <div class="dropdown"> 
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Flavour
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <div id="iced_drinks_dropdown">
+                                            <li><a class="dropdown-item" href="#">Iced Latte</a></li>
+                                            <li><a class="dropdown-item" href="#">Cold Brew</a></li>
+                                            <li><a class="dropdown-item" href="#">Chai Tea Iced Latte</a></li>
+                                        </div>
+                                        <div id="canned_drinks_dropdown">
+                                            <li><a class="dropdown-item" href="#">Latte</a></li>
+                                            <li><a class="dropdown-item" href="#">Caramel Latte/a></li>
+                                            <li><a class="dropdown-item" href="#">Americano</a></li>
+                                        </div>
+                                    </ul>
+                                </div>
                             </ul>
                         </div>
                         <div class="tab-pane" id="render">
@@ -727,67 +806,35 @@
         </div>
 
 
-
-
         <div class="row" style="background-color: #ce0041;">
             <div class="col-sm-2" style="padding: 30px;"> 
                 <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title" id="footer_title">About Us</h5>
-                    <div class="card-body" id="footer_info">
-                        <h6> Our coffees </h6>
-                        <h6> Our Story </h6>
-                        <h6> Sustainability </h6>
-                        <h6> Costa Foundation</h6>
-                        <h6> Policies and reports</h6>
-                    </div>
+                    <h5 class="card-title footer-title" id="about_us_title"></h5>
+                    <div class="card-body footer-body" id="about_us_body"></div>
                 </div>
             </div>
             <div class="col-sm-2" style="padding: 30px;"> 
                 <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title" id="footer_title">Nutrients</h5>
-                    <div class="card-body" id="footer_info">
-                        <h6>Calories</h6>
-                        <h6>Macronutrients</h6>
-                        <h6>Micronutrients</h6>
-                        <h6>Food Allergies</h6>
-                        <h6>Dietary Restrictions</h6>
-                    </div>
+                    <h5 class="card-title footer-title" id="nutrients_title"></h5>
+                    <div class="card-body footer-body" id="nutrients_body"></div>
                 </div>
             </div>
             <div class="col-sm-2" style="padding: 30px;"> 
                 <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title" id="footer_title">Giftings</h5>
-                    <div class="card-body" id="footer_info">
-                        <h6>Occasions</h6>
-                        <h6>Recipient</h6>
-                        <h6>Budget</h6>
-                        <h6>Personalization</h6>
-                        <h6>Delivery</h6>
-                    </div>
+                    <h5 class="card-title footer-title" id="giftings_title"></h5>
+                    <div class="card-body footer-body" id="giftings_body"></div>
                 </div>
             </div>
             <div class="col-sm-2" style="padding: 30px;"> 
                 <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title" id="footer_title">Contact Us</h5>
-                    <div class="card-body" id="footer_info">
-                        <h6>Email</h6>
-                        <h6>Phone</h6>
-                        <h6>Address</h6>
-                        <h6>Social Media</h6>
-                        <h6>Contact Form</h6>
-                    </div>
+                    <h5 class="card-title footer-title" id="contact_us_title"></h5>
+                    <div class="card-body footer-body" id="contact_us_body"></div>
                 </div>
             </div>
             <div class="col-sm-2" style="padding: 30px;"> 
                 <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title" id="footer_title">Terms and Condition</h5>
-                    <div class="card-body" id="footer_info">
-                        <h6>Agreement</h6>
-                        <h6>Intellectual Property</h6>
-                        <h6>Liability</h6>
-                        <h6>Termination</h6>
-                        <h6>Governing Law</h6>
-                    </div>
+                    <h5 class="card-title footer-title" id="tac_title"></h5>
+                    <div class="card-body footer-body" id="tac_body"></div>
                 </div>
             </div>
         </div>

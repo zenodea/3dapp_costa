@@ -83,7 +83,7 @@ h4
 	font-weight: bold;
 }
 
-#drink_description_main{
+#drink_description_main, .card-page-title{
 	font-family: costa;
 	padding: 40px;
 	text-align: center;
@@ -95,13 +95,13 @@ h4
 	background-color: #6d1f37;
 }
 
-#footer_title {
+.footer-title {
 	color:white;
 	font-weight: bold;
 	text-align: center;
 }
 
-#footer_info h6{
+.footer-body {
 	color: white;
 	line-height: 2.5;
 }
