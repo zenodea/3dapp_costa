@@ -66,5 +66,13 @@ $(document).ready(function()
 		html=$('#canned_latte_page_slogan').html(jsonObj.pageTextData[10].slogan);
 		html=$('#canned_latte_title').html(jsonObj.pageTextData[10].name);
 		html=$('#drink_description_canned').html(jsonObj.pageTextData[10].description);
+
+		// Modals
+		html=$('#modal_title_about').html(jsonObj.pageTextData[15].title);
+		html=$('#modal_body_about').html(jsonObj.pageTextData[15].description);
+
+		html=$('#modal_title_github').html(jsonObj.pageTextData[16].title);
+		html=$('#modal_body_github').html(jsonObj.pageTextData[16].description);
+
     });
 });

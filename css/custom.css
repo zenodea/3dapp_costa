@@ -14,7 +14,7 @@ body {
 	flex-direction: row;
 }
 
-#header_item{
+.header_item{
 	font-family: costa;
 	font-size: 20px;
 	padding: 30px;
@@ -23,7 +23,7 @@ body {
 	position: relative;
 	bottom: 30px;
 }
-#header_item:hover{
+.header_item:hover{
 	font-family: costa;
 	color: #6d1f37;
 }
@@ -153,6 +153,12 @@ h4
 .footer-body {
 	color: white;
 	line-height: 2.5;
+}
+
+.card-footer
+{
+	background-color: transparent;
+	border: 0;
 }
 
 #mainpage_button{

@@ -59,8 +59,28 @@
         {
             "title": "Latte in a Can",
             "slogan" : "Indulge in your favorite, anytime, anywhere",
-            "name" : "Iced Latte",
+            "name" : "Latte in a Can",
             "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+        },
+        {
+            "title": "Caramel Latte in a Can",
+            "slogan" : "Indulge in your favorite, now caramelized!",
+            "name" : "Caramel Latte in a Can",
+            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+        },
+        {
+            "title": "Americano in a Can",
+            "slogan" : "Boost of energy, the American Way",
+            "name" : "Americano in a Can",
+            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+        },
+        {
+            "title": "About Costa",
+            "description" : " We've 50 years' experience of crafting the finest quality coffee. From revolutionary methods and commitment to quality to unforgettable successes that have made Costa Coffee the Nation’s Favourite* coffee shop, our story is as unique as our coffee."
+        },
+        {
+            "title": "Github Repository",
+            "description" : "Student Number: ... <br> Github Repository: ..."
         }
     ]
 }
