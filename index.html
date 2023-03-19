@@ -202,68 +202,41 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function iced_latte_text()
+    function swap_information(selected)
     {
-        document.getElementById("iced_latte_page_title").style.display = "block";
-        document.getElementById("iced_latte_page_slogan").style.display = "block";
-        document.getElementById("iced_latte_title").style.display = "block";
-        document.getElementById("drink_description_iced").style.display = "block";
-        document.getElementById("iced_drinks_dropdown").style.display = "block";
+        // Make htmlElements into Arrays
+        var one = Array.prototype.slice.call(document.getElementsByClassName("iced_latte_page"),0);
+        var two = Array.prototype.slice.call(document.getElementsByClassName("cold_brew_page"),0);
+        var three = Array.prototype.slice.call(document.getElementsByClassName("chai_iced_page"),0);
 
-        document.getElementById("hot_latte_page_title").style.display = "none";
-        document.getElementById("hot_latte_page_slogan").style.display = "none";
-        document.getElementById("hot_latte_title").style.display = "none";
-        document.getElementById("drink_description_hot").style.display = "none";
-        document.getElementById("hot_drinks_dropdown").style.display = "none";
+        var four = Array.prototype.slice.call(document.getElementsByClassName("hot_latte_page"),0);
 
-        document.getElementById("canned_latte_page_title").style.display = "none";
-        document.getElementById("canned_latte_page_slogan").style.display = "none";
-        document.getElementById("canned_latte_title").style.display = "none";
-        document.getElementById("drink_description_canned").style.display = "none";
-        document.getElementById("canned_drinks_dropdown").style.display = "none";
+        var five = Array.prototype.slice.call(document.getElementsByClassName("canned_latte_page"),0);
+        var six = Array.prototype.slice.call(document.getElementsByClassName("canned_caramel_page"),0);
+        var seven = Array.prototype.slice.call(document.getElementsByClassName("canned_americano_page"),0);
+
+        // Merge all arrays
+        var merged = [one,two,three,four,five,six,seven]
+
+        for (var i = 0; i < merged.length ; i++)
+        {
+            for (var j = 0; j< merged[i].length; j++)
+            {
+                
+                if (merged[i][j].className == selected)
+                {
+                    merged[i][j].style.display="block";
+                }
+                else
+                {
+                    merged[i][j].style.display="none";
+                }
+            }
+        }
+
+        
     }
 
-    function hot_latte_text()
-    {
-        document.getElementById("iced_latte_page_title").style.display = "none";
-        document.getElementById("iced_latte_page_slogan").style.display = "none";
-        document.getElementById("iced_latte_title").style.display = "none";
-        document.getElementById("drink_description_iced").style.display = "none";
-        document.getElementById("iced_drinks_dropdown").style.display = "none";
-
-        document.getElementById("hot_latte_page_title").style.display = "block";
-        document.getElementById("hot_latte_page_slogan").style.display = "block";
-        document.getElementById("hot_latte_title").style.display = "block";
-        document.getElementById("drink_description_hot").style.display = "block";
-        document.getElementById("hot_drinks_dropdown").style.display = "block";
-
-        document.getElementById("canned_latte_page_title").style.display = "none";
-        document.getElementById("canned_latte_page_slogan").style.display = "none";
-        document.getElementById("canned_latte_title").style.display = "none";
-        document.getElementById("drink_description_canned").style.display = "none";
-        document.getElementById("canned_drinks_dropdown").style.display = "none";
-    }
-
-    function canned_latte_text()
-    {
-        document.getElementById("iced_latte_page_title").style.display = "none";
-        document.getElementById("iced_latte_page_slogan").style.display = "none";
-        document.getElementById("iced_latte_title").style.display = "none";
-        document.getElementById("drink_description_iced").style.display = "none";
-        document.getElementById("iced_drinks_dropdown").style.display = "none";
-
-        document.getElementById("hot_latte_page_title").style.display = "none";
-        document.getElementById("hot_latte_page_slogan").style.display = "none";
-        document.getElementById("hot_latte_title").style.display = "none";
-        document.getElementById("drink_description_hot").style.display = "none";
-        document.getElementById("hot_drinks_dropdown").style.display = "none";
-
-        document.getElementById("canned_latte_page_title").style.display = "block";
-        document.getElementById("canned_latte_page_slogan").style.display = "block";
-        document.getElementById("canned_latte_title").style.display = "block";
-        document.getElementById("drink_description_canned").style.display = "block";
-        document.getElementById("canned_drinks_dropdown").style.display = "block";
-    }
 
     function change_flavour(selected)
     {
@@ -425,7 +398,7 @@
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('iced_latte'); iced_latte_text();" id="mainpage_button">Learn More ></button>
+                        <button onclick="javascript:swap('iced_latte'); swap_information('iced_latte_page');change_flavour('flavour_iced_latte');" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -442,7 +415,7 @@
                         <h5 id="latte_main_description"></h3>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('hot_latte'); hot_latte_text();" id="mainpage_button">Learn More ></button>
+                        <button onclick="javascript:swap('hot_latte'); swap_information('hot_latte_page');" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -469,7 +442,7 @@
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('canned_latte'); canned_latte_text();" id="mainpage_button">Learn More ></button>
+                        <button onclick="javascript:swap('canned_latte'); swap_information('canned_latte_page');" id="mainpage_button">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -531,14 +504,28 @@
             <div class="row">
                 <div div class="card" id="item_card" style="width: 58rem;">
                     <div class="card-title card-page-title" >
-                        <h2 id="iced_latte_page_title"></h2>
-                        <h2 id="hot_latte_page_title"></h2>
-                        <h2 id="canned_latte_page_title"></h2>
+
+                        <h2 class="iced_latte_page" id="iced_latte_page_title"></h2>
+                        <h2 class="cold_brew_page" id="cold_brew_page_title"></h2>
+                        <h2 class="chai_iced_page" id="chai_iced_page_title"></h2>
+
+                        <h2 class="hot_latte_page" id="hot_latte_page_title"></h2>
+
+                        <h2 class="canned_latte_page" id="canned_latte_page_title"></h2>
+                        <h2 class="canned_caramel_page" id="canned_caramel_page_title"></h2>
+                        <h2 class="canned_americano_page" id="canned_americano_page_title"></h2>
+
                     </div>
                     <div class="card-body card-page-slogan" style="text-align: center;">
-                        <h3 id="iced_latte_page_slogan"></h3>
-                        <h3 id="hot_latte_page_slogan"></h3>
-                        <h3 id="canned_latte_page_slogan"></h3>
+                        <h2 class="iced_latte_page" id="iced_latte_page_slogan"></h2>
+                        <h2 class="cold_brew_page" id="cold_brew_page_slogan"></h2>
+                        <h2 class="chai_iced_page" id="chai_iced_page_slogan"></h2>
+
+                        <h2 class="hot_latte_page" id="hot_latte_page_slogan"></h2>
+
+                        <h2 class="canned_latte_page" id="canned_latte_page_slogan"></h2>
+                        <h2 class="canned_caramel_page" id="canned_caramel_page_slogan"></h2>
+                        <h2 class="canned_americano_page" id="canned_americano_page_slogan"></h2>
                     </div>
                 </div>
         </div>
@@ -585,14 +572,30 @@
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 38rem;">
                     <div class="card-title card-latte-title">
-                        <h4 id="iced_latte_title"></h4>
-                        <h4 id="hot_latte_title"></h4>
-                        <h4 id="canned_latte_title"></h4>
+
+                        <h4 class="iced_latte_page" id="iced_latte_title"></h4>
+                        <h4 class="cold_brew_page" id="cold_brew_title"></h4>
+                        <h4 class="chai_iced_page" id="chai_iced_title"></h4>
+
+                        <h4 class="hot_latte_page" id="hot_latte_title"></h4>
+
+                        <h4 class="canned_latte_page" id="canned_latte_title"></h4>
+                        <h4 class="canned_caramel_page" id="canned_caramel_title"></h4>
+                        <h4 class="canned_americano_page" id="canned_americano_title"></h4>
+
                     </div>
                     <div class="card-body card-drink-description">
-                        <h3 id="drink_description_iced"></h3>
-                        <h3 id="drink_description_hot"></h3>
-                        <h3 id="drink_description_canned"></h3>
+
+                        <h3 class="iced_latte_page" id="drink_description_iced_latte"></h3>
+                        <h3 class="cold_brew_page" id="drink_description_cold_brew"></h3>
+                        <h3 class="chai_iced_page" id="drink_description_chai_iced"></h3>
+
+                        <h3 class="hot_latte_page" id="drink_description_hot"></h3>
+
+                        <h3 class="canned_latte_page" id="drink_description_canned_latte"></h3>
+                        <h3 class="canned_caramel_page" id="drink_description_canned_caramel"></h3>
+                        <h3 class="canned_americano_page" id="drink_description_canned_americano"></h3>
+
                     </div>
                 </div>
             </div>
@@ -685,9 +688,9 @@
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <div id="iced_drinks_dropdown">
-                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte')">Iced Latte</a></li>
-                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew')">Cold Brew</a></li>
-                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea')">Chai Tea Iced Latte</a></li>
+                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte'); swap_information('iced_latte_page');">Iced Latte</a></li>
+                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew'); swap_information('cold_brew_page');">Cold Brew</a></li>
+                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swap_information('chai_iced_page');">Chai Tea Iced Latte</a></li>
                                         </div>
                                         <div id="hot_drinks_dropdown">
                                             <li><a class="dropdown-item">Latte</a></li>

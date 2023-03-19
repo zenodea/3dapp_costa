@@ -55,17 +55,27 @@ $(document).ready(function()
 		html=$('#iced_latte_page_title').html(jsonObj.pageTextData[8].title);
 		html=$('#iced_latte_page_slogan').html(jsonObj.pageTextData[8].slogan);
 		html=$('#iced_latte_title').html(jsonObj.pageTextData[8].name);
-		html=$('#drink_description_iced').html(jsonObj.pageTextData[8].description);
-		
-		html=$('#hot_latte_page_title').html(jsonObj.pageTextData[9].title);
-		html=$('#hot_latte_page_slogan').html(jsonObj.pageTextData[9].slogan);
-		html=$('#hot_latte_title').html(jsonObj.pageTextData[9].name);
-		html=$('#drink_description_hot').html(jsonObj.pageTextData[9].description);
+		html=$('#drink_description_iced_latte').html(jsonObj.pageTextData[8].description);
 
-		html=$('#canned_latte_page_title').html(jsonObj.pageTextData[10].title);
-		html=$('#canned_latte_page_slogan').html(jsonObj.pageTextData[10].slogan);
-		html=$('#canned_latte_title').html(jsonObj.pageTextData[10].name);
-		html=$('#drink_description_canned').html(jsonObj.pageTextData[10].description);
+		html=$('#cold_brew_page_title').html(jsonObj.pageTextData[9].title);
+		html=$('#cold_brew_page_slogan').html(jsonObj.pageTextData[9].slogan);
+		html=$('#cold_brew_title').html(jsonObj.pageTextData[9].name);
+		html=$('#drink_description_cold_brew').html(jsonObj.pageTextData[9].description);
+
+		html=$('#chai_iced_page_title').html(jsonObj.pageTextData[10].title);
+		html=$('#chai_iced_page_slogan').html(jsonObj.pageTextData[10].slogan);
+		html=$('#chai_iced_title').html(jsonObj.pageTextData[10].name);
+		html=$('#drink_description_chai_iced').html(jsonObj.pageTextData[10].description);
+		
+		html=$('#hot_latte_page_title').html(jsonObj.pageTextData[11].title);
+		html=$('#hot_latte_page_slogan').html(jsonObj.pageTextData[11].slogan);
+		html=$('#hot_latte_title').html(jsonObj.pageTextData[11].name);
+		html=$('#drink_description_hot').html(jsonObj.pageTextData[11].description);
+
+		html=$('#canned_latte_page_title').html(jsonObj.pageTextData[12].title);
+		html=$('#canned_latte_page_slogan').html(jsonObj.pageTextData[12].slogan);
+		html=$('#canned_latte_title').html(jsonObj.pageTextData[12].name);
+		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
 
 		// Modals
 		html=$('#modal_title_about').html(jsonObj.pageTextData[15].title);
