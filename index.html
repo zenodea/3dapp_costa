@@ -233,7 +233,24 @@
                 }
             }
         }
-
+        if (['iced_latte_page','cold_brew_page','chai_iced_page'].includes(selected))
+        {
+            document.getElementById("iced_drinks_dropdown").style.display = "block";
+            document.getElementById("hot_drinks_dropdown").style.display = "none";
+            document.getElementById("canned_drinks_dropdown").style.display = "none";
+        }
+        else if (['hot_latte_page'].includes(selected))
+        {
+            document.getElementById("iced_drinks_dropdown").style.display = "none";
+            document.getElementById("hot_drinks_dropdown").style.display = "block";
+            document.getElementById("canned_drinks_dropdown").style.display = "none";
+        }
+        else if (['canned_latte_page','canned_caramel_page','canned_americano_page'])
+        {
+            document.getElementById("iced_drinks_dropdown").style.display = "none";
+            document.getElementById("hot_drinks_dropdown").style.display = "none";
+            document.getElementById("canned_drinks_dropdown").style.display = "block";
+        }
         
     }
 
@@ -254,6 +271,18 @@
         {
             document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.98 0.97 0.95');
             document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
+        }
+        else if (selected = "flavour_canned_latte")
+        {
+            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_latte.png' );
+        }
+        else if (selected = "flavour_canned_caramel")
+        {
+            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png' );
+        }
+        else if (selected = "flavour_canned_americano")
+        {
+            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png' );
         }
     }
 
@@ -459,7 +488,7 @@
                 <div div class="card" id="what_new_card">
                     <img src="/models/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_iced"></h4>
-                    <div class="card-body mini-card-body">
+                    <div class="card-body mini-card-body" >
                         <h5 id="iced_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
@@ -534,6 +563,42 @@
             
             <!-- Future 3d Model-->
             <div class="col-sm-6" >
+                <div class="float-container">
+                        <div class="float-child dropdown"> 
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_flavour" data-bs-toggle="dropdown" aria-expanded="false">
+                                Flavour
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown_flavour">
+                                <div id="iced_drinks_dropdown">
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte'); swap_information('iced_latte_page');">Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew'); swap_information('cold_brew_page');">Cold Brew</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swap_information('chai_iced_page');">Chai Tea Iced Latte</a></li>
+                                </div>
+                                <div id="hot_drinks_dropdown">
+                                    <li><a class="dropdown-item">Latte</a></li>
+                                    <li><a class="dropdown-item">Hot Chocolate</a></li>
+                                    <li><a class="dropdown-item">Mocha</a></li>
+                                </div>
+                                <div id="canned_drinks_dropdown">
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte');" href="#">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_caramel');" href="#">Caramel Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_americano');" href="#">Americano</a></li>
+                                </div>
+                            </ul>
+                        </div>
+                            <div class="float-child dropdown"> 
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                Category 
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <div id="iced_drinks_dropdown">
+                                    <li><a class="dropdown-item" onclick="swap('iced_latte'); change_flavour('flavour_iced_latte'); swap_information('iced_latte_page');">Iced Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('hot_latte'); change_flavour('flavour_iced_latte'); swap_information('hot_latte_page');">Hot Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('canned_latte'); change_flavour('flavour_iced_latte'); swap_information('canned_latte_page');">Canned Drinks</a></li>
+                                </div>
+                            </ul>
+                        </div>
+                </div>
                 <x3d id="wire"> 
                     <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
                         <Switch whichChoice="0" id="sceneSwitch">
@@ -682,40 +747,6 @@
                                 <li class="nav-item" role="presentation">
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="offAnimation();">Off</a>
                                 </li>
-                                <div class="dropdown"> 
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Flavour
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <div id="iced_drinks_dropdown">
-                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte'); swap_information('iced_latte_page');">Iced Latte</a></li>
-                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew'); swap_information('cold_brew_page');">Cold Brew</a></li>
-                                            <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swap_information('chai_iced_page');">Chai Tea Iced Latte</a></li>
-                                        </div>
-                                        <div id="hot_drinks_dropdown">
-                                            <li><a class="dropdown-item">Latte</a></li>
-                                            <li><a class="dropdown-item">Hot Chocolate</a></li>
-                                            <li><a class="dropdown-item">Mocha</a></li>
-                                        </div>
-                                        <div id="canned_drinks_dropdown">
-                                            <li><a class="dropdown-item" href="#">Latte</a></li>
-                                            <li><a class="dropdown-item" href="#">Caramel Latte</a></li>
-                                            <li><a class="dropdown-item" href="#">Americano</a></li>
-                                        </div>
-                                    </ul>
-                                </div>
-                                  <div class="dropdown"> 
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Category 
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                        <div id="iced_drinks_dropdown">
-                                            <li><a class="dropdown-item" onclick="swap('iced_latte'); iced_latte_text()">Iced Drinks</a></li>
-                                            <li><a class="dropdown-item" onclick="swap('hot_latte'); hot_latte_text()">Hot Drinks</a></li>
-                                            <li><a class="dropdown-item" onclick="swap('canned_latte'); canned_latte_text()">Canned Drinks</a></li>
-                                        </div>
-                                    </ul>
-                                </div>
                             </ul>
                         </div>
                         <div class="tab-pane" id="render">

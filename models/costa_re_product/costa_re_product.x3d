@@ -142,6 +142,7 @@
 							          shininess="0.500"
 							          transparency="0.0"
 							          />
+						<ImageTexture DEF="MA_Material_002_texture" url="costa_latte.png"/>
 						</Appearance>
 						<IndexedFaceSet solid="false"
 						                creaseAngle="0.5236"

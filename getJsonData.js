@@ -52,6 +52,8 @@ $(document).ready(function()
 		html=$('#tac_body').html(html_tac);
 
 		// x3d models
+
+		// Iced Drinks
 		html=$('#iced_latte_page_title').html(jsonObj.pageTextData[8].title);
 		html=$('#iced_latte_page_slogan').html(jsonObj.pageTextData[8].slogan);
 		html=$('#iced_latte_title').html(jsonObj.pageTextData[8].name);
@@ -67,14 +69,26 @@ $(document).ready(function()
 		html=$('#chai_iced_title').html(jsonObj.pageTextData[10].name);
 		html=$('#drink_description_chai_iced').html(jsonObj.pageTextData[10].description);
 		
+		// Hot Drinks
 		html=$('#hot_latte_page_title').html(jsonObj.pageTextData[11].title);
 		html=$('#hot_latte_page_slogan').html(jsonObj.pageTextData[11].slogan);
 		html=$('#hot_latte_title').html(jsonObj.pageTextData[11].name);
 		html=$('#drink_description_hot').html(jsonObj.pageTextData[11].description);
 
+		// Canned Drinks
 		html=$('#canned_latte_page_title').html(jsonObj.pageTextData[12].title);
 		html=$('#canned_latte_page_slogan').html(jsonObj.pageTextData[12].slogan);
 		html=$('#canned_latte_title').html(jsonObj.pageTextData[12].name);
+		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
+
+		html=$('#canned_caramel_page_title').html(jsonObj.pageTextData[12].title);
+		html=$('#canned_caramel_page_slogan').html(jsonObj.pageTextData[12].slogan);
+		html=$('#canned_caramel_title').html(jsonObj.pageTextData[12].name);
+		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
+
+		html=$('#canned_americano_page_title').html(jsonObj.pageTextData[12].title);
+		html=$('#canned_americano_page_slogan').html(jsonObj.pageTextData[12].slogan);
+		html=$('#canned_americano_title').html(jsonObj.pageTextData[12].name);
 		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
 
 		// Modals
