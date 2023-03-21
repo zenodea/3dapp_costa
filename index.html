@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- Bootstrap+CSS -->
-        <script src="getJsondata.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
@@ -22,310 +21,11 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript">
-    /* $(document).ready(function(){
-        $("button").click(function(selected)
-        {
-        $("#main_page").hide();
-        $("#our_coffee_content").hide();
-        $("#our_menu_content").hide();
-        $("#iced_latte").hide();
-        $("#switcher_iced_latte").hide();
-        $("#hot_latte").hide();
-        $("#canned_latte").hide();
-
-        $(selected).show();
-  });
-    });
-    */
-
-    // Jquery for fancybox
-    $(document).ready(function() 
-    {
-        $(".mainpage_images").fancybox({
-            'transitionIn'	: 'elastic',
-            'transitionOut'	: 'elastic',
-            helpers : {
-        overlay : {
-            css : {
-                'background' : 'rgba(58, 42, 45, 0.95)'
-            }
-        }
-    }
-        });
-
-    // Gallery feature (with mouse support)
-    $("a[rel=gallery_fancybox]").fancybox({
-            'transitionIn'	: 'elastic',
-            'transitionOut'	: 'elastic',
-            'titlePosition' 	: 'over',
-            'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
-                return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-            }
-        });
-    });
-    
-    // Animation for x3d model
-    var spinning = false;
-
-    function onAnimation()
-    {
-        spinning = true;
-        document.getElementById('animation_timesensor').setAttribute('enabled', spinning.toString());
-    }
-
-    function offAnimation()
-    {
-        spinning = false;
-        document.getElementById('animation_timesensor').setAttribute('enabled', spinning.toString());
-    }
-
-    // Camera Functions
-    function cameraFront()
-    {
-        document.getElementById('model__CA_cameraFront').setAttribute('bind', 'true');
-    }
-
-    function cameraBack()
-    {
-        document.getElementById('model__CA_cameraBack').setAttribute('bind', 'true');
-    }
-
-    function cameraLeft()
-    {
-        document.getElementById('model__CA_cameraLeft').setAttribute('bind', 'true');
-    }
-
-    function cameraRight()
-    {
-        document.getElementById('model__CA_cameraRight').setAttribute('bind', 'true');
-    }
-
-    function cameraTop()
-    {
-        document.getElementById('model__CA_cameraTop').setAttribute('bind', 'true');
-    }
-
-    function cameraBottom()
-    {
-        document.getElementById('model__CA_cameraBottom').setAttribute('bind', 'true');
-    }
-
-    function cameraNormal()
-    {
-        document.getElementById('model__CA_cameraNormal').setAttribute('bind', 'true');
-    }
-
-    function wireFrame()
-    {
-        var e = document.getElementById('wire');
-        e.runtime.togglePoints(true);
-        e.runtime.togglePoints(true);
-    }
-
-    function normal()
-    {
-        var e = document.getElementById('wire');
-        e.runtime.togglePoints(false);
-        e.runtime.togglePoints(false);
-    }
-
-    function vertex()
-    {
-        var e = document.getElementById('wire');
-        e.runtime.togglePoints(true);
-    }
-
-    function redraw()
-    {
-        var e = document.getElementById('wire');
-        e.element.runtime.triggerRedraw(true);
-    }
-
-    function lightSwitch(id)
-    {
-        var light = document.getElementById(id);
-        if(light.getAttribute('on')!='TRUE')
-            light.setAttribute('on','TRUE');
-        else
-            light.setAttribute('on','FALSE');
-    }
-    
-    function headlight(id)
-    {
-        var h = document.getElementById(id);
-        if(h.getAttribute('headlight')=='true')
-        h.setAttribute('headlight', 'false');
-        else
-            h.setAttribute('headlight', 'true');
-    }
-
-    function swap(selected)
-    {
-        document.getElementById("main_page").style.display = "none";
-        document.getElementById("goback_button").style.display = "none";
-        document.getElementById("our_coffee_content").style.display = "none";
-        document.getElementById("our_menu_content").style.display = "none";
-        document.getElementById("contact_us_content").style.display = "none";
-        document.getElementById("iced_latte").style.display = "none";
-        document.getElementById("sceneSwitch").setAttribute("whichChoice", -1);
-
-        if (selected != "main_page")
-        {
-            document.getElementById("goback_button").style.display = "block";
-        }
-
-        if (selected == "iced_latte")
-        {
-            document.getElementById("sceneSwitch").setAttribute("whichChoice", 0);
-            document.getElementById("iced_latte").style.display = "block";
-        }
-
-        else if (selected == "hot_latte")
-        {
-            document.getElementById("sceneSwitch").setAttribute("whichChoice", 1);
-            document.getElementById("iced_latte").style.display = "block";
-        }
-
-        else if (selected == "canned_latte")
-        {
-            document.getElementById("sceneSwitch").setAttribute("whichChoice", 2);
-            document.getElementById("iced_latte").style.display = "block";
-        }
-
-        else
-        {
-            document.getElementById(selected).style.display = "block";
-        }
-
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function swap_information(selected)
-    {
-        // Make htmlElements into Arrays
-        var one = Array.prototype.slice.call(document.getElementsByClassName("iced_latte_page"),0);
-        var two = Array.prototype.slice.call(document.getElementsByClassName("cold_brew_page"),0);
-        var three = Array.prototype.slice.call(document.getElementsByClassName("chai_iced_page"),0);
-
-        var four = Array.prototype.slice.call(document.getElementsByClassName("hot_latte_page"),0);
-
-        var five = Array.prototype.slice.call(document.getElementsByClassName("canned_latte_page"),0);
-        var six = Array.prototype.slice.call(document.getElementsByClassName("canned_caramel_page"),0);
-        var seven = Array.prototype.slice.call(document.getElementsByClassName("canned_americano_page"),0);
-
-        // Merge all arrays
-        var merged = [one,two,three,four,five,six,seven]
-
-        for (var i = 0; i < merged.length ; i++)
-        {
-            for (var j = 0; j< merged[i].length; j++)
-            {
-                
-                if (merged[i][j].className == selected)
-                {
-                    merged[i][j].style.display="block";
-                }
-                else
-                {
-                    merged[i][j].style.display="none";
-                }
-            }
-        }
-        if (['iced_latte_page','cold_brew_page','chai_iced_page'].includes(selected))
-        {
-            document.getElementById("iced_drinks_dropdown").style.display = "block";
-            document.getElementById("hot_drinks_dropdown").style.display = "none";
-            document.getElementById("canned_drinks_dropdown").style.display = "none";
-        }
-        else if (['hot_latte_page'].includes(selected))
-        {
-            document.getElementById("iced_drinks_dropdown").style.display = "none";
-            document.getElementById("hot_drinks_dropdown").style.display = "block";
-            document.getElementById("canned_drinks_dropdown").style.display = "none";
-        }
-        else if (['canned_latte_page','canned_caramel_page','canned_americano_page'])
-        {
-            document.getElementById("iced_drinks_dropdown").style.display = "none";
-            document.getElementById("hot_drinks_dropdown").style.display = "none";
-            document.getElementById("canned_drinks_dropdown").style.display = "block";
-        }
-        
-    }
-
-
-    function change_flavour(selected)
-    {
-        if(selected == "flavour_iced_latte")
-        {
-            document.getElementById('model__MA_Material_003').setAttribute('diffuseColor','0.800 0.376 0.063' );
-            document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
-        }
-        else if (selected == "flavour_cold_brew")
-        {
-            document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.092 0.064 0.051');
-            document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.5');
-        }
-        else if (selected == "flavour_chai_tea")
-        {
-            document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.98 0.97 0.95');
-            document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
-        }
-        else if (selected == "flavour_canned_caramel")
-        {
-            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png');
-        }
-        else if (selected == "flavour_canned_latte")
-        {
-            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_latte.png');
-        }
-        else if (selected == "flavour_canned_americano")
-        {
-            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png');
-        }
-    }
-
-    function change_modal(selected)
-    {
-        if (selected == "github_modal")
-        {
-            document.getElementById("about_modal").style.display = "none";
-            document.getElementById("github_modal").style.display = "block";
-        }
-        if (selected == "about_modal")
-        {
-            document.getElementById("about_modal").style.display = "block";
-            document.getElementById("github_modal").style.display = "none";
-        }
-    }
-
-    // Menu function
-    // https://www.w3schools.com/howto/howto_js_search_menu.asp
-    function menu_function() 
-    {
-        // Declare variables
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("mySearch");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myMenu");
-        li = ul.getElementsByTagName("li");
-
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) 
-        {
-            a = li[i].getElementsByTagName("a")[0];
-            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-            } else {
-            li[i].style.display = "none";
-            }
-        }
-    }
-
-
-
-    </script>
+        <!-- Custom Javascript -->
+        <script src="js/gallery_functions.js"></script>
+        <script src="js/getJsondata.js"></script>
+        <script src="js/swap_functions.js"></script>
+        <script src="js/modelInteraction.js"></script>
     </head>
 
     <body>
@@ -404,7 +104,7 @@
             </div>
 
             <div class="col-sm-8">
-                <img src="/models/costa_cup/logo.png" width="700" height="400" style="position: absolute; top: 105px; right: 90px;">
+                <img src="/assets/x3d/costa_cup/logo.png" width="700" height="400" style="position: absolute; top: 105px; right: 90px;">
             </div>
         </div>
 
@@ -414,8 +114,8 @@
             <!-- Future 3d Model-->
             <div class="col-sm-6" >
                 <div div class="card" id="item_card" style="width: 50rem;">
-                <a class="mainpage_images" href="/models/costa_iced_cup/costa_iced_cup.png">
-                    <img src="/models/costa_iced_cup/costa_iced_cup.png" width="850" height="500" style="margin: 0 auto" >
+                <a class="mainpage_images" href="/assets/x3d/costa_iced_cup/costa_iced_cup.png">
+                    <img src="/assets/x3d/costa_iced_cup/costa_iced_cup.png" width="850" height="500" style="margin: 0 auto" >
                 </a>
                 </div>
             </div>
@@ -450,8 +150,8 @@
             </div>
 
             <div class="col-sm-6" >
-                <a class="mainpage_images" href="/models/costa_cup/costa_cup.png">
-                    <img src="/models/costa_cup/costa_cup.png" width="850" height="500" style="margin: 0 auto;" >
+                <a class="mainpage_images" href="/assets/x3d/costa_cup/costa_cup.png">
+                    <img src="/assets/x3d/costa_cup/costa_cup.png" width="850" height="500" style="margin: 0 auto;" >
                 </a>
             </div>
         </div>
@@ -459,8 +159,8 @@
         <!-- Cold Can Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
             <div class="col-sm-6" >
-                <a class="mainpage_images" href="/models/costa_re_product/costa_re_product.png">
-                    <img src="/models/costa_re_product/costa_re_product.png" width="850" height="500" >
+                <a class="mainpage_images" href="/assets/x3d/costa_re_product/costa_re_product.png">
+                    <img src="/assets/x3d/costa_re_product/costa_re_product.png" width="850" height="500" >
                 </a>
             </div>
 
@@ -486,7 +186,7 @@
         <div class="row" id="footer_info" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
-                    <img src="/models/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
+                    <img src="/assets/x3d/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_iced"></h4>
                     <div class="card-body mini-card-body" >
                         <h5 id="iced_latte_mini_description"></h5>
@@ -498,7 +198,7 @@
             </div>
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
-                    <img src="/models/costa_cup/temp.jpg" class="card-img-top" alt="...">
+                    <img src="/assets/x3d/costa_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_title">Latte</h4>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
@@ -510,7 +210,7 @@
             </div>
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
-                    <img src="/models/costa_re_product/temp.jpg" class="card-img-top" alt="...">
+                    <img src="/assets/x3d/costa_re_product/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_canned"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="canned_latte_mini_description"></h5>
@@ -604,19 +304,20 @@
                         <Switch whichChoice="0" id="sceneSwitch">
 
                                 <transform>
-                                <inline nameSpaceName="model" mapDEFToID="true" url="../models/costa_iced_cup/costa_iced_cup.x3d">  </inline>
+                                <inline nameSpaceName="model" mapDEFToID="true" url="../assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../models/costa_cup/costa_cup.x3d">  </inline>
+                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../assets/x3d/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
-                                <transform>
-                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../models/costa_re_product/costa_re_product.x3d">  </inline>
+                                <transform DEF="can">
+                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
 
                         </Switch>
-                                <!-- CONTROLS ROTATION OF THE MODEL-->
+                                <!-- CONTROLS ROTATION OF THE MODEL __ Iced Drink Straw up and down
+
                                 <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
 
                                 <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
@@ -624,6 +325,25 @@
                                 <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
                                 <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
 
+                                -->
+
+                                <!-- CONTROLS ROTATION OF THE MODEL __ Hot Drink Cup upd and down-->
+                                <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
+
+                                <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
+                                
+                                <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
+                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
+
+                                <!-- CONTROLS ROTATION OF THE MODEL __ Can rotate-->
+                                <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
+
+                                <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
+                                
+                                <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
+                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
+
+                                <!-- Lights -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
                                 <directionallight id="directional" direction="0 -1 0" on="FA intensity="2.0" shadowintensity="0.0" color="1,1,1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1">
                                 </directionallight> 
@@ -939,7 +659,7 @@
             <form>
                 <div class="form-group">
                   <label class="form-group-header" for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
                 </div>
                 <div class="form-group">
                   <label class="form-group-header" for="exampleFormControlSelect1">Please choose the category most appropriate</label>
@@ -952,7 +672,7 @@
                 </div>
                 <div class="form-group">
                   <label class="form-group-header" for="exampleFormControlTextarea1">Description of the issue</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">Submit</button>
