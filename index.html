@@ -272,17 +272,17 @@
             document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.98 0.97 0.95');
             document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
         }
-        else if (selected = "flavour_canned_latte")
+        else if (selected == "flavour_canned_caramel")
         {
-            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_latte.png' );
+            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png');
         }
-        else if (selected = "flavour_canned_caramel")
+        else if (selected == "flavour_canned_latte")
         {
-            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png' );
+            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_latte.png');
         }
-        else if (selected = "flavour_canned_americano")
+        else if (selected == "flavour_canned_americano")
         {
-            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png' );
+            document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png');
         }
     }
 
@@ -398,7 +398,7 @@
                     <h3> Indulge in your favorites</h3>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#"  id="mainpage_button" data-fancybox data-src="#main_page">Find a Costa></button>
+                        <button href="#"  id="mainpage_button" data-src="#main_page">Find a Costa></button>
                     </div>
                 </div>
             </div>
@@ -580,9 +580,9 @@
                                     <li><a class="dropdown-item">Mocha</a></li>
                                 </div>
                                 <div id="canned_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte');" href="#">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_caramel');" href="#">Caramel Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_americano');" href="#">Americano</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte'); swap_information('canned_latte_page');">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_caramel'); swap_information('canned_caramel_page');">Caramel Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_americano'); swap_information('canned_americano_page');">Americano</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -604,17 +604,18 @@
                         <Switch whichChoice="0" id="sceneSwitch">
 
                                 <transform>
-                                <inline nameSpaceName="model" mapDEFToID="true" url="../models/costa_iced_cup/costa_iced_cup.x3d" render="true" >  </inline>
+                                <inline nameSpaceName="model" mapDEFToID="true" url="../models/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline nameSpaceName="model"  url="../models/costa_cup/costa_cup.x3d" render="true" >  </inline>
+                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../models/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline nameSpaceName="model"  url="../models/costa_re_product/costa_re_product.x3d" render="true" >  </inline>
+                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../models/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
 
+                        </Switch>
                                 <!-- CONTROLS ROTATION OF THE MODEL-->
                                 <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
 
@@ -629,7 +630,6 @@
                                 <PointLight id='point' on='FALSE' intensity='5.000' color='0.0 0.6 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
                                 <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
                                 <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
-                        </Switch>
                     </scene>
                 </x3d>
             </div>
@@ -899,7 +899,7 @@
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <p>If the scan on your device fails whilst using the app at a till, check with the barista and try again. Baristas can also add your Beans retrospectively if the issue continues. If you’re using the app at an Express machine and the scan on your device fails, please try again and double check that you are connected to Wi-fi. For help with any other app related issue, see here.</p>
                     </div>
                   </div>
                 </div>
@@ -911,7 +911,7 @@
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <p>It's simple! Download our Costa Club app to register and start collecting beans today. If you have a plastic card, you can register it here.</p>
                     </div>
                   </div>
                 </div>
@@ -923,7 +923,7 @@
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <p>Log in to your Costa Club account here and select the ‘Card’ tab. Here, you’ll find instructions on how to replace your card. You can also download our app and login to start collecting beans. Don’t worry! You won’t lose the beans you’ve collected on your lost card, as all your beans will show in your account.</p>
                     </div>
                   </div>
                 </div>
@@ -942,7 +942,7 @@
                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
                 <div class="form-group">
-                  <label class="form-group-header" for="exampleFormControlSelect1">Example select</label>
+                  <label class="form-group-header" for="exampleFormControlSelect1">Please choose the category most appropriate</label>
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Dietary Questions</option>
                     <option>Problems with the application</option>
@@ -951,7 +951,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label class="form-group-header" for="exampleFormControlTextarea1">Description</label>
+                  <label class="form-group-header" for="exampleFormControlTextarea1">Description of the issue</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="form-group">

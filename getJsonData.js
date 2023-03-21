@@ -79,17 +79,17 @@ $(document).ready(function()
 		html=$('#canned_latte_page_title').html(jsonObj.pageTextData[12].title);
 		html=$('#canned_latte_page_slogan').html(jsonObj.pageTextData[12].slogan);
 		html=$('#canned_latte_title').html(jsonObj.pageTextData[12].name);
-		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
+		html=$('#drink_description_canned_latte').html(jsonObj.pageTextData[12].description);
 
-		html=$('#canned_caramel_page_title').html(jsonObj.pageTextData[12].title);
-		html=$('#canned_caramel_page_slogan').html(jsonObj.pageTextData[12].slogan);
-		html=$('#canned_caramel_title').html(jsonObj.pageTextData[12].name);
-		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
+		html=$('#canned_caramel_page_title').html(jsonObj.pageTextData[13].title);
+		html=$('#canned_caramel_page_slogan').html(jsonObj.pageTextData[13].slogan);
+		html=$('#canned_caramel_title').html(jsonObj.pageTextData[13].name);
+		html=$('#drink_description_canned_caramel').html(jsonObj.pageTextData[13].description);
 
-		html=$('#canned_americano_page_title').html(jsonObj.pageTextData[12].title);
-		html=$('#canned_americano_page_slogan').html(jsonObj.pageTextData[12].slogan);
-		html=$('#canned_americano_title').html(jsonObj.pageTextData[12].name);
-		html=$('#drink_description_canned').html(jsonObj.pageTextData[12].description);
+		html=$('#canned_americano_page_title').html(jsonObj.pageTextData[14].title);
+		html=$('#canned_americano_page_slogan').html(jsonObj.pageTextData[14].slogan);
+		html=$('#canned_americano_title').html(jsonObj.pageTextData[14].name);
+		html=$('#drink_description_canned_americano').html(jsonObj.pageTextData[14].description);
 
 		// Modals
 		html=$('#modal_title_about').html(jsonObj.pageTextData[15].title);

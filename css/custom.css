@@ -197,13 +197,17 @@ h4
 	font-family: costa;
 	font-weight: bold;
   }
-  .float-container {
+
+  /* Used for the flavour and category on top of the x3d model */
+.float-container 
+{
 	margin-top: -15px;
 	position: absolute;
 	z-index:1000; 
 }
 
-.float-child {
+.float-child 
+{
 	width: 50%;
     float: left;
 }  
