@@ -43,10 +43,11 @@ class Controller {
         $this->load->view('viewMessage', $data);
     }
 
-    function apiAddRequest($email, $section, $description)
+    // Controller method to send view data to model
+    function apiAddRequest()
     {
-        $data = $this->model->dbAddRequest($email,$section,$description);
-        $this->load->view('viewMessage', $data);
+        $data = $this->model->dbAddRequest($_POST['email'],$_POST['category'],$_POST['description']);
+        $this->load->view('viewRequest', $data);
     }
 
     function apiGetFlickrService()

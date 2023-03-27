@@ -172,6 +172,8 @@ class Model
         $stmt->bindValue(':category', $request);
         $stmt->bindValue(':request_description', $description);
         $result = $stmt->execute();
+        
+        $this->dbhandle = NULL;
         }
         catch (PDOException $e)
         {

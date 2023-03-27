@@ -606,14 +606,14 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form action="index.php/apiAddRequest" method="post">
                 <div class="form-group">
-                  <label class="form-group-header" for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+                  <label class="form-group-header" for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
                 </div>
                 <div class="form-group">
-                  <label class="form-group-header" for="exampleFormControlSelect1">Please choose the category most appropriate</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
+                  <label class="form-group-header" for="category">Please choose the category most appropriate</label>
+                  <select class="form-control" id="category" name="category">
                     <option>Dietary Questions</option>
                     <option>Problems with the application</option>
                     <option>Problems with the web page</option>
@@ -621,8 +621,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label class="form-group-header" for="exampleFormControlTextarea1">Description of the issue</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                  <label class="form-group-header" for="description_request">Description of the issue</label>
+                  <textarea class="form-control" id="description_request" name="description" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">Submit</button>

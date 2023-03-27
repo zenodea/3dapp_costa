@@ -21,34 +21,31 @@
                         <a class="nav-link header_item" href="javascript:swap('our_menu_content')">Our menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" href="#" data-toggle="modal" data-target="#exampleModal">About</a>
+                        <a class="nav-link header_item" onclick="change_modal('about_modal')" data-bs-toggle="modal" data-bs-target="#exampleModal">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link header_item" href="javascript:swap('contact_us_content')">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" href="#" data-toggle="modal" data-target="#exampleModal">Github</a>
+                        <a class="nav-link header_item" onclick="change_modal('github_modal')" data-bs-toggle="modal" data-bs-target="#exampleModal">Github</a>
                     </li>
                 </ul>
                 </div>  
         </nav>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">About Costa</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div id="about_modal">
+                    <div class="modal-header"><h5 class="modal-title" id="modal_title_about"></h5></div>
+                    <div class="modal-body" id="modal_body_about"></div>
                 </div>
-                <div class="modal-body">
-                    Welcome to the official Coca Cola website! We are a global brand that has been bringing people together for over 130 years. Our mission is to refresh the world and inspire moments of optimism and happiness.
-    <br>
-    At Coca Cola, we are dedicated to providing quality products that bring people joy. Whether you're enjoying an ice-cold Coke on a hot day or celebrating a special occasion with friends and family, we are proud to be a part of your moments of happiness.
+                <div id="github_modal">
+                    <div class="modal-header"><h5 class="modal-title" id="modal_title_github"></h5></div>
+                    <div class="modal-body" id="modal_body_github"></div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
             </div>
