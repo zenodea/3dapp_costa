@@ -12,10 +12,19 @@ class Controller {
     }
     
     function home()
-    {
-        $data = $this->model->model3D_info();
-        $this->load->view('view3DAppTest', $data);
-    }
+	{
+		// At the moment data is input from a JSON file directly from the getJsonData.js file using the JQuery AJAX method .getJson()
+		// $.getJSON('../application/model/data.json', function(jsonObj) {handler goes here} — The URL here should really be a path to this home() method.
+		// Then you would:
+		
+		// Insert code to access a method in the Model class that returns a PHP array with the data you need, e.g.
+		// $data = $this->model->apiGetJsonMuseumData();
+		$this->load->view('viewCosta');
+		// Echo the data out to the browser and trap it in the $.getJSON() handler and inject it into the view as before
+		// echo ($data);
+
+	}
+
 
     function apiCreateTable()
     {
@@ -26,12 +35,6 @@ class Controller {
     function apiInsertData()
     {
         $data = $this->model->dbInsertData();
-        $this->load->view('viewMessage', $data);
-    }
-
-    function apiGetData()
-    {
-        $data = $this->model->dbGetData();
         $this->load->view('viewMessage', $data);
     }
 

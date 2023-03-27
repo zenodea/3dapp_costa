@@ -4,14 +4,13 @@ class Model {
 
     public function __construct()
     {
-        $dsn = 'sqlite:./db/test1.db';
+        $dsn = 'sqlite:./db/costa_information.db';
 
         try
         {
             $this->dbhandle = new PDO($dsn, 'user', 'password', array(
                 PDO::ATTR_ERRMODE => pDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_EMULATE_PREPARES => false
-            ));
+                PDO::ATTR_EMULATE_PREPARES => false));
         }
         catch(PDOException $e)
         {
@@ -26,8 +25,17 @@ class Model {
     {
         try
         {
-            # Create table for 3d models
-            $this->dbhandle->exec("CREATE TABLE Model_3D (Id INTEGER PRIMARY KEY, x3dModelTitle TEXT, x3dCreationMethod TEXT, modelTitle TEXT, modelSubtitle TEXT, modelDescription TEXT)");
+            # 3D model table
+            $this->dbhandle->exec("CREATE TABLE Model_3D (Id INTEGER PRIMARY KEY, title TEXT, slogan TEXT, title_name TEXT, drink_description TEXT)");
+            
+            # Main Page Table
+            $this->dbhandle->exec("CREATE TABLE Main_page (Id INTEGER PRIMARY KEY, title TEXT, general_drink_description TEXT)");
+            
+            # Footer table
+            $this->dbhandle->exec("CREATE TABLE Footer (Id INTEGER PRIMARY KEY, title TEXT, items TEXT)");
+
+            # Modal Table
+            $this->dbhandle->exec("CREATE TABLE Modal (Id INTEGER PRIMARY KEY, title TEXT, Modal_description TEXT)");
 
             return "Model_3D table has been created succesfully!";
         }
@@ -40,11 +48,21 @@ class Model {
 
     function dbInsertData()
     {
+        $JsonFileContent = file_get_contents(__DIR__."/data.json");
+        $array = json_decode($JsonFileContent, true);
+        foreach ($array as $value) {
+            foreach ($value as $value1)
+            {
+                foreach ($value1 as $value2)
+                {
+                }
+            }
+          }
         try
         {
             $this->dbhandle->exec(
-                "INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelSubtitle)
-                    VALUES (1,'strin_1', 'string_2', 'string_3', 'string_4', 'string_5')"
+                "INSERT INTO Model_3D (title)
+                    VALUES (".'$value2'.")"
             );
             return "X3D model data inserted succesfully inside test1.db";
         }
@@ -55,31 +73,36 @@ class Model {
         $this->dbhandle = NULL;
     }
 
-    function dbGetData()
+    function dbGetJsonMuseumData()
     {
+        $list_tables = array("Model_3D","Main_page","footer","Modal");
+        $result = array();
         try
         {
-            $sql = 'SELECT * FROM Model_3D';
-
-            $stmt = $this->dbhandle->query($sql);
-
-            $result = null;
-
-            $i=0;
-
-            while($data = $stmt->fetch())
+            foreach ($list_tables as $value) 
             {
-                $result[$i]['x3dModelTitle'] = $data['x3dModelTitle'];
-                $result[$i]['x3dCreationMethod'] = $data['x3dCreationMethod'];
+                $sql = 'SELECT * FROM '.$value;
 
-                $i++;
-            }
+                $stmt = $this->dbhandle->query($sql);
+
+
+                $i=0;
+
+                while($data = $stmt->fetch())
+                {
+                    foreach ($data[$i] as $final_value)
+                    {
+                        array_push($result,$final_value);
+                    }
+                    $i++;
+                }
+                 $this->dbhandle = NULL;
+              }
         }
         catch (PDOException $e)
         {
             print new Exception($e->getMessage());
         }
-        $this->dbhandle = NULL;
     }
 
     public function dbGetBrand()

@@ -7,7 +7,6 @@ class load
         {
             extract($data);
         }
-
         include $file_name . '.php';
     }
 }

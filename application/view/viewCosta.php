@@ -33,58 +33,8 @@
         <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
         </button>
-        <!-- Footer -->
-        <nav class="navbar navbar-expand-sm" style="background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(0,0,0,0.4));">
-            <!-- Brand -->
-        <div class="logo">
-            <a class="navbar-brand"  href="javascript:swap('main_page')">
-                <div id="costa_logo">
-                    <h3>COSTA</h3>
-                    <h4>COFFEE</h4>
-                </div>
-            </a>
-        </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link header_item" href="javascript:swap('our_coffee_content')">Our coffees</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header_item" href="javascript:swap('our_menu_content')">Our menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header_item" onclick="change_modal('about_modal')" data-bs-toggle="modal" data-bs-target="#exampleModal">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header_item" href="javascript:swap('contact_us_content')">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link header_item" onclick="change_modal('github_modal')" data-bs-toggle="modal" data-bs-target="#exampleModal">Github</a>
-                    </li>
-                </ul>
-                </div>  
-        </nav>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div id="about_modal">
-                    <div class="modal-header"><h5 class="modal-title" id="modal_title_about"></h5></div>
-                    <div class="modal-body" id="modal_body_about"></div>
-                </div>
-                <div id="github_modal">
-                    <div class="modal-header"><h5 class="modal-title" id="modal_title_github"></h5></div>
-                    <div class="modal-body" id="modal_body_github"></div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-            </div>
-        </div>
+        <!-- Header -->
+        <?php include_once("header.html"); ?>
 
         <!-- First -->
         <div id="main_page" class="container_fluid main_contents">
@@ -104,7 +54,7 @@
             </div>
 
             <div class="col-sm-8">
-                <img src="/assets/x3d/costa_cup/logo.png" width="700" height="400" style="position: absolute; top: 105px; right: 90px;">
+                <img src="assets/x3d/costa_cup/logo.png" width="700" height="400" style="position: absolute; top: 105px; right: 90px;">
             </div>
         </div>
 
@@ -114,8 +64,8 @@
             <!-- Future 3d Model-->
             <div class="col-sm-6" >
                 <div div class="card" id="item_card" style="width: 50rem;">
-                <a class="mainpage_images" href="/assets/x3d/costa_iced_cup/costa_iced_cup.png">
-                    <img src="/assets/x3d/costa_iced_cup/costa_iced_cup.png" width="850" height="500" style="margin: 0 auto" >
+                <a class="mainpage_images" href="assets/x3d/costa_iced_cup/costa_iced_cup.png">
+                    <img src="assets/x3d/costa_iced_cup/costa_iced_cup.png" width="850" height="500" style="margin: 0 auto" >
                 </a>
                 </div>
             </div>
@@ -150,8 +100,8 @@
             </div>
 
             <div class="col-sm-6" >
-                <a class="mainpage_images" href="/assets/x3d/costa_cup/costa_cup.png">
-                    <img src="/assets/x3d/costa_cup/costa_cup.png" width="850" height="500" style="margin: 0 auto;" >
+                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
+                    <img src="assets/x3d/costa_cup/costa_cup.png" width="850" height="500" style="margin: 0 auto;" >
                 </a>
             </div>
         </div>
@@ -159,8 +109,8 @@
         <!-- Cold Can Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
             <div class="col-sm-6" >
-                <a class="mainpage_images" href="/assets/x3d/costa_re_product/costa_re_product.png">
-                    <img src="/assets/x3d/costa_re_product/costa_re_product.png" width="850" height="500" >
+                <a class="mainpage_images" href="assets/x3d/costa_re_product/costa_re_product.png">
+                    <img src="assets/x3d/costa_re_product/costa_re_product.png" width="850" height="500" >
                 </a>
             </div>
 
@@ -186,7 +136,7 @@
         <div class="row" id="footer_info" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
-                    <img src="/assets/x3d/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
+                    <img src="assets/x3d/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_iced"></h4>
                     <div class="card-body mini-card-body" >
                         <h5 id="iced_latte_mini_description"></h5>
@@ -198,7 +148,7 @@
             </div>
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
-                    <img src="/assets/x3d/costa_cup/temp.jpg" class="card-img-top" alt="...">
+                    <img src="assets/x3d/costa_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_title">Latte</h4>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
@@ -210,7 +160,7 @@
             </div>
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
-                    <img src="/assets/x3d/costa_re_product/temp.jpg" class="card-img-top" alt="...">
+                    <img src="assets/x3d/costa_re_product/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_canned"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="canned_latte_mini_description"></h5>
@@ -304,15 +254,15 @@
                         <Switch whichChoice="0" id="sceneSwitch">
 
                                 <transform>
-                                <inline nameSpaceName="model" mapDEFToID="true" url="../assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
+                                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../assets/x3d/costa_cup/costa_cup.x3d">  </inline>
+                                <inline nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform DEF="can">
-                                <inline nameSpaceName="model"  mapDEFToID="true"  url="../assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
+                                <inline nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
 
                         </Switch>
@@ -680,51 +630,6 @@
             </form>
 
         </div>
-
-        <div class="row" style="background-color: #ce0041;">
-            <div class="col-sm-2" style="padding: 30px;"> 
-                <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title footer-title" id="about_us_title"></h5>
-                    <div class="card-body footer-body" id="about_us_body"></div>
-                </div>
-            </div>
-            <div class="col-sm-2" style="padding: 30px;"> 
-                <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title footer-title" id="nutrients_title"></h5>
-                    <div class="card-body footer-body" id="nutrients_body"></div>
-                </div>
-            </div>
-            <div class="col-sm-2" style="padding: 30px;"> 
-                <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title footer-title" id="giftings_title"></h5>
-                    <div class="card-body footer-body" id="giftings_body"></div>
-                </div>
-            </div>
-            <div class="col-sm-2" style="padding: 30px;"> 
-                <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title footer-title" id="contact_us_title"></h5>
-                    <div class="card-body footer-body" id="contact_us_body"></div>
-                </div>
-            </div>
-            <div class="col-sm-2" style="padding: 30px;"> 
-                <div div class="card" style="background-color: transparent;">
-                    <h5 class="card-title footer-title" id="tac_title"></h5>
-                    <div class="card-body footer-body" id="tac_body"></div>
-                </div>
-            </div>
-        </div>
-  <nav class="navbar navbar-expand-sm footer" style="background-color: #810029;">
-    <div class="container">
-        <div class="navbar-text float-left copyright">
-            <p><span class="align-baseline"></span>2023 mobile web 3d application</p>
-        </div>
-        <div class="navbar-text float-right social">
-            <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
-            <a href="#"><i class="fab fa-google-plus-square fa-2x"></i></a>
-            <a href="#"><i class="fab fa-github-square fa-2x"></i></a>
-        </div>
-    </div>
-  </nav>
+        <?php include_once("footer.html"); ?>
     </body>
 </html>

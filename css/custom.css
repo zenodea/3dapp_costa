@@ -7,7 +7,7 @@ body {
   }
 @font-face {
 	font-family: costa;
-	src: url(/assets/fonts/CostaPtfBold.otf);
+	src: url("../assets/fonts/CostaPtfBold.otf");
 }
 
 .list-group{

@@ -120,7 +120,6 @@
 							          shininess="0.500"
 							          transparency="0.0"
 							          />
-						<ImageTexture DEF="iiii" url="costa_logo_texture.jpg"/>
 						</Appearance>
 						<IndexedFaceSet solid="false"
 						                creaseAngle="4.0000"
