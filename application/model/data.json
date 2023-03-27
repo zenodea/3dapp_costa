@@ -1,5 +1,6 @@
 {
-    "pageTextData": [
+    "main_page_text": 
+    [
         {
             "title" : "Iced Drinks",
             "description" : "Costa Iced drinks are refreshing and delicious beverages served cold with ice. They come in a variety of flavors such as coffee, tea, and fruit-based drinks. Perfect for hot summer days or whenever you need a cool drink."
@@ -11,7 +12,10 @@
         {
             "title" : "Canned Drinks",
             "description" : "Costa Canned drinks are ready-to-drink beverages available in a range of flavors such as Classic Latte, Caramel Latte, and Americano. These convenient and portable drinks are perfect for on-the-go and can be enjoyed chilled or at room temperature."
-        },
+        }
+    ],
+    "footer":
+    [
         {
             "title" : "About Us",
             "items" : ["Our Coffees", "Our Story", "Sustainability", "Costa Foundation", "Policies and reports"]
@@ -31,7 +35,10 @@
         {
             "title" : "Terms and Conditions",
             "items" : ["Agreement","Intellectual Property","Liability","Termination","Governing Law"]
-        },
+        }
+    ],
+    "drinks":
+    [
         {
             "title": "Iced Latte Every Day",
             "slogan" : "Ice, ice, latte. Cool and creamy.",
@@ -73,7 +80,10 @@
             "slogan" : "Boost of energy, the American Way",
             "name" : "Americano in a Can",
             "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
-        },
+        }
+    ],
+    "modal":
+    [
         {
             "title": "About Costa",
             "description" : " We've 50 years' experience of crafting the finest quality coffee. From revolutionary methods and commitment to quality to unforgettable successes that have made Costa Coffee the Nation’s Favourite* coffee shop, our story is as unique as our coffee."

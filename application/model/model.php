@@ -1,5 +1,6 @@
 <?php
-class Model {
+class Model 
+{
     public $dbhandle;
 
     public function __construct()
@@ -37,6 +38,9 @@ class Model {
             # Modal Table
             $this->dbhandle->exec("CREATE TABLE Modal (Id INTEGER PRIMARY KEY, title TEXT, Modal_description TEXT)");
 
+            # Requests Table
+            $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, email TEXT, category TEXT, request_description TEXT)");
+
             return "Model_3D table has been created succesfully!";
         }
         catch (PDOException $e)
@@ -49,73 +53,131 @@ class Model {
     function dbInsertData()
     {
         $JsonFileContent = file_get_contents(__DIR__."/data.json");
+
+        // Get data from data.json
         $array = json_decode($JsonFileContent, true);
-        foreach ($array as $value) {
-            foreach ($value as $value1)
-            {
-                foreach ($value1 as $value2)
-                {
-                }
-            }
-          }
+
+        // Separating the different sections of the json, also, array_pop() is used, as it is O(1)
+        // Note, array_pop gives the items in the reversed order, thus we start with the last element of the JSON
+        $modal = array_pop($array);
+        $drinks = array_pop($array);
+        $footer = array_pop($array);
+        $main_page = array_pop($array);
         try
         {
-            $this->dbhandle->exec(
-                "INSERT INTO Model_3D (title)
-                    VALUES (".'$value2'.")"
-            );
-            return "X3D model data inserted succesfully inside test1.db";
+            // Add main page items to database
+            foreach($main_page as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Main_page (title,general_drink_description)
+                            VALUES (:title, :drink_description)");
+                    $stmt->bindValue(':drink_description', array_pop($item));
+                    $stmt->bindValue(':title', array_pop($item));
+                    $result = $stmt->execute();
+            }
+
+            // Add drink items to database
+            foreach($drinks as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Model_3D (title,slogan,title_name,drink_description)
+                            VALUES (:title, :slogan, :title_name, :drink_description)");
+                    $stmt->bindValue(':drink_description', array_pop($item));
+                    $stmt->bindValue(':title_name', array_pop($item));
+                    $stmt->bindValue(':slogan', array_pop($item));
+                    $stmt->bindValue(':title', array_pop($item));
+                    $result = $stmt->execute();
+            }
+
+            // Add modal items to database
+            foreach($modal as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Modal (title,Modal_description)
+                            VALUES (:title, :modal_description)");
+                    $stmt->bindValue(':modal_description', array_pop($item));
+                    $stmt->bindValue(':title', array_pop($item));
+                    $result = $stmt->execute();
+            }
+
+            // Add footer items to database
+            foreach($footer as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Footer (title, items)
+                            VALUES (:section, :array)");
+                    $stmt->bindValue(':array', implode(', ',array_pop($item)));
+                    $stmt->bindValue(':section', array_pop($item));
+                    $result = $stmt->execute();
+            }
         }
         catch (PDOException $e)
         {
             print new Exception($e->getMessage());
         }
+        return "X3D model data inserted succesfully inside test1.db";
         $this->dbhandle = NULL;
     }
 
     function dbGetJsonMuseumData()
     {
-        $list_tables = array("Model_3D","Main_page","footer","Modal");
         $result = array();
         try
         {
-            foreach ($list_tables as $value) 
-            {
-                $sql = 'SELECT * FROM '.$value;
-
+                $sql = 'SELECT title,slogan,title_name,drink_description FROM Model_3d';
                 $stmt = $this->dbhandle->query($sql);
-
-
-                $i=0;
-
-                while($data = $stmt->fetch())
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
                 {
-                    foreach ($data[$i] as $final_value)
-                    {
-                        array_push($result,$final_value);
-                    }
-                    $i++;
+                    array_push($result,$value);
                 }
-                 $this->dbhandle = NULL;
-              }
+
+                $sql = 'SELECT title, general_drink_description FROM Main_page';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll();
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                $sql = 'SELECT title, items FROM footer';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                $sql = 'SELECT title, Modal_description FROM Modal';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                $this->dbhandle = NULL;
         }
         catch (PDOException $e)
         {
             print new Exception($e->getMessage());
         }
+        return $result;
     }
 
-    public function dbGetBrand()
+    function dbAddRequest($email, $request, $description)
     {
-        return array("-","Coke","Pepsi","Light","Dark");
-    }
+        try
+        {
+        $stmt=$this->dbhandle->prepare("INSERT INTO Request (email,category,request_description)
+                VALUES (:email, :category, :request_description)");
 
-    public function model3D_info()
-    {
-        return array
-        (
-            'model_1' => 'Coke Can 3D Image 1',
-        );
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':category', $request);
+        $stmt->bindValue(':request_description', $description);
+        $result = $stmt->execute();
+        }
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
+        return "Request Added!";
     }
 }
 ?>

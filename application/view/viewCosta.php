@@ -27,12 +27,12 @@
         <script src="js/swap_functions.js"></script>
         <script src="js/modelInteraction.js"></script>
     </head>
-
     <body>
 
         <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
         </button>
+
         <!-- Header -->
         <?php include_once("header.html"); ?>
 
