@@ -21,6 +21,7 @@ class Controller {
 		$this->load->view('viewCosta');
 		// Echo the data out to the browser and trap it in the $.getJSON() handler and inject it into the view as before
         echo '<div id="json_data">'.json_encode($data).'</div>';
+        echo implode($_POST);
 	}
 
 

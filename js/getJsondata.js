@@ -1,19 +1,11 @@
 $(document).ready(function()
 {
-	$.ajax({ 
-        data: { get_param: 'value' }, 
-		dataType: 'json',
-        success: function (data) { 
-            var names = data
-            $('#json_data').html(data);
-        }
-    });
-    $.getJSON(data, function(jsonObj)
+    $.getJSON("application/model/data.json", function(jsonObj)
     {
         // Main Page
 
         // Iced Latte
-		$('#iced_latte_main_title').html(jsonObj);
+		$('#iced_latte_main_title').html(jsonObj.main_page_text[0].title);
 		$('#what_new_iced').html(jsonObj.main_page_text[0].title);
 		$('#iced_latte_main_description').html(jsonObj.main_page_text[0].description);
 		$('#iced_latte_mini_description').html(jsonObj.main_page_text[0].description);
