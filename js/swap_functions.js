@@ -5,6 +5,8 @@ function swap(selected)
     document.getElementById("our_coffee_content").style.display = "none";
     document.getElementById("our_menu_content").style.display = "none";
     document.getElementById("contact_us_content").style.display = "none";
+    document.getElementById("going_beyond_content").style.display = "none";
+    document.getElementById("request_list_content").style.display = "none";
     document.getElementById("iced_latte").style.display = "none";
     document.getElementById("sceneSwitch").setAttribute("whichChoice", -1);
 
@@ -47,6 +49,8 @@ function swap_information(selected)
     var three = Array.prototype.slice.call(document.getElementsByClassName("chai_iced_page"),0);
 
     var four = Array.prototype.slice.call(document.getElementsByClassName("hot_latte_page"),0);
+    var four = Array.prototype.slice.call(document.getElementsByClassName("hot_chocolate_page"),0);
+    var four = Array.prototype.slice.call(document.getElementsByClassName("hot_mocha_page"),0);
 
     var five = Array.prototype.slice.call(document.getElementsByClassName("canned_latte_page"),0);
     var six = Array.prototype.slice.call(document.getElementsByClassName("canned_caramel_page"),0);
@@ -76,7 +80,7 @@ function swap_information(selected)
         document.getElementById("hot_drinks_dropdown").style.display = "none";
         document.getElementById("canned_drinks_dropdown").style.display = "none";
     }
-    else if (['hot_latte_page'].includes(selected))
+    else if (['hot_latte_page','hot_chocolate_page','hot_mocha_page'].includes(selected))
     {
         document.getElementById("iced_drinks_dropdown").style.display = "none";
         document.getElementById("hot_drinks_dropdown").style.display = "block";

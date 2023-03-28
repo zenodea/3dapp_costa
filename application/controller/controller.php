@@ -18,10 +18,9 @@ class Controller {
 		
 		// Insert code to access a method in the Model class that returns a PHP array with the data you need, e.g.
 		$data = $this->model->dbGetJsonMuseumData();
-		$this->load->view('viewCosta');
+		$this->load->view('viewCosta', $data);
 		// Echo the data out to the browser and trap it in the $.getJSON() handler and inject it into the view as before
-        echo '<div id="json_data">'.json_encode($data).'</div>';
-        echo implode($_POST);
+        // echo '<div id="json_data">'.json_encode($data).'</div>';
 	}
 
 
@@ -46,8 +45,17 @@ class Controller {
     // Controller method to send view data to model
     function apiAddRequest()
     {
-        $data = $this->model->dbAddRequest($_POST['email'],$_POST['category'],$_POST['description']);
-        $this->load->view('viewRequest', $data);
+        $this->model->dbAddRequest($_POST['email'],$_POST['category'],$_POST['description']);
+    }
+
+    function apiGetRequestData()
+    {
+        $this->model->dbGetRequestData();
+    }
+
+    function apiRemoveRequest()
+    {
+        $this->model->dbRemoveRequest($_POST['request_id']);
     }
 
     function apiGetFlickrService()

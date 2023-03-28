@@ -54,7 +54,11 @@
             </div>
 
             <div class="col-sm-8">
-                <img src="assets/x3d/costa_cup/logo.png" width="700" height="400" style="position: absolute; top: 105px; right: 90px;">
+                <div div class="card" id="item_card" style="width: 50rem;">
+                <a class="mainpage_images" href="assets/x3d/costa_cup/logo.png">
+                <img src="assets/x3d/costa_cup/logo.png" width="700" height="400" style="position: absolute; right: 90px;">
+                </a>
+                </div>
             </div>
         </div>
 
@@ -189,6 +193,8 @@
                         <h2 class="chai_iced_page" id="chai_iced_page_title"></h2>
 
                         <h2 class="hot_latte_page" id="hot_latte_page_title"></h2>
+                        <h2 class="hot_chocolate_page" id="hot_chocolate_page_title"></h2>
+                        <h2 class="hot_mocha_page" id="hot_mocha_page_title"></h2>
 
                         <h2 class="canned_latte_page" id="canned_latte_page_title"></h2>
                         <h2 class="canned_caramel_page" id="canned_caramel_page_title"></h2>
@@ -201,6 +207,8 @@
                         <h2 class="chai_iced_page" id="chai_iced_page_slogan"></h2>
 
                         <h2 class="hot_latte_page" id="hot_latte_page_slogan"></h2>
+                        <h2 class="hot_chocolate_page" id="hot_chocolate_page_slogan"></h2>
+                        <h2 class="hot_mocha_page" id="hot_mocha_page_slogan"></h2>
 
                         <h2 class="canned_latte_page" id="canned_latte_page_slogan"></h2>
                         <h2 class="canned_caramel_page" id="canned_caramel_page_slogan"></h2>
@@ -225,9 +233,9 @@
                                     <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swap_information('chai_iced_page');">Chai Tea Iced Latte</a></li>
                                 </div>
                                 <div id="hot_drinks_dropdown">
-                                    <li><a class="dropdown-item">Latte</a></li>
-                                    <li><a class="dropdown-item">Hot Chocolate</a></li>
-                                    <li><a class="dropdown-item">Mocha</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_latte'); swap_information('hot_latte_page');">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_chocolate'); swap_information('hot_chocolate_page');">Hot Chocolate</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_mocha'); swap_information('hot_mocha_page');">Mocha</a></li>
                                 </div>
                                 <div id="canned_drinks_dropdown">
                                     <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte'); swap_information('canned_latte_page');">Latte</a></li>
@@ -313,6 +321,8 @@
                         <h4 class="chai_iced_page" id="chai_iced_title"></h4>
 
                         <h4 class="hot_latte_page" id="hot_latte_title"></h4>
+                        <h4 class="hot_chocolate_page" id="hot_chocolate_title"></h4>
+                        <h4 class="hot_mocha_page" id="hot_mocha_title"></h4>
 
                         <h4 class="canned_latte_page" id="canned_latte_title"></h4>
                         <h4 class="canned_caramel_page" id="canned_caramel_title"></h4>
@@ -325,7 +335,9 @@
                         <h3 class="cold_brew_page" id="drink_description_cold_brew"></h3>
                         <h3 class="chai_iced_page" id="drink_description_chai_iced"></h3>
 
-                        <h3 class="hot_latte_page" id="drink_description_hot"></h3>
+                        <h3 class="hot_latte_page" id="drink_description_hot_latte"></h3>
+                        <h3 class="hot_chocolate_page" id="drink_description_hot_chocolate"></h3>
+                        <h3 class="hot_mocha_page" id="drink_description_hot_mocha"></h3>
 
                         <h3 class="canned_latte_page" id="drink_description_canned_latte"></h3>
                         <h3 class="canned_caramel_page" id="drink_description_canned_caramel"></h3>
@@ -606,7 +618,7 @@
                     </div>
                 </div>
             </div>
-            <form action="index.php/apiAddRequest" method="post">
+            <form method="post">
                 <div class="form-group">
                   <label class="form-group-header" for="email">Email address</label>
                   <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
@@ -630,6 +642,96 @@
             </form>
 
         </div>
+        
+        <!-- Request List Feature -->
+        <div id="request_list_content" class="container-fluid main_contents" style="display: none;">
+            <div class="row">
+                <div div class="card" id="item_card" style="width: 50rem;">
+                    <h4  class="card-title">Want to see the user requests?</h4>
+                    <div class="card-body" style="text-align: center;">
+                    <h4> You've come to the right place! </h4>
+                    <h3> You can even remove them with the click of a button! </h3>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Category</th>
+                <th scope="col">Description</th>
+                <th scope="col">Remove Button</th>
+            </tr>
+            </thead>
+            <tbody class="tbody-light">
+            <?php foreach($data as $value): 
+                
+                $value = array_values($value);
+                ?>
+            <tr class="table-primary">
+                <th scope="row"><?= $value[0]; ?></th>
+                <td> <?= $value[1]; ?></td>
+                <td> <?= $value[2]; ?></td>
+                <td> <?= $value[3]; ?></td>
+                <td>
+                    <button>Remove</button>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+            </tbody>
+            </table>
+        </div>
+
+        <!-- Going Beyond Page -->
+        <div id="going_beyond_content" class="container-fluid main_contetns" style="display: none;">
+            <div class="row">
+                <div div class="card" id="item_card" style="width: 50rem;">
+                    <h4  class="card-title">What feature are beyond in this project?</h4>
+                    <div class="card-body" style="text-align: center;">
+                    <h3> Here they are: </h3>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>The X3D models are more complex</li>
+                <li>Allowing for change in the X3D Model via html5</li>
+                <li>Request Feature, sending data to the SQLite Database</li>
+                <li>Used Blender to create the X3D model.</li>
+            </ul> 
+        </div>
+
         <?php include_once("footer.html"); ?>
+        <post></post>
+
+        <!-- Dinamic submitting form without reloading page !-->
+        <script>
+            $( "form" ).submit(function( event ) 
+            {
+            $.ajax({
+                    url: "index.php/apiAddRequest",
+                    type: 'POST',
+                    data: { 
+                            email: $("#email").val(),
+                            category: $("#category").val(),
+                            description: $("#description_request").val(),
+                          },
+                    success: function (data) 
+                        {
+                            alert('Succesfully Sent Request!');
+                            document.getElementById("email").reset();
+                            document.getElementById("category").reset();
+                            document.getElementById("description_request").reset();
+                        },
+                });
+            })
+        </script>
+
+        <script>
+                $( "request_list" ).on("click", function(event)
+                {
+                    alert('Succesfully Sent Request!');
+                })
+        </script>
     </body>
 </html>

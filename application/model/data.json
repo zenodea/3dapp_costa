@@ -64,6 +64,18 @@
             "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
+            "title": "Hot Chocolate",
+            "slogan" : "Perfect for the coldest days",
+            "name" : "Latte",
+            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+        },
+        {
+            "title": "Mocha",
+            "slogan" : "Perfect for the coldest days",
+            "name" : "Latte",
+            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+        },
+        {
             "title": "Latte in a Can",
             "slogan" : "Indulge in your favorite, anytime, anywhere",
             "name" : "Latte in a Can",

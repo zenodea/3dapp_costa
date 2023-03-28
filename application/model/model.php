@@ -181,5 +181,41 @@ class Model
         }
         return "Request Added!";
     }
+
+    function dbGetRequestData()
+    {
+        $result = array();
+        try
+        {
+                $sql = 'SELECT Id, email,category,request_description FROM Request';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+        }
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
+        return $result;
+    }
+
+    function dbRemoveRequest($id)
+    {
+        try
+        {
+            $stmt=$this->dbhandle->prepare('DELETE FROM Request WHERE Id=:Id');
+            $stmt->bindValue(':Id', $$id);
+            $result = $stmt->execute();
+        }
+
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
+        return $result;
+    }
 }
 ?>

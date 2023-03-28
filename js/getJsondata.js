@@ -73,23 +73,33 @@ $(document).ready(function()
 		html=$('#hot_latte_page_title').html(jsonObj.drinks[3].title);
 		html=$('#hot_latte_page_slogan').html(jsonObj.drinks[3].slogan);
 		html=$('#hot_latte_title').html(jsonObj.drinks[3].name);
-		html=$('#drink_description_hot').html(jsonObj.drinks[3].description);
+		html=$('#drink_description_hot_latte').html(jsonObj.drinks[3].description);
+		
+		html=$('#hot_chocolate_page_title').html(jsonObj.drinks[4].title);
+		html=$('#hot_chocolate_page_slogan').html(jsonObj.drinks[4].slogan);
+		html=$('#hot_chocolate_title').html(jsonObj.drinks[4].name);
+		html=$('#drink_description_hot_chocolate').html(jsonObj.drinks[4].description);
+
+		html=$('#hot_mocha_page_title').html(jsonObj.drinks[5].title);
+		html=$('#hot_mocha_page_slogan').html(jsonObj.drinks[5].slogan);
+		html=$('#hot_mocha_title').html(jsonObj.drinks[5].name);
+		html=$('#drink_description_hot_mocha').html(jsonObj.drinks[5].description);
 
 		// Canned Drinks
-		html=$('#canned_latte_page_title').html(jsonObj.drinks[4].title);
-		html=$('#canned_latte_page_slogan').html(jsonObj.drinks[4].slogan);
-		html=$('#canned_latte_title').html(jsonObj.drinks[4].name);
-		html=$('#drink_description_canned_latte').html(jsonObj.drinks[4].description);
+		html=$('#canned_latte_page_title').html(jsonObj.drinks[6].title);
+		html=$('#canned_latte_page_slogan').html(jsonObj.drinks[6].slogan);
+		html=$('#canned_latte_title').html(jsonObj.drinks[6].name);
+		html=$('#drink_description_canned_latte').html(jsonObj.drinks[6].description);
 
-		html=$('#canned_caramel_page_title').html(jsonObj.drinks[5].title);
-		html=$('#canned_caramel_page_slogan').html(jsonObj.drinks[5].slogan);
-		html=$('#canned_caramel_title').html(jsonObj.drinks[5].name);
-		html=$('#drink_description_canned_caramel').html(jsonObj.drinks[5].description);
+		html=$('#canned_caramel_page_title').html(jsonObj.drinks[7].title);
+		html=$('#canned_caramel_page_slogan').html(jsonObj.drinks[7].slogan);
+		html=$('#canned_caramel_title').html(jsonObj.drinks[7].name);
+		html=$('#drink_description_canned_caramel').html(jsonObj.drinks[7].description);
 
-		html=$('#canned_americano_page_title').html(jsonObj.drinks[6].title);
-		html=$('#canned_americano_page_slogan').html(jsonObj.drinks[6].slogan);
-		html=$('#canned_americano_title').html(jsonObj.drinks[6].name);
-		html=$('#drink_description_canned_americano').html(jsonObj.drinks[6].description);
+		html=$('#canned_americano_page_title').html(jsonObj.drinks[8].title);
+		html=$('#canned_americano_page_slogan').html(jsonObj.drinks[8].slogan);
+		html=$('#canned_americano_title').html(jsonObj.drinks[8].name);
+		html=$('#drink_description_canned_americano').html(jsonObj.drinks[8].description);
 
 		// Modals
 		html=$('#modal_title_about').html(jsonObj.modal[0].title);
