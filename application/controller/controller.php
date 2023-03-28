@@ -50,7 +50,21 @@ class Controller {
 
     function apiGetRequestData()
     {
-        $this->model->dbGetRequestData();
+        $data = $this->model->dbGetRequestData();
+        $finalString = "";
+        foreach($data as $value)
+        {
+            $value = array_values($value);
+            $finalString .= '<tr class="table-primary">';
+            $finalString .= '<th scope="row">'. $value[0] . '</th>';
+            $finalString .= '<th scope="row">'. $value[1] . '</th>';
+            $finalString .= '<th scope="row">'. $value[2] . '</th>';
+            $finalString .= '<th scope="row">'. $value[3] . '</th>';
+            $finalString .= '<td>
+                <button>Remove</button>
+            </td> </tr>';
+        } 
+        echo $finalString;
     }
 
     function apiRemoveRequest()

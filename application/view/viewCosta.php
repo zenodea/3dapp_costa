@@ -654,7 +654,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-bordered table-hover">
+            <table class="table table-striped table-bordered table-hover" id="request_list_placeholder">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
@@ -665,20 +665,7 @@
             </tr>
             </thead>
             <tbody class="tbody-light">
-            <?php foreach($data as $value): 
-                
-                $value = array_values($value);
-                ?>
-            <tr class="table-primary">
-                <th scope="row"><?= $value[0]; ?></th>
-                <td> <?= $value[1]; ?></td>
-                <td> <?= $value[2]; ?></td>
-                <td> <?= $value[3]; ?></td>
-                <td>
-                    <button>Remove</button>
-                </td>
-            </tr>
-            <?php endforeach; ?>
+                <temp></temp>
             </tbody>
             </table>
         </div>
@@ -719,19 +706,23 @@
                     success: function (data) 
                         {
                             alert('Succesfully Sent Request!');
-                            document.getElementById("email").reset();
-                            document.getElementById("category").reset();
-                            document.getElementById("description_request").reset();
                         },
                 });
             })
         </script>
 
         <script>
-                $( "request_list" ).on("click", function(event)
+                $( "#request_list" ).on("click", function(event)
                 {
-                    alert('Succesfully Sent Request!');
-                })
+                    $.ajax({
+        type: 'POST',
+        dataType:'html',
+        url: "index.php/apiGetRequestData",
+        success: function(data) 
+        {
+            $('temp').html(data);
+        }
+    });                })
         </script>
     </body>
 </html>
