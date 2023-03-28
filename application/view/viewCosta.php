@@ -665,7 +665,6 @@
             </tr>
             </thead>
             <tbody class="tbody-light">
-                <temp></temp>
             </tbody>
             </table>
         </div>
@@ -695,6 +694,7 @@
         <script>
             $( "form" ).submit(function( event ) 
             {
+                event.preventDefault();
             $.ajax({
                     url: "index.php/apiAddRequest",
                     type: 'POST',
@@ -706,6 +706,11 @@
                     success: function (data) 
                         {
                             alert('Succesfully Sent Request!');
+
+                            // Rest Form after succesfully having it sent
+                            $("#email")[0].reset();
+                            $("#category")[0].reset();
+                            $("#description_request")[0].reset();
                         },
                 });
             })
@@ -720,7 +725,7 @@
         url: "index.php/apiGetRequestData",
         success: function(data) 
         {
-            $('temp').html(data);
+            $('tbody').html(data);
         }
     });                })
         </script>

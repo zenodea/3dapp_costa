@@ -62,7 +62,8 @@ class Controller {
             $finalString .= '<th scope="row">'. $value[3] . '</th>';
             $finalString .= '<td>
                 <button>Remove</button>
-            </td> </tr>';
+            </td> 
+            </tr>';
         } 
         echo $finalString;
     }
