@@ -36,7 +36,7 @@
 
         <div class="row">
             <!-- Future 3d Model-->
-            <div class="col-sm-4" style="padding-left: 50px;">
+            <div class="col-sm-12">
                 <div div class="card" id="item_card" style="width: 38rem;">
                     <h4  class="card-title">Extraordinary <br>Every day</h4>
                     <div class="card-body" style="text-align: center;">
@@ -45,14 +45,6 @@
                     <div class="card-footer mx-auto justify-content-center">
                         <button href="#"  id="mainpage_button" data-src="#main_page">Find a Costa></button>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-8">
-                <div div class="card" id="item_card" style="width: 50rem;">
-                <a class="mainpage_images" href="assets/x3d/costa_cup/logo.png">
-                <img src="assets/x3d/costa_cup/logo.png" width="700" height="400" style="position: absolute; right: 90px;">
-                </a>
                 </div>
             </div>
         </div>
@@ -64,7 +56,7 @@
             <div class="col-sm-6" >
                 <div div class="card" id="item_card" style="width: 50rem;">
                 <a class="mainpage_images" href="assets/x3d/costa_iced_cup/costa_iced_cup.png">
-                    <img src="assets/x3d/costa_iced_cup/costa_iced_cup.png" width="850" height="500" style="margin: 0 auto" >
+                    <img class="img-fluid"  src="assets/x3d/costa_iced_cup/costa_iced_cup.png">
                 </a>
                 </div>
             </div>
@@ -100,7 +92,7 @@
 
             <div class="col-sm-6" >
                 <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
-                    <img src="assets/x3d/costa_cup/costa_cup.png" width="850" height="500" style="margin: 0 auto;" >
+                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
                 </a>
             </div>
         </div>
@@ -109,10 +101,9 @@
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
             <div class="col-sm-6" >
                 <a class="mainpage_images" href="assets/x3d/costa_re_product/costa_re_product.png">
-                    <img src="assets/x3d/costa_re_product/costa_re_product.png" width="850" height="500" >
+                    <img class="img-fluid" src="assets/x3d/costa_re_product/costa_re_product.png">
                 </a>
             </div>
-
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 40rem;">
                     <h4 id="canned_latte_main_title" class="card-title"></h4>

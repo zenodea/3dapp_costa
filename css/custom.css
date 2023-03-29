@@ -212,6 +212,12 @@ h4
     float: left;
 }  
 
+hr
+{
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	border: 10px;
+}
 /* Small devices (landscape phones, 576px and up)
 */
 @media (min-width: 576px) {
