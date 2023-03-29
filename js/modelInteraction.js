@@ -4,13 +4,13 @@ var spinning = false;
 function onAnimation()
 {
     spinning = true;
-    document.getElementById('animation_timesensor').setAttribute('enabled', spinning.toString());
+    document.getElementById('time').setAttribute('enabled', spinning.toString());
 }
 
 function offAnimation()
 {
     spinning = false;
-    document.getElementById('animation_timesensor').setAttribute('enabled', spinning.toString());
+    document.getElementById('time').setAttribute('enabled', spinning.toString());
 }
 
 

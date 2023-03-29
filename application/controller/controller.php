@@ -39,7 +39,7 @@ class Controller {
     function apiGetJsonMuseumData()
     {
         $data = $this->model->dbInsertData();
-        $this->load->view('viewMessage', $data);
+        echo json_encode($data);
     }
 
     // Controller method to send view data to model
@@ -51,21 +51,7 @@ class Controller {
     function apiGetRequestData()
     {
         $data = $this->model->dbGetRequestData();
-        $finalString = "";
-        foreach($data as $value)
-        {
-            $value = array_values($value);
-            $finalString .= '<tr class="table-primary">';
-            $finalString .= '<th scope="row">'. $value[0] . '</th>';
-            $finalString .= '<th scope="row">'. $value[1] . '</th>';
-            $finalString .= '<th scope="row">'. $value[2] . '</th>';
-            $finalString .= '<th scope="row">'. $value[3] . '</th>';
-            $finalString .= '<td>
-                <button>Remove</button>
-            </td> 
-            </tr>';
-        } 
-        echo $finalString;
+        echo $data;
     }
 
     function apiRemoveRequest()

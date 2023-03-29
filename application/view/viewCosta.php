@@ -21,11 +21,6 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
-        <!-- Custom Javascript -->
-        <script src="js/gallery_functions.js"></script>
-        <script src="js/getJsondata.js"></script>
-        <script src="js/swap_functions.js"></script>
-        <script src="js/modelInteraction.js"></script>
     </head>
     <body>
 
@@ -261,7 +256,7 @@
                     <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
                         <Switch whichChoice="0" id="sceneSwitch">
 
-                                <transform>
+                                <transform DEF="ball">
                                 <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
@@ -269,7 +264,7 @@
                                 <inline nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
-                                <transform DEF="can">
+                                <transform>
                                 <inline nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
 
@@ -286,20 +281,14 @@
                                 -->
 
                                 <!-- CONTROLS ROTATION OF THE MODEL __ Hot Drink Cup upd and down-->
-                                <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
+                                <timeSensor id="time" DEF='time' cycleInterval='4' loop='true' enabled='false'></timeSensor>
 
-                                <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
+                                <PositionInterpolator DEF="move" key="0 0.5 1" keyValue="0 0 0  0 3 0  0 0 0"> </PositionInterpolator>       
                                 
-                                <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
-                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
+                                <Route fromNode="time" fromField ="fraction_changed" toNode="move" toField="set_fraction"> </Route> 
+	                            <Route fromNode="move" fromField ="value_changed" toNode="ball" toField="translation"> </Route>  
 
                                 <!-- CONTROLS ROTATION OF THE MODEL __ Can rotate-->
-                                <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
-
-                                <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
-                                
-                                <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
-                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
 
                                 <!-- Lights -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
@@ -618,7 +607,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post">
+            <form id="request_form" method="post">
                 <div class="form-group">
                   <label class="form-group-header" for="email">Email address</label>
                   <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
@@ -654,8 +643,8 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-bordered table-hover" id="request_list_placeholder">
-            <thead class="thead-dark">
+            <table class="table table-striped table-bordered table-hover" id="request_list_placeholder" style="border-color: black">
+            <thead class="table-active">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Email</th>
@@ -687,47 +676,16 @@
             </ul> 
         </div>
 
+        <!-- Footer -->
         <?php include_once("footer.html"); ?>
-        <post></post>
 
-        <!-- Dinamic submitting form without reloading page !-->
-        <script>
-            $( "form" ).submit(function( event ) 
-            {
-                event.preventDefault();
-            $.ajax({
-                    url: "index.php/apiAddRequest",
-                    type: 'POST',
-                    data: { 
-                            email: $("#email").val(),
-                            category: $("#category").val(),
-                            description: $("#description_request").val(),
-                          },
-                    success: function (data) 
-                        {
-                            alert('Succesfully Sent Request!');
+        <!-- Custom Javascript -->
+        <script src="js/request_table_functions.js"></script>
+        <script src="js/gallery_functions.js"></script>
+        <script src="js/getJsondata.js"></script>
+        <script src="js/swap_functions.js"></script>
+        <script src="js/modelInteraction.js"></script>
+        <!-- Custom Javascript -->
 
-                            // Rest Form after succesfully having it sent
-                            $("#email")[0].reset();
-                            $("#category")[0].reset();
-                            $("#description_request")[0].reset();
-                        },
-                });
-            })
-        </script>
-
-        <script>
-                $( "#request_list" ).on("click", function(event)
-                {
-                    $.ajax({
-        type: 'POST',
-        dataType:'html',
-        url: "index.php/apiGetRequestData",
-        success: function(data) 
-        {
-            $('tbody').html(data);
-        }
-    });                })
-        </script>
     </body>
 </html>

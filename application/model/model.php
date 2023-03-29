@@ -199,7 +199,21 @@ class Model
         {
             print new Exception($e->getMessage());
         }
-        return $result;
+        $finalString = "";
+        foreach($result as $value)
+        {
+            $value = array_values($value);
+            $finalString .= '<tr class="table-primary">';
+            $finalString .= '<th scope="row">'. $value[0] . '</th>';
+            $finalString .= '<th scope="row">'. $value[1] . '</th>';
+            $finalString .= '<th scope="row">'. $value[2] . '</th>';
+            $finalString .= '<th scope="row">'. $value[3] . '</th>';
+            $finalString .= '<td>
+                <button onclick="remove_from_request('.$value[0].')" id="remove_button_'.$value[0].'">Remove</button>
+            </td> 
+            </tr>';
+        } 
+        return $finalString;
     }
 
     function dbRemoveRequest($id)
@@ -207,7 +221,7 @@ class Model
         try
         {
             $stmt=$this->dbhandle->prepare('DELETE FROM Request WHERE Id=:Id');
-            $stmt->bindValue(':Id', $$id);
+            $stmt->bindValue(':Id', $id);
             $result = $stmt->execute();
         }
 
