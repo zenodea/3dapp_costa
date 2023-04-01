@@ -33,27 +33,56 @@ $( "#request_list" ).on("click", function(event)
             });     
         })
 
-            function remove_from_request(id)
+function remove_from_request(id)
+{
+    $.ajax(
+    {
+        type: 'POST',
+        data: 
+        {
+            request_id: id
+        },
+        url: "index.php/apiRemoveRequest",
+        success: function(data) 
+        {
+            $.ajax(
             {
-                $.ajax(
+                type: 'POST',
+                dataType:'html',
+                url: "index.php/apiGetRequestData",
+                success: function(data) 
                 {
-                    type: 'POST',
-                    data: 
-                    {
-                        request_id: id
-                    },
-                    url: "index.php/apiRemoveRequest",
-                    success: function(data) 
-                    {
-                        $.ajax({
-                            type: 'POST',
-                            dataType:'html',
-                            url: "index.php/apiGetRequestData",
-                            success: function(data) 
-                            {
-                                $('tbody').html(data);
-                            } 
-                        }
-                    )}
-                });             
+                    $('tbody').html(data);
+                } 
             }
+        )}
+    });             
+}
+
+
+function add_comment_request(id)
+{
+    $.ajax(
+    {
+        type: 'POST',
+        data: 
+        {
+            request_id: id,
+            request_comment: document.getElementById("comment_"+id).value
+        },
+        url: "index.php/apiAddCommentRequest",
+        success: function(data) 
+        {
+            $.ajax(
+            {
+                type: 'POST',
+                dataType:'html',
+                url: "index.php/apiGetRequestData",
+                success: function(data) 
+                {
+                    $('tbody').html(data);
+                } 
+            }
+        )}
+    });             
+}

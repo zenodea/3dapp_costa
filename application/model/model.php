@@ -39,7 +39,10 @@ class Model
             $this->dbhandle->exec("CREATE TABLE Modal (Id INTEGER PRIMARY KEY, title TEXT, Modal_description TEXT)");
 
             # Requests Table
-            $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, email TEXT, category TEXT, request_description TEXT)");
+            $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, email TEXT, category TEXT, request_description TEXT,comment TEXT)");
+
+            # Gallery Table
+            $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT, photo BLOB)");
 
             return "Model_3D table has been created succesfully!";
         }
@@ -115,6 +118,18 @@ class Model
         $this->dbhandle = NULL;
     }
 
+    # Function to insert gallery images, alongside their corresponding description and title into the database
+    function dbInsertGallery()
+    {
+        $path = "../../assets/images/";
+    }
+
+    # Function to get picture from gallery database
+    function dbGetGallery()
+    {
+        $path = "../../assets/images/";
+    }
+
     function dbGetJsonMuseumData()
     {
         $result = array();
@@ -182,12 +197,13 @@ class Model
         return "Request Added!";
     }
 
+    # Function used to retrieve request data from the SQLite Database
     function dbGetRequestData()
     {
         $result = array();
         try
         {
-                $sql = 'SELECT Id, email,category,request_description FROM Request';
+                $sql = 'SELECT Id, email,category,request_description,comment FROM Request';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($data as $value)
@@ -209,11 +225,31 @@ class Model
             $finalString .= '<th scope="row">'. $value[2] . '</th>';
             $finalString .= '<th scope="row">'. $value[3] . '</th>';
             $finalString .= '<td>
+                <textarea  id="comment_'.$value[0].'" name="w3review" rows="2" cols="30">'.$value[4].'</textarea><button onclick="add_comment_request('.$value[0].')">
+            </td>';
+            $finalString .= '<td>
                 <button onclick="remove_from_request('.$value[0].')" id="remove_button_'.$value[0].'">Remove</button>
             </td> 
             </tr>';
         } 
         return $finalString;
+    }
+
+    # Function Used to update SQLite request table
+    function dbAddCommentRequest($id,$comment)
+    {
+        try
+        {
+            $stmt=$this->dbhandle->prepare('UPDATE Request SET comment=:comment  WHERE Id=:Id');
+            $stmt->bindValue(':comment', $comment);
+            $stmt->bindValue(':Id', $id);
+            $result = $stmt->execute();
+        }
+
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
     }
 
     function dbRemoveRequest($id)

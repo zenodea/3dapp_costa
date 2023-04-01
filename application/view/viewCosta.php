@@ -641,6 +641,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Category</th>
                 <th scope="col">Description</th>
+                <th scope="col">Comment</th>
                 <th scope="col">Remove Button</th>
             </tr>
             </thead>
@@ -662,8 +663,10 @@
             <ul>
                 <li>The X3D models are more complex</li>
                 <li>Allowing for change in the X3D Model via html5</li>
-                <li>Request Feature, sending data to the SQLite Database</li>
+                <li>Request Feature, sending data to the SQLite Database and deleting said data when necessary.</li>
                 <li>Used Blender to create the X3D model.</li>
+                <li>Photorealistic Renders of the 3d Objects (seen in the gallery)</li>
+                <li>Storing Images inside the database as blobs for the gallery, alongside their descriptions and titles</li>
             </ul> 
         </div>
 

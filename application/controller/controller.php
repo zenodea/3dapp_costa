@@ -54,6 +54,11 @@ class Controller {
         echo $data;
     }
 
+    function apiAddCommentRequest()
+    {
+        $data = $this->model->dbAddCommentRequest($_POST['request_id'],$_POST['request_comment']);
+    }
+
     function apiRemoveRequest()
     {
         $this->model->dbRemoveRequest($_POST['request_id']);
