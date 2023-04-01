@@ -36,6 +36,18 @@ class Controller {
         $this->load->view('viewMessage', $data);
     }
 
+    function apiAddGallery()
+    {
+        $data = $this->model->dbAddGallery();
+        $this->load->view('viewMessage', $data);
+    }
+
+    function apiGetGallery()
+    {
+        $data = $this->model->dbGetGallery();
+        echo $data;
+    }
+
     function apiGetJsonMuseumData()
     {
         $data = $this->model->dbInsertData();

@@ -440,46 +440,7 @@
             </div>
 
             <div class="row">
-
-                <div div class="card" id="item_card" style="width: 68rem;">
-                    <div class="row card-body">
-                        <div class="col-sm-6">
-                            <h4 class="card-title" id="latte_title">Latte</h4>
-                            <h5 class="card-text" id="latte_description">We combine our signature espresso with a creamy milk or dairy alternative of your choice for the ideal drink to sip when it's served hot or cold.</h5>
-                        </div>
-                        <a class="col-sm-6" rel="gallery_fancybox" href="assets/images/teaser-latte-macro-389x280.jpg.webp">
-                            <img src="assets/images/teaser-latte-macro-389x280.jpg.webp" alt="sans"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div div class="card" id="item_card" style="width: 68rem;">
-                    <div class="row card-body">
-                    <a class="col-sm-6" rel="gallery_fancybox" href="assets/images/teaser-latte-macro-389x280.jpg.webp">
-                        <img  src="assets/images/teaser-latte-macro-389x280.jpg.webp" alt="sans"/>
-                    </a>
-                        <div class="col-sm-6">
-                            <h4 class="card-title" id="latte_title">Latte</h4>
-                            <h5 class="card-text" id="latte_description">We combine our signature espresso with a creamy milk or dairy alternative of your choice for the ideal drink to sip when it's served hot or cold.</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div div class="card" id="item_card" style="width: 68rem;">
-                    <div class="row card-body">
-                        <div class="col-sm-6">
-                            <h4 class="card-title" id="latte_title">Latte</h4>
-                            <h5 class="card-text" id="latte_description">We combine our signature espresso with a creamy milk or dairy alternative of your choice for the ideal drink to sip when it's served hot or cold.</h5>
-                        </div>
-                    <a class="col-sm-6" rel="gallery_fancybox" href="assets/images/teaser-latte-macro-389x280.jpg.webp">
-                        <img src="assets/images/teaser-latte-macro-389x280.jpg.webp" alt="sans"/>
-                    </a>
-                    </div>
-                </div>
+                <temporary></temporary>
             </div>
         </div>
 

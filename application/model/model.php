@@ -42,7 +42,7 @@ class Model
             $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, email TEXT, category TEXT, request_description TEXT,comment TEXT)");
 
             # Gallery Table
-            $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT, photo BLOB)");
+            $this->dbhandle->exec("CREATE TABLE Gallery (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT, photo BLOB)");
 
             return "Model_3D table has been created succesfully!";
         }
@@ -118,16 +118,54 @@ class Model
         $this->dbhandle = NULL;
     }
 
-    # Function to insert gallery images, alongside their corresponding description and title into the database
-    function dbInsertGallery()
+    function dbAddGallery()
     {
-        $path = "../../assets/images/";
+        try
+        {
+            $dataToSave = base64_encode(file_get_contents('assets/images/teaser-latte-macro-389x280.jpg.webp'));
+            $title = "try";
+            $description = "try";
+            $stmt=$this->dbhandle->prepare("INSERT INTO Gallery (title,explanation,photo)
+                    VALUES (:title, :explanation, :photo)");
+            $stmt->bindValue(':title', $title);
+            $stmt->bindValue(':explanation', $description);
+            $stmt->bindValue(':photo', $dataToSave);
+            $result = $stmt->execute();
+            return $dataToSave;
+        } 
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
     }
 
-    # Function to get picture from gallery database
     function dbGetGallery()
     {
-        $path = "../../assets/images/";
+        $result = array();
+        try
+        {
+            $sql = 'SELECT * FROM Gallery';
+            $stmt = $this->dbhandle->query($sql);
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($data as $value)
+            {
+                array_push($result,$value);
+            }
+        } 
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
+        $finalString = "";
+        foreach($result as $value)
+        {
+            $value = array_values($value);
+            $finalString .= '<h2>'. $value[1] . '</h2>';
+            $finalString .= '<h2>'. $value[2] . '</h2>';
+            $finalString .= '<a href="data:image/jpeg;base64,'.$value[3].'">
+            <img class="img-fluid" src="data:image/jpeg;base64,'. $value[3] . '" alt="Angular"/></a>';
+        } 
+        return $finalString;
     }
 
     function dbGetJsonMuseumData()

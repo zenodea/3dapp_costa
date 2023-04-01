@@ -33,6 +33,20 @@ $( "#request_list" ).on("click", function(event)
             });     
         })
 
+$( "#gallery_button" ).on("click", function(event)
+{
+        $.ajax(
+            {
+                type: 'POST',
+                dataType:'html',
+                url: "index.php/apiGetGallery",
+                success: function(data) 
+                {
+                    $('temporary').html(data);
+                }
+            });     
+        })
+// Function to remove request, by making an ajax call to the controller
 function remove_from_request(id)
 {
     $.ajax(
@@ -60,6 +74,7 @@ function remove_from_request(id)
 }
 
 
+// Function to update request comment, by making an ajax call to the controller
 function add_comment_request(id)
 {
     $.ajax(
