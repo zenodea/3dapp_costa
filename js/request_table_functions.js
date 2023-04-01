@@ -80,6 +80,7 @@ function add_comment_request(id)
                 url: "index.php/apiGetRequestData",
                 success: function(data) 
                 {
+                    alert('Succesfully Updated Comment!');
                     $('tbody').html(data);
                 } 
             }
