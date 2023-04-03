@@ -9,7 +9,11 @@ body {
 	font-family: costa;
 	src: url("../assets/fonts/CostaPtfBold.otf");
 }
-.tooltip{border-radius: 10px;}
+.tooltip
+{
+	border-radius: 10px;
+	top: 1000px;
+}
 .tooltip-inner {background-color: #6d1f37;
 	font-family: costa;}
 

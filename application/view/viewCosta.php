@@ -43,12 +43,43 @@
                     <h3> Indulge in your favorites</h3>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#"  id="mainpage_button" data-src="#main_page">Find a Costa></button>
+                        <button  id="mainpage_button">Find a Costa></button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
 
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasIcedLabel">Iced Drinks</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small"> 
+                ...
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
+
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasHotLabel">Hot Drinks</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small"> 
+                ...
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
+
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasCannedLabel">Canned Drinks</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small"> 
+                ...
+            </div>
+        </div>
         <!-- Iced Latte Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, transparent, rgba(190, 231, 190,0.5))">
             
@@ -132,7 +163,7 @@
                         <h5 id="iced_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More</button>
+                        <button id="mainpage_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasIced" role="button" aria-controls="offcanvasIced">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +175,7 @@
                         <h5 id="latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More</button>
+                        <button data-bs-toggle="offcanvas" href="#offcanvasHot" role="button" aria-bs-controls="offcanvasHot" id="mainpage_button">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -156,7 +187,7 @@
                         <h5 id="canned_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button href="#" id="mainpage_button">Learn More</button>
+                        <button  data-bs-toggle="offcanvas" data-bs-target="#offcanvasCanned" role="button" aria-controls="offcanvasCanned" id="mainpage_button">Learn More</button>
                     </div>
                 </div>
             </div>
