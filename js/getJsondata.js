@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+	$(function () {
+		$('[data-bs-toggle="tooltip"]').tooltip()
+	  })
     $.getJSON("application/model/data.json", function(jsonObj)
     {
         // Main Page

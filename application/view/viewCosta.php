@@ -623,6 +623,7 @@
             </div>
             <ul>
                 <li>The X3D models are more complex</li>
+                <li>Use of Bootstrap 5, which allows for the creation of accordion (see the Contact Us Page), and the creation of OffCanvas sidebars</li>
                 <li>Allowing for change in the X3D Model via html5</li>
                 <li>Request Feature, sending data to the SQLite Database and deleting said data when necessary.</li>
                 <li>Used Blender to create the X3D model.</li>

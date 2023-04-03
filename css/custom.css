@@ -9,6 +9,9 @@ body {
 	font-family: costa;
 	src: url("../assets/fonts/CostaPtfBold.otf");
 }
+.tooltip{border-radius: 10px;}
+.tooltip-inner {background-color: #6d1f37;
+	font-family: costa;}
 
 .list-group{
 	flex-direction: row;
