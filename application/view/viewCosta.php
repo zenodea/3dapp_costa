@@ -4,7 +4,7 @@
         <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
         <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/custom.scss">
         
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -175,7 +175,7 @@
                         <h5 id="latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button data-bs-toggle="offcanvas" href="#offcanvasHot" role="button" aria-bs-controls="offcanvasHot" id="mainpage_button">Learn More</button>
+                        <button data-bs-toggle="offcanvas" href="#offcanvasHot" role="button" aria-controls="offcanvasHot" id="mainpage_button">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -324,7 +324,7 @@
             </div>
     
             <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
+                <div div class="card mx-auto" id="item_card" style="width: 38rem;">
                     <div class="card-title card-latte-title">
 
                         <h4 class="iced_latte_page" id="iced_latte_title"></h4>
@@ -370,7 +370,7 @@
                     </div>
                     <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
                     <div class="card-body">
-                            <nav class="navbar sticky-top navbar-expand-sm" style="width: 25%;">
+                            <nav div class="btn-group" role="group" aria-label="Basic example" style="width: 25%;">
                                 <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
                                     Front
                                 </button>
@@ -469,12 +469,132 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
+                    <h4  class="card-title">Costa Take Away Products!</h4>
+                    <div class="card-body" style="text-align: center;">
+                    <h3> Indulge in your favorites</h3>
+                    </div>
+                </div>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/x3d/costa_iced_cup/untitled.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Iced Latte</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/x3d/costa_iced_cup/untitled_3.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Iced Chai Tea Latte</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/x3d/costa_iced_cup/untitled6]_.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Mocha</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+            </div>
+            <div class="row">
+                <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
+                    <h4  class="card-title">Costa Take Away Products!</h4>
+                    <div class="card-body" style="text-align: center;">
+                    <h3> Indulge in your favorites</h3>
+                    </div>
+                </div>
+            <div id="carouselReProduct" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/x3d/costa_re_product/costa_latte_render.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Iced Latte</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/x3d/costa_re_product/costa_caramel_latte_render.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Iced Chai Tea Latte</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/x3d/costa_re_product/costa_americano_render.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Mocha</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselReProduct" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselReProduct" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+            </div>
 
             <div class="row">
-                <temporary></temporary>
-            </div>
+                <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
+                    <h4  class="card-title">Costa Take Away Products!</h4>
+                    <div class="card-body" style="text-align: center;">
+                    <h3> Indulge in your favorites</h3>
+                    </div>
+                </div>
+            <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/x3d/costa_cup/hot_drink.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Hot Drink</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
         </div>
-
         <!--  Extra Feature -->
         <div id="our_menu_content" class="container-fluid main_contents" style="display: none;">
                 <div class="row">

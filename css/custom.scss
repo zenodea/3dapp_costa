@@ -1,19 +1,20 @@
-body {
+body 
+{
 	 background: radial-gradient(circle at 100% 50%,
 	 transparent 20%, #e9f5fb 21%, #e9f5fb 34%, transparent 35%, transparent),
 	 radial-gradient(circle at 0% 50%, transparent 20%, #e9f5fb 21%, #e9f5fb 34%, transparent 35%, transparent) 0 -50px;
 	 background-color: #d7f2ff;
 	 background-size: 75px 100px;
-  }
+}
 @font-face {
 	font-family: costa;
 	src: url("../assets/fonts/CostaPtfBold.otf");
 }
 .tooltip
 {
-	border-radius: 10px;
-	top: 1000px;
+	padding-bottom: 600px;
 }
+
 .tooltip-inner {background-color: #6d1f37;
 	font-family: costa;}
 
