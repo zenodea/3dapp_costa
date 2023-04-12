@@ -114,6 +114,10 @@ $(document).ready(function()
 
 		html=$('#modal_title_github').html(jsonObj.modal[18].title);
 		html=$('#modal_body_github').html(jsonObj.modal[18].Modal_description);
+
+		// Accordion
+
+		// Gallery
 	}
     });
 });

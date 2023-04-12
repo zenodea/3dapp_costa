@@ -166,7 +166,7 @@
 			           rotation="0.000000 1.000000 0.000000 0.000000"
 			           >
 				<Group DEF="group_ME_Cylinder_003">
-					<Shape>
+					<Shape onclick="showInfoPopup('Plastic', 'The plastic Cups at costa are premium and as good as they come')">
 						<Appearance>
 							<Material USE="MA_Material_001" />
 						</Appearance>

@@ -23,7 +23,16 @@
 
     </head>
     <body>
-
+  <!-- aimdwda -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto" id="material-color"></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="material-info"></div>
+        </div>
+    </div>
         <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
         </button>
@@ -170,7 +179,7 @@
             <div class="col-sm-4" style="padding: 50px;">
                 <div div class="card" id="what_new_card">
                     <img src="assets/x3d/costa_cup/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title">Latte</h4>
+                    <h4 class="card-title" id="what_new_title"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
                     </div>
@@ -291,6 +300,7 @@
                                 </transform>
 
                         </Switch>
+
                                 <!-- CONTROLS ROTATION OF THE MODEL __ Iced Drink Straw up and down
 
                                 <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>

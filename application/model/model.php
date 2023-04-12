@@ -314,7 +314,7 @@ class Model
             $finalString .= '<th scope="row">'. $value[2] . '</th>';
             $finalString .= '<th scope="row">'. $value[3] . '</th>';
             $finalString .= '<td>
-                <textarea  id="comment_'.$value[0].'" name="w3review" rows="2" cols="30">'.$value[4].'</textarea><button onclick="add_comment_request('.$value[0].')">Save</button>
+                <textarea  class="form-control" id="comment_'.$value[0].'" name="w3review" rows="2" cols="20">'.$value[4].'</textarea><button onclick="add_comment_request('.$value[0].')">Save</button>
             </td>';
             $finalString .= '<td>
                 <button onclick="remove_from_request('.$value[0].')" id="remove_button_'.$value[0].'">Remove</button>

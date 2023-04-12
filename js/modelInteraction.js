@@ -134,3 +134,12 @@ function change_flavour(selected)
         document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png');
     }
 }
+
+function showInfoPopup(color, info) {
+  document.getElementById('material-color').innerText = `${color.toUpperCase()} Material`;
+  document.getElementById('material-info').innerText = info;
+
+  let toastEl = document.getElementById('material-toast');
+  let toast = new bootstrap.Toast(toastEl);
+  toast.show();
+}

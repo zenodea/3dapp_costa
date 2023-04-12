@@ -1,3 +1,6 @@
+// Function used for the only form in the SPA
+// If a form is submitted, using ajax, the information is sent to
+// the controller and then into the model to insert into the SQlite db
 $( "form" ).submit(function( event ) 
 {
     event.preventDefault();
@@ -19,6 +22,8 @@ $.ajax({
     });
 })
 
+// Function used to get information from the SQlite db and
+// inject it into the view
 $( "#request_list" ).on("click", function(event)
 {
         $.ajax(
