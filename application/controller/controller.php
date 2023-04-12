@@ -23,7 +23,7 @@ class Controller {
         // echo '<div id="json_data">'.json_encode($data).'</div>';
 	}
 
-
+    // api's to create insert data into the tables
     function apiCreateTable()
     {
         $data = $this->model->dbCreateTable();
@@ -35,6 +35,8 @@ class Controller {
         $data = $this->model->dbInsertData();
         $this->load->view('viewMessage', $data);
     }
+
+    // Api's for the gallery functions
 
     function apiAddGallery()
     {
@@ -50,7 +52,7 @@ class Controller {
 
     function apiGetJsonMuseumData()
     {
-        $data = $this->model->dbInsertData();
+        $data = $this->model->dbGetJsonMuseumData();
         echo json_encode($data);
     }
 
@@ -79,10 +81,5 @@ class Controller {
     function apiGetFlickrService()
     {
         $this->load->view('viewFlickrService');
-    }
-
-    function apiGetJson()
-    {
-        $this->load->view('viewJson');
     }
 }

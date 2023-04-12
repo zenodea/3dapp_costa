@@ -173,14 +173,7 @@ class Model
         $result = array();
         try
         {
-                $sql = 'SELECT title,slogan,title_name,drink_description FROM Model_3d';
-                $stmt = $this->dbhandle->query($sql);
-                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($data as $value)
-                {
-                    array_push($result,$value);
-                }
-
+                // Get data for the main page of the SPA
                 $sql = 'SELECT title, general_drink_description FROM Main_page';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll();
@@ -189,6 +182,7 @@ class Model
                     array_push($result,$value);
                 }
 
+                // Get data for the footer of the SPA
                 $sql = 'SELECT title, items FROM footer';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -197,6 +191,16 @@ class Model
                     array_push($result,$value);
                 }
 
+                // Get data for the models of the SPA
+                $sql = 'SELECT title,slogan,title_name,drink_description FROM Model_3d';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                // Get data for the Modal of the SPA
                 $sql = 'SELECT title, Modal_description FROM Modal';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
