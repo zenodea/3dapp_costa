@@ -35,6 +35,9 @@ class Model
             # Footer table
             $this->dbhandle->exec("CREATE TABLE Footer (Id INTEGER PRIMARY KEY, title TEXT, items TEXT)");
 
+            # Header table
+            $this->dbhandle->exec("CREATE TABLE Header (Id INTEGER PRIMARY KEY, title TEXT, items TEXT)");
+
             # Modal Table
             $this->dbhandle->exec("CREATE TABLE Modal (Id INTEGER PRIMARY KEY, title TEXT, Modal_description TEXT)");
 
@@ -42,7 +45,10 @@ class Model
             $this->dbhandle->exec("CREATE TABLE Request (Id INTEGER PRIMARY KEY, email TEXT, category TEXT, request_description TEXT,comment TEXT)");
 
             # Gallery Table
-            $this->dbhandle->exec("CREATE TABLE Gallery (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT, photo BLOB)");
+            $this->dbhandle->exec("CREATE TABLE Carousel (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT, photo_url TEXT)");
+
+            # Accordion Table
+            $this->dbhandle->exec("CREATE TABLE Accordion (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT)");
 
             return "Model_3D table has been created succesfully!";
         }
@@ -62,6 +68,8 @@ class Model
 
         // Separating the different sections of the json, also, array_pop() is used, as it is O(1)
         // Note, array_pop gives the items in the reversed order, thus we start with the last element of the JSON
+        $accordion = array_pop($array);
+        $carousel = array_pop($array);
         $modal = array_pop($array);
         $drinks = array_pop($array);
         $footer = array_pop($array);
@@ -107,6 +115,27 @@ class Model
                             VALUES (:section, :array)");
                     $stmt->bindValue(':array', implode(', ',array_pop($item)));
                     $stmt->bindValue(':section', array_pop($item));
+                    $result = $stmt->execute();
+            }
+
+            // Add carousel items to database
+            foreach($carousel as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Carousel (title, explanation, photo_url)
+                            VALUES (:title, :explanation, :photo_url)");
+                    $stmt->bindValue(':photo_url', array_pop($item));
+                    $stmt->bindValue(':explanation', array_pop($item));
+                    $stmt->bindValue(':title', array_pop($item));
+                    $result = $stmt->execute();
+            }
+
+            // Add accordion items to database
+            foreach($accordion as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Accordion (title, explanation)
+                            VALUES (:title, :explanation)");
+                    $stmt->bindValue(':explanation', array_pop($item));
+                    $stmt->bindValue(':title', array_pop($item));
                     $result = $stmt->execute();
             }
         }
@@ -202,6 +231,24 @@ class Model
 
                 // Get data for the Modal of the SPA
                 $sql = 'SELECT title, Modal_description FROM Modal';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                // Get data for the Modal of the SPA
+                $sql = 'SELECT title, explanation FROM Accordion';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                // Get data for the Modal of the SPA
+                $sql = 'SELECT title, explanation, photo_url FROM Carousel';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($data as $value)

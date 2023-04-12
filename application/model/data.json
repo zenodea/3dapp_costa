@@ -104,5 +104,68 @@
             "title": "Github Repository",
             "description" : "Student Number: ... <br> Github Repository: ..."
         }
+    ],
+    "carousel":
+    [
+        {
+            "title": "Iced Latte",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Iced Chai Tea Latte",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Iced Mocha",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Canned Iced Latte",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Canned Caramel Latte",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Canned Americano",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Latte",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Hot Chococlate",
+            "description": "temp",
+            "url": "dw"
+        },
+        {
+            "title": "Mocha",
+            "description": "temp",
+            "url": "dw"
+        }
+    ],
+    "accordion":
+    [
+        {
+            "title":"1) I'm experiencing issues with the App",
+            "explanation":"If the scan on your device fails whilst using the app at a till, check with the barista and try again. Baristas can also add your Beans retrospectively if the issue continues. If you’re using the app at an Express machine and the scan on your device fails, please try again and double check that you are connected to Wi-fi. For help with any other app related issue, see here."
+        },
+        {
+            "title":"2) How can I register to Costa Club?",
+            "explanation":"It's simple! Download our Costa Club app to register and start collecting beans today. If you have a plastic card, you can register it here."
+        },
+        {
+            "title":"3) How can I replace my lost card?",
+            "explanation":"Log in to your Costa Club account here and select the ‘Card’ tab. Here, you’ll find instructions on how to replace your card. You can also download our app and login to start collecting beans. Don’t worry! You won’t lose the beans you’ve collected on your lost card, as all your beans will show in your account."
+        }
     ]
 }
