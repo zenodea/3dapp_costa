@@ -61,7 +61,7 @@
             "title": "Latte Every Day",
             "slogan" : "Perfect for the coldest days",
             "name" : "Latte",
-            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+            "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
             "title": "Hot Chocolate",
@@ -79,13 +79,13 @@
             "title": "Latte in a Can",
             "slogan" : "Indulge in your favorite, anytime, anywhere",
             "name" : "Latte in a Can",
-            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+            "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
             "title": "Caramel Latte in a Can",
             "slogan" : "Indulge in your favorite, now caramelized!",
             "name" : "Caramel Latte in a Can",
-            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+            "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
             "title": "Americano in a Can",
@@ -109,48 +109,48 @@
     [
         {
             "title": "Iced Latte",
-            "description": "temp",
-            "url": "dw"
+            "description": "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.",
+            "url": "assets/images/iced_latte.png"
         },
         {
             "title": "Iced Chai Tea Latte",
-            "description": "temp",
-            "url": "dw"
+            "description": "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time. The result is a smooth and less acidic coffee that is perfect for hot summer days or anytime you want a refreshing iced coffee drink.",
+            "url": "assets/images/iced_chai_latte.png"
         },
         {
             "title": "Iced Mocha",
-            "description": "temp",
-            "url": "dw"
+            "description": "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice. Its a perfect combination of sweet and spicy flavors that is perfect for hot summer days or anytime you want a unique and flavorful iced drink.",
+            "url": "assets/images/iced_mocha.png"
         },
         {
-            "title": "Canned Iced Latte",
-            "description": "temp",
-            "url": "dw"
+            "title": "Canned Latte",
+            "description": "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.",
+            "url": "assets/images/costa_latte_render.png"
         },
         {
             "title": "Canned Caramel Latte",
             "description": "temp",
-            "url": "dw"
+            "url": "assets/images/costa_caramel_latte_render.png"
         },
         {
             "title": "Canned Americano",
             "description": "temp",
-            "url": "dw"
+            "url": "assets/images/costa_americano_render.png"
         },
         {
             "title": "Latte",
             "description": "temp",
-            "url": "dw"
+            "url": "assets/images/hot_drink.png"
         },
         {
             "title": "Hot Chococlate",
             "description": "temp",
-            "url": "dw"
+            "url": "assets/images/hot_drink.png"
         },
         {
             "title": "Mocha",
             "description": "temp",
-            "url": "dw"
+            "url": "assets/images/hot_drink.png"
         }
     ],
     "accordion":

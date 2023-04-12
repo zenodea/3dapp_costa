@@ -27,6 +27,7 @@
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
+                <img src="assets/images/costa_logo.png" class="rounded me-2" alt="...">
                 <strong class="me-auto" id="material-color"></strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -492,29 +493,7 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/x3d/costa_iced_cup/untitled.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Iced Latte</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/x3d/costa_iced_cup/untitled_3.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Iced Chai Tea Latte</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/x3d/costa_iced_cup/untitled6]_.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Mocha</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
+  <div class="carousel-inner" id="carousel_first"></div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -538,29 +517,7 @@
     <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/x3d/costa_re_product/costa_latte_render.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Iced Latte</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/x3d/costa_re_product/costa_caramel_latte_render.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Iced Chai Tea Latte</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/x3d/costa_re_product/costa_americano_render.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Mocha</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
+  <div class="carousel-inner" id="carousel_second"></div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselReProduct" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -585,15 +542,7 @@
     <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/x3d/costa_cup/hot_drink.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Hot Drink</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-  </div>
+  <div class="carousel-inner" id="carousel_third"></div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -677,38 +626,26 @@
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      1) I'm experiencing issues with the App
-                    </button>
+                    <button class="accordion-button collapsed" id="accordion_button_1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></button>
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    <p>If the scan on your device fails whilst using the app at a till, check with the barista and try again. Baristas can also add your Beans retrospectively if the issue continues. If you’re using the app at an Express machine and the scan on your device fails, please try again and double check that you are connected to Wi-fi. For help with any other app related issue, see here.</p>
-                    </div>
+                    <div id="accordion_explanation_1" class="accordion-body"></div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        2) How can I register to Costa Club?
-                    </button>
+                    <button class="accordion-button collapsed" id="accordion_button_2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></button>
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    <p>It's simple! Download our Costa Club app to register and start collecting beans today. If you have a plastic card, you can register it here.</p>
-                    </div>
+                    <div id="accordion_explanation_2" class="accordion-body"></div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3) How can I replace my lost card?
-                    </button>
+                    <button class="accordion-button collapsed" id="accordion_button_3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"></button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    <p>Log in to your Costa Club account here and select the ‘Card’ tab. Here, you’ll find instructions on how to replace your card. You can also download our app and login to start collecting beans. Don’t worry! You won’t lose the beans you’ve collected on your lost card, as all your beans will show in your account.</p>
-                    </div>
+                    <div class="accordion-body" id="accordion_explanation_3"></div>
                   </div>
                 </div>
               </div>
@@ -784,12 +721,28 @@
             </div>
             <ul>
                 <li>The X3D models are more complex</li>
+                <ul>
+                    <li>Use of html5 to change values of the x3d model</li>
+                </ul>
                 <li>Use of Bootstrap 5, which allows for the creation of accordion (see the Contact Us Page), and the creation of OffCanvas sidebars</li>
-                <li>Allowing for change in the X3D Model via html5</li>
-                <li>Request Feature, sending data to the SQLite Database and deleting said data when necessary.</li>
+                <ul>
+                    <li>Use of Accordions</li>
+                    <li>Use of OffCanvas sidebars</li>
+                    <li>Use of Toasts, used to check the material when clicking on a material on the x3d model</li>
+                </ul>
+                <li>Request Feature (CRUD)</li>
+                <ul>
+                    <li>Create a request to be sent to the database</li>
+                    <li>Read the list of requests</li>
+                    <li>Add and update comments for individual requests</li>
+                    <li>Delete specific request</li>
+                </ul>
                 <li>Used Blender to create the X3D model.</li>
                 <li>Photorealistic Renders of the 3d Objects (seen in the gallery)</li>
-                <li>Storing Images inside the database as blobs for the gallery, alongside their descriptions and titles</li>
+                <ul>
+                    <li>Use of condensation texture to add realism to the cans</li>
+                    <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
+                </ul>
             </ul> 
         </div>
 
