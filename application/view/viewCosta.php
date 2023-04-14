@@ -97,7 +97,7 @@
             <div class="col-sm-6" >
                 <div div class="card" id="item_card" style="width: 50rem;">
                 <a class="mainpage_images" href="assets/x3d/costa_iced_cup/costa_iced_cup.png">
-                    <img class="img-fluid"  src="assets/x3d/costa_iced_cup/costa_iced_cup.png">
+                    <img class="d-none d-md-block img-fluid"  src="assets/x3d/costa_iced_cup/costa_iced_cup.png">
                 </a>
                 </div>
             </div>
@@ -105,6 +105,26 @@
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 38rem;">
                     <h4 id="iced_latte_main_title" class="card-title"></h4>
+                    <div class="d-lg-none">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Latte</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                            <div class="offcanvas-body">
+                                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
+                                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
@@ -118,12 +138,32 @@
         <!-- Hot Latte Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(190, 231, 190,0.5), rgba(247, 247, 220, 0.5))">
             <!-- Future 3d Model-->
-
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 38rem;">
                     <h4 id="latte_main_title" class="card-title"></h4>
+
+                    <div class="d-lg-none">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasExample">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                                </svg>
+</a>
+                        </div>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Latte</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                            <div class="offcanvas-body">
+                                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
+                                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-body" id="drink_description_main">
-                        <h5 id="latte_main_description"></h3>
+                        <h5 id="latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
                         <button onclick="javascript:swap('hot_latte'); swap_information('hot_latte_page');" id="mainpage_button">Learn More ></button>
@@ -133,21 +173,57 @@
 
             <div class="col-sm-6" >
                 <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
-                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
+                    <img class="d-none d-md-block img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
                 </a>
-            </div>
-        </div>
 
+            </div>
+        
+        </div>
+        <style>
+  .offcanvas-button {
+    background-color: transparent;
+    border: none;
+    position: relative;
+  }
+  .offcanvas-button:hover,
+  .offcanvas-button:active
+    {
+    background-color: transparent;
+  }
+  .offcanvas-button svg {
+  transform: scaleX(30) scaleY(8);
+}
+</style>
         <!-- Cold Can Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
             <div class="col-sm-6" >
                 <a class="mainpage_images" href="assets/x3d/costa_re_product/costa_re_product.png">
-                    <img class="img-fluid" src="assets/x3d/costa_re_product/costa_re_product.png">
+                    <img class="d-none d-md-block img-fluid" src="assets/x3d/costa_re_product/costa_re_product.png">
                 </a>
             </div>
             <div class="col-sm-6">
                 <div div class="card" id="item_card" style="width: 40rem;">
                     <h4 id="canned_latte_main_title" class="card-title"></h4>
+                    <div class="d-lg-none">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Latte</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                            <div class="offcanvas-body">
+                                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
+                                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
