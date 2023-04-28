@@ -289,5 +289,21 @@ class Model
         }
         return $result;
     }
+
+    function dbGetDrinkInformation($id)
+    {
+        try
+        {
+            $stmt=$this->dbhandle->prepare('SELECT * FROM Model_3D WHERE Id=:Id');
+            $stmt->bindValue(':Id', $id);
+            $data = $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
+        return $result;
+    }
 }
 ?>

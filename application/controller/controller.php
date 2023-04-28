@@ -59,6 +59,12 @@ class Controller {
         $this->model->dbAddCommentRequest($_POST['request_id'],$_POST['request_comment']);
     }
 
+    function apiGetDrinkInformation()
+    {
+        $data = $this->model->dbGetDrinkInformation($_POST['id']);
+        echo json_encode($data);
+    }
+
     function apiRemoveRequest()
     {
         $this->model->dbRemoveRequest($_POST['request_id']);

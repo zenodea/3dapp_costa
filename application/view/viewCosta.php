@@ -134,7 +134,7 @@
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('iced_latte'); swap_information('iced_latte_page');change_flavour('flavour_iced_latte');">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('iced_latte'); change_flavour('flavour_iced_latte');">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -171,7 +171,7 @@
                         <h5 id="latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('hot_latte'); swap_information('hot_latte_page');">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('hot_latte'); ">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -221,7 +221,7 @@
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('canned_latte'); swap_information('canned_latte_page');">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('canned_latte'); change_flavour('flavour_canned_latte');">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -283,37 +283,16 @@
             <div class="row">
                 <div div class="card" id="item_card">
                     <div class="card-title card-page-title" >
-
-                        <h2 class="iced_latte_page" id="iced_latte_page_title"></h2>
-                        <h2 class="cold_brew_page" id="cold_brew_page_title"></h2>
-                        <h2 class="chai_iced_page" id="chai_iced_page_title"></h2>
-
-                        <h2 class="hot_latte_page" id="hot_latte_page_title"></h2>
-                        <h2 class="hot_chocolate_page" id="hot_chocolate_page_title"></h2>
-                        <h2 class="hot_mocha_page" id="hot_mocha_page_title"></h2>
-
-                        <h2 class="canned_latte_page" id="canned_latte_page_title"></h2>
-                        <h2 class="canned_caramel_page" id="canned_caramel_page_title"></h2>
-                        <h2 class="canned_americano_page" id="canned_americano_page_title"></h2>
-
+                        <h2 id="slogan_title_text"></h2>
                     </div>
                     <div class="card-body card-page-slogan" style="text-align: center;">
-                        <h2 class="iced_latte_page" id="iced_latte_page_slogan"></h2>
-                        <h2 class="cold_brew_page" id="cold_brew_page_slogan"></h2>
-                        <h2 class="chai_iced_page" id="chai_iced_page_slogan"></h2>
-
-                        <h2 class="hot_latte_page" id="hot_latte_page_slogan"></h2>
-                        <h2 class="hot_chocolate_page" id="hot_chocolate_page_slogan"></h2>
-                        <h2 class="hot_mocha_page" id="hot_mocha_page_slogan"></h2>
-
-                        <h2 class="canned_latte_page" id="canned_latte_page_slogan"></h2>
-                        <h2 class="canned_caramel_page" id="canned_caramel_page_slogan"></h2>
-                        <h2 class="canned_americano_page" id="canned_americano_page_slogan"></h2>
+                        <h2 id="slogan_text"></h2>
                     </div>
                 </div>
         </div>
     
         <div class="row" style="padding-top: 50px;">
+        <temporary></temporary>
             
             <!-- Future 3d Model-->
             <div class="col-sm-6" >
@@ -324,19 +303,19 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdown_flavour">
                                 <div id="iced_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte'); swap_information('iced_latte_page');">Iced Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew'); swap_information('cold_brew_page');">Cold Brew</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swap_information('chai_iced_page');">Chai Tea Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte'); swapDBINfo(1);">Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew'); swapDBINfo(2);">Cold Brew</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swapDBINfo(3);">Chai Tea Iced Latte</a></li>
                                 </div>
                                 <div id="hot_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_latte'); swap_information('hot_latte_page');">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_chocolate'); swap_information('hot_chocolate_page');">Hot Chocolate</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_mocha'); swap_information('hot_mocha_page');">Mocha</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_latte'); swapDBINfo(4);;">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_chocolate'); swapDBINfo(5);;">Hot Chocolate</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_mocha'); swapDBINfo(6);;">Mocha</a></li>
                                 </div>
                                 <div id="canned_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte'); swap_information('canned_latte_page');">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_caramel'); swap_information('canned_caramel_page');">Caramel Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_americano'); swap_information('canned_americano_page');">Americano</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte'); swapDBINfo(7);;">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_caramel'); swapDBINfo(8);;">Caramel Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_americano'); swapDBINfo(9);;">Americano</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -409,33 +388,10 @@
             <div class="col-sm-6">
                 <div div class="card mx-auto" id="item_card" >
                     <div class="card-title card-latte-title">
-
-                        <h4 class="iced_latte_page" id="iced_latte_title"></h4>
-                        <h4 class="cold_brew_page" id="cold_brew_title"></h4>
-                        <h4 class="chai_iced_page" id="chai_iced_title"></h4>
-
-                        <h4 class="hot_latte_page" id="hot_latte_title"></h4>
-                        <h4 class="hot_chocolate_page" id="hot_chocolate_title"></h4>
-                        <h4 class="hot_mocha_page" id="hot_mocha_title"></h4>
-
-                        <h4 class="canned_latte_page" id="canned_latte_title"></h4>
-                        <h4 class="canned_caramel_page" id="canned_caramel_title"></h4>
-                        <h4 class="canned_americano_page" id="canned_americano_title"></h4>
-
+                        <h4 id="title_text"></h4>
                     </div>
                     <div class="card-body card-drink-description">
-
-                        <h3 class="iced_latte_page" id="drink_description_iced_latte"></h3>
-                        <h3 class="cold_brew_page" id="drink_description_cold_brew"></h3>
-                        <h3 class="chai_iced_page" id="drink_description_chai_iced"></h3>
-
-                        <h3 class="hot_latte_page" id="drink_description_hot_latte"></h3>
-                        <h3 class="hot_chocolate_page" id="drink_description_hot_chocolate"></h3>
-                        <h3 class="hot_mocha_page" id="drink_description_hot_mocha"></h3>
-
-                        <h3 class="canned_latte_page" id="drink_description_canned_latte"></h3>
-                        <h3 class="canned_caramel_page" id="drink_description_canned_caramel"></h3>
-                        <h3 class="canned_americano_page" id="drink_description_canned_americano"></h3>
+                        <h3 id="drink_description_text"></h3>
                     </div>
                 </div>
 

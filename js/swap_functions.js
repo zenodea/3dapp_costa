@@ -17,18 +17,29 @@ function swap(selected)
 
     if (selected == "iced_latte")
     {
+        hideTabs("iced_drinks_dropdown");
+        swapDBINfo(1);
+
+        // Switch Scene
         $("#sceneSwitch").attr("whichChoice", 0);
         $("#iced_latte").show();
     }
 
     else if (selected == "hot_latte")
     {
+        hideTabs("hot_drinks_dropdown");
+        swapDBINfo(4);
+
+        // Switch Scene
         $("#sceneSwitch").attr("whichChoice", 1);
         $("#iced_latte").show();
     }
 
     else if (selected == "canned_latte")
     {
+        hideTabs("canned_drinks_dropdown");
+        swapDBINfo(7);
+
         $("#sceneSwitch").attr("whichChoice", 2);
         $("#iced_latte").show();
     }
@@ -41,60 +52,35 @@ function swap(selected)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function swap_information(selected)
+// Hide and show desired dropdown items
+function hideTabs(name)
 {
-    // Make htmlElements into Arrays
-    var one = Array.prototype.slice.call(document.getElementsByClassName("iced_latte_page"),0);
-    var two = Array.prototype.slice.call(document.getElementsByClassName("cold_brew_page"),0);
-    var three = Array.prototype.slice.call(document.getElementsByClassName("chai_iced_page"),0);
+    $("#iced_drinks_dropdown").hide();
+    $("#hot_drinks_dropdown").hide();
+    $("#canned_drinks_dropdown").hide();
 
-    var four = Array.prototype.slice.call(document.getElementsByClassName("hot_latte_page"),0);
-    var five = Array.prototype.slice.call(document.getElementsByClassName("hot_chocolate_page"),0);
-    var six = Array.prototype.slice.call(document.getElementsByClassName("hot_mocha_page"),0);
+    $("#"+name).show();
 
-    var seven = Array.prototype.slice.call(document.getElementsByClassName("canned_latte_page"),0);
-    var eight = Array.prototype.slice.call(document.getElementsByClassName("canned_caramel_page"),0);
-    var nine = Array.prototype.slice.call(document.getElementsByClassName("canned_americano_page"),0);
-
-    // Merge all arrays
-    var merged = [one,two,three,four,five,six,seven,eight,nine]
-
-    for (var i = 0; i < merged.length ; i++)
-    {
-        for (var j = 0; j< merged[i].length; j++)
-        {
-            
-            if (merged[i][j].className == selected)
-            {
-                merged[i][j].style.display="block";
-            }
-            else
-            {
-                merged[i][j].style.display="none";
-            }
-        }
-    }
-    if (['iced_latte_page','cold_brew_page','chai_iced_page'].includes(selected))
-    {
-        document.getElementById("iced_drinks_dropdown").style.display = "block";
-        document.getElementById("hot_drinks_dropdown").style.display = "none";
-        document.getElementById("canned_drinks_dropdown").style.display = "none";
-    }
-    else if (['hot_latte_page','hot_chocolate_page','hot_mocha_page'].includes(selected))
-    {
-        document.getElementById("iced_drinks_dropdown").style.display = "none";
-        document.getElementById("hot_drinks_dropdown").style.display = "block";
-        document.getElementById("canned_drinks_dropdown").style.display = "none";
-    }
-    else if (['canned_latte_page','canned_caramel_page','canned_americano_page'].includes(selected))
-    {
-        document.getElementById("iced_drinks_dropdown").style.display = "none";
-        document.getElementById("hot_drinks_dropdown").style.display = "none";
-        document.getElementById("canned_drinks_dropdown").style.display = "block";
-    }
-    
 }
-
+// Get data from the db about the drink tha† is desired
+function swapDBINfo(id)
+{
+    $.ajax({
+        url: "index.php/apiGetDrinkInformation",
+        type: 'POST',
+        data:  { 
+                id: id
+                },
+        success: function (data) 
+            {
+                var data = JSON.parse(data);
+                $('#slogan_title_text').html(data[0].title);
+                $('#slogan_text').html(data[0].slogan);
+                $('#title_text').html(data[0].title_name);
+                $('#drink_description_text').html(data[0].drink_description);
+            },
+    });
+}
 function change_modal(selected)
 {
     if (selected == "github_modal")

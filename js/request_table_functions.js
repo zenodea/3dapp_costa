@@ -36,7 +36,7 @@ $( "#request_list" ).on("click", function(event)
                     $('tbody').html(setupRequestList(data));
                 }
             });     
-        })
+})
 
 // Function to remove request, by making an ajax call to the controller
 function remove_from_request(id)
