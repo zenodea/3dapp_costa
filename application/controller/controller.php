@@ -36,20 +36,6 @@ class Controller {
         $this->load->view('viewMessage', $data);
     }
 
-    // Api's for the gallery functions
-
-    function apiAddGallery()
-    {
-        $data = $this->model->dbAddGallery();
-        $this->load->view('viewMessage', $data);
-    }
-
-    function apiGetGallery()
-    {
-        $data = $this->model->dbGetGallery();
-        echo $data;
-    }
-
     function apiGetJsonMuseumData()
     {
         $data = $this->model->dbGetJsonMuseumData();
@@ -65,7 +51,7 @@ class Controller {
     function apiGetRequestData()
     {
         $data = $this->model->dbGetRequestData();
-        echo $data;
+        echo json_encode($data);
     }
 
     function apiAddCommentRequest()

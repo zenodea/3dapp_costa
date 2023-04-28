@@ -2,9 +2,12 @@
 <html>
     <head>
         <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
-        <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+        <link rel='stylesheet' type='text/css' href='css/x3dom.css'></link> 
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/custom.scss">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
         
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -23,6 +26,14 @@
 
     </head>
     <body>
+    <style>
+    #button-group {
+    width: 300px;
+    height: 300px;
+    position: relative;
+  }
+</style>
+
   <!-- aimdwda -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -43,20 +54,21 @@
 
         <!-- First -->
         <div id="main_page" class="container_fluid main_contents">
-
         <div class="row">
             <!-- Future 3d Model-->
             <div class="col-sm-12">
-                <div div class="card" id="item_card" style="width: 38rem;">
+            <div id="main_3d_image">
+                <div class="card" id="main_text">
                     <h4  class="card-title">Extraordinary <br>Every day</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Indulge in your favorites</h3>
                     </div>
-                    <div class="card-footer mx-auto justify-content-center">
-                        <button  id="mainpage_button">Find a Costa></button>
+                    <div class="card-footer mx-auto text-center justify-content-center">
+                        <button  class="costa_button" onclick="window.location.href=' https://www.costa.co.uk'">Find a Costa</button>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
 
@@ -90,22 +102,15 @@
                 ...
             </div>
         </div>
+
         <!-- Iced Latte Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, transparent, rgba(190, 231, 190,0.5))">
             
             <!-- Future 3d Model-->
-            <div class="col-sm-6" >
-                <div div class="card" id="item_card" style="width: 50rem;">
-                <a class="mainpage_images" href="assets/x3d/costa_iced_cup/costa_iced_cup.png">
-                    <img class="d-none d-md-block img-fluid"  src="assets/x3d/costa_iced_cup/costa_iced_cup.png">
-                </a>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
+            <div class="col-sm-12">
+                <div div class="card" id="item_card">
                     <h4 id="iced_latte_main_title" class="card-title"></h4>
-                    <div class="d-lg-none">
+                    <div class="arrow_hidden">
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -113,7 +118,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas   reveal-for-large offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Latte</h5>
                                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -129,7 +134,7 @@
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('iced_latte'); swap_information('iced_latte_page');change_flavour('flavour_iced_latte');" id="mainpage_button">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('iced_latte'); swap_information('iced_latte_page');change_flavour('flavour_iced_latte');">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -138,11 +143,11 @@
         <!-- Hot Latte Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(190, 231, 190,0.5), rgba(247, 247, 220, 0.5))">
             <!-- Future 3d Model-->
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 38rem;">
+            <div class="col-sm-12">
+                <div div class="card" id="item_card">
                     <h4 id="latte_main_title" class="card-title"></h4>
 
-                    <div class="d-lg-none">
+                    <div class="arrow_hidden">
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasExample">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -166,16 +171,9 @@
                         <h5 id="latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('hot_latte'); swap_information('hot_latte_page');" id="mainpage_button">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('hot_latte'); swap_information('hot_latte_page');">Learn More ></button>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-sm-6" >
-                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
-                    <img class="d-none d-md-block img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
-                </a>
-
             </div>
         
         </div>
@@ -196,15 +194,10 @@
 </style>
         <!-- Cold Can Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
-            <div class="col-sm-6" >
-                <a class="mainpage_images" href="assets/x3d/costa_re_product/costa_re_product.png">
-                    <img class="d-none d-md-block img-fluid" src="assets/x3d/costa_re_product/costa_re_product.png">
-                </a>
-            </div>
-            <div class="col-sm-6">
-                <div div class="card" id="item_card" style="width: 40rem;">
+            <div class="col-sm-12">
+                <div div class="card" id="item_card">
                     <h4 id="canned_latte_main_title" class="card-title"></h4>
-                    <div class="d-lg-none">
+                    <div class="arrow_hidden">
                         <div class="d-flex justify-content-center">
                             <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -228,7 +221,7 @@
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button onclick="javascript:swap('canned_latte'); swap_information('canned_latte_page');" id="mainpage_button">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('canned_latte'); swap_information('canned_latte_page');">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -240,8 +233,8 @@
                 <h4 id="latte_title">What's New</h4>
             </div>
         </div>
-        <div class="row" id="footer_info" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
-            <div class="col-sm-4" style="padding: 50px;">
+        <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
+            <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="assets/x3d/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_iced"></h4>
@@ -249,23 +242,23 @@
                         <h5 id="iced_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button id="mainpage_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasIced" role="button" aria-controls="offcanvasIced">Learn More</button>
+                        <button class="costa_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasIced" role="button" aria-controls="offcanvasIced">Learn More</button>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4" style="padding: 50px;">
+            <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="assets/x3d/costa_cup/temp.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_title"></h4>
+                    <h4 class="card-title" id="what_new_hot"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button data-bs-toggle="offcanvas" href="#offcanvasHot" role="button" aria-controls="offcanvasHot" id="mainpage_button">Learn More</button>
+                        <button class="costa_button" data-bs-toggle="offcanvas" href="#offcanvasHot" role="button" aria-controls="offcanvasHot" >Learn More</button>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4" style="padding: 50px;">
+            <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="assets/x3d/costa_re_product/temp.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_canned"></h4>
@@ -273,7 +266,7 @@
                         <h5 id="canned_latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button  data-bs-toggle="offcanvas" data-bs-target="#offcanvasCanned" role="button" aria-controls="offcanvasCanned" id="mainpage_button">Learn More</button>
+                        <button  class="costa_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCanned" role="button" aria-controls="offcanvasCanned">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -288,7 +281,7 @@
 
             <!-- Original Content -->
             <div class="row">
-                <div div class="card" id="item_card" style="width: 58rem;">
+                <div div class="card" id="item_card">
                     <div class="card-title card-page-title" >
 
                         <h2 class="iced_latte_page" id="iced_latte_page_title"></h2>
@@ -360,8 +353,10 @@
                             </ul>
                         </div>
                 </div>
+
+                <div class="model3D x3d-container">
                 <x3d id="wire"> 
-                    <scene render="true" visible="true" pickmode="idBuf" dopickpass="true">
+                    <scene>
                         <Switch whichChoice="0" id="sceneSwitch">
 
                                 <transform DEF="ball">
@@ -408,10 +403,11 @@
                                 <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
                     </scene>
                 </x3d>
+                </div>
             </div>
     
             <div class="col-sm-6">
-                <div div class="card mx-auto" id="item_card" style="width: 38rem;">
+                <div div class="card mx-auto" id="item_card" >
                     <div class="card-title card-latte-title">
 
                         <h4 class="iced_latte_page" id="iced_latte_title"></h4>
@@ -440,51 +436,51 @@
                         <h3 class="canned_latte_page" id="drink_description_canned_latte"></h3>
                         <h3 class="canned_caramel_page" id="drink_description_canned_caramel"></h3>
                         <h3 class="canned_americano_page" id="drink_description_canned_americano"></h3>
-
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
+            <div class="col-sm-4">
+                <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Viewpoint</button>
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#camera_physical" aria-controls="camera_physical" aria-selected="true">Camera Control</button>
                             </li>
                         </ul>
                     </div>
-                    <h3 class="card-title" style="text-align: center; padding: 30px">Camera Controls</h3>
-                    <div class="card-body">
-                            <nav div class="btn-group" role="group" aria-label="Basic example" style="width: 25%;">
-                                <button type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
+                    <h3 class="card-title">Camera Controls</h3>
+                    <div class="card-body tab-content">
+                        <div class="tab-pane active" id="camera_physical">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
                                     Front
                                 </button>
-                                <button type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
                                     Back
                                 </button>
-                                <button type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
                                     Left
                                 </button>
-                                <button type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white" onclick="cameraRight();">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white" onclick="cameraRight();">
                                     Right
                                 </button>
-                                <button type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
                                     Top
                                 </button>
-                                <button type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
                                     Bottom
                                 </button>
-                                <button type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraNormal();">
+                                <button class="btn btn-primary" type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraNormal();">
                                     Normal
                                 </button>
-                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
+            <div class="col-sm-4">
+                <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -505,8 +501,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4" style="background-color: transparent; padding: 30px;">
-                <div class="card" style="background-color: transparent;">
+            <div class="col-sm-4">
+                <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -558,9 +554,9 @@
             </div>
             <div class="row">
                 <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Take Away Products!</h4>
+                    <h4  class="card-title">Costa Iced Products!</h4>
                     <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
+                    <h3> Perfect on a sunny day!</h3>
                     </div>
                 </div>
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -584,7 +580,7 @@
                 <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Take Away Products!</h4>
                     <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
+                    <h3> Drink your favourites, anywhere!</h3>
                     </div>
                 </div>
             <div id="carouselReProduct" class="carousel slide" data-bs-ride="carousel">
@@ -607,9 +603,9 @@
 
             <div class="row">
                 <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Take Away Products!</h4>
+                    <h4  class="card-title">Costa Hot Products!</h4>
                     <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
+                    <h3> No need to be cold, drink this! </h3>
                     </div>
                 </div>
             <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
@@ -752,7 +748,7 @@
                   <textarea class="form-control" id="description_request" name="description" rows="3" required></textarea>
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="costa_button btn btn-primary">Submit</button>
                 </div>
             </form>
 
@@ -777,7 +773,7 @@
                 <th scope="col">Category</th>
                 <th scope="col">Description</th>
                 <th scope="col">Comment</th>
-                <th scope="col">Remove Button</th>
+                <th scope="col">Remove Request</th>
             </tr>
             </thead>
             <tbody class="tbody-light">
@@ -799,11 +795,15 @@
                 <li>The X3D models are more complex</li>
                 <ul>
                     <li>Use of html5 to change values of the x3d model</li>
+                    <li>Integration with bootstrap to add Toasts when a specific material is clicked.</li>
                 </ul>
                 <li>Use of Bootstrap 5, which allows for the creation of accordion (see the Contact Us Page), and the creation of OffCanvas sidebars</li>
                 <ul>
                     <li>Use of Accordions</li>
                     <li>Use of OffCanvas sidebars</li>
+                    <ul>
+                        <li>When images in main page are too big, they are moved to a new offcanvas, accesible via large arrows</li>
+                    </ul>
                     <li>Use of Toasts, used to check the material when clicking on a material on the x3d model</li>
                 </ul>
                 <li>Request Feature (CRUD)</li>
@@ -819,8 +819,20 @@
                     <li>Use of condensation texture to add realism to the cans</li>
                     <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
                 </ul>
+                <li>Use of Javascript library Three.js to create 3d gyzmo to interactively </li>
+                <ul>
+                    <li>Use of condensation texture to add realism to the cans</li>
+                    <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
+                </ul>
             </ul> 
         </div>
+        <style>
+  
+  .offcanvas-button:focus svg {
+    filter: drop-shadow(0 0 5px #007bff) drop-shadow(0 0 10px #007bff) drop-shadow(0 0 15px #007bff);
+  }
+  
+</style>
 
         <!-- Footer -->
         <?php include_once("footer.html"); ?>
@@ -832,6 +844,5 @@
         <script src="js/swap_functions.js"></script>
         <script src="js/modelInteraction.js"></script>
         <!-- Custom Javascript -->
-
     </body>
 </html>

@@ -19,6 +19,7 @@ $(document).ready(function()
 
         // Iced Latte
 		$('#latte_main_title').html(jsonObj[1].title);
+		$('#what_new_hot').html(jsonObj[1].title);
 		$('#latte_main_description').html(jsonObj[1].general_drink_description);
 		$('#latte_mini_description').html(jsonObj[1].general_drink_description);
 

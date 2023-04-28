@@ -1,6 +1,6 @@
 // Animation for x3d model
 var spinning = false;
-
+var model_view = "normal";
 function onAnimation()
 {
     spinning = true;
@@ -59,21 +59,57 @@ function cameraNormal()
 function wireFrame()
 {
     var e = document.getElementById('wire');
-    e.runtime.togglePoints(true);
-    e.runtime.togglePoints(true);
+    if (model_view == "normal")
+    {
+        e.runtime.togglePoints(true);
+        e.runtime.togglePoints(true);
+    }
+    else if (model_view == "wire")
+    {
+
+    }
+    else if (model_view == "vertex")
+    {
+        e.runtime.togglePoints(true);
+    }
+    model_view = "wire"
 }
 
 function normal()
 {
     var e = document.getElementById('wire');
-    e.runtime.togglePoints(false);
-    e.runtime.togglePoints(false);
+    if (model_view == "wire")
+    {
+        e.runtime.togglePoints(false);
+        e.runtime.togglePoints(false);
+    }
+    else if (model_view=="normal")
+    {
+
+    }
+    else if (model_view=="vertex")
+    {
+        e.runtime.togglePoints(false);
+    }
+    model_view = "normal"
 }
 
 function vertex()
 {
     var e = document.getElementById('wire');
-    e.runtime.togglePoints(true);
+    if (model_view == "normal")
+    {
+        e.runtime.togglePoints(true);
+    }
+    else if (model_view == "vertex")
+    {
+
+    }
+    else if (model_view == "wire")
+    {
+        e.runtime.togglePoints(false);
+    }
+    model_view = "vertex"
 }
 
 function redraw()

@@ -29,28 +29,15 @@ $( "#request_list" ).on("click", function(event)
         $.ajax(
             {
                 type: 'POST',
-                dataType:'html',
+                dataType:'json',
                 url: "index.php/apiGetRequestData",
                 success: function(data) 
                 {
-                    $('tbody').html(data);
+                    $('tbody').html(setupRequestList(data));
                 }
             });     
         })
 
-$( "#gallery_button" ).on("click", function(event)
-{
-        $.ajax(
-            {
-                type: 'POST',
-                dataType:'html',
-                url: "index.php/apiGetGallery",
-                success: function(data) 
-                {
-                    $('temporary').html(data);
-                }
-            });     
-        })
 // Function to remove request, by making an ajax call to the controller
 function remove_from_request(id)
 {
@@ -67,11 +54,12 @@ function remove_from_request(id)
             $.ajax(
             {
                 type: 'POST',
-                dataType:'html',
+                dataType:'json',
                 url: "index.php/apiGetRequestData",
                 success: function(data) 
                 {
-                    $('tbody').html(data);
+                    alert('Succesfully Removed Request!');
+                    $('tbody').html(setupRequestList(data));
                 } 
             }
         )}
@@ -96,14 +84,36 @@ function add_comment_request(id)
             $.ajax(
             {
                 type: 'POST',
-                dataType:'html',
+                dataType:'json',
                 url: "index.php/apiGetRequestData",
+
                 success: function(data) 
                 {
                     alert('Succesfully Updated Comment!');
-                    $('tbody').html(data);
-                } 
+                    $('tbody').html(setupRequestList(data));
+                }
             }
         )}
     });             
+}
+
+/* Function used to organise JSON file obtained from the Model via the Controller*/
+function setupRequestList(data)
+{
+    finalString = ""
+    for (var i = 0; i < data.length; i++)
+    {
+    finalString += '<tr class="table-primary">';
+    finalString += '<th scope="row">'+ data[i].Id + '</th>';
+    finalString += '<th scope="row">'+ data[i].email + '</th>';
+    finalString += '<th scope="row">'+ data[i].category + '</th>';
+    finalString += '<th scope="row">'+ data[i].request_description + '</th>';
+    finalString += '<td> <textarea  class="form-control" id="comment_'+data[i].Id+'" name="w3review" rows="2" cols="20">'+data[i].comment+'</textarea><button onclick="add_comment_request('+data[i].Id+')">Save</button>'
+    finalString += '</td>';
+    finalString += '<td>'
+    finalString += '<button class="costa_button" onclick="remove_from_request('+data[i].Id+')" id="remove_button_'+data[i].Id+'">Remove</button>'
+    finalString += '</td>' 
+    finalString += '</tr>';
+    }
+    return finalString;
 }

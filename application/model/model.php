@@ -147,56 +147,6 @@ class Model
         $this->dbhandle = NULL;
     }
 
-    function dbAddGallery()
-    {
-        try
-        {
-            $dataToSave = base64_encode(file_get_contents('assets/images/teaser-latte-macro-389x280.jpg.webp'));
-            $title = "try";
-            $description = "try";
-            $stmt=$this->dbhandle->prepare("INSERT INTO Gallery (title,explanation,photo)
-                    VALUES (:title, :explanation, :photo)");
-            $stmt->bindValue(':title', $title);
-            $stmt->bindValue(':explanation', $description);
-            $stmt->bindValue(':photo', $dataToSave);
-            $result = $stmt->execute();
-            return $dataToSave;
-        } 
-        catch (PDOException $e)
-        {
-            print new Exception($e->getMessage());
-        }
-    }
-
-    function dbGetGallery()
-    {
-        $result = array();
-        try
-        {
-            $sql = 'SELECT * FROM Gallery';
-            $stmt = $this->dbhandle->query($sql);
-            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($data as $value)
-            {
-                array_push($result,$value);
-            }
-        } 
-        catch (PDOException $e)
-        {
-            print new Exception($e->getMessage());
-        }
-        $finalString = "";
-        foreach($result as $value)
-        {
-            $value = array_values($value);
-            $finalString .= '<h2>'. $value[1] . '</h2>';
-            $finalString .= '<h2>'. $value[2] . '</h2>';
-            $finalString .= '<a href="data:image/jpeg;base64,'.$value[3].'">
-            <img class="img-fluid" src="data:image/jpeg;base64,'. $value[3] . '" alt="Angular"/></a>';
-        } 
-        return $finalString;
-    }
-
     function dbGetJsonMuseumData()
     {
         $result = array();
@@ -304,24 +254,7 @@ class Model
         {
             print new Exception($e->getMessage());
         }
-        $finalString = "";
-        foreach($result as $value)
-        {
-            $value = array_values($value);
-            $finalString .= '<tr class="table-primary">';
-            $finalString .= '<th scope="row">'. $value[0] . '</th>';
-            $finalString .= '<th scope="row">'. $value[1] . '</th>';
-            $finalString .= '<th scope="row">'. $value[2] . '</th>';
-            $finalString .= '<th scope="row">'. $value[3] . '</th>';
-            $finalString .= '<td>
-                <textarea  class="form-control" id="comment_'.$value[0].'" name="w3review" rows="2" cols="20">'.$value[4].'</textarea><button onclick="add_comment_request('.$value[0].')">Save</button>
-            </td>';
-            $finalString .= '<td>
-                <button onclick="remove_from_request('.$value[0].')" id="remove_button_'.$value[0].'">Remove</button>
-            </td> 
-            </tr>';
-        } 
-        return $finalString;
+        return $result;
     }
 
     # Function Used to update SQLite request table
