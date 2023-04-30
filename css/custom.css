@@ -45,6 +45,7 @@ body
 /* Main Screen*/
 #main_3d_image {
     background: url("../assets/images/3d_background_800.jpg");
+	box-shadow: inset 0 0 10px #000000;
 	background-position: center; 
     background-repeat: no-repeat;
 	background-clip: padding-box;
@@ -79,7 +80,10 @@ X3D, x3d {
 	width: 100%;
     height: 100%
 }
-
+.controller_card
+{
+	height:200px;
+}
 .controller_card > h3
 {
 	text-align: center; 
@@ -221,6 +225,11 @@ h4
 	top: -80px;
   }
 
+  #What_New_title
+  {
+	padding-top: 100px;
+  }
+
 /* What new */
 .what_new_card
 {
@@ -295,6 +304,34 @@ hr
 	border: 0;
 }
 
+/* Going Beyond */
+
+.going_beyond_list
+{
+	background-color: white;
+	box-shadow: inset 0 0 10px #000000;
+	box-sizing: border-box;
+    padding: 10px;
+	border-radius: 20px;
+}
+
+.going_beyond_list > ul 
+{
+	font-family: costa;
+	font-size: 15px;
+	font-weight: bold;
+	color: #000000;
+	position: relative;
+}
+
+.going_beyond_list > ul > li
+{
+	font-family: costa;
+	font-size: 20px;
+	font-weight: bold;
+	color: #6d1f37;	
+	position: relative;
+}
 /* Small devices (landscape phones, 576px and up)
 */
 @media (min-width: 576px) {

@@ -77,7 +77,7 @@
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small"> 
-                ...
+                
             </div>
         </div>
 
@@ -104,32 +104,12 @@
         </div>
 
         <!-- Iced Latte Info -->
-        <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, transparent, rgba(190, 231, 190,0.5))">
+        <div class="row" style="background:linear-gradient(to bottom, transparent, rgba(190, 231, 190,0.5))">
             
             <!-- Future 3d Model-->
             <div class="col-sm-12">
                 <div div class="card" id="item_card">
                     <h4 id="iced_latte_main_title" class="card-title"></h4>
-                    <div class="arrow_hidden">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="offcanvas   reveal-for-large offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Latte</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                            <div class="offcanvas-body">
-                                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
-                                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
@@ -147,26 +127,6 @@
                 <div div class="card" id="item_card">
                     <h4 id="latte_main_title" class="card-title"></h4>
 
-                    <div class="arrow_hidden">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasExample">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                                </svg>
-</a>
-                        </div>
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Latte</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                            <div class="offcanvas-body">
-                                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
-                                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="latte_main_description"></h5>
                     </div>
@@ -197,26 +157,6 @@
             <div class="col-sm-12">
                 <div div class="card" id="item_card">
                     <h4 id="canned_latte_main_title" class="card-title"></h4>
-                    <div class="arrow_hidden">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-primary w-100 offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Latte</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                            <div class="offcanvas-body">
-                                <a class="mainpage_images" href="assets/x3d/costa_cup/costa_cup.png">
-                                    <img class="img-fluid" src="assets/x3d/costa_cup/costa_cup.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
@@ -230,13 +170,13 @@
         <!-- What's New -->
         <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),rgba(252, 187, 187, 0.5))">
             <div class="col-sm-12">
-                <h4 id="latte_title">What's New</h4>
+                <h4 id="What_New_title">What's New</h4>
             </div>
         </div>
         <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
-                    <img src="assets/x3d/costa_iced_cup/temp.jpg" class="card-img-top" alt="...">
+                    <img src="assets/images/cold_products_slogan.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_iced"></h4>
                     <div class="card-body mini-card-body" >
                         <h5 id="iced_latte_mini_description"></h5>
@@ -248,7 +188,7 @@
             </div>
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
-                    <img src="assets/x3d/costa_cup/temp.jpg" class="card-img-top" alt="...">
+                    <img src="assets/images/hot_products_slogan.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_hot"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
@@ -260,7 +200,7 @@
             </div>
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
-                    <img src="assets/x3d/costa_re_product/temp.jpg" class="card-img-top" alt="...">
+                    <img src="assets/images/canned_products_slogan.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_canned"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="canned_latte_mini_description"></h5>
@@ -291,7 +231,7 @@
                 </div>
         </div>
     
-        <div class="row" style="padding-top: 50px;">
+        <div class="row" style="padding-top: 50px; margin-bottom:50px">
         <temporary></temporary>
             
             <!-- Future 3d Model-->
@@ -338,7 +278,7 @@
                     <scene>
                         <Switch whichChoice="0" id="sceneSwitch">
 
-                                <transform DEF="ball">
+                                <transform>
                                 <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
@@ -352,26 +292,23 @@
 
                         </Switch>
 
-                                <!-- CONTROLS ROTATION OF THE MODEL __ Iced Drink Straw up and down
+		                        <!-- CONTROLS ROTATION OF THE MODEL __ Cold drink, straw up and down
+		                        <timeSensor DEF="time" cycleInterval="2" loop="true" enabled="false"> </timeSensor>
+		                        <PositionInterpolator DEF="move" key="0 0.5 1" keyValue="0 0 0  0 0 1  0 0 0"> </PositionInterpolator>       
+		                        <Route fromNode="time" fromField ="fraction_changed" toNode="move" toField="set_fraction"> </Route> 
+		                        <Route fromNode="move" fromField ="value_changed" toNode="straw" toField="translation"> </Route>  -->
 
-                                <timeSensor id="animation_timesensor" DEF='RotationTimer' cycleInterval='4' loop='true' enabled='false'></timeSensor>
+		                        <!-- CONTROLS ROTATION OF THE MODEL __ Hot drink, Cup up and down
+		                        <timeSensor DEF="time_cup" cycleInterval="2" loop="true" enabled="false"> </timeSensor>
+		                        <PositionInterpolator DEF="move" key="0 0.5 1" keyValue="0 0 0  0 0 1  0 0 0"> </PositionInterpolator>       
+		                        <Route fromNode="time_cup" fromField ="fraction_changed" toNode="move" toField="set_fraction"> </Route> 
+		                        <Route fromNode="move" fromField ="value_changed" toNode="cup" toField="translation"> </Route>  -->
 
+		                        <!-- CONTROLS ROTATION OF THE MODEL
+                                <timeSensor DEF='time_can' cycleInterval='4' loop='true' enabled='false'></timeSensor>
                                 <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
-                                
-                                <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
-                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='ball' toField='set_rotation'></ROUTE>
-
-                                -->
-
-                                <!-- CONTROLS ROTATION OF THE MODEL __ Hot Drink Cup upd and down-->
-                                <timeSensor id="time" DEF='time' cycleInterval='4' loop='true' enabled='false'></timeSensor>
-
-                                <PositionInterpolator DEF="move" key="0 0.5 1" keyValue="0 0 0  0 3 0  0 0 0"> </PositionInterpolator>       
-                                
-                                <Route fromNode="time" fromField ="fraction_changed" toNode="move" toField="set_fraction"> </Route> 
-	                            <Route fromNode="move" fromField ="value_changed" toNode="ball" toField="translation"> </Route>  
-
-                                <!-- CONTROLS ROTATION OF THE MODEL __ Can rotate-->
+                                <ROUTE fromNode='time_can' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
+                                <ROUTE fromNode='Rotator' fromField='value_changed' toNode='can' toField='set_rotation'></ROUTE> -->
 
                                 <!-- Lights -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
@@ -380,12 +317,15 @@
                                 <PointLight id='point' on='FALSE' intensity='5.000' color='0.0 0.6 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
                                 <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
                                 <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
+
                     </scene>
                 </x3d>
                 </div>
             </div>
     
             <div class="col-sm-6">
+                <div class="row">
+
                 <div div class="card mx-auto" id="item_card" >
                     <div class="card-title card-latte-title">
                         <h4 id="title_text"></h4>
@@ -394,7 +334,13 @@
                         <h3 id="drink_description_text"></h3>
                     </div>
                 </div>
+                </div>
 
+                <div class="row">
+            <div id="carousel_3d_model" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carousel_3d" style="border:6px solid #6d1f37;	box-shadow: inset 0 0 10px #000000;"></div>
+            </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -407,15 +353,15 @@
                             </li>
                         </ul>
                     </div>
-                    <h3 class="card-title">Camera Controls</h3>
-                    <div class="card-body tab-content">
-                        <div class="tab-pane active" id="camera_physical">
+                    <div class="card-body tab-content" style="justify-content: center;">
+                        <div class="tab-pane active text-center" id="camera_physical" style="justify-content: center;">
                                 <button class="btn btn-primary" type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
                                     Front
                                 </button>
                                 <button class="btn btn-primary" type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
                                     Back
                                 </button>
+                                <br>
                                 <button class="btn btn-primary" type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
                                     Left
                                 </button>
@@ -428,6 +374,7 @@
                                 <button class="btn btn-primary" type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
                                     Bottom
                                 </button>
+                                <br>
                                 <button class="btn btn-primary" type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraNormal();">
                                     Normal
                                 </button>
@@ -444,16 +391,23 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title" style="text-align: center; padding: 30px">Lighting Control</h3>
-                            <input type="checkbox"  onclick="lightSwitch('point')">
-                                <label>point light</label><br>
-                            <input type="checkbox"  onclick="lightSwitch('spot')">
-                                <label>spot light</label><br>
-                            <input type="checkbox"  onclick="lightSwitch('directional')">
-                                <label>directional light</label><br>
-                            <input type="checkbox" checked="true" onclick="headlight('head')">
-                                <label>headlight</label><br>
+                    <div class="card-body text-center">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" onclick="headlight('head')" type="checkbox" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Headlight</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" onclick="lightSwitch('point')" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Point Light</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" onclick="lightSwitch('directional')" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Directional Light</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" onclick="lightSwitch('spot')" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Spot Light</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -469,9 +423,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-content card-body">
+                    <div class="tab-content text-center card-body">
                         <div class="tab-pane active" id="animation">
-                        <h3 class="card-title" style="text-align: center; padding: 30px">Animation</h3>
                             <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="onAnimation();">On</a>
@@ -482,7 +435,6 @@
                             </ul>
                         </div>
                         <div class="tab-pane" id="render">
-                            <h3 class="card-title" style="text-align: center; padding: 30px">Render</h3>
                             <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
@@ -534,9 +486,9 @@
             </div>
             <div class="row">
                 <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Take Away Products!</h4>
+                    <h4  class="card-title">Costa Hot Products!</h4>
                     <div class="card-body" style="text-align: center;">
-                    <h3> Drink your favourites, anywhere!</h3>
+                    <h3> No need to be cold, drink this! </h3>
                     </div>
                 </div>
             <div id="carouselReProduct" class="carousel slide" data-bs-ride="carousel">
@@ -559,9 +511,9 @@
 
             <div class="row">
                 <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Hot Products!</h4>
+                    <h4  class="card-title">Costa Take Away Products!</h4>
                     <div class="card-body" style="text-align: center;">
-                    <h3> No need to be cold, drink this! </h3>
+                    <h3> Drink your favourites, anywhere!</h3>
                     </div>
                 </div>
             <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
@@ -747,19 +699,29 @@
                     </div>
                 </div>
             </div>
+            <div class="going_beyond_list">
+
             <ul>
                 <li>The X3D models are more complex</li>
                 <ul>
                     <li>Use of html5 to change values of the x3d model</li>
                     <li>Integration with bootstrap to add Toasts when a specific material is clicked.</li>
+                    <li>Three Unique animations are given, one for each of the model.</li>
+                    <li>The 3D models all have unique components</li>
+                    <ul>
+                        <li>Iced Drinks: They have multiple Ice Cubes, a Straw, realistic liquid and accurate top cup.</li>
+                        <li>Hot Drinks: The cup is designed after the official cup utilsied by Costa.</li>
+                        <li>Canned Drinks: Textures have been created by me manually, the top of the can has the following details</li>
+                        <ul>
+                            <li>3D Modelled Pull Tab</li>
+                            <li>3D Modelled Tear Line and Tear Strip</li>
+                        </ul>
+                    </ul>
                 </ul>
                 <li>Use of Bootstrap 5, which allows for the creation of accordion (see the Contact Us Page), and the creation of OffCanvas sidebars</li>
                 <ul>
                     <li>Use of Accordions</li>
                     <li>Use of OffCanvas sidebars</li>
-                    <ul>
-                        <li>When images in main page are too big, they are moved to a new offcanvas, accesible via large arrows</li>
-                    </ul>
                     <li>Use of Toasts, used to check the material when clicking on a material on the x3d model</li>
                 </ul>
                 <li>Request Feature (CRUD)</li>
@@ -772,23 +734,50 @@
                 <li>Used Blender to create the X3D model.</li>
                 <li>Photorealistic Renders of the 3d Objects (seen in the gallery)</li>
                 <ul>
-                    <li>Use of condensation texture to add realism to the cans</li>
                     <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
-                </ul>
-                <li>Use of Javascript library Three.js to create 3d gyzmo to interactively </li>
-                <ul>
-                    <li>Use of condensation texture to add realism to the cans</li>
-                    <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
+                    <li>Smoke Simulation was Baked into the model for realistic steam.</li>
+                    <li>Used 4k HDRI backdrops for realistic lighting</li>
+                    <li>Used 4k Textures for approrate recreate of other materials, such as the table</li>
                 </ul>
             </ul> 
+            </div>
         </div>
-        <style>
-  
-  .offcanvas-button:focus svg {
-    filter: drop-shadow(0 0 5px #007bff) drop-shadow(0 0 10px #007bff) drop-shadow(0 0 15px #007bff);
-  }
-  
-</style>
+        <div id="references_content" class="container-fluid main_contetns" style="display: none;">
+            <div class="row">
+                <div div class="card" id="item_card" style="width: 50rem;">
+                    <h4  class="card-title">Here are the references for any item not created by me</h4>
+                </div>
+            </div>
+            <div class="going_beyond_list">
+            <ul>
+                <li>3D Renders</li>
+                <ul>
+                    <li>Hot Drinks</li>
+                    <ul>
+                        <li>Textures</li>
+                        <ul>
+                            <li> </li>
+                        </ul>
+                        <li>HDR</li>
+                        <ul>
+                            <li> </li>
+                        </ul>
+                    </ul>
+                    <li>Canned Drinks</li>
+                    <ul>
+                        <li>Textures</li>
+                        <ul>
+                            <li> </li>
+                        </ul>
+                        <li>HDR</li>
+                        <ul>
+                            <li> </li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            </div>
+        </div>
 
         <!-- Footer -->
         <?php include_once("footer.html"); ?>

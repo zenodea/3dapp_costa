@@ -59,55 +59,6 @@ $(document).ready(function()
 		$('#contact_us_body').html(html_contact_us);
 		$('#tac_body').html(html_tac);
 
-		// x3d models
-
-		// Iced Drinks
-		$('#iced_latte_page_title').html(jsonObj[8].title);
-		$('#iced_latte_page_slogan').html(jsonObj[8].slogan);
-		$('#iced_latte_title').html(jsonObj[8].title_name);
-		$('#drink_description_iced_latte').html(jsonObj[8].drink_description);
-
-		$('#cold_brew_page_title').html(jsonObj[9].title);
-		$('#cold_brew_page_slogan').html(jsonObj[9].slogan);
-		$('#cold_brew_title').html(jsonObj[9].title_name);
-		$('#drink_description_cold_brew').html(jsonObj[9].drink_description);
-
-		$('#chai_iced_page_title').html(jsonObj[10].title);
-		$('#chai_iced_page_slogan').html(jsonObj[10].slogan);
-		$('#chai_iced_title').html(jsonObj[10].title_name);
-		$('#drink_description_chai_iced').html(jsonObj[10].drink_description);
-		
-		// Hot Drinks
-		$('#hot_latte_page_title').html(jsonObj[11].title);
-		$('#hot_latte_page_slogan').html(jsonObj[11].slogan);
-		$('#hot_latte_title').html(jsonObj[11].title_name);
-		$('#drink_description_hot_latte').html(jsonObj[11].drink_description);
-		
-		$('#hot_chocolate_page_title').html(jsonObj[12].title);
-		$('#hot_chocolate_page_slogan').html(jsonObj[12].slogan);
-		$('#hot_chocolate_title').html(jsonObj[12].title_name);
-		$('#drink_description_hot_chocolate').html(jsonObj[12].drink_description);
-
-		$('#hot_mocha_page_title').html(jsonObj[13].title);
-		$('#hot_mocha_page_slogan').html(jsonObj[13].slogan);
-		$('#hot_mocha_title').html(jsonObj[13].title_name);
-		$('#drink_description_hot_mocha').html(jsonObj[13].drink_description);
-
-		// Canned Drinks
-		$('#canned_latte_page_title').html(jsonObj[14].title);
-		$('#canned_latte_page_slogan').html(jsonObj[14].slogan);
-		$('#canned_latte_title').html(jsonObj[14].title_name);
-		$('#drink_description_canned_latte').html(jsonObj[14].drink_description);
-
-		$('#canned_caramel_page_title').html(jsonObj[15].title);
-		$('#canned_caramel_page_slogan').html(jsonObj[15].slogan);
-		$('#canned_caramel_title').html(jsonObj[15].title_name);
-		$('#drink_description_canned_caramel').html(jsonObj[15].drink_description);
-
-		$('#canned_americano_page_title').html(jsonObj[16].title);
-		$('#canned_americano_page_slogan').html(jsonObj[16].slogan);
-		$('#canned_americano_title').html(jsonObj[16].title_name);
-		$('#drink_description_canned_americano').html(jsonObj[16].drink_description);
 
 		// Modals
 		$('#modal_title_about').html(jsonObj[17].title);

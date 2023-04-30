@@ -4,13 +4,17 @@ var model_view = "normal";
 function onAnimation()
 {
     spinning = true;
-    document.getElementById('time').setAttribute('enabled', spinning.toString());
+    document.getElementById('model__time').setAttribute('enabled', spinning.toString());
+    document.getElementById('model__time_cup').setAttribute('enabled', spinning.toString());
+    document.getElementById('model__time_can').setAttribute('enabled', spinning.toString());
 }
 
 function offAnimation()
 {
     spinning = false;
-    document.getElementById('time').setAttribute('enabled', spinning.toString());
+    document.getElementById('model__time').setAttribute('enabled', spinning.toString());
+    document.getElementById('model__time_cup').setAttribute('enabled', spinning.toString());
+    document.getElementById('model__time_can').setAttribute('enabled', spinning.toString());
 }
 
 

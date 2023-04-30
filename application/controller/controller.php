@@ -65,6 +65,12 @@ class Controller {
         echo json_encode($data);
     }
 
+    function apiGetSinglePicture()
+    {
+        $data = $this->model->dbGetSinglePicture($_POST['id']);
+        echo json_encode($data);
+    }
+
     function apiRemoveRequest()
     {
         $this->model->dbRemoveRequest($_POST['request_id']);

@@ -78,6 +78,24 @@ function swapDBINfo(id)
                 $('#slogan_text').html(data[0].slogan);
                 $('#title_text').html(data[0].title_name);
                 $('#drink_description_text').html(data[0].drink_description);
+                $.ajax({
+                    url: "index.php/apiGetSinglePicture",
+                    type: 'POST',
+                    data:  { 
+                            id: id
+                            },
+                    success: function (carousel_data) 
+                        {
+                            var carousel_data = JSON.parse(carousel_data);
+                            html = ""
+				            html+='<div class="carousel-item active">'
+                            html+='<img src="'+carousel_data[0].photo_url+'" class="d-block w-100" alt="...">'
+                            html+='<div class="carousel-caption d-none d-md-block">'
+                            html+='<h5>'+carousel_data[0].title+'</h5>'
+                            html+='<p>'+carousel_data[0].explanation+'</p></div></div>'
+                            $('#carousel_3d').html(html);
+                        },
+                });
             },
     });
 }

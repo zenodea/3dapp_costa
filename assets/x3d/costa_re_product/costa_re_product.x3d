@@ -99,6 +99,7 @@
 			           fieldOfView="0.691"
 			           />
 		</Transform>
+		<Transform DEF="can">
 		<Transform DEF="Circle_TRANSFORM"
 		           translation="0.004206 -1.686411 -0.165211"
 		           scale="0.518956 0.519159 0.598050"
@@ -110,7 +111,7 @@
 			           rotation="0.000000 1.000000 0.000000 0.000000"
 			           >
 				<Group DEF="group_ME_Circle">
-					<Shape>
+					<Shape onclick="showInfoPopup('Alluminum', 'The Best Aluminium, 100% recycles, is used!')">
 						<Appearance>
 							<Material DEF="MA_Material"
 							          diffuseColor="1.000 0.399 0.000"
@@ -192,6 +193,7 @@
 				</Group>
 			</Transform>
 		</Transform>
+		</Transform>
 		<Transform DEF="Point_TRANSFORM"
 		           translation="6.065952 -12.421650 8.303453"
 		           scale="1.000000 1.000000 1.000000"
@@ -204,6 +206,15 @@
 			            radius="25.0000" 
 			            location="0.0000 0.0000 0.0000"
 			            />
+
 		</Transform>
+		<!-- CONTROLS ROTATION OF THE MODEL-->
+        <timeSensor DEF='time_can' cycleInterval='4' loop='true' enabled='false'></timeSensor>
+
+        <orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>
+          
+        <ROUTE fromNode='time_can' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
+        <ROUTE fromNode='Rotator' fromField='value_changed' toNode='can' toField='set_rotation'></ROUTE>
+		
 	</Scene>
 </X3D>

@@ -305,5 +305,21 @@ class Model
         }
         return $result;
     }
+
+    function dbGetSinglePicture($id)
+    {
+        try
+        {
+            $stmt=$this->dbhandle->prepare('SELECT * FROM Carousel WHERE Id=:Id');
+            $stmt->bindValue(':Id', $id);
+            $data = $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $e)
+        {
+            print new Exception($e->getMessage());
+        }
+        return $result;
+    }
 }
 ?>
