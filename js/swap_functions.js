@@ -7,6 +7,7 @@ function swap(selected)
     $("#contact_us_content").hide()
     $("#going_beyond_content").hide()
     $("#request_list_content").hide()
+    $("#references_content").hide()
     $("#iced_latte").hide()
     $("#sceneSwitch").attr("whichChoice", -1);
 
@@ -17,7 +18,9 @@ function swap(selected)
 
     if (selected == "iced_latte")
     {
+        cameraFront();
         hideTabs("iced_drinks_dropdown");
+        swapGallery(1);
         swapDBINfo(1);
 
         // Switch Scene
@@ -27,7 +30,9 @@ function swap(selected)
 
     else if (selected == "hot_latte")
     {
+        cameraFront();
         hideTabs("hot_drinks_dropdown");
+        swapGallery(4);
         swapDBINfo(4);
 
         // Switch Scene
@@ -37,7 +42,9 @@ function swap(selected)
 
     else if (selected == "canned_latte")
     {
+        cameraFront();
         hideTabs("canned_drinks_dropdown");
+        swapGallery(7);
         swapDBINfo(7);
 
         $("#sceneSwitch").attr("whichChoice", 2);
@@ -62,7 +69,9 @@ function hideTabs(name)
     $("#"+name).show();
 
 }
-// Get data from the db about the drink tha† is desired
+
+// Get data from the db about the drink tha† is desired from the Model_3D DB table
+// Alongisde the corresponding picture from the carousel DB table
 function swapDBINfo(id)
 {
     $.ajax({
@@ -78,26 +87,61 @@ function swapDBINfo(id)
                 $('#slogan_text').html(data[0].slogan);
                 $('#title_text').html(data[0].title_name);
                 $('#drink_description_text').html(data[0].drink_description);
-                $.ajax({
-                    url: "index.php/apiGetSinglePicture",
-                    type: 'POST',
-                    data:  { 
-                            id: id
-                            },
-                    success: function (carousel_data) 
-                        {
-                            var carousel_data = JSON.parse(carousel_data);
-                            html = ""
-				            html+='<div class="carousel-item active">'
-                            html+='<img src="'+carousel_data[0].photo_url+'" class="d-block w-100" alt="...">'
-                            html+='<div class="carousel-caption d-none d-md-block">'
-                            html+='<h5>'+carousel_data[0].title+'</h5>'
-                            html+='<p>'+carousel_data[0].explanation+'</p></div></div>'
-                            $('#carousel_3d').html(html);
-                        },
-                });
             },
     });
+}
+
+// Swapping Gallery elements when appropriate
+// Placed inside fancybox
+function swapGallery(id)
+{
+    $.ajax({
+        url: "index.php/apiGetSinglePicture",
+        type: 'POST',
+        data:  { 
+                id: id
+                },
+        success: function (carousel_data) 
+            {
+                var carousel_data = JSON.parse(carousel_data);
+                html = ""
+                if (id < 4)
+                {
+                    $('#gallery_title').html("Cold Drinks Gallery");
+                    for (i = 0; i < 3; i++)
+                    {
+                        html += "<div class='column'>"
+                        html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" rel="group_gallery">'
+                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'></a></div>'
+                    }
+                }
+                else if (id > 3 && id <7)
+                {
+                    $('#gallery_title').html("Hot Drinks Gallery");
+                    for (i = 3; i < 6; i++)
+                    {
+                        html += "<div class='column'>"
+                        html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" rel="group_gallery">'
+                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'></a></div>'
+                    }
+
+                }
+                else if (id > 6)
+                {
+                    $('#gallery_title').html("Canned Drinks Gallery");
+                    for (i = 6; i < 9; i++)
+                    {
+                        html += "<div class='column'>"
+                        html += '<a class="group_gallery" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" >'
+                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'></a></div>'
+                    }
+                }
+                $('#gallery_Row').html(html);
+
+                // Gallery feature (with mouse support)
+                $("a[class=group_gallery]").fancybox();
+            },
+    }); 
 }
 function change_modal(selected)
 {

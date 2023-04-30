@@ -108,10 +108,10 @@ function setupRequestList(data)
     finalString += '<th scope="row">'+ data[i].email + '</th>';
     finalString += '<th scope="row">'+ data[i].category + '</th>';
     finalString += '<th scope="row">'+ data[i].request_description + '</th>';
-    finalString += '<td> <textarea  class="form-control" id="comment_'+data[i].Id+'" name="w3review" rows="2" cols="20">'+data[i].comment+'</textarea><button onclick="add_comment_request('+data[i].Id+')">Save</button>'
+    finalString += '<td> <textarea  class="form-control" id="comment_'+data[i].Id+'" rows="2" cols="20">'+data[i].comment+'</textarea><button class="request_button" onclick="add_comment_request('+data[i].Id+')">Save</button>'
     finalString += '</td>';
     finalString += '<td>'
-    finalString += '<button class="costa_button" onclick="remove_from_request('+data[i].Id+')" id="remove_button_'+data[i].Id+'">Remove</button>'
+    finalString += '<button class="request_button" onclick="remove_from_request('+data[i].Id+')" id="remove_button_'+data[i].Id+'">Remove</button>'
     finalString += '</td>' 
     finalString += '</tr>';
     }

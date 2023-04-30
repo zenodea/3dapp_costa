@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
         <link rel='stylesheet' type='text/css' href='css/x3dom.css'></link> 
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/custom.css">
 
-        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-        
-        <!-- JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-        <!-- Fancybox -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- Bootstrap+CSS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -235,7 +226,7 @@
         <temporary></temporary>
             
             <!-- Future 3d Model-->
-            <div class="col-sm-6" >
+            <div class="col-sm-5" >
                 <div class="float-container">
                         <div class="float-child dropdown"> 
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_flavour" data-bs-toggle="dropdown" aria-expanded="false">
@@ -279,18 +270,19 @@
                         <Switch whichChoice="0" id="sceneSwitch">
 
                                 <transform>
-                                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
+                                <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_cup/costa_cup.x3d">  </inline>
+                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
+                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
 
                         </Switch>
+						        <!--<ImageTexture DEF="MA_Material_002_texture" url="costa_latte.png"/>-->
 
 		                        <!-- CONTROLS ROTATION OF THE MODEL __ Cold drink, straw up and down
 		                        <timeSensor DEF="time" cycleInterval="2" loop="true" enabled="false"> </timeSensor>
@@ -323,7 +315,7 @@
                 </div>
             </div>
     
-            <div class="col-sm-6">
+            <div class="col-sm-7">
                 <div class="row">
 
                 <div div class="card mx-auto" id="item_card" >
@@ -337,10 +329,17 @@
                 </div>
 
                 <div class="row">
-            <div id="carousel_3d_model" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="carousel_3d" style="border:6px solid #6d1f37;	box-shadow: inset 0 0 10px #000000;"></div>
-            </div>
+                <div class="card mx-auto" style="margin:50px">
+                    <div class="card-title">
+                        <h4 id="gallery_title" style="margin-top:20px;"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title title_gallery drinksText"></div>
+                            <div id="gallery_Row" class="row">
+                            </div>
+                    </div>
                 </div>
+            </div>
             </div>
         </div>
         <div class="row">
@@ -355,28 +354,25 @@
                     </div>
                     <div class="card-body tab-content" style="justify-content: center;">
                         <div class="tab-pane active text-center" id="camera_physical" style="justify-content: center;">
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
+                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
                                     Front
                                 </button>
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
+                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
                                     Back
                                 </button>
                                 <br>
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
+                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
                                     Left
                                 </button>
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white" onclick="cameraRight();">
+                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white" onclick="cameraRight();">
                                     Right
                                 </button>
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
+                                <br>
+                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
                                     Top
                                 </button>
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
+                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
                                     Bottom
-                                </button>
-                                <br>
-                                <button class="btn btn-primary" type="button" style="background-color: rgb(127, 127, 127); border-color: transparent; color:white" onclick="cameraNormal();">
-                                    Normal
                                 </button>
                         </div>
                     </div>
@@ -423,16 +419,20 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-content text-center card-body">
+                    <div class="tab-content card-body">
                         <div class="tab-pane active" id="animation">
-                            <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="onAnimation();">On</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="offAnimation();">Off</a>
-                                </li>
-                            </ul>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" onclick="Animate('iced_drink')" type="checkbox" id="flexSwitchCheckChecked">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Iced Drinks Animation</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" onclick="Animate('hot_drink')" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Hot Drinks Animation</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" onclick="Animate('canned_drink')" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Canned Drinks Animation</label>
+                            </div>
                         </div>
                         <div class="tab-pane" id="render">
                             <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
@@ -467,6 +467,7 @@
                     <h3> Perfect on a sunny day!</h3>
                     </div>
                 </div>
+                
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -673,7 +674,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-bordered table-hover" id="request_list_placeholder" style="border-color: black">
+            <table class="table text-center table-striped table-bordered table-hover" id="request_list_placeholder" style="border-color: black">
             <thead class="table-active">
             <tr>
                 <th scope="col">#</th>
@@ -756,24 +757,37 @@
                     <ul>
                         <li>Textures</li>
                         <ul>
-                            <li> </li>
+                            <li>Polystirene: https://polyhaven.com/a/polystyrene</li>
+                            <li>Asphalt Snow: https://polyhaven.com/a/asphalt_snow</li>
+                            <li>Red Stone Pavement: https://polyhaven.com/a/red_sandstone_pavement</li>
                         </ul>
                         <li>HDR</li>
                         <ul>
-                            <li> </li>
+                            <li>Snowy Cemetery: https://polyhaven.com/a/snowy_cemetery</li>
+                            <li>Vignaioli Night: https://polyhaven.com/a/vignaioli_night</li>
+                            <li>Interior Consturction: https://polyhaven.com/a/interior_construction</li>
                         </ul>
                     </ul>
                     <li>Canned Drinks</li>
                     <ul>
                         <li>Textures</li>
                         <ul>
-                            <li> </li>
+                            <li>Wooden Planks: https://polyhaven.com/a/wooden_planks</li>
+                            <li>Fabric Pattern 07: https://polyhaven.com/a/fabric_pattern_07</li>
+                            <li>Snow 02: https://polyhaven.com/a/snow_02</li>
                         </ul>
                         <li>HDR</li>
                         <ul>
-                            <li> </li>
+                            <li>Little Paris Eiffel Tower: https://polyhaven.com/a/little_paris_eiffel_tower</li>
+                            <li>Scythian Tombs 2: https://polyhaven.com/a/scythian_tombs_2</li>
+                            <li>: https://polyhaven.com/a/scythian_tombs_2</li>
                         </ul>
                     </ul>
+                </ul>
+                <li>Costa Text</li>
+                <ul>
+                    <li>Carrion Information: https://www.costa.co.uk/contact-form</li>
+                    <li>Costa About Me: https://www.costa.co.uk/behind-the-beans/our-story/history</li>
                 </ul>
             </ul>
             </div>
@@ -781,6 +795,16 @@
 
         <!-- Footer -->
         <?php include_once("footer.html"); ?>
+
+        <!-- JQuery -->
+        <script src="js/jquery-3.6.4.min.js"></script>
+
+        <!-- Fancybox -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- X3D -->
+        <script src="js/x3dom/x3dom.js"></script> 
 
         <!-- Custom Javascript -->
         <script src="js/request_table_functions.js"></script>

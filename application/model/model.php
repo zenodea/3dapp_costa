@@ -143,7 +143,7 @@ class Model
         {
             print new Exception($e->getMessage());
         }
-        return "X3D model data inserted succesfully inside test1.db";
+        return "X3D model data inserted succesfully inside costa_information.db";
         $this->dbhandle = NULL;
     }
 
@@ -219,12 +219,13 @@ class Model
     {
         try
         {
-        $stmt=$this->dbhandle->prepare("INSERT INTO Request (email,category,request_description)
-                VALUES (:email, :category, :request_description)");
+        $stmt=$this->dbhandle->prepare("INSERT INTO Request (email,category,request_description,comment)
+                VALUES (:email, :category, :request_description, :comment)");
 
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':category', $request);
         $stmt->bindValue(':request_description', $description);
+        $stmt->bindValue(':comment', "Empty");
         $result = $stmt->execute();
         
         $this->dbhandle = NULL;
@@ -310,10 +311,15 @@ class Model
     {
         try
         {
-            $stmt=$this->dbhandle->prepare('SELECT * FROM Carousel WHERE Id=:Id');
-            $stmt->bindValue(':Id', $id);
-            $data = $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = array();
+            // Get data for the Modal of the SPA
+            $sql = 'SELECT title, explanation, photo_url FROM Carousel';
+            $stmt = $this->dbhandle->query($sql);
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($data as $value)
+            {
+                array_push($result,$value);
+            }
         }
         catch (PDOException $e)
         {

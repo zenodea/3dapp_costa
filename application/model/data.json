@@ -61,19 +61,19 @@
             "title": "Latte Every Day",
             "slogan" : "Perfect for the coldest days",
             "name" : "Latte",
-            "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+            "description" : "What is the best way to start the day? With a nice and warm Latte, prepared by our finest baristas!"
         },
         {
             "title": "Hot Chocolate",
-            "slogan" : "Perfect for the coldest days",
-            "name" : "Latte",
-            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+            "slogan" : "Perfect Sweetness Punch to start off the day",
+            "name" : "Hot Chocolate",
+            "description" : "Are you not a fan of coffee? Don't worry, we are experts in the making of Hot Chocolate. Sugar or no sugar, no problem, AND we will include some whipped cream if you wish!"
         },
         {
             "title": "Mocha",
             "slogan" : "Perfect for the coldest days",
-            "name" : "Latte",
-            "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
+            "name" : "Mocha",
+            "description" : "Are you a fan of Coffee AND Hot Chocolate? Then, the mocha mixes the strenght of both drinks into one. The sweetness of the hot choclate with the energy punch given by coffee, all in one simple package."
         },
         {
             "title": "Latte in a Can",
@@ -102,24 +102,24 @@
         },
         {
             "title": "Github Repository",
-            "description" : "Student Number: ... <br> Github Repository: ... <br> X3D Model Folder (Github Repository): ..."
+            "description" : "Student Number: 215872 <br> Github Repository: https://github.com/DoveCrying/3dapp_costa <br> X3D Model Folder (Github Repository): https://github.com/DoveCrying/3dapp_costa/tree/main/assets/x3d"
         }
     ],
     "carousel":
     [
         {
             "title": "Iced Latte",
-            "description": "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up.",
+            "description": "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness.",
             "url": "assets/images/iced_latte.png"
         },
         {
             "title": "Cold Brew",
-            "description": "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time. The result is a smooth and less acidic coffee that is perfect for hot summer days or anytime you want a refreshing iced coffee drink.",
+            "description": "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time.",
             "url": "assets/images/iced_mocha.png"
         },
         {
             "title": "Iced Chai Tea Latte",
-            "description": "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice. Its a perfect combination of sweet and spicy flavors that is perfect for hot summer days or anytime you want a unique and flavorful iced drink.",
+            "description": "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice.",
             "url": "assets/images/iced_chai_latte.png"
         },
         {

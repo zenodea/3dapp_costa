@@ -80,10 +80,12 @@ X3D, x3d {
 	width: 100%;
     height: 100%
 }
+
 .controller_card
 {
 	height:200px;
 }
+
 .controller_card > h3
 {
 	text-align: center; 
@@ -92,6 +94,10 @@ X3D, x3d {
 	background-color: transparent;
 }
 
+.camera_button
+{
+	width: 25%;
+}
 #item_card{
 	background-color: transparent;
 	border-color: transparent;
@@ -332,6 +338,33 @@ hr
 	color: #6d1f37;	
 	position: relative;
 }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+	.column {
+		float: left;
+		width: 33.33%;
+		padding: 5px;
+	}
+  
+  /* Clear floats after image containers */
+  .row::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+  /* Request CSS */
+  .request_button
+  {
+	font-size: 15px;
+	border-radius: 100px;
+	background-color: #6d1f37;
+	color: #ffffff;
+	font-weight: bold;
+	width: 80px;
+	height: 30px;
+
+  }
 /* Small devices (landscape phones, 576px and up)
 */
 @media (min-width: 576px) {
@@ -388,6 +421,12 @@ hr
 	.mini-card-body > h5
 	{
 		font-size: 14px;
+	}
+
+	/* Carousel */
+	.carousel-inner .item img {
+		height: 50%;
+		width: 100% !important;
 	}
 
 	/* Footer */

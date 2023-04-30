@@ -1,22 +1,24 @@
 // Animation for x3d model
 var spinning = false;
 var model_view = "normal";
-function onAnimation()
+function Animate(model)
 {
-    spinning = true;
-    document.getElementById('model__time').setAttribute('enabled', spinning.toString());
-    document.getElementById('model__time_cup').setAttribute('enabled', spinning.toString());
-    document.getElementById('model__time_can').setAttribute('enabled', spinning.toString());
+    if (model == "iced_drink")
+    {
+        var animation = (document.getElementById('model__time').getAttribute('enabled') === 'true');
+        document.getElementById('model__time').setAttribute('enabled', !animation);
+    }
+    else if (model == "hot_drink")
+    {
+        var animation = (document.getElementById('model__time_cup').getAttribute('enabled') === 'true');
+        document.getElementById('model__time_cup').setAttribute('enabled', !animation);
+    }
+    else if (model == "canned_drink")
+    {
+        var animation = (document.getElementById('model__time_can').getAttribute('enabled') === 'true');
+        document.getElementById('model__time_can').setAttribute('enabled', !animation);
+    }
 }
-
-function offAnimation()
-{
-    spinning = false;
-    document.getElementById('model__time').setAttribute('enabled', spinning.toString());
-    document.getElementById('model__time_cup').setAttribute('enabled', spinning.toString());
-    document.getElementById('model__time_can').setAttribute('enabled', spinning.toString());
-}
-
 
 
 // Camera Functions
