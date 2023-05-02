@@ -8,7 +8,7 @@ function swap(selected)
     $("#going_beyond_content").hide()
     $("#request_list_content").hide()
     $("#references_content").hide()
-    $("#iced_latte").hide()
+    $("#3d_model_content").hide()
     $("#sceneSwitch").attr("whichChoice", -1);
 
     if (selected != "main_page")
@@ -18,37 +18,59 @@ function swap(selected)
 
     if (selected == "iced_latte")
     {
+        // Reset the camera each time you select one of the x3d models
+        cameraBack();
         cameraFront();
+
+        // Hide the unrelated dropdown items (Everything except Iced drinks)
         hideTabs("iced_drinks_dropdown");
+
+        // Get the images for the iced drinks from the SQLite db, carousel table
         swapGallery(1);
+        // Swap the information on the page with the relevant information. From the SQLite db, 3D Model table
         swapDBINfo(1);
 
-        // Switch Scene
+        // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 0);
-        $("#iced_latte").show();
+        $("#3d_model_content").show();
     }
 
     else if (selected == "hot_latte")
     {
+        // Reset the camera each time you select one of the x3d models
+        cameraBack();
         cameraFront();
+
+        // Hide the unrelated dropdown items (Everything except Hot drinks)
         hideTabs("hot_drinks_dropdown");
+
+        // Get the images for the hot drinks from the SQLite db, carousel table
         swapGallery(4);
+        // Swap the information on the page with the relevant information. From the SQLite db, 3D Model table
         swapDBINfo(4);
 
-        // Switch Scene
+        // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 1);
-        $("#iced_latte").show();
+        $("#3d_model_content").show();
     }
 
     else if (selected == "canned_latte")
     {
+        // Reset the camera each time you select one of the x3d models
+        cameraBack();
         cameraFront();
+
+        // Hide the unrelated dropdown items (Everything except Canned drinks)
         hideTabs("canned_drinks_dropdown");
+
+        // Get the images for the canned drinks from the SQLite db, carousel table
         swapGallery(7);
+        // Swap the information on the page with the relevant information. From the SQLite db, 3D Model table
         swapDBINfo(7);
 
+        // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 2);
-        $("#iced_latte").show();
+        $("#3d_model_content").show();
     }
 
     else
@@ -82,11 +104,15 @@ function swapDBINfo(id)
                 },
         success: function (data) 
             {
+                // Update Values with correct selected model values
                 var data = JSON.parse(data);
                 $('#slogan_title_text').html(data[0].title);
                 $('#slogan_text').html(data[0].slogan);
                 $('#title_text').html(data[0].title_name);
                 $('#drink_description_text').html(data[0].drink_description);
+
+                // Change 3d model to correct flavour
+                change_flavour(id)
             },
     });
 }
@@ -111,8 +137,10 @@ function swapGallery(id)
                     for (i = 0; i < 3; i++)
                     {
                         html += "<div class='column'>"
-                        html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" rel="group_gallery">'
-                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'></a></div>'
+                        html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" data-buttons=\'["fullScreen","share"]\' rel="group_gallery">'
+                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'><div class="custom-buttons">'
+                        html += '</div></a>'
+                        html += '<button onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
                     }
                 }
                 else if (id > 3 && id <7)
@@ -122,7 +150,9 @@ function swapGallery(id)
                     {
                         html += "<div class='column'>"
                         html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" rel="group_gallery">'
-                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'></a></div>'
+                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'><div class="custom-buttons">'
+                        html += '</div></a>'
+                        html += '<button  onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
                     }
 
                 }
@@ -133,7 +163,9 @@ function swapGallery(id)
                     {
                         html += "<div class='column'>"
                         html += '<a class="group_gallery" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" >'
-                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'></a></div>'
+                        html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'><div class="custom-buttons">'
+                        html += '</div></a>'
+                        html += '<button  onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
                     }
                 }
                 $('#gallery_Row').html(html);

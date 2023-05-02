@@ -1,3 +1,5 @@
+/* CSS is used to create a creative backgorund with curved lines */
+/* Learnet from https://css-tricks.com/how-to-create-wavy-shapes-patterns-in-css/ */
 body 
 {
 	 background: radial-gradient(circle at 100% 50%,
@@ -6,13 +8,17 @@ body
 	 background-color: #d7f2ff;
 	 background-size: 75px 100px;
 }
+
+/* Adding custom font to the project */
 @font-face {
 	font-family: costa;
 	src: url("../assets/fonts/CostaPtfBold.otf");
 }
+
+/* CSS for the tooltip used in the navbar */
 .tooltip
 {
-	padding-bottom: 600px;
+	margin-bottom: 600px;
 }
 
 .toast-header img {
@@ -26,17 +32,18 @@ body
 	flex-direction: row;
 }
 
-/* Header */
 
+/* Header */
 .header_item{
 	font-family: costa;
 	font-size: 20px;
-	padding: 30px;
+	padding-left: 30px;
 	font-weight: bold;
 	color: #ffffff;
 	position: relative;
 	bottom: 30px;
 }
+
 .header_item:hover{
 	font-family: costa;
 	color: #6d1f37;
@@ -67,6 +74,7 @@ body
 #main_text > h4 {
 	font-size: 25px;
 }
+
 #main_text > h5 {
 	font-size: 15px;
 }
@@ -98,22 +106,18 @@ X3D, x3d {
 {
 	width: 25%;
 }
-#item_card{
+
+.item_card{
 	background-color: transparent;
 	border-color: transparent;
 	margin: auto;
 }
 
-.arrow_hidden{
-	padding: 20px;
-}
-
+/* Bootstrap Toast CSS configurations */
 #costa_logo
 {
-	padding: 20px;
-	padding-left: 90px;
+	padding-left: 30px;
 }
-
 
 #costa_logo h3{
 	transition: 0.3s;
@@ -142,6 +146,7 @@ X3D, x3d {
 }
 
 /* Accordion CSS */
+
 .accordion
 {
 	padding-left: 50px;
@@ -378,6 +383,13 @@ hr
 		font-size: 10px; 
 	}
 
+	#costa_logo h3{
+		font-size: 30px;
+	}
+	#costa_logo h4{
+		font-size: 15px;
+	}
+
 	/* Main Screen*/
 
 	/* Main 3d Image and Text */
@@ -449,6 +461,12 @@ hr
 		font-size: 12px; 
 	}
 
+	#costa_logo h3{
+		font-size: 40px;
+	}
+	#costa_logo h4{
+		font-size: 20px;
+	}
 	/* Main Screen*/
 
 	/* Main 3d Image and Text */
@@ -509,9 +527,17 @@ hr
 	{
         background-color: rgb(250, 250, 189);
     }
+
 	/* Header */
 	.header_item{
 		font-size: 15px; 
+	}
+
+	#costa_logo h3{
+		font-size: 60px;
+	}
+	#costa_logo h4{
+		font-size: 40px;
 	}
 
 	/* Main Screen*/
@@ -577,6 +603,13 @@ hr
 	/* Header */
 	.header_item{
 		font-size: 20px; 
+	}
+
+	#costa_logo h3{
+		font-size: 70px;
+	}
+	#costa_logo h4{
+		font-size: 40px;
 	}
 
 	/* Main Screen*/

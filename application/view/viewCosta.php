@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel='stylesheet' type='text/css' href='css/x3dom.css'></link> 
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/custom.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <link rel='stylesheet' type='text/css' href='application/css/x3dom.css'></link> 
+        <link rel="stylesheet" href="application/css/bootstrap.css">
+        <link rel="stylesheet" href="application/css/custom.css">
 
 
         <!-- Bootstrap+CSS -->
@@ -18,18 +20,13 @@
     </head>
     <body>
     <style>
-    #button-group {
-    width: 300px;
-    height: 300px;
-    position: relative;
-  }
 </style>
 
   <!-- aimdwda -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="assets/images/costa_logo.png" class="rounded me-2" alt="...">
+                <img src="application/assets/images/costa_logo.png" class="rounded me-2" alt="...">
                 <strong class="me-auto" id="material-color"></strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -99,13 +96,13 @@
             
             <!-- Future 3d Model-->
             <div class="col-sm-12">
-                <div div class="card" id="item_card">
+                <div div class="card item_card">
                     <h4 id="iced_latte_main_title" class="card-title"></h4>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('iced_latte'); change_flavour('flavour_iced_latte');">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('iced_latte'); change_flavour(1);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -115,7 +112,7 @@
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(190, 231, 190,0.5), rgba(247, 247, 220, 0.5))">
             <!-- Future 3d Model-->
             <div class="col-sm-12">
-                <div div class="card" id="item_card">
+                <div div class="card item_card">
                     <h4 id="latte_main_title" class="card-title"></h4>
 
                     <div class="card-body" id="drink_description_main">
@@ -146,13 +143,13 @@
         <!-- Cold Can Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
             <div class="col-sm-12">
-                <div div class="card" id="item_card">
+                <div div class="card item_card">
                     <h4 id="canned_latte_main_title" class="card-title"></h4>
                     <div class="card-body" id="drink_description_main">
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('canned_latte'); change_flavour('flavour_canned_latte');">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('canned_latte'); change_flavour(4);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -167,7 +164,7 @@
         <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
-                    <img src="assets/images/cold_products_slogan.jpg" class="card-img-top" alt="...">
+                    <img src="application/assets/images/cold_products_slogan.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_iced"></h4>
                     <div class="card-body mini-card-body" >
                         <h5 id="iced_latte_mini_description"></h5>
@@ -179,7 +176,7 @@
             </div>
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
-                    <img src="assets/images/hot_products_slogan.jpg" class="card-img-top" alt="...">
+                    <img src="application/assets/images/hot_products_slogan.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_hot"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
@@ -191,7 +188,7 @@
             </div>
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
-                    <img src="assets/images/canned_products_slogan.jpg" class="card-img-top" alt="...">
+                    <img src="application/assets/images/canned_products_slogan.jpg" class="card-img-top" alt="...">
                     <h4 class="card-title" id="what_new_canned"></h4>
                     <div class="card-body mini-card-body">
                         <h5 id="canned_latte_mini_description"></h5>
@@ -208,11 +205,11 @@
 
 
         <!-- X3D Models -->
-        <div id="iced_latte" class="container-fluid main_contents" style="display: none;">
+        <div id="3d_model_content" class="container-fluid main_contents" style="display: none;">
 
             <!-- Original Content -->
             <div class="row">
-                <div div class="card" id="item_card">
+                <div div class="card item_card">
                     <div class="card-title card-page-title" >
                         <h2 id="slogan_title_text"></h2>
                     </div>
@@ -234,19 +231,19 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdown_flavour">
                                 <div id="iced_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_iced_latte'); swapDBINfo(1);">Iced Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_cold_brew'); swapDBINfo(2);">Cold Brew</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_chai_tea'); swapDBINfo(3);">Chai Tea Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(1);">Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(2);">Cold Brew</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(3);">Chai Tea Iced Latte</a></li>
                                 </div>
                                 <div id="hot_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_latte'); swapDBINfo(4);;">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_chocolate'); swapDBINfo(5);;">Hot Chocolate</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_hot_mocha'); swapDBINfo(6);;">Mocha</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(4);">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(5);">Hot Chocolate</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(6);">Mocha</a></li>
                                 </div>
                                 <div id="canned_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_latte'); swapDBINfo(7);;">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_caramel'); swapDBINfo(8);;">Caramel Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="change_flavour('flavour_canned_americano'); swapDBINfo(9);;">Americano</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(7);">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(8);">Caramel Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBINfo(9);">Americano</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -256,9 +253,9 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <div id="iced_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="swap('iced_latte'); change_flavour('flavour_iced_latte'); swap_information('iced_latte_page');">Iced Drinks</a></li>
-                                    <li><a class="dropdown-item" onclick="swap('hot_latte'); change_flavour('flavour_iced_latte'); swap_information('hot_latte_page');">Hot Drinks</a></li>
-                                    <li><a class="dropdown-item" onclick="swap('canned_latte'); change_flavour('flavour_iced_latte'); swap_information('canned_latte_page');">Canned Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('iced_latte');">Iced Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('hot_latte');">Hot Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('canned_latte');">Canned Drinks</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -270,15 +267,15 @@
                         <Switch whichChoice="0" id="sceneSwitch">
 
                                 <transform>
-                                <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
+                                <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="application/assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_cup/costa_cup.x3d">  </inline>
+                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
                                 <transform>
-                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
+                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
 
                         </Switch>
@@ -318,7 +315,7 @@
             <div class="col-sm-7">
                 <div class="row">
 
-                <div div class="card mx-auto" id="item_card" >
+                <div div class="card mx-auto item_card">
                     <div class="card-title card-latte-title">
                         <h4 id="title_text"></h4>
                     </div>
@@ -440,7 +437,6 @@
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="vertex();">Vertex</a>
                                     <a href="#" class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
-                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="redraw();">Reset</a>
                                 </li>
                             </ul>
                         </div>
@@ -453,7 +449,7 @@
         <!-- Gallery Feature -->
         <div id="our_coffee_content" class="container-fluid main_contents" style="display: none;">
             <div class="row">
-                <div div class="card" id="item_card" style="width: 58rem;">
+                <div div class="card item_card" style="width: 58rem;">
                     <h4  class="card-title">Gallery of our drinks!</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Indulge in your favorites</h3>
@@ -461,7 +457,7 @@
                 </div>
             </div>
             <div class="row">
-                <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
+                <div div class="card item_card" tyle="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Iced Products!</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Perfect on a sunny day!</h3>
@@ -486,7 +482,7 @@
 </div>
             </div>
             <div class="row">
-                <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
+                <div div class="card item_card"  style="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Hot Products!</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> No need to be cold, drink this! </h3>
@@ -511,7 +507,7 @@
             </div>
 
             <div class="row">
-                <div div class="card" id="item_card" style="width: 58rem; padding-top:40px">
+                <div div class="card item_card" style="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Take Away Products!</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Drink your favourites, anywhere!</h3>
@@ -597,7 +593,7 @@
         <!-- Contact Us Feature -->
         <div id="contact_us_content" class="container-fluid main_contents" style="display: none;">
             <div class="row">
-                <div div class="card" id="item_card" style="width: 50rem;">
+                <div div class="card item_card"  style="width: 50rem;">
                     <h4  class="card-title">Have a question about Costa?</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> If you can’t find what you’re looking for on our website check out our FAQ’s for the quickest answer. Alternatively, you can reach our Customer Services team by submitting a query through our contact form.</h3>
@@ -631,7 +627,7 @@
                 </div>
               </div>
             <div class="row">
-                <div div class="card" id="item_card" style="width: 50rem; padding-top: 30px;">
+                <div div class="card item_card"  style="width: 50rem; padding-top: 30px;">
                     <h4  class="card-title">Contact us directly!</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Please fill in the form with all the information.</h3>
@@ -666,7 +662,7 @@
         <!-- Request List Feature -->
         <div id="request_list_content" class="container-fluid main_contents" style="display: none;">
             <div class="row">
-                <div div class="card" id="item_card" style="width: 50rem;">
+                <div div class="card item_card" style="width: 50rem;">
                     <h4  class="card-title">Want to see the user requests?</h4>
                     <div class="card-body" style="text-align: center;">
                     <h4> You've come to the right place! </h4>
@@ -693,7 +689,7 @@
         <!-- Going Beyond Page -->
         <div id="going_beyond_content" class="container-fluid main_contetns" style="display: none;">
             <div class="row">
-                <div div class="card" id="item_card" style="width: 50rem;">
+                <div div class="card item_card" style="width: 50rem;">
                     <h4  class="card-title">What feature are beyond in this project?</h4>
                     <div class="card-body" style="text-align: center;">
                     <h3> Here they are: </h3>
@@ -745,7 +741,7 @@
         </div>
         <div id="references_content" class="container-fluid main_contetns" style="display: none;">
             <div class="row">
-                <div div class="card" id="item_card" style="width: 50rem;">
+                <div div class="card item_card" style="width: 50rem;">
                     <h4  class="card-title">Here are the references for any item not created by me</h4>
                 </div>
             </div>
@@ -780,7 +776,7 @@
                         <ul>
                             <li>Little Paris Eiffel Tower: https://polyhaven.com/a/little_paris_eiffel_tower</li>
                             <li>Scythian Tombs 2: https://polyhaven.com/a/scythian_tombs_2</li>
-                            <li>: https://polyhaven.com/a/scythian_tombs_2</li>
+                            <li>Blaubeuren Church Square: https://polyhaven.com/a/blaubeuren_church_square</li>
                         </ul>
                     </ul>
                 </ul>
@@ -797,21 +793,21 @@
         <?php include_once("footer.html"); ?>
 
         <!-- JQuery -->
-        <script src="js/jquery-3.6.4.min.js"></script>
+        <script src="application/js/jquery-3.6.4.min.js"></script>
 
         <!-- Fancybox -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
 
         <!-- X3D -->
-        <script src="js/x3dom/x3dom.js"></script> 
+        <script src="application/js/x3dom/x3dom.js"></script> 
 
         <!-- Custom Javascript -->
-        <script src="js/request_table_functions.js"></script>
-        <script src="js/gallery_functions.js"></script>
-        <script src="js/getJsondata.js"></script>
-        <script src="js/swap_functions.js"></script>
-        <script src="js/modelInteraction.js"></script>
+        <script src="application/js/request_table_functions.js"></script>
+        <script src="application/js/gallery_functions.js"></script>
+        <script src="application/js/getJsondata.js"></script>
+        <script src="application/js/swap_functions.js"></script>
+        <script src="application/js/modelInteraction.js"></script>
         <!-- Custom Javascript -->
     </body>
 </html>

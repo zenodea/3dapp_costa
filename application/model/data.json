@@ -110,47 +110,47 @@
         {
             "title": "Iced Latte",
             "description": "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness.",
-            "url": "assets/images/iced_latte.png"
+            "url": "application/assets/images/iced_latte.png"
         },
         {
             "title": "Cold Brew",
             "description": "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time.",
-            "url": "assets/images/iced_mocha.png"
+            "url": "application/assets/images/iced_mocha.png"
         },
         {
             "title": "Iced Chai Tea Latte",
             "description": "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice.",
-            "url": "assets/images/iced_chai_latte.png"
+            "url": "application/assets/images/iced_chai_latte.png"
         },
         {
             "title": "Latte",
             "description": "What's better than a day out in the snow? A day out in the snow with a hot latte!",
-            "url": "assets/images/hot_latte_render.png"
+            "url": "application/assets/images/hot_latte_render.png"
         },
         {
             "title": "Hot Chococlate",
             "description": "Warm up your night out with a hot chocolate!",
-            "url": "assets/images/hot_chocolate_render.png"
+            "url": "application/assets/images/hot_chocolate_render.png"
         },
         {
             "title": "Mocha",
             "description": "Have a fancy Mocha anywhere, even at your construction place!",
-            "url": "assets/images/hot_mocha_render.png"
+            "url": "application/assets/images/hot_mocha_render.png"
         },
         {
             "title": "Canned Latte",
             "description": "Get your Latte in a can, to drink anywhere you want!",
-            "url": "assets/images/costa_latte_render.png"
+            "url": "application/assets/images/costa_latte_render.png"
         },
         {
             "title": "Canned Caramel Latte",
             "description": "A latte is not enough for you? Don't worry, get the caramel variant for an extra punch of sweetness!",
-            "url": "assets/images/costa_caramel_latte_render.png"
+            "url": "application/assets/images/costa_caramel_latte_render.png"
         },
         {
             "title": "Canned Americano",
             "description": "Do you prefer a simpler, stronger, traditional Americano? We have it canned and ready to be drinked!",
-            "url": "assets/images/costa_americano_render.png"
+            "url": "application/assets/images/costa_americano_render.png"
         }
     ],
     "accordion":

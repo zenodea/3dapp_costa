@@ -91,7 +91,7 @@ $(document).ready(function()
 			}
 			html+='<img src="'+jsonObj[21+i].photo_url+'" class="d-block w-100" alt="...">'
 			html+='<div class="carousel-caption d-none d-md-block">'
-        	html+='<h5>'+jsonObj[21+i].title+'</h5>'
+        	html+='<h5>'+jsonObj[21+i].title+'</h5><button style="background-color:white;" onclick="swap(\'iced_latte\'); swapDBINfo('+(21-21+i)+');"  type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
         	html+='<p>'+jsonObj[21+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_first').html(html);
@@ -109,7 +109,7 @@ $(document).ready(function()
 			}
 			html+='<img src="'+jsonObj[24+i].photo_url+'" class="d-block w-100" alt="...">'
 			html+='<div class="carousel-caption d-none d-md-block">'
-        	html+='<h5>'+jsonObj[24+i].title+'</h5>'
+        	html+='<h5>'+jsonObj[24+i].title+'</h5><button style="background-color:white;" onclick="swap(\'hot_latte\'); swapDBINfo('+(24-21+i)+');" type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
         	html+='<p>'+jsonObj[24+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_second').html(html);
@@ -127,7 +127,7 @@ $(document).ready(function()
 			}
 			html+='<img src="'+jsonObj[27+i].photo_url+'" class="d-block w-100" alt="...">'
 			html+='<div class="carousel-caption d-none d-md-block">'
-        	html+='<h5>'+jsonObj[27+i].title+'</h5>'
+        	html+='<h5>'+jsonObj[27+i].title+'</h5><button style="background-color:white;" onclick="swap(\'canned_latte\'); swapDBINfo('+(27-21+i)+');" type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
         	html+='<p>'+jsonObj[27+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_third').html(html);
