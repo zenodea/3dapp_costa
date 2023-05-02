@@ -136,11 +136,11 @@ function swapGallery(id)
                     $('#gallery_title').html("Cold Drinks Gallery");
                     for (i = 0; i < 3; i++)
                     {
-                        html += "<div class='column'>"
+                        html += "<div class='column center-text'>"
                         html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" data-buttons=\'["fullScreen","share"]\' rel="group_gallery">'
                         html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'><div class="custom-buttons">'
                         html += '</div></a>'
-                        html += '<button onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
+                        html += '<button class="request_button" onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
                     }
                 }
                 else if (id > 3 && id <7)
@@ -152,7 +152,7 @@ function swapGallery(id)
                         html += '<a class="grouped_fancybox" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" rel="group_gallery">'
                         html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'><div class="custom-buttons">'
                         html += '</div></a>'
-                        html += '<button  onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
+                        html += '<button class="request_button" onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
                     }
 
                 }
@@ -165,7 +165,7 @@ function swapGallery(id)
                         html += '<a class="group_gallery" href='+carousel_data[i].photo_url+' data-fancybox data-caption="'+carousel_data[i].explanation+'" >'
                         html += '<img class="card-img-top img-thumbnail" src='+carousel_data[i].photo_url+'><div class="custom-buttons">'
                         html += '</div></a>'
-                        html += '<button  onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
+                        html += '<button class="request_button" onclick="swapDBINfo('+(i+1)+')" data-fancybox-share>View 3D</button></div>'
                     }
                 }
                 $('#gallery_Row').html(html);
@@ -175,6 +175,8 @@ function swapGallery(id)
             },
     }); 
 }
+
+// Function used to change the content of the modal
 function change_modal(selected)
 {
     if (selected == "github_modal")
