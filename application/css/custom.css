@@ -37,11 +37,10 @@ body
 .header_item{
 	font-family: costa;
 	font-size: 20px;
-	padding-left: 30px;
+	padding-left: 50px;
 	font-weight: bold;
 	color: #ffffff;
 	position: relative;
-	bottom: 30px;
 }
 
 .header_item:hover{
@@ -104,6 +103,7 @@ X3D, x3d {
 
 .camera_button
 {
+	font-size: 20px;
 	width: 25%;
 }
 

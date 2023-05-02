@@ -5,8 +5,9 @@ function Animate(model)
 {
     if (model == "iced_drink")
     {
-        var animation = (document.getElementById('model__time').getAttribute('enabled') === 'true');
-        document.getElementById('model__time').setAttribute('enabled', !animation);
+        var animation = (document.getElementById('model__time_straw').getAttribute('enabled') === 'true');
+        document.getElementById('model__time_straw').setAttribute('enabled', !animation);
+        document.getElementById('model__time_cube').setAttribute('enabled', !animation);
     }
     else if (model == "hot_drink")
     {
@@ -150,29 +151,50 @@ function headlight(id)
 
 function change_flavour(selected)
 {
+    // Iced Latte
     if(selected == 1)
     {
         document.getElementById('model__MA_Material_003').setAttribute('diffuseColor','0.800 0.376 0.063' );
         document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
     }
+    // Cold Brew
     else if (selected == 2)
     {
         document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.092 0.064 0.051');
         document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.5');
     }
+    // Iced Chai Tea Latte
     else if (selected == 3)
     {
         document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.98 0.97 0.95');
         document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
     }
-    else if (selected == 8)
+    // Latte
+    else if (selected == 4)
     {
-        document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png');
+        document.getElementById('model__MA_Material').setAttribute('diffuseColor','0.800 0.376 0.063' );
     }
+    // Hot Chocolate
+    else if (selected == 5)
+    {
+        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.092 0.064 0.051');
+    }
+    // Mocha
+    else if (selected == 6)
+    {
+        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.98 0.97 0.95');
+    }
+    // Canned Latte
     else if (selected == 7)
     {
         document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_latte.png');
     }
+    // Canned Caramel Latte
+    else if (selected == 8)
+    {
+        document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png');
+    }
+    // Canned Americano
     else if (selected == 9)
     {
         document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png');

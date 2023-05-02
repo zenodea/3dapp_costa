@@ -64,33 +64,33 @@
             "description" : "What is the best way to start the day? With a nice and warm Latte, prepared by our finest baristas!"
         },
         {
-            "title": "Hot Chocolate",
+            "title": "Creamy, Homemade, Hot Chocolate",
             "slogan" : "Perfect Sweetness Punch to start off the day",
             "name" : "Hot Chocolate",
             "description" : "Are you not a fan of coffee? Don't worry, we are experts in the making of Hot Chocolate. Sugar or no sugar, no problem, AND we will include some whipped cream if you wish!"
         },
         {
-            "title": "Mocha",
-            "slogan" : "Perfect for the coldest days",
+            "title": "Coffee + Chocolate = Mocha",
+            "slogan" : "Spice up your day with the Choco Coffee Combo!",
             "name" : "Mocha",
             "description" : "Are you a fan of Coffee AND Hot Chocolate? Then, the mocha mixes the strenght of both drinks into one. The sweetness of the hot choclate with the energy punch given by coffee, all in one simple package."
         },
         {
             "title": "Latte in a Can",
             "slogan" : "Indulge in your favorite, anytime, anywhere",
-            "name" : "Latte in a Can",
+            "name" : "Latte",
             "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
             "title": "Caramel Latte in a Can",
             "slogan" : "Indulge in your favorite, now caramelized!",
-            "name" : "Caramel Latte in a Can",
+            "name" : "Caramel Latte",
             "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
             "title": "Americano in a Can",
             "slogan" : "Boost of energy, the American Way",
-            "name" : "Americano in a Can",
+            "name" : "Americano",
             "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         }
     ],

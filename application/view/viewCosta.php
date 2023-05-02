@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Costa Coffee 3D Gallery</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -58,36 +59,65 @@
             </div>
         </div>
         </div>
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
+        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
 
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasIcedLabel">Iced Drinks</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body small"> 
-                
+            <div class="offcanvas-body small text-center"> 
+            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <div class="dropup mt-3">
+            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
+                Types
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Iced Latte</a></li>
+                <li><a class="dropdown-item" href="#">Cold Brew</a></li>
+                <li><a class="dropdown-item" href="#">Iced Chai Tea Latte</a></li>
+            </ul>
+            </div>
             </div>
         </div>
 
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
-
+        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasHotLabel">Hot Drinks</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body small"> 
-                ...
+            <div class="offcanvas-body text-center"> 
+            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <div class="dropup mt-3">
+            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
+                Types
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Latte</a></li>
+                <li><a class="dropdown-item" href="#">Hot Chocolate</a></li>
+                <li><a class="dropdown-item" href="#">Mocha</a></li>
+            </ul>
+            </div>
             </div>
         </div>
 
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
+        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
 
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasCannedLabel">Canned Drinks</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body small"> 
-                ...
+            <div class="offcanvas-body small text-center"> 
+            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <div class="dropup mt-3">
+            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
+                Types
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Canned Latte</a></li>
+                <li><a class="dropdown-item" href="#">Canned Caramel Latte</a></li>
+                <li><a class="dropdown-item" href="#">Canned Americano</a></li>
+            </ul>
+            </div>
             </div>
         </div>
 
@@ -182,7 +212,7 @@
                         <h5 id="latte_mini_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" data-bs-toggle="offcanvas" href="#offcanvasHot" role="button" aria-controls="offcanvasHot" >Learn More</button>
+                        <button class="costa_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHot" aria-controls="offcanvasHot" >Learn More</button>
                     </div>
                 </div>
             </div>
@@ -728,7 +758,8 @@
                     <li>Add and update comments for individual requests</li>
                     <li>Delete specific request</li>
                 </ul>
-                <li>Used Blender to create the X3D model.</li>
+                <li>I have explored other 3D Content authoring packages besides 3ds Max to create my 3D models, in the case of this project, Blender was used.</li>
+                <li>I have created an alternative export workflow for my 3D Models using Blender => X3D => X3DOM</li>
                 <li>Photorealistic Renders of the 3d Objects (seen in the gallery)</li>
                 <ul>
                     <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
@@ -807,7 +838,7 @@
         <script src="application/js/gallery_functions.js"></script>
         <script src="application/js/getJsondata.js"></script>
         <script src="application/js/swap_functions.js"></script>
-        <script src="application/js/modelInteraction.js"></script>
+        <script src="application/js/3d_model_interaction.js"></script>
         <!-- Custom Javascript -->
     </body>
 </html>
