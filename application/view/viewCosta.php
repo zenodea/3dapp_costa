@@ -309,6 +309,8 @@
                                 </transform>
 
                         </Switch>
+                                <!-- PlaceHolder information if x3d models need to be regenerated -->
+
 						        <!--<ImageTexture DEF="MA_Material_002_texture" url="costa_latte.png"/>-->
 
 		                        <!-- CONTROLS ROTATION OF THE MODEL __ Cold drink, straw up and down
@@ -331,12 +333,11 @@
 
                                 <!-- Lights -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                                <directionallight id="directional" direction="0 -1 0" on="FA intensity="2.0" shadowintensity="0.0" color="1,1,1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1">
+                                <directionallight id="directional" direction="0 -1 0" on="FA intensity='2.0' shadowintensity="0.0" color="1,1,1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1">
                                 </directionallight> 
                                 <PointLight id='point' on='FALSE' intensity='5.000' color='0.0 0.6 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
                                 <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
                                 <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
-
                     </scene>
                 </x3d>
                 </div>
@@ -371,6 +372,8 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
+                
+                <!-- Camera Controls -->
                 <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
@@ -406,6 +409,8 @@
                 </div>
             </div>
             <div class="col-sm-4">
+
+                <!-- Lighting Controls -->
                 <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
@@ -435,6 +440,8 @@
                 </div>
             </div>
             <div class="col-sm-4">
+
+                <!-- Animation + Render Controls -->
                 <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
@@ -447,6 +454,8 @@
                         </ul>
                     </div>
                     <div class="tab-content card-body">
+
+                        <!-- Animation Controls -->
                         <div class="tab-pane active" id="animation">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" onclick="Animate('iced_drink')" type="checkbox" id="flexSwitchCheckChecked">
@@ -461,6 +470,7 @@
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Canned Drinks Animation</label>
                             </div>
                         </div>
+                        <!-- Render Controls -->
                         <div class="tab-pane" id="render">
                             <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -486,6 +496,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Carousel for Iced Products -->
             <div class="row">
                 <div div class="card item_card" tyle="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Iced Products!</h4>
@@ -495,22 +507,24 @@
                 </div>
                 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner" id="carousel_first"></div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner" id="carousel_first"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
             </div>
+
+            <!-- Carousel for Hot Products -->
             <div class="row">
                 <div div class="card item_card"  style="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Hot Products!</h4>
@@ -519,23 +533,24 @@
                     </div>
                 </div>
             <div id="carouselReProduct" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner" id="carousel_second"></div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselReProduct" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselReProduct" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner" id="carousel_second"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselReProduct" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselReProduct" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
             </div>
 
+            <!-- Carousel for Canned Products -->
             <div class="row">
                 <div div class="card item_card" style="width: 58rem; padding-top:40px">
                     <h4  class="card-title">Costa Take Away Products!</h4>
@@ -543,24 +558,25 @@
                     <h3> Drink your favourites, anywhere!</h3>
                     </div>
                 </div>
-            <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner" id="carousel_third"></div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
+                <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                <div class="carousel-inner" id="carousel_third"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            </div>
         </div>
+
         <!--  Extra Feature -->
         <div id="our_menu_content" class="container-fluid main_contents" style="display: none;">
                 <div class="row">
