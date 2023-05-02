@@ -51,7 +51,6 @@ function remove_from_request(id)
         url: "index.php/apiRemoveRequest",
         success: function(data) 
         {
-            alert(data)
             $.ajax(
             {
                 type: 'POST',

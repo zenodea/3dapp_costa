@@ -4,7 +4,7 @@
         <title>Costa Coffee 3D Gallery</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        <link rel="icon" href="application/assets/images/costa_logo.png" type="image/icon type">
         <link rel='stylesheet' type='text/css' href='application/css/x3dom.css'></link> 
         <link rel="stylesheet" href="application/css/bootstrap.css">
         <link rel="stylesheet" href="application/css/custom.css">
@@ -23,17 +23,19 @@
     <style>
 </style>
 
-  <!-- aimdwda -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img src="application/assets/images/costa_logo.png" class="rounded me-2" alt="...">
-                <strong class="me-auto" id="material-color"></strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  <!-- Toast used to describe material for the X3D Model -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="application/assets/images/costa_logo.png" class="rounded me-2" alt="...">
+                    <strong class="me-auto" id="material-color"></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="material-info"></div>
             </div>
-            <div class="toast-body" id="material-info"></div>
         </div>
-    </div>
+
+        <!-- Go Back Button Appears when not on the main page -->
         <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
         </button>
@@ -41,7 +43,7 @@
         <!-- Header -->
         <?php include_once("header.html"); ?>
 
-        <!-- First -->
+        <!-- Main Page Section -->
         <div id="main_page" class="container_fluid main_contents">
         <div class="row">
             <!-- Future 3d Model-->
@@ -58,67 +60,6 @@
                 </div>
             </div>
         </div>
-        </div>
-        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
-
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasIcedLabel">Iced Drinks</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body small text-center"> 
-            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
-            <div class="dropup mt-3">
-            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
-                Types
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Iced Latte</a></li>
-                <li><a class="dropdown-item" href="#">Cold Brew</a></li>
-                <li><a class="dropdown-item" href="#">Iced Chai Tea Latte</a></li>
-            </ul>
-            </div>
-            </div>
-        </div>
-
-        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasHotLabel">Hot Drinks</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body text-center"> 
-            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
-            <div class="dropup mt-3">
-            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
-                Types
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Latte</a></li>
-                <li><a class="dropdown-item" href="#">Hot Chocolate</a></li>
-                <li><a class="dropdown-item" href="#">Mocha</a></li>
-            </ul>
-            </div>
-            </div>
-        </div>
-
-        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
-
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasCannedLabel">Canned Drinks</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body small text-center"> 
-            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
-            <div class="dropup mt-3">
-            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
-                Types
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Canned Latte</a></li>
-                <li><a class="dropdown-item" href="#">Canned Caramel Latte</a></li>
-                <li><a class="dropdown-item" href="#">Canned Americano</a></li>
-            </ul>
-            </div>
-            </div>
         </div>
 
         <!-- Iced Latte Info -->
@@ -185,7 +126,70 @@
             </div>
 
         </div>
-        <!-- What's New -->
+
+        <!-- What's New Section -->
+        
+        <!-- OffCanvas Configurations -->
+        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasIcedLabel">Iced Drinks</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small text-center"> 
+            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <div class="dropup mt-3">
+            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
+                Types
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Iced Latte</a></li>
+                <li><a class="dropdown-item" href="#">Cold Brew</a></li>
+                <li><a class="dropdown-item" href="#">Iced Chai Tea Latte</a></li>
+            </ul>
+            </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasHotLabel">Hot Drinks</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body text-center"> 
+            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <div class="dropup mt-3">
+            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
+                Types
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Latte</a></li>
+                <li><a class="dropdown-item" href="#">Hot Chocolate</a></li>
+                <li><a class="dropdown-item" href="#">Mocha</a></li>
+            </ul>
+            </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
+
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasCannedLabel">Canned Drinks</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body small text-center"> 
+            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <div class="dropup mt-3">
+            <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
+                Types
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Canned Latte</a></li>
+                <li><a class="dropdown-item" href="#">Canned Caramel Latte</a></li>
+                <li><a class="dropdown-item" href="#">Canned Americano</a></li>
+            </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- BootStrap 5 Cards -->
         <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),rgba(252, 187, 187, 0.5))">
             <div class="col-sm-12">
                 <h4 id="What_New_title">What's New</h4>
@@ -732,7 +736,7 @@
             </table>
         </div>
 
-        <!-- Going Beyond Page -->
+        <!-- References Page -->
         <div id="going_beyond_content" class="container-fluid main_contetns" style="display: none;">
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
@@ -786,6 +790,7 @@
             </ul> 
             </div>
         </div>
+
         <div id="references_content" class="container-fluid main_contetns" style="display: none;">
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
