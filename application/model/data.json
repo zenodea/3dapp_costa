@@ -167,5 +167,20 @@
             "title":"3) How can I replace my lost card?",
             "explanation":"Log in to your Costa Club account here and select the ‘Card’ tab. Here, you’ll find instructions on how to replace your card. You can also download our app and login to start collecting beans. Don’t worry! You won’t lose the beans you’ve collected on your lost card, as all your beans will show in your account."
         }
+    ],
+    "offcanvas":
+    [
+        {
+            "title":"Iced Drinks",
+            "explanation":"Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+        },
+        {
+            "title":"Hot Drinks",
+            "explanation":"Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+        },
+        {
+            "title":"Canned Drinks",
+            "explanation":"Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+        }
     ]
 }

@@ -19,8 +19,15 @@ function swap(selected)
     if (selected == "iced_latte")
     {
         // Reset the camera each time you select one of the x3d models
-        cameraBack();
-        cameraFront();
+        try
+        {
+            cameraBack();
+            cameraFront();
+        }
+        catch
+        {
+
+        }
 
         // Hide the unrelated dropdown items (Everything except Iced drinks)
         hideTabs("iced_drinks_dropdown");
@@ -38,8 +45,15 @@ function swap(selected)
     else if (selected == "hot_latte")
     {
         // Reset the camera each time you select one of the x3d models
-        cameraBack();
-        cameraFront();
+        try
+        {
+            cameraBack();
+            cameraFront();
+        }
+        catch
+        {
+
+        }
 
         // Hide the unrelated dropdown items (Everything except Hot drinks)
         hideTabs("hot_drinks_dropdown");
@@ -57,8 +71,15 @@ function swap(selected)
     else if (selected == "canned_latte")
     {
         // Reset the camera each time you select one of the x3d models
-        cameraBack();
-        cameraFront();
+        try
+        {
+            cameraBack();
+            cameraFront();
+        }
+        catch
+        {
+
+        }
 
         // Hide the unrelated dropdown items (Everything except Canned drinks)
         hideTabs("canned_drinks_dropdown");

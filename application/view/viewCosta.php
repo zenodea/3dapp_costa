@@ -96,21 +96,6 @@
             </div>
         
         </div>
-        <style>
-  .offcanvas-button {
-    background-color: transparent;
-    border: none;
-    position: relative;
-  }
-  .offcanvas-button:hover,
-  .offcanvas-button:active
-    {
-    background-color: transparent;
-  }
-  .offcanvas-button svg {
-  transform: scaleX(30) scaleY(8);
-}
-</style>
         <!-- Cold Can Info -->
         <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
             <div class="col-sm-12">
@@ -132,11 +117,11 @@
         <!-- OffCanvas Configurations -->
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasIcedLabel">Iced Drinks</h5>
+                <h5 class="offcanvas-title" id="offcanvasIcedLabel"></h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small text-center"> 
-            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <h5 id="offcanvasIcedDescription"></h5>
             <div class="dropup mt-3">
             <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
                 Types
@@ -151,11 +136,11 @@
         </div>
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasHotLabel">Hot Drinks</h5>
+                <h5 class="offcanvas-title" id="offcanvasHotLabel"></h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body text-center"> 
-            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <h5 id="offcanvasHotDescription"></h5>
             <div class="dropup mt-3">
             <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
                 Types
@@ -171,11 +156,11 @@
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
 
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasCannedLabel">Canned Drinks</h5>
+                <h5 class="offcanvas-title" id="offcanvasCannedLabel"></h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small text-center"> 
-            <h5>Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!</h5>
+            <h5 id="offcanvasCannedDescription"></h5>
             <div class="dropup mt-3">
             <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
                 Types

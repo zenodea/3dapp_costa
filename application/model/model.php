@@ -50,6 +50,9 @@ class Model
             # Accordion Table
             $this->dbhandle->exec("CREATE TABLE Accordion (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT)");
 
+            # Offcanvas Table
+            $this->dbhandle->exec("CREATE TABLE Offcanvas (Id INTEGER PRIMARY KEY, title TEXT, explanation TEXT)");
+
             return "Model_3D table has been created succesfully!";
         }
         catch (PDOException $e)
@@ -68,6 +71,7 @@ class Model
 
         // Separating the different sections of the json, also, array_pop() is used, as it is O(1)
         // Note, array_pop gives the items in the reversed order, thus we start with the last element of the JSON
+        $offcanvas = array_pop($array);
         $accordion = array_pop($array);
         $carousel = array_pop($array);
         $modal = array_pop($array);
@@ -138,6 +142,16 @@ class Model
                     $stmt->bindValue(':title', array_pop($item));
                     $result = $stmt->execute();
             }
+
+            // Add accordion items to database
+            foreach($offcanvas as $item)
+            {
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Offcanvas (title, explanation)
+                            VALUES (:title, :explanation)");
+                    $stmt->bindValue(':explanation', array_pop($item));
+                    $stmt->bindValue(':title', array_pop($item));
+                    $result = $stmt->execute();
+            }
         }
         catch (PDOException $e)
         {
@@ -199,6 +213,15 @@ class Model
 
                 // Get data for the Modal of the SPA
                 $sql = 'SELECT title, explanation, photo_url FROM Carousel';
+                $stmt = $this->dbhandle->query($sql);
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($data as $value)
+                {
+                    array_push($result,$value);
+                }
+
+                // Get data for the Modal of the SPA
+                $sql = 'SELECT title, explanation FROM OffCanvas';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($data as $value)

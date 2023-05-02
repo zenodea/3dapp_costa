@@ -3,23 +3,24 @@
 // the controller and then into the model to insert into the SQlite db
 $( "form" ).submit(function( event ) 
 {
+    // Make sure not to reload Page
     event.preventDefault();
-$.ajax({
-        url: "index.php/apiAddRequest",
-        type: 'POST',
-        data: { 
-                email: $("#email").val(),
-                category: $("#category").val(),
-                description: $("#description_request").val(),
-                },
-        success: function (data) 
-            {
-                alert('Succesfully Sent Request!');
+    $.ajax({
+            url: "index.php/apiAddRequest",
+            type: 'POST',
+            data: { 
+                    email: $("#email").val(),
+                    category: $("#category").val(),
+                    description: $("#description_request").val(),
+                    },
+            success: function (data) 
+                {
+                    alert('Succesfully Sent Request!');
 
-                // Rest Form after succesfully having it sent
-                $("#request_form")[0].reset();
-            },
-    });
+                    // Reset Form after succesfully having it sent
+                    $("#request_form")[0].reset();
+                },
+        });
 })
 
 // Function used to get information from the SQlite db and
@@ -28,7 +29,7 @@ $( "#request_list" ).on("click", function(event)
 {
         $.ajax(
             {
-                type: 'POST',
+                type: 'GET',
                 dataType:'json',
                 url: "index.php/apiGetRequestData",
                 success: function(data) 
@@ -53,7 +54,7 @@ function remove_from_request(id)
         {
             $.ajax(
             {
-                type: 'POST',
+                type: 'GET',
                 dataType:'json',
                 url: "index.php/apiGetRequestData",
                 success: function(data) 
@@ -83,7 +84,7 @@ function add_comment_request(id)
         {
             $.ajax(
             {
-                type: 'POST',
+                type: 'GET',
                 dataType:'json',
                 url: "index.php/apiGetRequestData",
 

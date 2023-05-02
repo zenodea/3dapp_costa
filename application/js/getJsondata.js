@@ -1,8 +1,12 @@
 $(document).ready(function()
 {
-	$(function () {
+	// Initialise tooltip
+	$(function () 
+	{
 		$('[data-bs-toggle="tooltip"]').tooltip()
-	  })
+    })
+
+	// Get information from controller to insert into the SPA
 	$.ajax(
 		{
 			dataType:'json',
@@ -77,7 +81,7 @@ $(document).ready(function()
 		$('#accordion_button_3').html(jsonObj[21].title);
 		$('#accordion_explanation_3').html(jsonObj[21].explanation);
 
-		// Gallery
+		// Gallery using Carousel Bootstrap
 		html="";
 		for (i=1; i<4; i++)
 		{
@@ -131,6 +135,21 @@ $(document).ready(function()
         	html+='<p>'+jsonObj[27+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_third').html(html);
+
+		// Offcanvas
+
+		// Iced Drinks
+		$('#offcanvasIcedLabel').html(jsonObj[31].title);
+		$('#offcanvasIcedDescription').html(jsonObj[31].explanation);
+
+		// Hot Drinks
+		$('#offcanvasHotLabel').html(jsonObj[32].title);
+		$('#offcanvasHotDescription').html(jsonObj[32].explanation);
+
+		// Canned Drinks
+		$('#offcanvasCannedLabel').html(jsonObj[33].title);
+		$('#offcanvasCannedDescription').html(jsonObj[33].explanation);
+
 	}
     });
 });
