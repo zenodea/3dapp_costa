@@ -20,9 +20,13 @@
 
     </head>
     <body>
-    <style>
-</style>
-
+    <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
   <!-- Toast used to describe material for the X3D Model -->
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
             <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -38,6 +42,10 @@
         <!-- Go Back Button Appears when not on the main page -->
         <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
+        </button>
+
+        <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:changeTheme();" style="width: 10em;">
+            <i>Dark Mode</i>
         </button>
 
         <!-- Header -->
