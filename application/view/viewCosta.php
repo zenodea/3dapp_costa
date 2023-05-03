@@ -20,13 +20,6 @@
 
     </head>
     <body>
-    <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  </script>
   <!-- Toast used to describe material for the X3D Model -->
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
             <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -40,13 +33,16 @@
         </div>
 
         <!-- Go Back Button Appears when not on the main page -->
+        <div>
         <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
         </button>
+        </div>
 
-        <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:changeTheme();" style="width: 10em;">
-            <i>Dark Mode</i>
+        <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:2em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
+            <i style="float: right;"id="moon_icon">🌕</i>
         </button>
+
 
         <!-- Header -->
         <?php include_once("header.html"); ?>
@@ -70,8 +66,8 @@
         </div>
         </div>
 
-        <!-- Iced Latte Info -->
-        <div class="row" style="background:linear-gradient(to bottom, transparent, rgba(190, 231, 190,0.5))">
+        <!-- Iced Drink Info -->
+        <div class="row iced_drink_row">
             
             <!-- Future 3d Model-->
             <div class="col-sm-12">
@@ -81,14 +77,14 @@
                         <h5 id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('iced_latte'); change_flavour(1);">Learn More ></button>
+                        <button class="costa_button" onclick="swap('iced_latte'); change_flavour(1);">Learn More ></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Hot Latte Info -->
-        <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(190, 231, 190,0.5), rgba(247, 247, 220, 0.5))">
+        <!-- Hot Drink Info -->
+        <div class="row hot_drink_row">
             <!-- Future 3d Model-->
             <div class="col-sm-12">
                 <div div class="card item_card">
@@ -98,14 +94,14 @@
                         <h5 id="latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('hot_latte'); ">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('hot_latte'); change_flavour(4);">Learn More ></button>
                     </div>
                 </div>
             </div>
         
         </div>
-        <!-- Cold Can Info -->
-        <div class="row" style="padding-top: 50px; background:linear-gradient(to bottom, rgba(247, 247, 220, 0.5), rgba(252, 187, 187, 0.5))">
+        <!-- Canned Info -->
+        <div class="row canned_drink_row">
             <div class="col-sm-12">
                 <div div class="card item_card">
                     <h4 id="canned_latte_main_title" class="card-title"></h4>
@@ -113,7 +109,7 @@
                         <h5 id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('canned_latte'); change_flavour(4);">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('canned_latte'); change_flavour(7);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -126,7 +122,7 @@
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasIcedLabel"></h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button offcanvas_button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small text-center"> 
             <h5 id="offcanvasIcedDescription"></h5>
@@ -135,9 +131,9 @@
                 Types
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Iced Latte</a></li>
-                <li><a class="dropdown-item" href="#">Cold Brew</a></li>
-                <li><a class="dropdown-item" href="#">Iced Chai Tea Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBINfo(1);">Iced Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBINfo(2);">Cold Brew</a></li>
+                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBINfo(3);">Iced Chai Tea Latte</a></li>
             </ul>
             </div>
             </div>
@@ -154,9 +150,9 @@
                 Types
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Latte</a></li>
-                <li><a class="dropdown-item" href="#">Hot Chocolate</a></li>
-                <li><a class="dropdown-item" href="#">Mocha</a></li>
+                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBINfo(4);">Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBINfo(5);">Hot Chocolate</a></li>
+                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBINfo(6);">Mocha</a></li>
             </ul>
             </div>
             </div>
@@ -174,21 +170,21 @@
                 Types
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Canned Latte</a></li>
-                <li><a class="dropdown-item" href="#">Canned Caramel Latte</a></li>
-                <li><a class="dropdown-item" href="#">Canned Americano</a></li>
+                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(7);">Canned Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(8);">Canned Caramel Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(9);">Canned Americano</a></li>
             </ul>
             </div>
             </div>
         </div>
 
         <!-- BootStrap 5 Cards -->
-        <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),rgba(252, 187, 187, 0.5))">
+        <div class="row whats_new_row">
             <div class="col-sm-12">
                 <h4 id="What_New_title">What's New</h4>
             </div>
         </div>
-        <div class="row" style="background:linear-gradient(to bottom, rgba(252, 187, 187, 0.5),transparent)">
+        <div class="row what_new_card_row">
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/cold_products_slogan.jpg" class="card-img-top" alt="...">
@@ -330,9 +326,8 @@
 
                                 <!-- Lights -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                                <directionallight id="directional" direction="0 -1 0" on="FA intensity='2.0' shadowintensity="0.0" color="1,1,1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1">
-                                </directionallight> 
-                                <PointLight id='point' on='FALSE' intensity='5.000' color='0.0 0.6 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
+                                <directionallight id="directional" direction="0 0 1" on="FA" intensity='10.0' shadowintensity="0.0" color="1 1 1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1"></directionallight> 
+                                <PointLight id='point' on='FALSE' intensity='10.000' color='0.0 0.0 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
                                 <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
                                 <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
                     </scene>
@@ -381,24 +376,24 @@
                     </div>
                     <div class="card-body tab-content" style="justify-content: center;">
                         <div class="tab-pane active text-center" id="camera_physical" style="justify-content: center;">
-                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(253, 160, 160); border-color: transparent; color:white" onclick="cameraFront();">
+                                <button class="btn btn-primary camera_button" type="button" onclick="cameraFront();">
                                     Front
                                 </button>
-                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(241, 253, 160); border-color: transparent; color:white" onclick="cameraBack();">
+                                <button class="btn btn-primary camera_button" type="button" onclick="cameraBack();">
                                     Back
                                 </button>
                                 <br>
-                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(160, 253, 177); border-color: transparent; color:white" onclick="cameraLeft();">
+                                <button class="btn btn-primary camera_button" type="button" onclick="cameraLeft();">
                                     Left
                                 </button>
-                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(160, 225, 253); border-color: transparent; color:white" onclick="cameraRight();">
+                                <button class="btn btn-primary camera_button" type="button" onclick="cameraRight();">
                                     Right
                                 </button>
                                 <br>
-                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(206, 160, 253); border-color: transparent; color:white" onclick="cameraTop();">
+                                <button class="btn btn-primary camera_button" type="button" onclick="cameraTop();">
                                     Top
                                 </button>
-                                <button class="btn btn-primary camera_button" type="button" style="background-color: rgb(255, 177, 207); border-color: transparent; color:white" onclick="cameraBottom();">
+                                <button class="btn btn-primary camera_button" type="button" onclick="cameraBottom();">
                                     Bottom
                                 </button>
                         </div>
@@ -424,14 +419,20 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" onclick="lightSwitch('point')" type="checkbox" id="flexSwitchCheckDefault">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Point Light</label>
+                            <label for="pointcolor"> > </label>
+                            <input style="border-color:black;" type="color" id="pointcolor" name="favcolor" value="#ffffff">
                         </div>
                         <div class="form-check form-switch">
                             <input class="form-check-input" onclick="lightSwitch('directional')" type="checkbox" id="flexSwitchCheckDefault">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Directional Light</label>
+                            <label for="directionalcolor"> > </label>
+                            <input style="border-color:black;" type="color" id="directionalcolor" name="favcolor" value="#ffffff">
                         </div>
                         <div class="form-check form-switch">
                             <input class="form-check-input" onclick="lightSwitch('spot')" type="checkbox" id="flexSwitchCheckDefault">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Spot Light</label>
+                            <label for="spotcolor"> > </label>
+                            <input style="border-color:black;" type="color" id="spotcolor" name="favcolor" value="#ffffff">
                         </div>
                     </div>
                 </div>
@@ -724,7 +725,7 @@
                 <th scope="col">Remove Request</th>
             </tr>
             </thead>
-            <tbody class="tbody-light">
+            <tbody class="tbody">
             </tbody>
             </table>
         </div>
@@ -780,6 +781,7 @@
                     <li>Used 4k HDRI backdrops for realistic lighting</li>
                     <li>Used 4k Textures for approrate recreate of other materials, such as the table</li>
                 </ul>
+                <li>Light and Dark mode created via switching css values. Manually created.</li>
             </ul> 
             </div>
         </div>

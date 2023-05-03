@@ -213,19 +213,26 @@ function change_modal(selected)
 }
 
 
-var toggle = document.getElementById("theme-toggle");
-
-var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-if (storedTheme)
-    document.documentElement.setAttribute('data-theme', storedTheme)
-
+// https://lukelowrey.com/css-variable-theme-switcher/
 
 function changeTheme() {
     var currentTheme = document.documentElement.getAttribute("data-theme");
-    var targetTheme = "light";
 
-    if (currentTheme === "light") {
+    // If data-theme is null, it automatically means it is light
+    if(currentTheme==null)
+    {
+        currentTheme="light"
+    }
+
+    if (currentTheme == "light") 
+    {
+        $("#moon_icon").html("🌞");
         targetTheme = "dark";
+    }
+    else
+    {
+        $("#moon_icon").html("🌕")
+        targetTheme = "light";
     }
 
     document.documentElement.setAttribute('data-theme', targetTheme)
