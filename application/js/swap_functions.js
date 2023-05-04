@@ -18,17 +18,6 @@ function swap(selected)
 
     if (selected == "iced_latte")
     {
-        // Reset the camera each time you select one of the x3d models
-        try
-        {
-            cameraBack();
-            cameraFront();
-        }
-        catch
-        {
-
-        }
-
         // Hide the unrelated dropdown items (Everything except Iced drinks)
         hideTabs("iced_drinks_dropdown");
 
@@ -40,21 +29,14 @@ function swap(selected)
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 0);
         $("#3d_model_content").show();
+
+        // Reset the camera each time you select one of the x3d models
+        cameraBack();
+        cameraFront();
     }
 
     else if (selected == "hot_latte")
     {
-        // Reset the camera each time you select one of the x3d models
-        try
-        {
-            cameraBack();
-            cameraFront();
-        }
-        catch
-        {
-
-        }
-
         // Hide the unrelated dropdown items (Everything except Hot drinks)
         hideTabs("hot_drinks_dropdown");
 
@@ -66,20 +48,14 @@ function swap(selected)
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 1);
         $("#3d_model_content").show();
+
+        // Reset the camera each time you select one of the x3d models
+        cameraBack();
+        cameraFront();
     }
 
     else if (selected == "canned_latte")
     {
-        // Reset the camera each time you select one of the x3d models
-        try
-        {
-            cameraBack();
-            cameraFront();
-        }
-        catch
-        {
-
-        }
 
         // Hide the unrelated dropdown items (Everything except Canned drinks)
         hideTabs("canned_drinks_dropdown");
@@ -92,6 +68,10 @@ function swap(selected)
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 2);
         $("#3d_model_content").show();
+
+        // Reset the camera each time you select one of the x3d models
+        cameraBack();
+        cameraFront();
     }
 
     else

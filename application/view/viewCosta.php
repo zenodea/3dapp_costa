@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="application/css/bootstrap.css">
         <link rel="stylesheet" href="application/css/custom.css">
 
-
         <!-- Bootstrap+CSS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -39,7 +38,7 @@
         </button>
         </div>
 
-        <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:2em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
+        <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:1.5em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
             <i style="float: right;"id="moon_icon">🌕</i>
         </button>
 
@@ -288,7 +287,6 @@
                 <x3d id="wire"> 
                     <scene>
                         <Switch whichChoice="0" id="sceneSwitch">
-
                                 <transform>
                                 <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="application/assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
@@ -300,7 +298,6 @@
                                 <transform>
                                 <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
-
                         </Switch>
                                 <!-- PlaceHolder information if x3d models need to be regenerated -->
 
@@ -326,10 +323,10 @@
 
                                 <!-- Lights -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                                <directionallight id="directional" direction="0 0 1" on="FA" intensity='10.0' shadowintensity="0.0" color="1 1 1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1"></directionallight> 
-                                <PointLight id='point' on='FALSE' intensity='10.000' color='0.0 0.0 0.0' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
+                                <directionallight id="directional" direction="1 1 1" on="FA" intensity='10.0' shadowintensity="0.0" color="1 1 1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1"></directionallight> 
+                                <PointLight id='point' on='FALSE' intensity='10.000' color='1 1 1' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
                                 <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
-                                <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='0 0 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
+                                <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='1 1 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
                     </scene>
                 </x3d>
                 </div>
@@ -364,39 +361,29 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                
                 <!-- Camera Controls -->
                 <div class="card controller_card">
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
-                        <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#camera_physical" aria-controls="camera_physical" aria-selected="true">Camera Control</button>
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active">Camera Viewpoint</a>
                             </li>
-                        </ul>
                     </div>
-                    <div class="card-body tab-content" style="justify-content: center;">
-                        <div class="tab-pane active text-center" id="camera_physical" style="justify-content: center;">
-                                <button class="btn btn-primary camera_button" type="button" onclick="cameraFront();">
-                                    Front
-                                </button>
-                                <button class="btn btn-primary camera_button" type="button" onclick="cameraBack();">
-                                    Back
-                                </button>
-                                <br>
-                                <button class="btn btn-primary camera_button" type="button" onclick="cameraLeft();">
-                                    Left
-                                </button>
-                                <button class="btn btn-primary camera_button" type="button" onclick="cameraRight();">
-                                    Right
-                                </button>
-                                <br>
-                                <button class="btn btn-primary camera_button" type="button" onclick="cameraTop();">
-                                    Top
-                                </button>
-                                <button class="btn btn-primary camera_button" type="button" onclick="cameraBottom();">
-                                    Bottom
-                                </button>
-                        </div>
+                    <div class="card-body">
+                          <a class="btn btn-success btn-responsive" onclick="cameraFront();">Front</a>
+                          <a class="btn btn-primary btn-responsive" onclick="cameraBack();">Back</a>
+                          <a class="btn btn-secondary btn-responsive" onclick="cameraLeft();">Left</a>
+                          <a class="btn btn-secondary btn-responsive" onclick="cameraRight();">Right</a>
+                          <div class="dropdown" style="margin-top: 30px;">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                Extra
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" onclick="cameraTop();">Top</a>
+                                <a class="dropdown-item" onclick="cameraBottom();">Bottom</a>
+                            </ul>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -407,33 +394,44 @@
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#coke" aria-controls="coke" aria-selected="true">Lighting Control</button>
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#p-light" aria-controls="p-light" aria-selected="true">p-light</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#s-light" aria-controls="s-light" aria-selected="true">s-light</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#d-light" aria-controls="d-light" aria-selected="true">d-light</button>
                             </li>
                         </ul>
                     </div>
-                    <div class="card-body text-center">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" onclick="headlight('head')" type="checkbox" id="flexSwitchCheckChecked" checked>
-                            <label class="form-check-label" for="flexSwitchCheckChecked">Headlight</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" onclick="lightSwitch('point')" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Point Light</label>
-                            <label for="pointcolor"> > </label>
-                            <input style="border-color:black;" type="color" id="pointcolor" name="favcolor" value="#ffffff">
-                        </div>
-                        <div class="form-check form-switch">
+                    <div class="card-body tab-content text-center">
+                    <div class="tab-pane active" id="p-light">
+                            <h5>Point Light</h5>
+                            <div class="form-check form-check-inline form-switch">
+                                <input class="form-check-input" onclick="lightSwitch('point')" type="checkbox" id="flexSwitchCheckDefault">
+                                <br>
+                            </div>
+                                <p>Pick a color:</p>
+                                <input style="border-color:black;width:100%" type="color" id="pointcolor" name="favcolor" value="#ffffff">
+                    </div>
+                    <div class="tab-pane" id="d-light">
+                        <h5>Directional Light</h5>
+                        <div class="form-check form-check-inline form-switch">
                             <input class="form-check-input" onclick="lightSwitch('directional')" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Directional Light</label>
-                            <label for="directionalcolor"> > </label>
-                            <input style="border-color:black;" type="color" id="directionalcolor" name="favcolor" value="#ffffff">
+                            <br>
                         </div>
-                        <div class="form-check form-switch">
+                            <p>Pick a color:</p>
+                            <input style="border-color:black;width:100%" type="color" id="directionalcolor" name="favcolor" value="#ffffff">
+                    </div>
+                    <div class="tab-pane text-center" id="s-light">
+                        <h5>Spot Light</h5>
+                        <div class="form-check form-check-inline form-switch">
                             <input class="form-check-input" onclick="lightSwitch('spot')" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Spot Light</label>
-                            <label for="spotcolor"> > </label>
-                            <input style="border-color:black;" type="color" id="spotcolor" name="favcolor" value="#ffffff">
+                            <br>
                         </div>
+                            <p>Pick a color:</p>
+                            <input style="border-color:black;width:100%" type="color" id="spotcolor" name="favcolor" value="#ffffff">
+                    </div>
                     </div>
                 </div>
             </div>
@@ -472,9 +470,9 @@
                         <div class="tab-pane" id="render">
                             <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
-                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="vertex();">Vertex</a>
-                                    <a href="#" class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
+                                    <a class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
+                                    <a class="btn btn-outline-dark btn-responsive" onclick="vertex();">Vertex</a>
+                                    <a class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
                                 </li>
                             </ul>
                         </div>
@@ -714,7 +712,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table text-center table-striped table-bordered table-hover" id="request_list_placeholder" style="border-color: black">
+            <table class="table text-center  table-bordered" id="request_list_placeholder" style="border-color: black">
             <thead class="table-active">
             <tr>
                 <th scope="col">#</th>
@@ -745,7 +743,8 @@
             <ul>
                 <li>The X3D models are more complex</li>
                 <ul>
-                    <li>Use of html5 to change values of the x3d model</li>
+                    <li>Use of html5 to change values of the x3d models</li>
+                    <li>Use of jQuery to modify the light sources of the x3d models</li>
                     <li>Integration with bootstrap to add Toasts when a specific material is clicked.</li>
                     <li>Three Unique animations are given, one for each of the model.</li>
                     <li>The 3D models all have unique components</li>
