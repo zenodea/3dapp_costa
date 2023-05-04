@@ -71,6 +71,7 @@
 	/* Green Blue (1200px and up)*/
 	--background-green-back: rgb(31, 45, 43);
 }
+
 /* CSS is used to create a creative backgorund with curved lines */
 /* Learnet from https://css-tricks.com/how-to-create-wavy-shapes-patterns-in-css/ */
 body 
@@ -119,6 +120,13 @@ body
 @font-face {
 	font-family: costa;
 	src: url("../assets/fonts/CostaPtfBold.otf");
+}
+
+
+.btn
+{
+	color: var(--card_text);
+	background-color: var(--bootstrap_background);
 }
 
 /* CSS for the tooltip used in the navbar */
@@ -347,15 +355,26 @@ X3D, x3d {
 	font-weight: bold;
 }
 
-.form-control, .form-control:focus
+.form-control, .form-control:focus, .form-control:active
 {
 	font-family: costa;
 	font-size: 15px;
 	font-weight: bold;
 	background-color: var(--bootstrap_background);
 	color: var(--card_text);
-	box-shadow: var(--costa_red_title);
+	border-color: var(--costa_red_title);
+	
 }
+
+.form-control::placeholder 
+{ 
+	color: var(--card_text);
+}
+
+.form-control::-ms-input-placeholder 
+{
+	color: var(--card_text);
+ }
 
 /* Table CSS */
 
