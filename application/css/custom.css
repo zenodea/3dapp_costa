@@ -10,6 +10,7 @@
 	--controller_button: transparent;
 	--footer-bottom: #810029;
 	--footer-top: #ce0041;
+	--invert_value: 0;
 
 	/* Shading Info */
 	--iced_drink_row: rgba(190, 196, 231, 0.5);
@@ -46,6 +47,8 @@
 	--controller_button: rgba(94, 94, 94, 0.6);
 	--footer-bottom: #000000;
 	--footer-top: #400014;
+
+	--invert_value: 1;
 
 	/* Shading Info */
 	--iced_drink_row: rgba(0, 12, 80, 0.5);
@@ -122,11 +125,17 @@ body
 	src: url("../assets/fonts/CostaPtfBold.otf");
 }
 
+/* Various Button CSS */
 
 .btn-default
 {
 	color: var(--card_text);
 	background-color: var(--bootstrap_background) !important;
+}
+
+.btn-close
+{
+	filter: invert(var(--invert_value));
 }
 
 .btn-outline-dark
@@ -145,6 +154,11 @@ body
 {
 	color: var(--bootstrap_background) !important;
 	background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.7))
+}
+
+.navbar-toggler-icon
+{
+	filter: invert(var(--invert_value));
 }
 
 /* Header */
@@ -438,14 +452,14 @@ h4
 
 #learn_more_button{
 	border-radius: 40px;
-	background-color: #6d1f37;
+	background-color: var(--costa_red_title);
 }
 
 
 .costa_button{
 	font-size: 20px;
 	border-radius: 100px;
-	background-color: #6d1f37;
+	background-color: var(--costa_red_title);
 	color: #ffffff;
 	font-weight: bold;
 	width: 180px;
@@ -581,7 +595,7 @@ hr
 
 .going_beyond_list
 {
-	background-color: white;
+	background-color: var(--bootstrap_background);
 	box-shadow: inset 0 0 10px #000000;
 	box-sizing: border-box;
     padding: 10px;
@@ -593,7 +607,7 @@ hr
 	font-family: costa;
 	font-size: 15px;
 	font-weight: bold;
-	color: #000000;
+	color: var(--card_text);
 	position: relative;
 }
 
@@ -602,7 +616,7 @@ hr
 	font-family: costa;
 	font-size: 20px;
 	font-weight: bold;
-	color: #6d1f37;	
+	color: var(--costa_red_title);	
 	position: relative;
 }
 

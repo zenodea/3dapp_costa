@@ -60,17 +60,32 @@
             </div>
         </div>
 
+        <!-- X3D Model for the 3d Costa Logo-->
         <div class="modal fade" id="title_modal" tabindex="-1" role="dialog" aria-labelledby="title_modal_label" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
-                <x3d style="height:50%"> 
+                <div class="modal-header">
+                    <h5 class="modal-title">3D Costa Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Rendering
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item">Normal</a></li>
+                          <li><a class="dropdown-item">Wire</a></li>
+                          <li><a class="dropdown-item">Vertex</a></li>
+                        </ul>
+                      </div>
+                <x3d id="wire_costa_title" style="height:50%"> 
                     <scene>
-                                <transform id="costa_logo">
-                                    <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="application/assets/x3d/costa_logo.x3d">  </inline>
-                                </transform>
-                                <!-- Lights -->
-                                <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                                <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
+                            <transform id="costa_logo">
+                                <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="application/assets/x3d/costa_logo.x3d">  </inline>
+                            </transform>
+                            <!-- Lights -->
+                            <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
+                            <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
                     </scene>
                 </x3d>
             </div>

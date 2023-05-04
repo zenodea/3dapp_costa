@@ -1,22 +1,30 @@
 // Animation for x3d model
 var spinning = false;
-var model_view = "normal";
 function Animate(model)
 {
     if (model == "iced_drink")
     {
+        // Check if animation is alreday on or not
         var animation = (document.getElementById('model__time_straw').getAttribute('enabled') === 'true');
+
+        // Set the animation node to the opposite of var animation
         document.getElementById('model__time_straw').setAttribute('enabled', !animation);
         document.getElementById('model__time_cube').setAttribute('enabled', !animation);
     }
     else if (model == "hot_drink")
     {
+        // Check if animation is alreday on or not
         var animation = (document.getElementById('model__time_cup').getAttribute('enabled') === 'true');
+
+        // Set the animation node to the opposite of var animation
         document.getElementById('model__time_cup').setAttribute('enabled', !animation);
     }
     else if (model == "canned_drink")
     {
+        // Check if animation is alreday on or not
         var animation = (document.getElementById('model__time_can').getAttribute('enabled') === 'true');
+
+        // Set the animation node to the opposite of var animation
         document.getElementById('model__time_can').setAttribute('enabled', !animation);
     }
 }
@@ -61,6 +69,10 @@ function cameraNormal()
 
 
 // Rendering functions for the X3D Models
+
+// Current view of the model, used to track how to go from one state to another
+var model_view = "normal";
+
 // Wireframe mode
 function wireFrame()
 {
@@ -167,17 +179,17 @@ function change_flavour(selected)
     // Latte
     else if (selected == 4)
     {
-        document.getElementById('model__MA_Material').setAttribute('diffuseColor','0.800 0.376 0.063' );
+        document.getElementById('model__MA_Material').setAttribute('diffuseColor','0.659 0.439 0.22' );
     }
     // Hot Chocolate
     else if (selected == 5)
     {
-        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.092 0.064 0.051');
+        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.8 0.635 0.471');
     }
     // Mocha
     else if (selected == 6)
     {
-        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.98 0.97 0.95');
+        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.388 0.192 0.0');
     }
     // Canned Latte
     else if (selected == 7)
