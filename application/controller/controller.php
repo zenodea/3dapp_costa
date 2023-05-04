@@ -30,12 +30,15 @@ class Controller {
         $this->load->view('viewMessage', $data);
     }
 
+    // Controller method used to insert data into the SQLite DB
+    // From data.json
     function apiInsertData()
     {
         $data = $this->model->dbInsertData();
         $this->load->view('viewMessage', $data);
     }
 
+    // Controller method used to get back the majority of information from the database
     function apiGetJsonMuseumData()
     {
         $data = $this->model->dbGetJsonMuseumData();
@@ -48,26 +51,32 @@ class Controller {
         $this->model->dbAddRequest($_POST['email'],$_POST['category'],$_POST['description']);
     }
 
+    // Controller method used to get all the data in the 
+    // Request db table
     function apiGetRequestData()
     {
         $data = $this->model->dbGetRequestData();
         echo json_encode($data);
     }
 
+    // Controller method used to update data into the
+    // Request db table
     function apiAddCommentRequest()
     {
         $this->model->dbAddCommentRequest($_POST['request_id'],$_POST['request_comment']);
     }
 
+    // Get information of a specific drink
     function apiGetDrinkInformation()
     {
         $data = $this->model->dbGetDrinkInformation($_POST['id']);
         echo json_encode($data);
     }
 
-    function apiGetSinglePicture()
+
+    function apiGetDrinkImages()
     {
-        $data = $this->model->dbGetSinglePicture($_POST['id']);
+        $data = $this->model->dbGetDrinkImages($_POST['id']);
         echo json_encode($data);
     }
 

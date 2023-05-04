@@ -1,36 +1,3 @@
-// 
-$("#pointcolor").change(function()
-{
-    var hexColor = $(this).val(); // Get the new color value in hexadecimal format
-    var red = parseInt(hexColor.substring(1, 3), 16) / 255; // Convert the red value to a range of 0 to 1
-    var green = parseInt(hexColor.substring(3, 5), 16) / 255; // Convert the green value to a range of 0 to 1
-    var blue = parseInt(hexColor.substring(5, 7), 16) / 255; // Convert the blue value to a range of 0 to 1
-    var rgbColor = red.toFixed(2) + " " + green.toFixed(2) + " " + blue.toFixed(2) // Concatenate the RGB values into a string
-    // Do something with the new color, e.g. update the background color of an element
-    $("#point").attr("color", rgbColor)
-});
-
-$("#spotcolor").change(function()
-{
-    var hexColor = $(this).val(); // Get the new color value in hexadecimal format
-    var red = parseInt(hexColor.substring(1, 3), 16) / 255; // Convert the red value to a range of 0 to 1
-    var green = parseInt(hexColor.substring(3, 5), 16) / 255; // Convert the green value to a range of 0 to 1
-    var blue = parseInt(hexColor.substring(5, 7), 16) / 255; // Convert the blue value to a range of 0 to 1
-    var rgbColor = red.toFixed(2) + " " + green.toFixed(2) + " " + blue.toFixed(2) // Concatenate the RGB values into a string
-    // Do something with the new color, e.g. update the background color of an element
-    $("#spot").attr("color", rgbColor)
-});
-
-$("#directionalcolor").change(function()
-{
-    var hexColor = $(this).val(); // Get the new color value in hexadecimal format
-    var red = parseInt(hexColor.substring(1, 3), 16) / 255; // Convert the red value to a range of 0 to 1
-    var green = parseInt(hexColor.substring(3, 5), 16) / 255; // Convert the green value to a range of 0 to 1
-    var blue = parseInt(hexColor.substring(5, 7), 16) / 255; // Convert the blue value to a range of 0 to 1
-    var rgbColor = red.toFixed(2) + " " + green.toFixed(2) + " " + blue.toFixed(2) // Concatenate the RGB values into a string
-    // Do something with the new color, e.g. update the background color of an element
-    $("#directional").attr("color", rgbColor)
-});
 // Function used for the only form in the SPA
 // If a form is submitted, using ajax, the information is sent to
 // the controller and then into the model to insert into the SQlite db

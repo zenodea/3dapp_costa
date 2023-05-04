@@ -7,12 +7,7 @@ $(document).ready(function()
     })
 
 	// Get information from controller to insert into the SPA
-	$.ajax(
-		{
-			dataType:'json',
-			url: "index.php/apiGetJsonMuseumData",
-            success: function(jsonObj) 
-    {
+	$.getJSON('index.php/apiGetJsonMuseumData', function(jsonObj){
         // Main Page
 
         // Iced Latte
@@ -150,6 +145,6 @@ $(document).ready(function()
 		$('#offcanvasCannedLabel').html(jsonObj[33].title);
 		$('#offcanvasCannedDescription').html(jsonObj[33].explanation);
 
-	}
+	
     });
 });

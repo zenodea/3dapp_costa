@@ -123,7 +123,7 @@ function swapDBINfo(id)
 function swapGallery(id)
 {
     $.ajax({
-        url: "index.php/apiGetSinglePicture",
+        url: "index.php/apiGetDrinkImages",
         type: 'POST',
         data:  { 
                 id: id

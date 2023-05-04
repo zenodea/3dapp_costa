@@ -23,7 +23,6 @@ function Animate(model)
 
 
 // Camera Functions
-
 function cameraFront()
 {
     document.getElementById('model__CA_cameraFront').setAttribute('bind', 'true');
@@ -61,8 +60,8 @@ function cameraNormal()
 
 
 
-// Change Model
-
+// Rendering functions for the X3D Models
+// Wireframe mode
 function wireFrame()
 {
     var e = document.getElementById('wire');
@@ -82,25 +81,7 @@ function wireFrame()
     model_view = "wire"
 }
 
-function normal()
-{
-    var e = document.getElementById('wire');
-    if (model_view == "wire")
-    {
-        e.runtime.togglePoints(false);
-        e.runtime.togglePoints(false);
-    }
-    else if (model_view=="normal")
-    {
-
-    }
-    else if (model_view=="vertex")
-    {
-        e.runtime.togglePoints(false);
-    }
-    model_view = "normal"
-}
-
+// Vertex Mode
 function vertex()
 {
     var e = document.getElementById('wire');
@@ -119,10 +100,24 @@ function vertex()
     model_view = "vertex"
 }
 
-function redraw()
+// Normal mode
+function normal()
 {
     var e = document.getElementById('wire');
-    e.element.runtime.triggerRedraw(true);
+    if (model_view == "wire")
+    {
+        e.runtime.togglePoints(false);
+        e.runtime.togglePoints(false);
+    }
+    else if (model_view=="normal")
+    {
+
+    }
+    else if (model_view=="vertex")
+    {
+        e.runtime.togglePoints(false);
+    }
+    model_view = "normal"
 }
 
 function lightSwitch(id)

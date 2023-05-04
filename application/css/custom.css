@@ -141,6 +141,59 @@ body
 }
 
 /* CSS for the tooltip used in the navbar */
+.header-navbar
+{
+	color: var(--bootstrap_background) !important;
+	background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.7))
+}
+
+/* Header */
+.header_item{
+	font-family: costa;
+	font-size: 20px;
+	padding-left: 50px;
+	font-weight: bold;
+	color: #ffffff;
+	position: relative;
+}
+
+.header_item:hover{
+	font-family: costa;
+	color: var(--costa_red_title);
+}
+
+#costa_logo
+{
+	margin-top:30px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#costa_logo h3{
+	transition: 0.3s;
+	font-size: 70px;
+	text-align: center;
+	font-family: costa;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+#costa_logo:hover h3, #costa_logo:hover h4
+{
+	color: var(--costa_red_title);
+	transition: 0.3s;
+}
+
+#costa_logo h4{
+	position: relative;
+	transition: 0.3s;
+	bottom: 20px;
+	font-family: costa;
+	text-align: center;
+	font-size: 30px;
+	color: #ffffff;
+	font-weight: bold;
+}
 .tooltip
 {
 	margin-bottom: 600px;
@@ -158,20 +211,6 @@ body
 }
 
 
-/* Header */
-.header_item{
-	font-family: costa;
-	font-size: 20px;
-	padding-left: 50px;
-	font-weight: bold;
-	color: #ffffff;
-	position: relative;
-}
-
-.header_item:hover{
-	font-family: costa;
-	color: var(--costa_red_title);
-}
 
 /* Main Screen*/
 #main_3d_image {
@@ -231,6 +270,7 @@ body
 {
 	background:linear-gradient(to bottom, var(--whatsnew_row),transparent)
 }
+
 /* X3D Models*/
 
 X3D, x3d {
@@ -274,38 +314,6 @@ X3D, x3d {
 }
 
 /* Bootstrap Toast CSS configurations */
-#costa_logo
-{
-	margin-top:30px;
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
-#costa_logo h3{
-	transition: 0.3s;
-	font-size: 70px;
-	text-align: center;
-	font-family: costa;
-	color: #ffffff;
-	font-weight: bold;
-}
-
-#costa_logo:hover h3, #costa_logo:hover h4
-{
-	color: var(--costa_red_title);
-	transition: 0.3s;
-}
-
-#costa_logo h4{
-	position: relative;
-	transition: 0.3s;
-	bottom: 20px;
-	font-family: costa;
-	text-align: center;
-	font-size: 30px;
-	color: #ffffff;
-	font-weight: bold;
-}
 
 /* Accordion CSS */
 

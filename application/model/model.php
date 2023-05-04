@@ -80,6 +80,17 @@ class Model
         $main_page = array_pop($array);
         try
         {
+            // Check that database is empty
+            // If not, do not add more information
+            // The use case of this website does not expect to have more information added, apart from requests
+            // Thus, as a precaution, this is put into place to make sure no more data is added
+            $stmt= $this->dbhandle->query("SELECT COUNT(*) FROM Main_page");
+            $row = $stmt->fetchAll();
+            if($row[0]['COUNT(*)']>0)
+            {
+                return "SQlite DB already has information inside";
+                $this->dbhandle = NULL;
+            }
             // Add main page items to database
             foreach($main_page as $item)
             {
@@ -238,6 +249,7 @@ class Model
         return $result;
     }
 
+    // Function used to add request to the SQLite DB
     function dbAddRequest($email, $request, $description)
     {
         try
@@ -260,7 +272,7 @@ class Model
         return "Request Added!";
     }
 
-    # Function used to retrieve request data from the SQLite Database
+    // Function used to retrieve request data from the SQLite Database
     function dbGetRequestData()
     {
         $result = array();
@@ -281,7 +293,7 @@ class Model
         return $result;
     }
 
-    # Function Used to update SQLite request table
+    // Function Used to update SQLite request table
     function dbAddCommentRequest($id,$comment)
     {
         try
@@ -298,6 +310,7 @@ class Model
         }
     }
 
+    // Function used to remove request based on some ID
     function dbRemoveRequest($id)
     {
         try
@@ -314,6 +327,17 @@ class Model
         return $result;
     }
 
+    // Function used to obtain information of one of the drinks
+    // Based on the ID, the following id's are the same for the entire project
+    // ID = 1 = Iced Latte
+    // ID = 2 = Cold Brew
+    // ID = 3 = Iced Chai Tea Latte
+    // ID = 4 = Latte
+    // ID = 5 = Hot Chocolate
+    // ID = 6 = Mocha
+    // ID = 7 = Canned Latte
+    // ID = 8 = Canned Caramel latte
+    // ID = 9 = Canned Americano
     function dbGetDrinkInformation($id)
     {
         try
@@ -330,7 +354,7 @@ class Model
         return $result;
     }
 
-    function dbGetSinglePicture($id)
+    function dbGetDrinkImages($id)
     {
         try
         {

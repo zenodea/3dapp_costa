@@ -854,6 +854,7 @@
         <script src="application/js/getJsondata.js"></script>
         <script src="application/js/swap_functions.js"></script>
         <script src="application/js/3d_model_interaction.js"></script>
+        <script src="application/js/color_functions.js"></script>
         <!-- Custom Javascript -->
     </body>
 </html>
