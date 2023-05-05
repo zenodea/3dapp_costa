@@ -15,91 +15,6 @@
 		            groundColor="0.051 0.051 0.051"
 		            skyColor="0.051 0.051 0.051"
 		            />
-		<Transform DEF="cameraFront_TRANSFORM"
-		           translation="-32.912083 1.588756 0.297633"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 -1.000000 0.000000 1.570796"
-		           >
-			<Viewpoint DEF="CA_cameraFront"
-			           centerOfRotation="0 0 0"
-			           position="-0.00 0.00 -0.00"
-			           orientation="0.00 0.00 0.00 0.00"
-			           fieldOfView="0.691"
-					   set_bind="true"
-			           />
-		</Transform>
-		<Transform DEF="cameraBack_TRANSFORM"
-		           translation="37.918720 1.570305 -0.317710"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 1.000000 -0.000000 1.570796"
-		           >
-			<Viewpoint DEF="CA_cameraBack"
-			           centerOfRotation="0 0 0"
-			           position="-0.00 -0.00 -0.00"
-			           orientation="0.00 0.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraRight_TRANSFORM"
-		           translation="0.307320 1.526437 39.315842"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 -0.000000 0.000000 0.000000"
-		           >
-			<Viewpoint DEF="CA_cameraRight"
-			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 0.00"
-			           orientation="1.00 0.00 -0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraLeft_TRANSFORM"
-		           translation="-0.066309 -0.373231 -39.570515"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 1.000000 -0.000000 3.141593"
-		           >
-			<Viewpoint DEF="CA_cameraLeft"
-			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 0.00"
-			           orientation="0.00 1.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraTop_TRANSFORM"
-		           translation="0.140633 31.900522 -0.694273"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 0.707107 0.707107 3.141593"
-		           >
-			<Viewpoint DEF="CA_cameraTop"
-			           centerOfRotation="0 0 0"
-			           position="0.00 0.00 0.00"
-			           orientation="0.00 1.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraBottom_TRANSFORM"
-		           translation="0.102175 -25.971338 0.340308"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 0.707107 -0.707107 3.141593"
-		           >
-			<Viewpoint DEF="CA_cameraBottom"
-			           centerOfRotation="0 0 0"
-			           position="0.00 0.00 -0.00"
-			           orientation="0.00 1.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="Camera_TRANSFORM"
-		           translation="-19.672993 18.730597 25.040863"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="-0.610180 -0.764549 -0.207719 0.837818"
-		           >
-			<Viewpoint DEF="CA_Camera"
-			           centerOfRotation="0 0 0"
-			           position="-0.00 0.00 0.00"
-			           orientation="0.00 -0.51 0.86 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
 		<Transform DEF="can">
 		<Transform DEF="Circle_TRANSFORM"
 		           translation="0.000001 1.387452 0.000001"
@@ -192,19 +107,6 @@
 				</Group>
 			</Transform>
 		</Transform>
-		</Transform>
-		<Transform DEF="Point_TRANSFORM"
-		           translation="6.065952 -12.421650 8.303453"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 0.707107 0.707107 3.141593"
-		           >
-			<PointLight DEF="LA_Point"
-			            ambientIntensity="0.0000"
-			            color="1.0000 1.0000 1.0000"
-			            intensity="1.0000"
-			            radius="25.0000" 
-			            location="0.0000 0.0000 0.0000"
-			            />
 		</Transform>
 				<timeSensor DEF='time_can' cycleInterval='4' loop='true' enabled='false'></timeSensor>
 				<orientationInterpolator DEF='Rotator' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.57079 0 1 0 3.14159  0 1 0 4.71239  0 1 0 6.28317'></orientationInterpolator>

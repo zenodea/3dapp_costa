@@ -39,7 +39,7 @@
         </div>
 
         <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:1.5em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
-            <i style="float: right;"id="moon_icon">🌕</i>
+            <i class="fas fa-moon" style="color:black" id="moon_icon"></i>
         </button>
 
 
@@ -53,9 +53,9 @@
             <div class="col-sm-12">
             <div id="main_3d_image">
                 <div class="card" id="main_text">
-                    <h4  class="card-title">Extraordinary <br>Every day</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
+                    <div class="card-title">
+                        <h4>Extraordinary <br>Every day</h4>
+                        <h5> Indulge in your favorites</h5>
                     </div>
                     <div class="card-footer mx-auto text-center justify-content-center">
                         <button  class="costa_button" onclick="window.location.href=' https://www.costa.co.uk'">Find a Costa</button>
@@ -71,12 +71,12 @@
             <!-- Future 3d Model-->
             <div class="col-sm-12">
                 <div div class="card item_card">
-                    <h4 id="iced_latte_main_title" class="card-title"></h4>
-                    <div class="card-body" id="drink_description_main">
-                        <h5 id="iced_latte_main_description"></h5>
+                    <div class="card-title">
+                        <h4 id="iced_latte_main_title"></h4>
+                        <h5 class="drink_description_main" id="iced_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="swap('iced_latte'); change_flavour(1);">Learn More ></button>
+                        <button class="costa_button" onclick="swap('iced_latte'); swapDBINfo(1); change_flavour(1);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -87,13 +87,12 @@
             <!-- Future 3d Model-->
             <div class="col-sm-12">
                 <div div class="card item_card">
-                    <h4 id="latte_main_title" class="card-title"></h4>
-
-                    <div class="card-body" id="drink_description_main">
-                        <h5 id="latte_main_description"></h5>
+                    <div class="card-title">
+                        <h4 id="latte_main_title"></h4>
+                        <h5 class="drink_description_main" id="latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('hot_latte'); change_flavour(4);">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('hot_latte'); swapDBINfo(4); change_flavour(4);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -103,12 +102,12 @@
         <div class="row canned_drink_row">
             <div class="col-sm-12">
                 <div div class="card item_card">
-                    <h4 id="canned_latte_main_title" class="card-title"></h4>
-                    <div class="card-body" id="drink_description_main">
-                        <h5 id="canned_latte_main_description"></h5>
+                    <div  class="card-title">
+                        <h4 id="canned_latte_main_title"></h4>
+                        <h5 class="drink_description_main" id="canned_latte_main_description"></h5>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('canned_latte'); change_flavour(7);">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('canned_latte'); swapDBINfo(7); change_flavour(7);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -180,14 +179,20 @@
         <!-- BootStrap 5 Cards -->
         <div class="row whats_new_row">
             <div class="col-sm-12">
-                <h4 id="What_New_title">What's New</h4>
+                <div div class="card item_card">
+                    <div class="card-title">
+                        <h4 id="What_New_title">What's New</h4>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row what_new_card_row">
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/cold_products_slogan.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_iced"></h4>
+                    <div class="card-title">
+                        <h4  id="what_new_iced"></h4>
+                    </div>
                     <div class="card-body mini-card-body" >
                         <h5 id="iced_latte_mini_description"></h5>
                     </div>
@@ -199,7 +204,9 @@
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/hot_products_slogan.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_hot"></h4>
+                    <div class="card-title">
+                        <h4 id="what_new_hot"></h4>
+                    </div>
                     <div class="card-body mini-card-body">
                         <h5 id="latte_mini_description"></h5>
                     </div>
@@ -211,7 +218,9 @@
             <div class="col-sm-4 what_new_card">
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/canned_products_slogan.jpg" class="card-img-top" alt="...">
-                    <h4 class="card-title" id="what_new_canned"></h4>
+                    <div class="card-title">
+                        <h4 id="what_new_canned"></h4>
+                    </div>
                     <div class="card-body mini-card-body">
                         <h5 id="canned_latte_mini_description"></h5>
                     </div>
@@ -233,10 +242,8 @@
             <div class="row">
                 <div div class="card item_card">
                     <div class="card-title card-page-title" >
-                        <h2 id="slogan_title_text"></h2>
-                    </div>
-                    <div class="card-body card-page-slogan" style="text-align: center;">
-                        <h2 id="slogan_text"></h2>
+                        <h4 id="slogan_title_text"></h4>
+                        <h5 id="slogan_text"></h5>
                     </div>
                 </div>
         </div>
@@ -287,16 +294,19 @@
                 <x3d id="wire"> 
                     <scene>
                         <Switch whichChoice="0" id="sceneSwitch">
+                                <!-- Iced Drinks Model -->
                                 <transform>
-                                <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="application/assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
+                                    <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true" url="application/assets/x3d/costa_iced_cup/costa_iced_cup.x3d">  </inline>
                                 </transform>
 
+                                <!-- Hot Drinks Model -->
                                 <transform>
-                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_cup/costa_cup.x3d">  </inline>
+                                    <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_cup/costa_cup.x3d">  </inline>
                                 </transform>
 
+                                <!-- Canned Drinks Model -->
                                 <transform>
-                                <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
+                                    <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
                                 </transform>
                         </Switch>
                                 <!-- PlaceHolder information if x3d models need to be regenerated -->
@@ -321,12 +331,15 @@
                                 <ROUTE fromNode='time_can' fromField='fraction_changed' toNode='Rotator' toField='set_fraction'></ROUTE>
                                 <ROUTE fromNode='Rotator' fromField='value_changed' toNode='can' toField='set_rotation'></ROUTE> -->
 
-                                <!-- Lights -->
+                                <!-- Transparent Background for the scene -->
                                 <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
+
+                                <!-- Lights -->
                                 <directionallight id="directional" direction="1 1 1" on="FA" intensity='10.0' shadowintensity="0.0" color="1 1 1" shadowmapsize="1024" znear="-1" zfar="-1" shadowcascades="1" shadowsplitfactor="1" shadowsplitoffset="0.1"></directionallight> 
-                                <PointLight id='point' on='FALSE' intensity='10.000' color='1 1 1' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
-                                <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
+                                <PointLight id='point' on='FALSE' intensity='5.000' color='1 1 1' location='0 10 0.5 ' radius='20.0000' >  </PointLight> 
                                 <SpotLight id='spot' on ="FALSE" beamWidth='0.9' color='1 1 1' cutOffAngle='1' location='0 0 10' radius='90.000' >  </SpotLight> 
+
+                                <NavigationInfo id="head" headlight='false'>  </NavigationInfo> 
                     </scene>
                 </x3d>
                 </div>
@@ -340,7 +353,7 @@
                         <h4 id="title_text"></h4>
                     </div>
                     <div class="card-body card-drink-description">
-                        <h3 id="drink_description_text"></h3>
+                        <h5 class="drink_description_main" id="drink_description_text"></h5>
                     </div>
                 </div>
                 </div>
@@ -370,12 +383,12 @@
                             </li>
                     </div>
                     <div class="card-body">
-                          <a class="btn btn-success btn-responsive" onclick="cameraFront();">Front</a>
-                          <a class="btn btn-primary btn-responsive" onclick="cameraBack();">Back</a>
-                          <a class="btn btn-secondary btn-responsive" onclick="cameraLeft();">Left</a>
-                          <a class="btn btn-secondary btn-responsive" onclick="cameraRight();">Right</a>
+                          <a class="btn btn-outline-dark btn-responsive" onclick="cameraFront();">Front</a>
+                          <a class="btn btn-outline-dark btn-responsive" onclick="cameraBack();">Back</a>
+                          <a class="btn btn-outline-dark btn-responsive" onclick="cameraLeft();">Left</a>
+                          <a class="btn btn-outline-dark btn-responsive" onclick="cameraRight();">Right</a>
                           <div class="dropdown" style="margin-top: 30px;">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="btn btn-outline-dark btn-responsive dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 Extra
                             </a>
 
@@ -405,7 +418,7 @@
                         </ul>
                     </div>
                     <div class="card-body tab-content text-center">
-                    <div class="tab-pane active" id="p-light">
+                    <div class="tab-pane active lights_text" id="p-light">
                             <h5>Point Light</h5>
                             <div class="form-check form-check-inline form-switch">
                                 <input class="form-check-input" onclick="lightSwitch('point')" type="checkbox" id="flexSwitchCheckDefault">
@@ -414,7 +427,7 @@
                                 <p>Pick a color:</p>
                                 <input style="border-color:black;width:100%" type="color" id="pointcolor" name="favcolor" value="#ffffff">
                     </div>
-                    <div class="tab-pane" id="d-light">
+                    <div class="tab-pane lights_text" id="d-light">
                         <h5>Directional Light</h5>
                         <div class="form-check form-check-inline form-switch">
                             <input class="form-check-input" onclick="lightSwitch('directional')" type="checkbox" id="flexSwitchCheckDefault">
@@ -423,7 +436,7 @@
                             <p>Pick a color:</p>
                             <input style="border-color:black;width:100%" type="color" id="directionalcolor" name="favcolor" value="#ffffff">
                     </div>
-                    <div class="tab-pane text-center" id="s-light">
+                    <div class="tab-pane text-center lights_text" id="s-light">
                         <h5>Spot Light</h5>
                         <div class="form-check form-check-inline form-switch">
                             <input class="form-check-input" onclick="lightSwitch('spot')" type="checkbox" id="flexSwitchCheckDefault">
@@ -486,22 +499,22 @@
         <div id="our_coffee_content" class="container-fluid main_contents" style="display: none;">
             <div class="row">
                 <div div class="card item_card" style="width: 58rem;">
-                    <h4  class="card-title">Gallery of our drinks!</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Indulge in your favorites</h3>
+                    <div  class="card-title">
+                        <h4>Gallery of our drinks!</h4>
+                        <h5> Indulge in your favorites</h5>
                     </div>
                 </div>
             </div>
+            <br>
 
             <!-- Carousel for Iced Products -->
             <div class="row">
                 <div div class="card item_card" tyle="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Iced Products!</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Perfect on a sunny day!</h3>
+                    <div class="card-title">
+                        <h4>Costa Iced Products!</h4>
+                        <h5>Perfect on a sunny day!</h5>
                     </div>
                 </div>
-                
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -523,9 +536,9 @@
             <!-- Carousel for Hot Products -->
             <div class="row">
                 <div div class="card item_card"  style="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Hot Products!</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> No need to be cold, drink this! </h3>
+                    <div class="card-title">
+                        <h4>Costa Hot Products!</h4>
+                        <h5> No need to be cold, drink this! </h5>
                     </div>
                 </div>
             <div id="carouselReProduct" class="carousel slide" data-bs-ride="carousel">
@@ -549,9 +562,9 @@
             <!-- Carousel for Canned Products -->
             <div class="row">
                 <div div class="card item_card" style="width: 58rem; padding-top:40px">
-                    <h4  class="card-title">Costa Take Away Products!</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Drink your favourites, anywhere!</h3>
+                    <div  class="card-title">
+                        <h4>Costa Take Away Products!</h4>
+                        <h5> Drink your favourites, anywhere!</h5>
                     </div>
                 </div>
                 <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
@@ -636,9 +649,11 @@
         <div id="contact_us_content" class="container-fluid main_contents" style="display: none;">
             <div class="row">
                 <div div class="card item_card"  style="width: 50rem;">
-                    <h4  class="card-title">Have a question about Costa?</h4>
+                    <div class="card-title"  style="text-align: center;">
+                        <h4>Have a question about Costa?</h4>
+                        <h5> If you can’t find what you’re looking for on our website check out our FAQ’s for the quickest answer. Alternatively, you can reach our Customer Services team by submitting a query through our contact form.</h3>
+                    </div>
                     <div class="card-body" style="text-align: center;">
-                    <h3> If you can’t find what you’re looking for on our website check out our FAQ’s for the quickest answer. Alternatively, you can reach our Customer Services team by submitting a query through our contact form.</h3>
                     </div>
                 </div>
             </div>
@@ -670,9 +685,9 @@
               </div>
             <div class="row">
                 <div div class="card item_card"  style="width: 50rem; padding-top: 30px;">
-                    <h4  class="card-title">Contact us directly!</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Please fill in the form with all the information.</h3>
+                    <div class="card-title"  style="text-align: center;">
+                    <h4>Contact us directly!</h4>
+                    <h5> Please fill in the form with all the information.</h5>
                     </div>
                 </div>
             </div>
@@ -705,12 +720,12 @@
         <div id="request_list_content" class="container-fluid main_contents" style="display: none;">
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
-                    <h4  class="card-title">Want to see the user requests?</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h4> You've come to the right place! </h4>
-                    <h3> You can even remove them with the click of a button! </h3>
-                    </div>
+                    <div class="card-title">
+                        <h4>Want to see the user requests?</h4>
+                        <h5> You've come to the right place! </h5>
+                        <h5> You can even remove them with the click of a button! </h5>
                 </div>
+            </div>
             </div>
             <table class="table text-center  table-bordered" id="request_list_placeholder" style="border-color: black">
             <thead class="table-active">
@@ -732,9 +747,9 @@
         <div id="going_beyond_content" class="container-fluid main_contetns" style="display: none;">
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
-                    <h4  class="card-title">What feature are beyond in this project?</h4>
-                    <div class="card-body" style="text-align: center;">
-                    <h3> Here they are: </h3>
+                    <div class="card-title">
+                        <h4>What feature are beyond in this project?</h4>
+                        <h5> Here they are: </h5>
                     </div>
                 </div>
             </div>
@@ -773,6 +788,11 @@
                 </ul>
                 <li>I have explored other 3D Content authoring packages besides 3ds Max to create my 3D models, in the case of this project, Blender was used.</li>
                 <li>I have created an alternative export workflow for my 3D Models using Blender => X3D => X3DOM</li>
+                <ul>
+                    <li>Manually set up color, transparency and metalness for x3D model </li>
+                    <li>Manually inspected correct material to insert correct texture to the x3d model</li>
+                    <li>Created animations by understanding the .x3d files and inserting appropriate nodes to move specific objects</li>
+                </ul>
                 <li>Photorealistic Renders of the 3d Objects (seen in the gallery)</li>
                 <ul>
                     <li>Specific Shader Nodes used to replicate materials (such as the plastic cups in the iced drinks)</li>
@@ -780,7 +800,11 @@
                     <li>Used 4k HDRI backdrops for realistic lighting</li>
                     <li>Used 4k Textures for approrate recreate of other materials, such as the table</li>
                 </ul>
-                <li>Light and Dark mode created via switching css values. Manually created.</li>
+                <li>Advanced usage of CSS</li>
+                <ul>
+                    <li>Use of variables to make an effective light mode and dark mode for the website</li>
+                    <li>Background created dynamically via CSS</li>
+                </ul>
             </ul> 
             </div>
         </div>
@@ -788,7 +812,9 @@
         <div id="references_content" class="container-fluid main_contetns" style="display: none;">
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
-                    <h4  class="card-title">Here are the references for any item not created by me</h4>
+                    <div class="card-title">
+                        <h5>Here are the references for any item not created by me:</h5>
+                    </div>
                 </div>
             </div>
             <div class="going_beyond_list">
@@ -849,12 +875,23 @@
         <script src="application/js/x3dom/x3dom.js"></script> 
 
         <!-- Custom Javascript -->
+
+        <!-- Javascript functions used for the request feature (CRUD)-->
         <script src="application/js/request_table_functions.js"></script>
+
         <script src="application/js/gallery_functions.js"></script>
+
+        <!-- Javascript function to add all general information to the table !-->
         <script src="application/js/getJsondata.js"></script>
+
+        <!-- Javascript functions for swapping of content in the SPA -->
         <script src="application/js/swap_functions.js"></script>
+
+        <!-- Javascript functions for interactions with the 3d Model -->
         <script src="application/js/3d_model_interaction.js"></script>
+
+        <!-- Javascript functions for changes in the lighting of the 3d Model-->
         <script src="application/js/color_functions.js"></script>
-        <!-- Custom Javascript -->
+
     </body>
 </html>

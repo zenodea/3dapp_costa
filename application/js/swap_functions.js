@@ -23,8 +23,6 @@ function swap(selected)
 
         // Get the images for the iced drinks from the SQLite db, carousel table
         swapGallery(1);
-        // Swap the information on the page with the relevant information. From the SQLite db, 3D Model table
-        swapDBINfo(1);
 
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 0);
@@ -42,8 +40,6 @@ function swap(selected)
 
         // Get the images for the hot drinks from the SQLite db, carousel table
         swapGallery(4);
-        // Swap the information on the page with the relevant information. From the SQLite db, 3D Model table
-        swapDBINfo(4);
 
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 1);
@@ -62,8 +58,6 @@ function swap(selected)
 
         // Get the images for the canned drinks from the SQLite db, carousel table
         swapGallery(7);
-        // Swap the information on the page with the relevant information. From the SQLite db, 3D Model table
-        swapDBINfo(7);
 
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 2);
@@ -206,12 +200,14 @@ function changeTheme() {
 
     if (currentTheme == "light") 
     {
-        $("#moon_icon").html("🌞");
+        document.getElementById("moon_icon").className = "fa fa-sun";
+        document.getElementById("moon_icon").style = "color: white;"
         targetTheme = "dark";
     }
     else
     {
-        $("#moon_icon").html("🌕")
+        document.getElementById("moon_icon").className = "fa fa-moon";
+        document.getElementById("moon_icon").style = "color: black;"
         targetTheme = "light";
     }
 
