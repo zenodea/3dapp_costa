@@ -11,6 +11,22 @@ function Animate(model)
         document.getElementById('model__time_straw').setAttribute('enabled', !animation);
         document.getElementById('model__time_cube').setAttribute('enabled', !animation);
     }
+    else if (model == "straw")
+    {
+        // Check if animation is alreday on or not
+        var animation = (document.getElementById('model__time_straw').getAttribute('enabled') === 'true');
+
+        // Set the animation node to the opposite of var animation
+        document.getElementById('model__time_straw').setAttribute('enabled', !animation);
+    }
+    else if (model == "ice")
+    {
+        // Check if animation is alreday on or not
+        var animation = (document.getElementById('model__time_cube').getAttribute('enabled') === 'true');
+
+        // Set the animation node to the opposite of var animation
+        document.getElementById('model__time_cube').setAttribute('enabled', !animation);
+    }
     else if (model == "hot_drink")
     {
         // Check if animation is alreday on or not

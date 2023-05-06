@@ -2,8 +2,8 @@
         <nav class="navbar  navbar-expand-md header-navbar">
             <!-- Brand -->
         <div class="logo">
-            <a class="navbar-brand" data-bs-toggle="modal" data-bs-target="#title_modal">
-                <div id="costa_logo" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click me! I hold a little secret ;)">
+            <a class="navbar-brand">
+                <div id="costa_logo">
                     <h3>CO<span id="special_S" style="font-size: 1.2em;">S</span>TA</h3>
                     <h4>COFFEE</h4>
                 </div>
@@ -15,25 +15,25 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link header_item" onclick="javascript:swap('main_page')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home page of the website">Home</a>
+                        <a class="nav-link header_item" onclick="swap('main_page')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home page of the website">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" id="gallery_button" onclick="javascript:swap('our_coffee_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="List of our coffee, alongside some extra realistic images! :)">Our coffees</a>
+                        <a class="nav-link header_item" id="gallery_button" onclick="swap('our_coffee_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="List of our coffee, alongside some extra realistic images! :)">Our coffees</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link header_item" onclick="change_modal('about_modal')" data-bs-toggle="modal" data-bs-target="#about_github_modal">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" onclick="javascript:swap('contact_us_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Any Issues? Contact Us!">Contact Us</a>
+                        <a class="nav-link header_item" onclick="swap('contact_us_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Any Issues? Contact Us!">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" id="request_list" onclick="javascript:swap('request_list_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Need to view the user's request? This is the place!" >Requests List</a>
+                        <a class="nav-link header_item" id="request_list" onclick="swap('request_list_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Need to view the user's request? This is the place!" >Requests List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" onclick="javascript:swap('going_beyond_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How does this website go beyond?">Going Beyond</a>
+                        <a class="nav-link header_item" onclick="swap('going_beyond_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How does this website go beyond?">Going Beyond</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link header_item" onclick="javascript:swap('references_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How does this website go beyond?">References</a>
+                        <a class="nav-link header_item" onclick="swap('references_content')" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How does this website go beyond?">References</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link header_item" onclick="change_modal('github_modal')" data-bs-toggle="modal" data-bs-target="#about_github_modal">Github</a>
@@ -56,38 +56,6 @@
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- X3D Model for the 3d Costa Logo-->
-        <div class="modal fade" id="title_modal" tabindex="-1" role="dialog" aria-labelledby="title_modal_label" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">3D Costa Title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          Rendering
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                          <li><a class="dropdown-item">Normal</a></li>
-                          <li><a class="dropdown-item">Wire</a></li>
-                          <li><a class="dropdown-item">Vertex</a></li>
-                        </ul>
-                      </div>
-                <x3d id="wire_costa_title" style="height:50%"> 
-                    <scene>
-                            <transform id="costa_logo">
-                                <inline onclick="animateModel()" nameSpaceName="model" mapDEFToID="true" url="application/assets/x3d/costa_logo.x3d">  </inline>
-                            </transform>
-                            <!-- Lights -->
-                            <background skycolor="0 0 0" transparency=1 roundcolor="" groundangle="" skyangle="" backurl="" bottomurl="" fronturl="" lefturl="" righturl="" topurl=""></background>
-                            <NavigationInfo id="head" headlight='true' type='"EXAMINE"'>  </NavigationInfo> 
-                    </scene>
-                </x3d>
             </div>
             </div>
         </div>

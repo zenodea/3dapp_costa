@@ -33,7 +33,7 @@ class Model
             $this->dbhandle->exec("CREATE TABLE Main_page (Id INTEGER PRIMARY KEY, title TEXT, general_drink_description TEXT)");
             
             # Footer table
-            $this->dbhandle->exec("CREATE TABLE Footer (Id INTEGER PRIMARY KEY, title TEXT, items TEXT)");
+            $this->dbhandle->exec("CREATE TABLE Footer (Id INTEGER PRIMARY KEY, title TEXT, items TEXT, costa_url TEXT)");
 
             # Header table
             $this->dbhandle->exec("CREATE TABLE Header (Id INTEGER PRIMARY KEY, title TEXT, items TEXT)");
@@ -126,8 +126,9 @@ class Model
             // Add footer items to database
             foreach($footer as $item)
             {
-                    $stmt=$this->dbhandle->prepare("INSERT INTO Footer (title, items)
-                            VALUES (:section, :array)");
+                    $stmt=$this->dbhandle->prepare("INSERT INTO Footer (title, items, costa_url)
+                            VALUES (:section, :array, :costa_url)");
+                    $stmt->bindValue(':costa_url', implode(', ',array_pop($item)));
                     $stmt->bindValue(':array', implode(', ',array_pop($item)));
                     $stmt->bindValue(':section', array_pop($item));
                     $result = $stmt->execute();
@@ -187,7 +188,7 @@ class Model
                 }
 
                 // Get data for the footer of the SPA
-                $sql = 'SELECT title, items FROM footer';
+                $sql = 'SELECT title, items, costa_url FROM footer';
                 $stmt = $this->dbhandle->query($sql);
                 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($data as $value)

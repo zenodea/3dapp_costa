@@ -18,23 +18,23 @@
     [
         {
             "title" : "About Us",
-            "items" : ["Our Coffees", "Our Story", "Sustainability", "Costa Foundation", "Policies and reports"]
+            "items" : ["Our Coffees", "Our Story", "Sustainability", "Costa Foundation", "Policies and reports","Download the app"],
+            "url" : ["https://www.costa.co.uk/our-coffees", "https://www.costa.co.uk/behind-the-beans/our-story/history", "https://www.costa.co.uk/sustainability", "https://www.costafoundation.com/", "https://www.costa.co.uk/policies-and-reports", "https://swf3j.app.goo.gl/JGZwd"]
         },
         {
-            "title" : "Nutrients",
-            "items" : ["Calories", "Macronutrients", "Micronutrients", "Food Alergies", "Dietary Restrictions"]
+            "title" : "Dietary Information",
+            "items" : ["Nutrition and allergens", "Store dietary information", "Costa Express dietary information", "Food Ready to drink dietary information"],
+            "url" : ["https://www.costa.co.uk/behind-the-beans/nutrition#allergens-advice", "https://www.costa.co.uk/docs/store-allergen-guide.pdf", "https://www.costa.co.uk/docs/express-allergen-guide.pdf", "https://www.costa.co.uk/docs/ready-to-drink.pdf"]
         },
         {
             "title" : "Giftings",
-            "items" : ["Occasions","Recipients","Budget","Personalization","Delivery"]
+            "items" : ["Gift cards","Gift cards for business"],
+            "url" : ["https://gifting.costa.co.uk/?utm_source=costauksite&utm_medium=referral&utm_campaign=giftcardsfooter", "https://www.costacoffeeforbusiness.co.uk/"]
         },
         {
             "title" : "Contact Us",
-            "items" : ["Email","Phone","Address","Social Media","Contact Form"]
-        },
-        {
-            "title" : "Terms and Conditions",
-            "items" : ["Agreement","Intellectual Property","Liability","Termination","Governing Law"]
+            "items" : ["FAQs","Contact Us","Press","Careers"],
+            "url" : ["https://www.costa.co.uk/faqs", "https://www.costa.co.uk/contact-form/", "https://costanewsroom.vuelio.co.uk/press/", "https://www.costacareers.co.uk/"]
         }
     ],
     "drinks":

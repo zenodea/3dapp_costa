@@ -455,7 +455,7 @@
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" href="#animation">Animation</button>
+                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" href="#animation">SFX</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" href="#render" >Render</button>
@@ -466,22 +466,38 @@
 
                         <!-- Animation Controls -->
                         <div class="tab-pane active" id="animation">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" onclick="Animate('iced_drink')" type="checkbox" id="flexSwitchCheckChecked">
-                                <label class="form-check-label" for="flexSwitchCheckChecked">Iced Drinks Animation</label>
+                            <div class="text-center" id="iced_fx" style="display:none;">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" onclick="Animate('straw')" type="checkbox" id="flexSwitchCheckChecked">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Straw Animation</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" onclick="Animate('ice')" type="checkbox" id="flexSwitchCheckChecked">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Ice Animation</label>
+                                </div>
                             </div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" onclick="Animate('hot_drink')" type="checkbox" id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Hot Drinks Animation</label>
+                            <div class="text-center" id="hot_fx" style="display:none;">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" onclick="Animate('hot_drink')" type="checkbox" id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Lift Cup Animation</label>
+                                </div>
+                                <div>
+                                    <br>
+                                    <h4>Modify Model</h4>
+                                    <p>Pick a color:</p>
+                                    <input style="border-color:black;width:100%" type="color" id="change_cup_color" name="favcolor" value="#AD1035">
+                                </div>
                             </div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" onclick="Animate('canned_drink')" type="checkbox" id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Canned Drinks Animation</label>
+                            <div class="text-center" id="canned_fx" style="display:none;">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" onclick="Animate('canned_drink')" type="checkbox" id="flexSwitchCheckDefault">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Rotate Can Animation</label>
+                                </div>
                             </div>
                         </div>
                         <!-- Render Controls -->
-                        <div class="tab-pane" id="render">
-                            <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
+                        <div class="tab-pane " id="render">
+                            <ul class="nav text-center nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
                                     <a class="btn btn-outline-dark btn-responsive" onclick="vertex();">Vertex</a>

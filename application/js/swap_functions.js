@@ -9,6 +9,9 @@ function swap(selected)
     $("#request_list_content").hide()
     $("#references_content").hide()
     $("#3d_model_content").hide()
+    $("#iced_fx").hide();
+    $("#hot_fx").hide();
+    $("#canned_fx").hide();
     $("#sceneSwitch").attr("whichChoice", -1);
 
     if (selected != "main_page")
@@ -28,6 +31,8 @@ function swap(selected)
         $("#sceneSwitch").attr("whichChoice", 0);
         $("#3d_model_content").show();
 
+        $("#iced_fx").show();
+
         // Reset the camera each time you select one of the x3d models
         cameraBack();
         cameraFront();
@@ -44,6 +49,8 @@ function swap(selected)
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 1);
         $("#3d_model_content").show();
+
+        $("#hot_fx").show();
 
         // Reset the camera each time you select one of the x3d models
         cameraBack();
@@ -62,6 +69,8 @@ function swap(selected)
         // Switch the 3D model to save up on resources
         $("#sceneSwitch").attr("whichChoice", 2);
         $("#3d_model_content").show();
+
+        $("#canned_fx").show();
 
         // Reset the camera each time you select one of the x3d models
         cameraBack();

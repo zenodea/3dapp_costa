@@ -16,6 +16,12 @@ $("#directionalcolor").change(function()
     $("#directional").attr("color", hextorgb($(this).val()))
 });
 
+// Change color of cup for the hot drinks
+$("#change_cup_color").change(function()
+{
+    document.getElementById("model__MA_Material_cup_body").setAttribute('diffuseColor', hextorgb($(this).val()))
+})
+
 // x3d takes rgb inputs as three vlaues from 0 to 1
 // here we convert hex values to rgb values (with values from 0 to 1)
 function hextorgb(hexValue)
