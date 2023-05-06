@@ -159,8 +159,8 @@ body
 	background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.7))
 }
 
-.navbar-toggler-icon
-{
+.navbar-toggler-icon{
+	overflow-x: 30px;
 	filter: invert(var(--invert_value));
 }
 
@@ -333,24 +333,25 @@ X3D, x3d {
 	border-color: var(--card_text);
 }
 
-
-.camera_button
-{
-	font-size: 20px;
-	border-radius: 100px;
-	background-color: #6d1f37;
-	color: #ffffff;
-	font-weight: bold;
-	width: 25%;
-	border-color: transparent;
-}
-
 .item_card{
 	background-color: transparent;
 	border-color: transparent;
 	margin: auto;
 	color: var(--card_text)
 }
+
+  /* Request CSS */
+  .request_button
+  {
+	font-size: 15px;
+	border-radius: 100px;
+	background-color: var(--costa_red_title);
+	color: #ffffff;
+	font-weight: bold;
+	width: 80px;
+	height: 30px;
+
+  }    
 
 /* Bootstrap Toast CSS configurations */
 
@@ -591,6 +592,7 @@ hr
 	line-height: 1.5;
 }
 
+/* Hide href blue color */ 
 a:link { text-decoration: none; }
 
 
@@ -603,6 +605,7 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 .footer-title {
+	font-size: 23px;
 	color:white;
 	font-weight: bold;
 	text-align: center;
@@ -627,6 +630,11 @@ a:active { text-decoration: none; }
 .social > a
 {
 	color: var(--card_text);
+}
+
+.social
+{
+	padding-right: 50px;
 }
 
 .card-footer
@@ -695,18 +703,6 @@ a:active { text-decoration: none; }
 	display: table;
   }
 
-  /* Request CSS */
-  .request_button
-  {
-	font-size: 15px;
-	border-radius: 100px;
-	background-color: #6d1f37;
-	color: #ffffff;
-	font-weight: bold;
-	width: 80px;
-	height: 30px;
-
-  }
 /* Small devices (landscape phones, 576px and up)
 */
 @media (min-width: 576px) {
@@ -718,13 +714,6 @@ a:active { text-decoration: none; }
 
 	.header_item{
 		font-size: 20px; 
-	}
-
-	#costa_logo h3{
-		font-size: 60px;
-	}
-	#costa_logo h4{
-		font-size: 30px;
 	}
 
 	/* Main Screen*/
@@ -784,6 +773,11 @@ a:active { text-decoration: none; }
 		font-size: 14px;
 	}
 
+	.costa_button{
+		width: 140px;
+		height: 50px;
+	}
+
 	/* Offcanvas */
 	.offcanvas-body > h5
 	{
@@ -800,6 +794,11 @@ a:active { text-decoration: none; }
 	.footer-body > a {
 	font-size: 7px;
 	}
+
+	.social
+	{
+		padding-right: 0px;
+	}
 }
 
 
@@ -813,7 +812,7 @@ a:active { text-decoration: none; }
     }
 
 	.header_item{
-		font-size: 12px; 
+		font-size: 9px; 
 	}
 
 	#costa_logo h3{
@@ -880,6 +879,11 @@ a:active { text-decoration: none; }
 		font-size: 16px;
 	}
 
+	.costa_button{
+		width: 140px;
+		height: 50px;
+	}
+
 	/* Offcanvas */
 	.offcanvas-body > h5
 	{
@@ -890,6 +894,11 @@ a:active { text-decoration: none; }
 	/* Footer */
 	.footer-body > a {
 	font-size: 10px;
+	}
+
+	.social
+	{
+		padding-right: 0px;
 	}
 }
 
@@ -904,7 +913,7 @@ a:active { text-decoration: none; }
 
 	/* Header */
 	.header_item{
-		font-size: 15px; 
+		font-size: 12px; 
 	}
 
 	#costa_logo h3{
@@ -969,6 +978,11 @@ a:active { text-decoration: none; }
 	{
 		font-size: 18px;
 	}
+	.costa_button{
+		width: 180px;
+		height: 60px;
+	}
+
 
 	/* Offcanvas */
 	.offcanvas-body > h5
@@ -979,6 +993,11 @@ a:active { text-decoration: none; }
 	/* Footer */
 	.footer-body > a{
 	font-size: 15px;
+	}
+
+	.social
+	{
+		padding-right: 0px;
 	}
 }
 
@@ -993,7 +1012,7 @@ a:active { text-decoration: none; }
 
 	/* Header */
 	.header_item{
-		font-size: 20px; 
+		font-size: 18px; 
 	}
 
 	#costa_logo h3{
@@ -1059,6 +1078,11 @@ a:active { text-decoration: none; }
 		font-size: 20px;
 	}
 
+	.costa_button{
+		width: 180px;
+		height: 60px;
+	}
+
 	/* Offcanvas */
 	.offcanvas-body > h5
 	{
@@ -1068,5 +1092,10 @@ a:active { text-decoration: none; }
 	/* Footer */
 	.footer-body > a {
 	font-size: 20px;
+	}
+
+	.social
+	{
+		padding-right: 0px;
 	}
 }

@@ -282,9 +282,9 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <div id="iced_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="swap('iced_latte');">Iced Drinks</a></li>
-                                    <li><a class="dropdown-item" onclick="swap('hot_latte');">Hot Drinks</a></li>
-                                    <li><a class="dropdown-item" onclick="swap('canned_latte');">Canned Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('iced_latte');   swapDBINfo(1);">Iced Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('hot_latte');    swapDBINfo(4);">Hot Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(7);">Canned Drinks</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -466,30 +466,26 @@
 
                         <!-- Animation Controls -->
                         <div class="tab-pane active" id="animation">
-                            <div class="text-center" id="iced_fx" style="display:none;">
-                                <div class="form-check form-switch">
+                            <div class="text-center lights_text" id="iced_fx" style="display:none;">
+                                <h5>Straw Animation</h5>
+                                <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('straw')" type="checkbox" id="flexSwitchCheckChecked">
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Straw Animation</label>
                                 </div>
-                                <div class="form-check form-switch">
+                                <h5>Ice Animation</h5>
+                                <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('ice')" type="checkbox" id="flexSwitchCheckChecked">
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Ice Animation</label>
                                 </div>
                             </div>
-                            <div class="text-center" id="hot_fx" style="display:none;">
-                                <div class="form-check form-switch">
+                            <div class="text-center lights_text" id="hot_fx" style="display:none;">
+                                <h5>Lift Cup Animation</h5>
+                                <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('hot_drink')" type="checkbox" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Lift Cup Animation</label>
                                 </div>
-                                <div>
-                                    <br>
-                                    <h4>Modify Model</h4>
                                     <p>Pick a color:</p>
                                     <input style="border-color:black;width:100%" type="color" id="change_cup_color" name="favcolor" value="#AD1035">
-                                </div>
                             </div>
-                            <div class="text-center" id="canned_fx" style="display:none;">
-                                <div class="form-check form-switch">
+                            <div class="text-center lights_text" id="canned_fx" style="display:none;">
+                                <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('canned_drink')" type="checkbox" id="flexSwitchCheckDefault">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Rotate Can Animation</label>
                                 </div>
@@ -499,9 +495,9 @@
                         <div class="tab-pane " id="render">
                             <ul class="nav text-center nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
+                                    <a class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
                                     <a class="btn btn-outline-dark btn-responsive" onclick="wireFrame();">WireFrame</a>
                                     <a class="btn btn-outline-dark btn-responsive" onclick="vertex();">Vertex</a>
-                                    <a class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
                                 </li>
                             </ul>
                         </div>
@@ -600,65 +596,6 @@
                 </button>
                 </div>
             </div>
-        </div>
-
-        <!--  Extra Feature -->
-        <div id="our_menu_content" class="container-fluid main_contents" style="display: none;">
-                <div class="row">
-                    <div div class="card">
-                        <input type="text" id="mySearch" onkeyup="menu_function()" placeholder="Search.." title="Type in a category">
-                    </div>
-                </div>
-            <ul class="list-group list-group-vertical" id="myMenu" style=" width:33.3%;">
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Iced Latte</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Espresso</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Latte</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Americano</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Fluid</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Latte</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Americano</h4>
-                </div>
-                </a>
-              </li>
-              <li class="list-group-item"><a>
-                <div div class="card" id="what_new_card" style="width:20rem;height:20rem">
-                    <h4 class="card-title" id="what_new_title">Fluid</h4>
-                </div>
-                </a>
-              </li>
-            </ul>
         </div>
 
         <!-- Contact Us Feature -->

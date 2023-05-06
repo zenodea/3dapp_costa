@@ -67,6 +67,17 @@ class Controller {
     }
 
     // Get information of a specific drink
+    // Function used to obtain information of one of the drinks
+    // Based on the ID, the following id's are the same for the entire project
+    // ID = 1 = Iced Latte
+    // ID = 2 = Cold Brew
+    // ID = 3 = Iced Chai Tea Latte
+    // ID = 4 = Latte
+    // ID = 5 = Hot Chocolate
+    // ID = 6 = Mocha
+    // ID = 7 = Canned Latte
+    // ID = 8 = Canned Caramel latte
+    // ID = 9 = Canned Americano
     function apiGetDrinkInformation()
     {
         $data = $this->model->dbGetDrinkInformation($_POST['id']);
