@@ -21,7 +21,7 @@ class Model
         
     }
 
-    # Database functions
+    # Database functions used to create the tables to the SQLite DB
     function dbCreateTable()
     {
         try
@@ -62,6 +62,7 @@ class Model
         $this->dbhandle = NULL;
     }
 
+    # Database functions used to insert data onto the tables to the SQLite DB
     function dbInsertData()
     {
         $JsonFileContent = file_get_contents(__DIR__."/data.json");
