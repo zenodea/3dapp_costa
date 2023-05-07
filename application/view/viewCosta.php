@@ -11,9 +11,7 @@
 
         <!-- Bootstrap+CSS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-        <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
@@ -39,7 +37,7 @@
         </div>
 
         <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:1.5em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
-            <i class="fas fa-moon" style="color:black" id="moon_icon"></i>
+            <i class="fas fa-sun" style="color:black" id="moon_icon"></i>
         </button>
 
 
@@ -681,18 +679,17 @@
             </div>
             </div>
             <table class="table text-center  table-bordered" id="request_list_placeholder" style="border-color: black">
-            <thead class="table-active">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Email</th>
-                <th scope="col">Category</th>
-                <th scope="col">Description</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Remove Request</th>
-            </tr>
-            </thead>
-            <tbody class="tbody">
-            </tbody>
+                <thead class="table-active">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Comment</th>
+                        <th scope="col">Remove Request</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody"></tbody>
             </table>
         </div>
 
@@ -821,11 +818,16 @@
         <script src="application/js/jquery-3.6.4.min.js"></script>
 
         <!-- Fancybox -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
+        <script src="application/js/jquery.fancybox.min.js"></script> 
+        <link rel="stylesheet" href="application/css/jquery.fancybox.min.css"/>
 
         <!-- X3D -->
         <script src="application/js/x3dom/x3dom.js"></script> 
+
+        <!-- Bootstrap -->
+        <script src="application/js/bootstrap.min.js" ></script>
+        <!-- Fontawesome -->
+        <script src="application/js/fontawesome-all.min.js"></script>
 
         <!-- Custom Javascript -->
 

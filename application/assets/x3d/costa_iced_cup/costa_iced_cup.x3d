@@ -16,35 +16,34 @@
 		            skyColor="0.000 0.000 0.000"
 		            />
 		<!-- Lighting -->
-		<!--
 		<Transform DEF="Point_TRANSFORM" 
-		           translation="6.180618 0.127149 0.000000"
+		           translation="100.180618 0.127149 0.000000"
 		           scale="1.550077 1.550077 1.550077"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<PointLight DEF="LA_Point"
 			            ambientIntensity="0.0000"
 			            color="1.0000 1.0000 1.0000"
-			            intensity="0.6"
+			            intensity="0.4"
 			            radius="1250.0000" 
 			            location="-0.0000 0.0000 0.0000"
 			            />
 		</Transform>
 		<Transform DEF="Point_001_TRANSFORM"
-		           translation="-6.120903 0.127149 0.000000"
+		           translation="-100.120903 0.127149 0.000000"
 		           scale="1.550077 1.550077 1.550077"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<PointLight DEF="LA_Point_001"
 			            ambientIntensity="0.0000"
 			            color="1.0000 1.0000 1.0000"
-			            intensity="0.6"
+			            intensity="0.4"
 			            radius="1000.0000" 
 			            location="-0.0000 0.0000 0.0000"
 			            />
 		</Transform>
 		<Transform DEF="Point_002_TRANSFORM"
-		           translation="-0.029858 11.513533 0.000000"
+		           translation="-0.029858 100.513533 0.000000"
 		           scale="1.090021 1.090021 1.090021"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
@@ -57,51 +56,143 @@
 			            />
 		</Transform>
 		<Transform DEF="Point_003_TRANSFORM"
-		           translation="-0.029858 -12.310867 0.000000"
+		           translation="-0.029858 -100.310867 0.000000"
 		           scale="1.090021 1.090021 1.090021"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<PointLight DEF="LA_Point_003"
 			            ambientIntensity="0.0000"
 			            color="1.0000 1.0000 1.0000"
-			            intensity="0.6"
+			            intensity="0.4"
 			            radius="1000.0000" 
 			            location="0.0000 0.0000 0.0000"
 			            />
 		</Transform>
 		<Transform DEF="Point_004_TRANSFORM"
-		           translation="-0.019262 -0.019261 5.979070"
+		           translation="-0.019262 -0.019261 100.979070"
 		           scale="1.493506 1.493506 1.493506"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<PointLight DEF="LA_Point_004"
 			            ambientIntensity="0.0000"
 			            color="1.0000 1.0000 1.0000"
-			            intensity="0.6"
+			            intensity="0.4"
 			            radius="1000.0000" 
 			            location="0.0000 0.0000 0.0000"
 			            />
 		</Transform>
 		<Transform DEF="Point_005_TRANSFORM"
-		           translation="-0.019262 -0.019261 -5.959807"
+		           translation="-0.019262 -0.019261 -100.959807"
 		           scale="1.493506 1.493506 1.493506"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<PointLight DEF="LA_Point_005"
 			            ambientIntensity="0.0000"
 			            color="1.0000 1.0000 1.0000"
-			            intensity="0.6"
+			            intensity="0.4"
 			            radius="1000.0000" 
 			            location="0.0000 -0.0000 0.0000"
 			            />
 		</Transform>
-		-->
-			<PointLight DEF='Omni001-6' intensity='0.4' location='-1860 1456 -1416' radius='10750'/>
-			<PointLight DEF='Omni002-7' intensity='0.4' location='1940 1456 -1404' radius='10750'/>
-			<PointLight DEF='Omni003-8' intensity='0.4' location='-9.502 1456 1745' radius='10750'/>
-			<PointLight DEF='Omni004-11' intensity='0.4' location='11.65 -1231 -1432' radius='10750'/>
-			<PointLight DEF='Omni005-12' intensity='0.4' location='1945 -1189 1764' radius='10750'/>
-			<PointLight DEF='Omni006-13' intensity='0.4' location='-1931 -1189 1790' radius='10750'/>
+
+		<!-- Camera -->
+				<Transform DEF="cameraBack_TRANSFORM"
+		           translation="15.057143 -0.306532 -0.008247"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 1.000000 -0.000000 1.570796"
+		           >
+			<Viewpoint DEF="CA_cameraBack"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 0.00"
+			           orientation="0.00 0.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraRight_TRANSFORM"
+		           translation="-0.014593 -0.306534 12.928702"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 -0.000000 0.000000 0.000000"
+		           >
+			<Viewpoint DEF="CA_cameraRight"
+			           centerOfRotation="0 0 0"
+			           position="0.00 -0.00 -0.00"
+			           orientation="0.00 0.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraFront_TRANSFORM"
+		           translation="-14.830286 -0.287171 -0.001103"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 -1.000000 0.000000 1.570796"
+		           >
+			<Viewpoint DEF="CA_cameraFront"
+			           centerOfRotation="0 0 0"
+			           position="-0.00 -0.00 0.00"
+			           orientation="0.00 0.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraLeft_TRANSFORM"
+		           translation="-0.014593 -0.306548 -12.869599"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 1.000000 -0.000000 3.141593"
+		           >
+			<Viewpoint DEF="CA_cameraLeft"
+			           centerOfRotation="0 0 0"
+			           position="0.00 -0.00 -0.00"
+			           orientation="0.00 1.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraTop_TRANSFORM"
+		           translation="-0.009316 16.654472 0.009353"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           >
+			<Viewpoint DEF="CA_cameraTop"
+			           centerOfRotation="0 0 0"
+			           position="0.00 0.00 0.00"
+			           orientation="0.00 1.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraBottom_TRANSFORM"
+		           translation="-0.006122 -14.042221 0.007346"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="0.000000 0.707107 -0.707107 3.141593"
+		           >
+			<Viewpoint DEF="CA_cameraBottom"
+			           centerOfRotation="0 0 0"
+			           position="0.00 -0.00 -0.00"
+			           orientation="0.00 1.00 0.00 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="camera_TRANSFORM"
+		           translation="-26.448473 1.748579 -0.007597"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.024417 -0.999404 -0.024416 1.571356"
+		           >
+			<Viewpoint DEF="CA_camera"
+			           centerOfRotation="0 0 0"
+			           position="-0.00 -0.00 0.00"
+			           orientation="0.00 -1.00 -0.03 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+		<Transform DEF="cameraNormal_TRANSFORM"
+		           translation="12.661065 5.379593 21.341877"
+		           scale="1.000000 1.000000 1.000000"
+		           rotation="-0.304540 0.948273 0.089631 0.601908"
+		           >
+			<Viewpoint DEF="CA_cameraNormal"
+			           centerOfRotation="0 0 0"
+			           position="-0.00 -0.00 -0.00"
+			           orientation="0.64 0.14 -0.76 0.00"
+			           fieldOfView="0.691"
+			           />
+		</Transform>
+
 		<Transform DEF="Cylinder_002_TRANSFORM"
 		           translation="-0.033304 2.204308 -0.011013"
 		           scale="0.147871 0.147871 2.510259"
@@ -496,102 +587,7 @@
 				</Group>
 			</Transform>
 		</Transform>
-		<Transform DEF="cameraBack_TRANSFORM"
-		           translation="15.057143 -0.306532 -0.008247"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 1.000000 -0.000000 1.570796"
-		           >
-			<Viewpoint DEF="CA_cameraBack"
-			           centerOfRotation="0 0 0"
-			           position="0.00 0.00 0.00"
-			           orientation="0.00 0.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraRight_TRANSFORM"
-		           translation="-0.014593 -0.306534 12.928702"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 -0.000000 0.000000 0.000000"
-		           >
-			<Viewpoint DEF="CA_cameraRight"
-			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 -0.00"
-			           orientation="0.00 0.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraFront_TRANSFORM"
-		           translation="-14.830286 -0.287171 -0.001103"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 -1.000000 0.000000 1.570796"
-		           >
-			<Viewpoint DEF="CA_cameraFront"
-			           centerOfRotation="0 0 0"
-			           position="-0.00 -0.00 0.00"
-			           orientation="0.00 0.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraLeft_TRANSFORM"
-		           translation="-0.014593 -0.306548 -12.869599"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 1.000000 -0.000000 3.141593"
-		           >
-			<Viewpoint DEF="CA_cameraLeft"
-			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 -0.00"
-			           orientation="0.00 1.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraTop_TRANSFORM"
-		           translation="-0.009316 16.654472 0.009353"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 0.707107 0.707107 3.141593"
-		           >
-			<Viewpoint DEF="CA_cameraTop"
-			           centerOfRotation="0 0 0"
-			           position="0.00 0.00 0.00"
-			           orientation="0.00 1.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraBottom_TRANSFORM"
-		           translation="-0.006122 -14.042221 0.007346"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="0.000000 0.707107 -0.707107 3.141593"
-		           >
-			<Viewpoint DEF="CA_cameraBottom"
-			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 -0.00"
-			           orientation="0.00 1.00 0.00 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="camera_TRANSFORM"
-		           translation="-26.448473 1.748579 -0.007597"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="-0.024417 -0.999404 -0.024416 1.571356"
-		           >
-			<Viewpoint DEF="CA_camera"
-			           centerOfRotation="0 0 0"
-			           position="-0.00 -0.00 0.00"
-			           orientation="0.00 -1.00 -0.03 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
-		<Transform DEF="cameraNormal_TRANSFORM"
-		           translation="12.661065 5.379593 21.341877"
-		           scale="1.000000 1.000000 1.000000"
-		           rotation="-0.304540 0.948273 0.089631 0.601908"
-		           >
-			<Viewpoint DEF="CA_cameraNormal"
-			           centerOfRotation="0 0 0"
-			           position="-0.00 -0.00 -0.00"
-			           orientation="0.64 0.14 -0.76 0.00"
-			           fieldOfView="0.691"
-			           />
-		</Transform>
+
 		    
 		<!-- Animations Iced Drinks -->
 		<timeSensor DEF="time_cube" cycleInterval="2" loop="true" enabled="false"> </timeSensor>

@@ -4,13 +4,13 @@ $(document).ready(function()
 	$.getJSON('index.php/apiGetJsonMuseumData', function(jsonObj){
         // Main Page
 
-        // Iced Latte
+        // Iced Drinks 
 		$('#iced_latte_main_title').html(jsonObj[0].title);
 		$('#what_new_iced').html(jsonObj[0].title);
 		$('#iced_latte_main_description').html(jsonObj[0].general_drink_description);
 		$('#iced_latte_mini_description').html(jsonObj[0].general_drink_description);
 
-        // Iced Latte
+        // Hot Drinks
 		$('#latte_main_title').html(jsonObj[1].title);
 		$('#what_new_hot').html(jsonObj[1].title);
 		$('#latte_main_description').html(jsonObj[1].general_drink_description);
