@@ -817,12 +817,10 @@ a:active { text-decoration: none; }
 		font-size: 15px;
 	}
 
-	/* Carousel */
-	.carousel-inner .item img {
-		height: 50%;
-		width: 100% !important;
-	}
-
+	.carousel {
+		width: 800px;
+		margin: auto;
+	  }
 	/* Footer */
 	.footer-body > a {
 	font-size: 7px;

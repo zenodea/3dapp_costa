@@ -223,12 +223,15 @@ function change_flavour(selected)
     }
 }
 
-function materialPopup(color, info) 
+// Function used to show information about the material that has been clicked on
+// In the form of a toast with Bootstrap 5
+function materialPopup(title, description) 
 {
-    $('#mat_name').text(color);
-    $('#mat_info').text(info);
+    $('#mat_name').text(title);
+    $('#mat_info').text(description);
 
-    let toastEl = document.getElementById('material-toast');
-    let toast = new bootstrap.Toast(toastEl);
+    // Create new toast
+    let toast = new bootstrap.Toast($('#material-toast'));
+    // Show new toast
     toast.show();
 }

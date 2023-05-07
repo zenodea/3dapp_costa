@@ -4,10 +4,13 @@
         <title>Costa Coffee 3D Gallery</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- CSS -->
         <link rel="icon" href="application/assets/images/costa_logo.png" type="image/icon type">
         <link rel='stylesheet' type='text/css' href='application/css/x3dom.css'></link> 
         <link rel="stylesheet" href="application/css/bootstrap.css">
         <link rel="stylesheet" href="application/css/custom.css">
+        <link rel="stylesheet" href="application/css/jquery.fancybox.min.css"/>
 
         <!-- Bootstrap+CSS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -15,8 +18,6 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
-        <!-- Fontawesome -->
-        <script src="application/js/fontawesome-all.min.js"></script>
     </head>
     <body>
   <!-- Toast used to describe material for the X3D Model -->
@@ -532,7 +533,7 @@
                         <h5>Perfect on a sunny day!</h5>
                     </div>
                 </div>
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleCaptions" class="carousel slide text-center" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -826,7 +827,6 @@
 
         <!-- Fancybox -->
         <script src="application/js/jquery.fancybox.min.js"></script> 
-        <link rel="stylesheet" href="application/css/jquery.fancybox.min.css"/>
 
         <!-- X3D -->
         <script src="application/js/x3dom/x3dom.js"></script> 
@@ -834,12 +834,16 @@
         <!-- Bootstrap -->
         <script src="application/js/bootstrap.min.js" ></script>
 
+        <!-- Fontawesome -->
+        <script src="application/js/fontawesome-all.min.js"></script>
+
         <!-- Custom Javascript -->
 
         <!-- Javascript functions used for the request feature (CRUD)-->
         <script src="application/js/request_table_functions.js"></script>
 
-        <script src="application/js/gallery_functions.js"></script>
+        <!-- Any function that require document.ready() (tooltip + fancybox)-->
+        <script src="application/js/doc_ready_functions.js"></script>
 
         <!-- Javascript function to add all general information to the table !-->
         <script src="application/js/getJsondata.js"></script>
