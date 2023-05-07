@@ -43,14 +43,14 @@
 			            />
 		</Transform>
 		<Transform DEF="Point_002_TRANSFORM"
-		           translation="-0.029858 100.513533 0.000000"
+		           translation="-0.029858 150.513533 0.000000"
 		           scale="1.090021 1.090021 1.090021"
 		           rotation="0.000000 0.707107 0.707107 3.141593"
 		           >
 			<PointLight DEF="LA_Point_002"
 			            ambientIntensity="0.0000"
 			            color="1.0000 1.0000 1.0000"
-			            intensity="0.6"
+			            intensity="0.9"
 			            radius="1000.0000" 
 			            location="0.0000 0.0000 0.0000"
 			            />

@@ -24,19 +24,14 @@
 
 	/* Background Colors */
 	--background-strip: #e9f5fb;
-
 	/* Blue (Smallest Device) */
 	--background-blue-back: #d7f2ff;
-
 	/* Purple (576px and up)*/
 	--background-purple-back: rgb(236, 193, 246);
-
 	/* Orange (768px and up)*/
 	--background-orange-back: rgb(242, 203, 173); 
-
 	/* Yellow (992px and up*/
 	--background-yellow-back: rgb(250, 250, 189);
-
 	/* Green Blue (1200px and up)*/
 	--background-green-back: rgb(190, 245, 239);
 }
@@ -66,19 +61,14 @@
 
 	/* Background Colors */
 	--background-strip: #000000;
-
 	/* Blue (Smallest Device) */
 	--background-blue-back: #12394d;
-
 	/* Purple (576px and up)*/	
 	--background-purple-back: rgb(114, 66, 125);
-
 	/* Orange (768px and up)*/
 	--background-orange-back: rgb(72, 47, 27); 
-
 	/* Yellow (992px and up*/
 	--background-yellow-back: rgb(79, 79, 22);
-
 	/* Green Blue (1200px and up)*/
 	--background-green-back: rgb(31, 45, 43);
 }
@@ -235,8 +225,6 @@ body
 	flex-direction: row;
 }
 
-
-
 /* Main Screen*/
 #main_3d_image {
     background: url("../assets/images/3d_background_800.jpg");
@@ -245,18 +233,18 @@ body
     background-repeat: no-repeat;
 	background-clip: padding-box;
     height: 300px;
-	margin: 50px;
+	margin: 20px;
 	border-radius: 100px;
 }
 
+
 #main_text {
-    float: left;
     margin: 5%;
     display: block;
     background-color: var(--first_card_background);
     padding: 30px;
 	border-radius: 25px;
-	height:250px;
+	height:300px;
 }
 
 #main_text > h4 {
@@ -365,6 +353,10 @@ X3D, x3d {
   }    
 
 /* Bootstrap Toast CSS configurations */
+.toast
+{
+	margin-bottom: 60px;
+}
 .toast-header, .toast-body
 {
 	background-color: var(--bootstrap_background);
@@ -382,6 +374,7 @@ X3D, x3d {
 	color: var(--costa_red_title);
 	font-size:20px;
 }
+
 /* Accordion CSS */
 
 .accordion
@@ -423,6 +416,30 @@ X3D, x3d {
 	font-weight: bold;
 	background-color: var(--bootstrap_background);
 	color: var(--card_text);
+}
+
+/* Carousel */
+
+.carousel {
+	width: 800px;
+	margin: auto;
+	}
+
+/* Carousel */
+
+.carousel-caption > h5
+{
+	font-size: 20px;
+}
+
+.carousel-caption > p
+{
+	font-size: 10px;
+}
+
+.carousel-caption > button
+{
+	font-size: 10px;
 }
 
 /* Form Group CSS */
@@ -479,12 +496,11 @@ X3D, x3d {
 	color: var(--card_text);	
 }
 
-
 .card-title > h4
 {
 	font-family: costa;
 	text-align: center;
-	font-size: 40px;
+	font-size: 30px;
 	color: var(--costa_red_title);
 	font-weight: bold;
 }
@@ -758,7 +774,7 @@ a:active { text-decoration: none; }
 	#main_text
 	{
     	float: left;
-		height:260px;
+		height:300px;
 	}
 
 	#main_text > h4 {
@@ -817,10 +833,6 @@ a:active { text-decoration: none; }
 		font-size: 15px;
 	}
 
-	.carousel {
-		width: 800px;
-		margin: auto;
-	  }
 	/* Footer */
 	.footer-body > a {
 	font-size: 7px;
@@ -829,6 +841,23 @@ a:active { text-decoration: none; }
 	.social
 	{
 		padding-right: 0px;
+	}
+
+	/* carousel */
+
+	.carousel-caption > h5
+	{
+		font-size: 25px;
+	}
+
+	.carousel-caption > p
+	{
+		font-size: 15px;
+	}
+
+	.carousel-caption > button
+	{
+		font-size: 10px;
 	}
 }
 
@@ -971,7 +1000,7 @@ a:active { text-decoration: none; }
 	#main_text
 	{
     	float: left;
-		height:400px;
+		height:300px;
 	}
 
 	#main_text > h4 {
@@ -1075,7 +1104,7 @@ a:active { text-decoration: none; }
 	#main_text
 	{
     	float: left;
-		height:500px;
+		height:300px;
 	}
 
 	#main_text > h4 {

@@ -464,7 +464,7 @@
                                 <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" href="#animation">SFX</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" href="#render" >Render</button>
+                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" href="#render_tab" >Render</button>
                             </li>
                         </ul>
                     </div>
@@ -498,7 +498,7 @@
                             </div>
                         </div>
                         <!-- Render Controls -->
-                        <div class="tab-pane " id="render">
+                        <div class="tab-pane " id="render_tab">
                             <ul class="nav text-center nav-tabs card-header-tabs pull-right" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="btn btn-outline-dark btn-responsive" onclick="normal();">Normal</a>
@@ -533,18 +533,19 @@
                         <h5>Perfect on a sunny day!</h5>
                     </div>
                 </div>
-            <div id="carouselExampleCaptions" class="carousel slide text-center" data-bs-ride="carousel">
+            <!-- Carousel for the Iced products at Costa -->
+            <div id="carouselCostaIced" class="carousel slide text-center" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselCostaIced" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselCostaIced" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselCostaIced" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner" id="carousel_first"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCostaIced" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCostaIced" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -559,18 +560,18 @@
                         <h5> No need to be cold, drink this! </h5>
                     </div>
                 </div>
-            <div id="carouselReProduct" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselReProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner" id="carousel_second"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselReProduct" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselReProduct" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -585,18 +586,18 @@
                         <h5> Drink your favourites, anywhere!</h5>
                     </div>
                 </div>
-                <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselCannedProduct" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselHotProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselCannedProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselCannedProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselCannedProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                 <div class="carousel-inner" id="carousel_third"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCannedProduct" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselHotProduct" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCannedProduct" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -686,6 +687,8 @@
                 </div>
             </div>
             </div>
+            <div class="table-responsive">
+
             <table class="table text-center  table-bordered" id="request_list_placeholder" style="border-color: black">
                 <thead class="table-active">
                     <tr>
@@ -699,6 +702,7 @@
                 </thead>
                 <tbody class="tbody"></tbody>
             </table>
+            </div>
         </div>
 
         <!-- References Page -->
