@@ -1,11 +1,5 @@
 $(document).ready(function()
 {
-	// Initialise tooltip
-	$(function () 
-	{
-		$('[data-bs-toggle="tooltip"]').tooltip()
-    })
-
 	// Get information from controller to insert into the SPA
 	$.getJSON('index.php/apiGetJsonMuseumData', function(jsonObj){
         // Main Page

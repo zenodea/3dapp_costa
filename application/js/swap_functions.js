@@ -14,11 +14,13 @@ function swap(selected)
     $("#canned_fx").hide();
     $("#sceneSwitch").attr("whichChoice", -1);
 
+    // Show button to go back to main page if content page is not main_page 
     if (selected != "main_page")
     {
         $("#goback_button").show();
     }
 
+    // Iced Drinks Content Swap
     if (selected == "iced_latte")
     {
         // Hide the unrelated dropdown items (Everything except Iced drinks)
@@ -38,6 +40,7 @@ function swap(selected)
         cameraFront();
     }
 
+    // Hot Drinks Content Swap
     else if (selected == "hot_latte")
     {
         // Hide the unrelated dropdown items (Everything except Hot drinks)
@@ -57,6 +60,7 @@ function swap(selected)
         cameraFront();
     }
 
+    // Canned Drinks Content Swap
     else if (selected == "canned_latte")
     {
 
@@ -77,11 +81,13 @@ function swap(selected)
         cameraFront();
     }
 
+    // All other content swap
     else
     {
         $("#"+selected).show();
     }
     
+    // Scroll window up when swapping content
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -91,9 +97,7 @@ function hideTabs(name)
     $("#iced_drinks_dropdown").hide();
     $("#hot_drinks_dropdown").hide();
     $("#canned_drinks_dropdown").hide();
-
     $("#"+name).show();
-
 }
 
 // Get data from the db about the drink tha† is desired from the Model_3D DB table
@@ -196,8 +200,8 @@ function change_modal(selected)
 }
 
 
-// https://lukelowrey.com/css-variable-theme-switcher/
-
+// Inspired by https://lukelowrey.com/css-variable-theme-switcher/
+// Function used to change the day or night mode for the website
 function changeTheme() {
     var currentTheme = document.documentElement.getAttribute("data-theme");
 
@@ -209,17 +213,15 @@ function changeTheme() {
 
     if (currentTheme == "light") 
     {
-        document.getElementById("moon_icon").className = "fa fa-sun";
-        document.getElementById("moon_icon").style = "color: white;"
+        $("#moon_icon").attr("class","fa fa-sun");
+        $("#moon_icon").attr("style", "color: white;")
         targetTheme = "dark";
     }
     else
     {
-        document.getElementById("moon_icon").className = "fa fa-moon";
-        document.getElementById("moon_icon").style = "color: black;"
+        $("#moon_icon").attr("class","fa fa-moon");
+        $("#moon_icon").attr("style", "color: black;")
         targetTheme = "light";
     }
-
     document.documentElement.setAttribute('data-theme', targetTheme)
-    localStorage.setItem('theme', targetTheme);
 };

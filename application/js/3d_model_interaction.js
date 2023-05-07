@@ -1,47 +1,46 @@
 // Animation for x3d model
-var spinning = false;
 function Animate(model)
 {
     if (model == "iced_drink")
     {
         // Check if animation is alreday on or not
-        var animation = (document.getElementById('model__time_straw').getAttribute('enabled') === 'true');
+        var animation = $('#model__time_straw').attr('enabled') === 'true';
 
         // Set the animation node to the opposite of var animation
-        document.getElementById('model__time_straw').setAttribute('enabled', !animation);
-        document.getElementById('model__time_cube').setAttribute('enabled', !animation);
+        $('#model__time_straw').attr('enabled', !animation);
+        $('#model__time_cube').attr('enabled', !animation);
     }
     else if (model == "straw")
     {
         // Check if animation is alreday on or not
-        var animation = (document.getElementById('model__time_straw').getAttribute('enabled') === 'true');
+        var animation = $('#model__time_straw').attr('enabled') === 'true';
 
         // Set the animation node to the opposite of var animation
-        document.getElementById('model__time_straw').setAttribute('enabled', !animation);
+        $('#model__time_straw').attr('enabled', !animation);
     }
     else if (model == "ice")
     {
         // Check if animation is alreday on or not
-        var animation = (document.getElementById('model__time_cube').getAttribute('enabled') === 'true');
+        var animation = $('#model__time_cube').attr('enabled') === 'true';
 
         // Set the animation node to the opposite of var animation
-        document.getElementById('model__time_cube').setAttribute('enabled', !animation);
+        $('#model__time_cube').attr('enabled', !animation);
     }
     else if (model == "hot_drink")
     {
         // Check if animation is alreday on or not
-        var animation = (document.getElementById('model__time_cup').getAttribute('enabled') === 'true');
+        var animation = $('#model__time_cup').attr('enabled') === 'true';
 
         // Set the animation node to the opposite of var animation
-        document.getElementById('model__time_cup').setAttribute('enabled', !animation);
+        $('#model__time_cup').attr('enabled', !animation);
     }
     else if (model == "canned_drink")
     {
         // Check if animation is alreday on or not
-        var animation = (document.getElementById('model__time_can').getAttribute('enabled') === 'true');
+        var animation = $('#model__time_can').attr('enabled') === 'true';
 
         // Set the animation node to the opposite of var animation
-        document.getElementById('model__time_can').setAttribute('enabled', !animation);
+        $('#model__time_can').attr('enabled', !animation);
     }
 }
 
@@ -49,37 +48,37 @@ function Animate(model)
 // Camera Functions
 function cameraFront()
 {
-    document.getElementById('model__CA_cameraFront').setAttribute('bind', 'true');
+    $('#model__CA_cameraFront').attr('bind', 'true');
 }
 
 function cameraBack()
 {
-    document.getElementById('model__CA_cameraBack').setAttribute('bind', 'true');
+    $('#model__CA_cameraBack').attr('bind', 'true');
 }
 
 function cameraLeft()
 {
-    document.getElementById('model__CA_cameraLeft').setAttribute('bind', 'true');
+    $('#model__CA_cameraLeft').attr('bind', 'true');
 }
 
 function cameraRight()
 {
-    document.getElementById('model__CA_cameraRight').setAttribute('bind', 'true');
+    $('#model__CA_cameraRight').attr('bind', 'true');
 }
 
 function cameraTop()
 {
-    document.getElementById('model__CA_cameraTop').setAttribute('bind', 'true');
+    $('#model__CA_cameraTop').attr('bind', 'true');
 }
 
 function cameraBottom()
 {
-    document.getElementById('model__CA_cameraBottom').setAttribute('bind', 'true');
+    $('#model__CA_cameraBottom').attr('bind', 'true');
 }
 
 function cameraNormal()
 {
-    document.getElementById('model__CA_cameraNormal').setAttribute('bind', 'true');
+    $('#model__CA_cameraNormal').attr('bind', 'true');
 }
 
 
@@ -177,58 +176,59 @@ function change_flavour(selected)
     // Iced Latte
     if(selected == 1)
     {
-        document.getElementById('model__MA_Material_003').setAttribute('diffuseColor','0.800 0.376 0.063' );
-        document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
+        $('#model__MA_Material_003').attr('diffuseColor','0.800 0.376 0.063' );
+        $('#model__MA_Material_003').attr('transparency', '0.0');
     }
     // Cold Brew
     else if (selected == 2)
     {
-        document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.092 0.064 0.051');
-        document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.5');
+        $('#model__MA_Material_003').attr('diffuseColor', '0.092 0.064 0.051');
+        $('#model__MA_Material_003').attr('transparency', '0.5');
     }
     // Iced Chai Tea Latte
     else if (selected == 3)
     {
-        document.getElementById('model__MA_Material_003').setAttribute('diffuseColor', '0.98 0.97 0.95');
-        document.getElementById('model__MA_Material_003').setAttribute('transparency', '0.0');
+        $('#model__MA_Material_003').attr('diffuseColor', '0.98 0.97 0.95');
+        $('#model__MA_Material_003').attr('transparency', '0.0');
     }
     // Latte
     else if (selected == 4)
     {
-        document.getElementById('model__MA_Material').setAttribute('diffuseColor','0.659 0.439 0.22' );
+        $('#model__MA_Material').attr('diffuseColor','0.659 0.439 0.22' );
     }
     // Hot Chocolate
     else if (selected == 5)
     {
-        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.8 0.635 0.471');
+        $('#model__MA_Material').attr('diffuseColor', '0.8 0.635 0.471');
     }
     // Mocha
     else if (selected == 6)
     {
-        document.getElementById('model__MA_Material').setAttribute('diffuseColor', '0.388 0.192 0.0');
+        $('#model__MA_Material').attr('diffuseColor', '0.388 0.192 0.0');
     }
     // Canned Latte
     else if (selected == 7)
     {
-        document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_latte.png');
+        $('#model__MA_Material_002_texture').attr('url','costa_latte.png');
     }
     // Canned Caramel Latte
     else if (selected == 8)
     {
-        document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_caramel_latte.png');
+        $('#model__MA_Material_002_texture').attr('url','costa_caramel_latte.png');
     }
     // Canned Americano
     else if (selected == 9)
     {
-        document.getElementById('model__MA_Material_002_texture').setAttribute('url','costa_americano.png');
+        $('#model__MA_Material_002_texture').attr('url','costa_americano.png');
     }
 }
 
-function showInfoPopup(color, info) {
-  document.getElementById('material-color').innerText = `${color.toUpperCase()} Material`;
-  document.getElementById('material-info').innerText = info;
+function showInfoPopup(color, info) 
+{
+    document.getElementById('material-color').innerText = `${color.toUpperCase()} Material`;
+    document.getElementById('material-info').innerText = info;
 
-  let toastEl = document.getElementById('material-toast');
-  let toast = new bootstrap.Toast(toastEl);
-  toast.show();
+    let toastEl = document.getElementById('material-toast');
+    let toast = new bootstrap.Toast(toastEl);
+    toast.show();
 }

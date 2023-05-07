@@ -19,7 +19,7 @@ $("#directionalcolor").change(function()
 // Change color of cup for the hot drinks
 $("#change_cup_color").change(function()
 {
-    document.getElementById("model__MA_Material_cup_body").setAttribute('diffuseColor', hextorgb($(this).val()))
+    $("#model__MA_Material_cup_body").attr('diffuseColor', hextorgb($(this).val()))
 })
 
 // x3d takes rgb inputs as three vlaues from 0 to 1

@@ -1,20 +1,19 @@
 // Jquery for fancybox
 $(document).ready(function() 
 {
+    // Initialise tooltip
+    $(function () 
+    {
+        $('[data-bs-toggle="tooltip"]').tooltip()
+    })
 
-$("#favcolor").change(function()
-{
-    var color = $(this).val(); // Get the new color value
-    // Do something with the new color, e.g. update the background color of an element
-    $("body").css("background-color", color);
-});
+    $('[data-fancybox="goto"]').fancybox({});
+    // Gallery feature (with mouse support)
 
-$('[data-fancybox="goto"]').fancybox({});
-// Gallery feature (with mouse support)
-$("a[class=group_gallery]").fancybox({
-        'transitionIn'	: 'elastic',
-        'transitionOut'	: 'elastic',
-        'titlePosition' 	: 'over',
-    });
+    $("a[class=group_gallery]").fancybox({
+            'transitionIn'	: 'elastic',
+            'transitionOut'	: 'elastic',
+            'titlePosition' 	: 'over',
+        });
 });
 
