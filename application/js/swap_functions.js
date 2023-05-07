@@ -211,16 +211,19 @@ function changeTheme() {
         currentTheme="light"
     }
 
+    // Set up Dark mode
     if (currentTheme == "light") 
     {
-        $("#moon_icon").attr("class","fa fa-sun");
-        $("#moon_icon").attr("style", "color: white;")
+        $("#sun_icon").show();
+        $("#moon_icon").hide();
         targetTheme = "dark";
     }
+
+    // Set up Light Mode
     else
     {
-        $("#moon_icon").attr("class","fa fa-moon");
-        $("#moon_icon").attr("style", "color: black;")
+        $("#sun_icon").hide();
+        $("#moon_icon").show();
         targetTheme = "light";
     }
     document.documentElement.setAttribute('data-theme', targetTheme)

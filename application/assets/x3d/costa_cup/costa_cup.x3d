@@ -27,7 +27,7 @@
 			           >
 				<Group DEF="group_ME_cup_001">
 					<Transform DEF="cup">
-					<Shape>
+					<Shape onclick="materialPopup('Plastic','Our costa cups are perfect to keep the heat in, while keeping the exterior cool!')">
 						<Appearance>
 							<Material DEF="MA_Material_004"
 							          diffuseColor="0.800 0.800 0.800"
@@ -64,7 +64,7 @@
 			           rotation="0.000000 0.000000 0.000000 0.000000"
 			           >
 				<Group DEF="group_ME_main_body_001">
-					<Shape>
+					<Shape onclick="materialPopup('Carton','The body of our Costa Cups are made of Carton. One of the best, biodegradable, insulant out there!')">
 						<Appearance>
 							<Material DEF="MA_Material_cup_body"
 							          diffuseColor="0.692 0.048 0.053"

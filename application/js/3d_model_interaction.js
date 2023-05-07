@@ -91,7 +91,7 @@ var model_view = "normal";
 // Wireframe mode
 function wireFrame()
 {
-    var e = document.getElementById('wire');
+    var e = document.getElementById('render');
     if (model_view == "normal")
     {
         e.runtime.togglePoints(true);
@@ -111,7 +111,7 @@ function wireFrame()
 // Vertex Mode
 function vertex()
 {
-    var e = document.getElementById('wire');
+    var e = document.getElementById('render');
     if (model_view == "normal")
     {
         e.runtime.togglePoints(true);
@@ -130,7 +130,7 @@ function vertex()
 // Normal mode
 function normal()
 {
-    var e = document.getElementById('wire');
+    var e = document.getElementById('render');
     if (model_view == "wire")
     {
         e.runtime.togglePoints(false);
@@ -223,10 +223,10 @@ function change_flavour(selected)
     }
 }
 
-function showInfoPopup(color, info) 
+function materialPopup(color, info) 
 {
-    document.getElementById('material-color').innerText = `${color.toUpperCase()} Material`;
-    document.getElementById('material-info').innerText = info;
+    $('#mat_name').text(color);
+    $('#mat_info').text(info);
 
     let toastEl = document.getElementById('material-toast');
     let toast = new bootstrap.Toast(toastEl);

@@ -18,6 +18,10 @@
 	--canned_drink_row: rgba(220, 247, 221, 0.5);
 	--whatsnew_row:rgba(248, 252, 187, 0.5);
 
+	/* table CSS */
+	--thead_color: rgba(255, 141, 141,0.8);
+	--tbody_color: rgb(198, 250, 255);
+
 	/* Background Colors */
 	--background-strip: #e9f5fb;
 
@@ -55,6 +59,10 @@
 	--hot_drink_row: rgba(62, 9, 0, 0.5);
 	--canned_drink_row: rgba(0, 60, 2, 0.5);
 	--whatsnew_row:rgba(59, 63, 0, 0.5);
+
+	/* table CSS */
+	--thead_color: #400014;
+	--tbody_color: rgb(29, 29, 29);
 
 	/* Background Colors */
 	--background-strip: #000000;
@@ -340,6 +348,9 @@ X3D, x3d {
 	color: var(--card_text)
 }
 
+#gallery_title{
+	font-size: 30px;
+}
   /* Request CSS */
   .request_button
   {
@@ -354,7 +365,23 @@ X3D, x3d {
   }    
 
 /* Bootstrap Toast CSS configurations */
+.toast-header, .toast-body
+{
+	background-color: var(--bootstrap_background);
+}
 
+.toast-body
+{
+	color: var(--card_text);
+}
+
+.toast-header > strong
+{
+	font-family: costa;
+	font-weight: bold;
+	color: var(--costa_red_title);
+	font-size:20px;
+}
 /* Accordion CSS */
 
 .accordion
@@ -439,15 +466,16 @@ X3D, x3d {
 
 /* Table CSS */
 
+
 .table-active
 {
-	background-color: var(--bootstrap_background);
+	background-color: var(--thead_color);
 	color: var(--card_text);	
 }
 
 .tbody
 {
-	background-color: var(--bootstrap_background);
+	background-color: var(--tbody_color);
 	color: var(--card_text);	
 }
 
@@ -762,6 +790,11 @@ a:active { text-decoration: none; }
 		width: 50%;
 	}
 
+	#gallery_title
+	{
+		font-size: 15px;
+	}
+
 	/* What's New Cards */
 	.what_new_card
 	{
@@ -866,7 +899,10 @@ a:active { text-decoration: none; }
 		width: 50%;
 	}
 
-
+	#gallery_title
+	{
+		font-size: 20px;
+	}
 
 	/* What's New Cards */
 	.what_new_card
@@ -968,6 +1004,11 @@ a:active { text-decoration: none; }
 		font-size: 10px;
 		width: 50%;
 	}
+	
+	#gallery_title
+	{
+		font-size: 25px;
+	}
 
 	/* What's New Cards */
 	.what_new_card
@@ -1065,6 +1106,11 @@ a:active { text-decoration: none; }
 	{
 		font-size: 20px;
 		width: 25%;
+	}
+
+	#gallery_title
+	{
+		font-size: 30px;
 	}
 
 	/* What's New Cards */

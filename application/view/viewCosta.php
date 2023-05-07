@@ -15,6 +15,8 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
+        <!-- Fontawesome -->
+        <script src="application/js/fontawesome-all.min.js"></script>
     </head>
     <body>
   <!-- Toast used to describe material for the X3D Model -->
@@ -22,10 +24,10 @@
             <div id="material-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
                     <img src="application/assets/images/costa_logo.png" class="rounded me-2" alt="...">
-                    <strong class="me-auto" id="material-color"></strong>
+                    <strong class="me-auto" id="mat_name"></strong>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
-                <div class="toast-body" id="material-info"></div>
+                <div class="toast-body" id="mat_info"></div>
             </div>
         </div>
 
@@ -37,7 +39,12 @@
         </div>
 
         <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:1.5em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
-            <i class="fas fa-sun" style="color:black" id="moon_icon"></i>
+            <div  id="moon_icon">
+                <i class="fa fa-moon" style="color:black"></i>
+            </div>
+            <div  id="sun_icon" style="display:none">
+                <i class="fa fa-sun" style="color:white" id="sun_icon" style="display:none"></i>
+            </div>
         </button>
 
 
@@ -289,7 +296,7 @@
                 </div>
 
                 <div class="model3D x3d-container">
-                <x3d id="wire"> 
+                <x3d id="render"> 
                     <scene>
                         <Switch whichChoice="0" id="sceneSwitch">
                                 <!-- Iced Drinks Model -->
@@ -763,7 +770,7 @@
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
                     <div class="card-title">
-                        <h5>Here are the references for any item not created by me:</h5>
+                        <h4>Reference List</h4>
                     </div>
                 </div>
             </div>
@@ -826,8 +833,6 @@
 
         <!-- Bootstrap -->
         <script src="application/js/bootstrap.min.js" ></script>
-        <!-- Fontawesome -->
-        <script src="application/js/fontawesome-all.min.js"></script>
 
         <!-- Custom Javascript -->
 
