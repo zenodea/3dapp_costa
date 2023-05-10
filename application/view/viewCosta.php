@@ -14,7 +14,6 @@
 
         <!-- Bootstrap+CSS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
@@ -60,8 +59,8 @@
             <div id="main_3d_image">
                 <div class="card" id="main_text">
                     <div class="card-title">
-                        <h4>Extraordinary <br>Every day</h4>
-                        <h5> Indulge in your favorites</h5>
+                        <h1>Extraordinary <br>Every day</h1>
+                        <h2> Indulge in your favorites</h2>
                     </div>
                     <div class="card-footer mx-auto text-center justify-content-center">
                         <button  class="costa_button" onclick="window.location.href=' https://www.costa.co.uk'">Find a Costa</button>
@@ -72,17 +71,17 @@
         </div>
 
         <!-- Iced Drink Info -->
-        <div class="row iced_drink_row">
+        <div class="row iced_drink_row" style="margin-top: 40px;">
             
             <!-- Future 3d Model-->
             <div class="col-sm-12">
                 <div div class="card item_card">
                     <div class="card-title">
-                        <h4 id="iced_latte_main_title"></h4>
-                        <h5 class="drink_description_main" id="iced_latte_main_description"></h5>
+                        <h1 id="iced_latte_main_title"></h1>
+                        <h2 class="drink_description_main" id="iced_latte_main_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="swap('iced_latte'); swapDBINfo(1); change_flavour(1);">Learn More ></button>
+                        <button class="costa_button" onclick="swap('iced_latte'); swapDBinfo(1); change_flavour(1);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -94,11 +93,11 @@
             <div class="col-sm-12">
                 <div div class="card item_card">
                     <div class="card-title">
-                        <h4 id="latte_main_title"></h4>
-                        <h5 class="drink_description_main" id="latte_main_description"></h5>
+                        <h1 id="latte_main_title"></h1>
+                        <h2 class="drink_description_main" id="latte_main_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('hot_latte'); swapDBINfo(4); change_flavour(4);">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('hot_latte'); swapDBinfo(4); change_flavour(4);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -109,11 +108,11 @@
             <div class="col-sm-12">
                 <div div class="card item_card">
                     <div  class="card-title">
-                        <h4 id="canned_latte_main_title"></h4>
-                        <h5 class="drink_description_main" id="canned_latte_main_description"></h5>
+                        <h1 id="canned_latte_main_title"></h1>
+                        <h2 class="drink_description_main" id="canned_latte_main_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('canned_latte'); swapDBINfo(7); change_flavour(7);">Learn More ></button>
+                        <button class="costa_button" onclick="javascript:swap('canned_latte'); swapDBinfo(7); change_flavour(7);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -125,38 +124,38 @@
         <!-- OffCanvas Configurations -->
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasIced" aria-labelledby="offcanvasIcedLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasIcedLabel"></h5>
+                <h1 class="offcanvas-title" id="offcanvasIcedLabel"></h1>
                 <button type="button offcanvas_button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small text-center"> 
-            <h5 id="offcanvasIcedDescription"></h5>
+            <h2 id="offcanvasIcedDescription"></h2>
             <div class="dropup mt-3">
             <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
                 Types
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBINfo(1);">Iced Latte</a></li>
-                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBINfo(2);">Cold Brew</a></li>
-                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBINfo(3);">Iced Chai Tea Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBinfo(1);">Iced Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBinfo(2);">Cold Brew</a></li>
+                <li><a class="dropdown-item" onclick="swap('iced_latte'); swapDBinfo(3);">Iced Chai Tea Latte</a></li>
             </ul>
             </div>
             </div>
         </div>
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasHot" aria-labelledby="offcanvasHotLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasHotLabel"></h5>
+                <h1 class="offcanvas-title" id="offcanvasHotLabel"></h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body text-center"> 
-            <h5 id="offcanvasHotDescription"></h5>
+            <h2 id="offcanvasHotDescription"></h2>
             <div class="dropup mt-3">
             <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
                 Types
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBINfo(4);">Latte</a></li>
-                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBINfo(5);">Hot Chocolate</a></li>
-                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBINfo(6);">Mocha</a></li>
+                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBinfo(4);">Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBinfo(5);">Hot Chocolate</a></li>
+                <li><a class="dropdown-item" onclick="swap('hot_latte'); swapDBinfo(6);">Mocha</a></li>
             </ul>
             </div>
             </div>
@@ -164,19 +163,19 @@
         <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasCanned" aria-labelledby="offcanvasCannedLabel">
 
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasCannedLabel"></h5>
+                <h1 class="offcanvas-title" id="offcanvasCannedLabel"></h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small text-center"> 
-            <h5 id="offcanvasCannedDescription"></h5>
+            <h2 id="offcanvasCannedDescription"></h2>
             <div class="dropup mt-3">
             <button class="btn btn-secondary dropdown-toggle costa_button" type="button" data-bs-toggle="dropdown">
                 Types
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(7);">Canned Latte</a></li>
-                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(8);">Canned Caramel Latte</a></li>
-                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(9);">Canned Americano</a></li>
+                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBinfo(7);">Canned Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBinfo(8);">Canned Caramel Latte</a></li>
+                <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBinfo(9);">Canned Americano</a></li>
             </ul>
             </div>
             </div>
@@ -184,10 +183,10 @@
 
         <!-- BootStrap 5 Cards -->
         <div class="row whats_new_row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="margin-top:100px">
                 <div div class="card item_card">
                     <div class="card-title">
-                        <h4 id="What_New_title">What's New</h4>
+                        <h1 id="What_New_title">What's New</h1>
                     </div>
                 </div>
             </div>
@@ -197,10 +196,10 @@
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/cold_products_slogan.jpg" class="card-img-top" alt="...">
                     <div class="card-title">
-                        <h4  id="what_new_iced"></h4>
+                        <h1  id="what_new_iced"></h1>
                     </div>
                     <div class="card-body mini-card-body" >
-                        <h5 id="iced_latte_mini_description"></h5>
+                        <h2 id="iced_latte_mini_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
                         <button class="costa_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasIced" role="button" aria-controls="offcanvasIced">Learn More</button>
@@ -211,10 +210,10 @@
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/hot_products_slogan.jpg" class="card-img-top" alt="...">
                     <div class="card-title">
-                        <h4 id="what_new_hot"></h4>
+                        <h1 id="what_new_hot"></h1>
                     </div>
                     <div class="card-body mini-card-body">
-                        <h5 id="latte_mini_description"></h5>
+                        <h2 id="latte_mini_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
                         <button class="costa_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHot" aria-controls="offcanvasHot" >Learn More</button>
@@ -225,10 +224,10 @@
                 <div div class="card" id="what_new_card">
                     <img src="application/assets/images/canned_products_slogan.jpg" class="card-img-top" alt="...">
                     <div class="card-title">
-                        <h4 id="what_new_canned"></h4>
+                        <h1 id="what_new_canned"></h1>
                     </div>
                     <div class="card-body mini-card-body">
-                        <h5 id="canned_latte_mini_description"></h5>
+                        <h2 id="canned_latte_mini_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
                         <button  class="costa_button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCanned" role="button" aria-controls="offcanvasCanned">Learn More</button>
@@ -248,8 +247,8 @@
             <div class="row">
                 <div div class="card item_card">
                     <div class="card-title card-page-title" >
-                        <h4 id="slogan_title_text"></h4>
-                        <h5 id="slogan_text"></h5>
+                        <h1 id="slogan_title_text"></h1>
+                        <h2 id="slogan_text"></h2>
                     </div>
                 </div>
         </div>
@@ -266,19 +265,19 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdown_flavour">
                                 <div id="iced_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(1);">Iced Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(2);">Cold Brew</a></li>
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(3);">Chai Tea Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(1);">Iced Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(2);">Cold Brew</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(3);">Chai Tea Iced Latte</a></li>
                                 </div>
                                 <div id="hot_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(4);">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(5);">Hot Chocolate</a></li>
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(6);">Mocha</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(4);">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(5);">Hot Chocolate</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(6);">Mocha</a></li>
                                 </div>
                                 <div id="canned_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(7);">Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(8);">Caramel Latte</a></li>
-                                    <li><a class="dropdown-item" onclick="swapDBINfo(9);">Americano</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(7);">Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(8);">Caramel Latte</a></li>
+                                    <li><a class="dropdown-item" onclick="swapDBinfo(9);">Americano</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -288,9 +287,9 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <div id="iced_drinks_dropdown">
-                                    <li><a class="dropdown-item" onclick="swap('iced_latte');   swapDBINfo(1);">Iced Drinks</a></li>
-                                    <li><a class="dropdown-item" onclick="swap('hot_latte');    swapDBINfo(4);">Hot Drinks</a></li>
-                                    <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBINfo(7);">Canned Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('iced_latte');   swapDBinfo(1);">Iced Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('hot_latte');    swapDBinfo(4);">Hot Drinks</a></li>
+                                    <li><a class="dropdown-item" onclick="swap('canned_latte'); swapDBinfo(7);">Canned Drinks</a></li>
                                 </div>
                             </ul>
                         </div>
@@ -312,9 +311,10 @@
 
                                 <!-- Canned Drinks Model -->
                                 <transform>
-                                    <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_re_product/costa_re_product.x3d">  </inline>
+                                    <inline onclick="animateModel()" nameSpaceName="model"  mapDEFToID="true"  url="application/assets/x3d/costa_can/costa_can.x3d">  </inline>
                                 </transform>
                         </Switch>
+
                                 <!-- PlaceHolder information if x3d models need to be regenerated -->
 
 						        <!--<ImageTexture DEF="MA_Material_002_texture" url="costa_latte.png"/>-->
@@ -356,10 +356,10 @@
 
                 <div div class="card mx-auto item_card">
                     <div class="card-title card-latte-title">
-                        <h4 id="title_text"></h4>
+                        <h1 id="title_text"></h1>
                     </div>
                     <div class="card-body card-drink-description">
-                        <h5 class="drink_description_main" id="drink_description_text"></h5>
+                        <h2 class="drink_description_main" id="drink_description_text"></h2>
                     </div>
                 </div>
                 </div>
@@ -367,7 +367,7 @@
                 <div class="row">
                 <div class="card mx-auto" style="margin:50px">
                     <div class="card-title">
-                        <h4 id="gallery_title" style="margin-top:20px;"></h4>
+                        <h1 id="gallery_title" style="margin-top:20px;"></h1>
                     </div>
                     <div class="card-body">
                         <div class="card-title title_gallery drinksText"></div>
@@ -425,7 +425,7 @@
                     </div>
                     <div class="card-body tab-content text-center">
                     <div class="tab-pane active lights_text" id="p-light">
-                            <h5>Point Light</h5>
+                            <h2>Point Light</h2>
                             <div class="form-check form-check-inline form-switch">
                                 <input class="form-check-input" onclick="lightSwitch('point')" type="checkbox" id="flexSwitchCheckDefault">
                                 <br>
@@ -434,7 +434,7 @@
                                 <input style="border-color:black;width:100%" type="color" id="pointcolor" name="favcolor" value="#ffffff">
                     </div>
                     <div class="tab-pane lights_text" id="d-light">
-                        <h5>Directional Light</h5>
+                        <h2>Directional Light</h2>
                         <div class="form-check form-check-inline form-switch">
                             <input class="form-check-input" onclick="lightSwitch('directional')" type="checkbox" id="flexSwitchCheckDefault">
                             <br>
@@ -443,7 +443,7 @@
                             <input style="border-color:black;width:100%" type="color" id="directionalcolor" name="favcolor" value="#ffffff">
                     </div>
                     <div class="tab-pane text-center lights_text" id="s-light">
-                        <h5>Spot Light</h5>
+                        <h2>Spot Light</h2>
                         <div class="form-check form-check-inline form-switch">
                             <input class="form-check-input" onclick="lightSwitch('spot')" type="checkbox" id="flexSwitchCheckDefault">
                             <br>
@@ -473,17 +473,17 @@
                         <!-- Animation Controls -->
                         <div class="tab-pane active" id="animation">
                             <div class="text-center lights_text" id="iced_fx" style="display:none;">
-                                <h5>Straw Animation</h5>
+                                <h2>Straw Animation</h2>
                                 <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('straw')" type="checkbox" id="flexSwitchCheckChecked">
                                 </div>
-                                <h5>Ice Animation</h5>
+                                <h2>Ice Animation</h2>
                                 <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('ice')" type="checkbox" id="flexSwitchCheckChecked">
                                 </div>
                             </div>
                             <div class="text-center lights_text" id="hot_fx" style="display:none;">
-                                <h5>Lift Cup Animation</h5>
+                                <h2>Lift Cup Animation</h2>
                                 <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('hot_drink')" type="checkbox" id="flexSwitchCheckDefault">
                                 </div>
@@ -518,8 +518,8 @@
             <div class="row">
                 <div div class="card item_card" style="width: 58rem;">
                     <div  class="card-title">
-                        <h4>Gallery of our drinks!</h4>
-                        <h5> Indulge in your favorites</h5>
+                        <h1>Gallery of our drinks!</h1>
+                        <h2> Indulge in your favorites</h2>
                     </div>
                 </div>
             </div>
@@ -529,8 +529,8 @@
             <div class="row">
                 <div div class="card item_card" tyle="width: 58rem; padding-top:40px">
                     <div class="card-title">
-                        <h4>Costa Iced Products!</h4>
-                        <h5>Perfect on a sunny day!</h5>
+                        <h1>Costa Iced Products!</h1>
+                        <h2>Perfect on a sunny day!</h2>
                     </div>
                 </div>
             <!-- Carousel for the Iced products at Costa -->
@@ -556,8 +556,8 @@
             <div class="row">
                 <div div class="card item_card"  style="width: 58rem; padding-top:40px">
                     <div class="card-title">
-                        <h4>Costa Hot Products!</h4>
-                        <h5> No need to be cold, drink this! </h5>
+                        <h1>Costa Hot Products!</h1>
+                        <h2> No need to be cold, drink this! </h2>
                     </div>
                 </div>
             <div id="carouselHotProduct" class="carousel slide" data-bs-ride="carousel">
@@ -582,8 +582,8 @@
             <div class="row">
                 <div div class="card item_card" style="width: 58rem; padding-top:40px">
                     <div  class="card-title">
-                        <h4>Costa Take Away Products!</h4>
-                        <h5> Drink your favourites, anywhere!</h5>
+                        <h1>Costa Take Away Products!</h1>
+                        <h2> Drink your favourites, anywhere!</h2>
                     </div>
                 </div>
                 <div id="carouselCannedProduct" class="carousel slide" data-bs-ride="carousel">
@@ -610,8 +610,8 @@
             <div class="row">
                 <div div class="card item_card"  style="width: 50rem;">
                     <div class="card-title"  style="text-align: center;">
-                        <h4>Have a question about Costa?</h4>
-                        <h5> If you can’t find what you’re looking for on our website check out our FAQ’s for the quickest answer. Alternatively, you can reach our Customer Services team by submitting a query through our contact form.</h3>
+                        <h1>Have a question about Costa?</h1>
+                        <h2> If you can’t find what you’re looking for on our website check out our FAQ’s for the quickest answer. Alternatively, you can reach our Customer Services team by submitting a query through our contact form.</h2>
                     </div>
                     <div class="card-body" style="text-align: center;">
                     </div>
@@ -646,8 +646,8 @@
             <div class="row">
                 <div div class="card item_card"  style="width: 50rem; padding-top: 30px;">
                     <div class="card-title"  style="text-align: center;">
-                    <h4>Contact us directly!</h4>
-                    <h5> Please fill in the form with all the information.</h5>
+                    <h1>Contact us directly!</h1>
+                    <h2> Please fill in the form with all the information.</h2>
                     </div>
                 </div>
             </div>
@@ -681,9 +681,9 @@
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
                     <div class="card-title">
-                        <h4>Want to see the user requests?</h4>
-                        <h5> You've come to the right place! </h5>
-                        <h5> You can even remove them with the click of a button! </h5>
+                        <h1>Want to see the user requests?</h1>
+                        <h2> You've come to the right place! </h2>
+                        <h2> You can even remove them with the click of a button! </h2>
                 </div>
             </div>
             </div>
@@ -710,8 +710,8 @@
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
                     <div class="card-title">
-                        <h4>What feature are beyond in this project?</h4>
-                        <h5> Here they are: </h5>
+                        <h1>What feature are beyond in this project?</h1>
+                        <h2> Here they are: </h2>
                     </div>
                 </div>
             </div>
@@ -775,7 +775,7 @@
             <div class="row">
                 <div div class="card item_card" style="width: 50rem;">
                     <div class="card-title">
-                        <h4>Reference List</h4>
+                        <h1>Reference List</h1>
                     </div>
                 </div>
             </div>
@@ -818,6 +818,12 @@
                 <ul>
                     <li>Carrion Information: https://www.costa.co.uk/contact-form</li>
                     <li>Costa About Me: https://www.costa.co.uk/behind-the-beans/our-story/history</li>
+                </ul>
+                <li>Mini Cards Thumbnails (Main Page)</li>
+                <ul>
+                    <li>Iced Drinks: https://www.costa.co.uk/contact-form</li>
+                    <li>Hot Drinks: https://images.ctfassets.net/royi30b2qd26/78766uHKdvKc0tobv9U3Dk/2f24192e12a7bbffad18aa5cead6d399/cwc-cups-and-packaging-takeaway-cup-with-lid-rich-text-684x400.jpg</li>
+                    <li>Canned Drinks: https://images.ctfassets.net/royi30b2qd26/19ixNdJRC4p1gwzFensSxY/66a5aa497f158daaf23f011291b8913c/rtd-22-latte-promo-NEW-696x512.jpg?w=700&h=515&fl=progressive&q=50&fm=jpg</li>
                 </ul>
             </ul>
             </div>

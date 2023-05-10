@@ -1,3 +1,5 @@
+// General swap function
+// Hides undesired content, and shows selected content
 function swap(selected)
 {
     $("#main_page").hide()
@@ -102,7 +104,7 @@ function hideTabs(name)
 
 // Get data from the db about the drink tha† is desired from the Model_3D DB table
 // Alongisde the corresponding picture from the carousel DB table
-function swapDBINfo(id)
+function swapDBinfo(id)
 {
     $.ajax({
         url: "index.php/apiGetDrinkInformation",

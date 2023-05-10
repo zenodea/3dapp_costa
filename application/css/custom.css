@@ -209,6 +209,7 @@ body
 	color: #ffffff;
 	font-weight: bold;
 }
+
 .tooltip
 {
 	margin-bottom: 600px;
@@ -247,11 +248,11 @@ body
 	height:300px;
 }
 
-#main_text > h4 {
+#main_text > h1 {
 	font-size: 25px;
 }
 
-#main_text > h5 {
+#main_text > h2 {
 	font-size: 15px;
 }
 
@@ -427,7 +428,7 @@ X3D, x3d {
 
 /* Carousel */
 
-.carousel-caption > h5
+.carousel-caption > h2
 {
 	font-size: 20px;
 }
@@ -496,7 +497,7 @@ X3D, x3d {
 	color: var(--card_text);	
 }
 
-.card-title > h4
+.card-title > h1
 {
 	font-family: costa;
 	text-align: center;
@@ -505,7 +506,7 @@ X3D, x3d {
 	font-weight: bold;
 }
 
-.card-title > h5, .card-body > h5, .lights_text > h5, .lights_text > p
+.card-title > h2, .card-body > h2, .lights_text > h2, .lights_text > p
 {
 	font-family: costa;
 	text-align: center;
@@ -563,16 +564,8 @@ X3D, x3d {
 #what_new_card {
 	height: 800px;
 	overflow-y: auto;
-  }
+}
 
-  #what_new_title{
-	top: -80px;
-  }
-
-  #What_New_title
-  {
-	padding-top: 100px;
-  }
 
 /* What new */
 .what_new_card
@@ -580,7 +573,7 @@ X3D, x3d {
 	padding:50px;
 }
 
-.mini-card-body > h5
+.mini-card-body > h2
 {
 	font-family: costa;
 	text-align: center;
@@ -688,9 +681,17 @@ a:active { text-decoration: none; }
 }
 
 /* Offcanvas CSS */
-.offcanvas-body > h5
+.offcanvas-body > h2
 {
 	font-size: 15px;
+	font-family: costa;
+}
+
+.offcanvas-header > h1
+{
+	font-size: 20px;
+	color:var(--costa_red_title);
+	font-family: costa;
 }
 
 .offcanvas
@@ -777,10 +778,10 @@ a:active { text-decoration: none; }
 		height:300px;
 	}
 
-	#main_text > h4 {
+	#main_text > h1 {
 		font-size: 30px;
 	}
-	#main_text > h5 {
+	#main_text > h2 {
 		font-size: 20px;
 	}
 
@@ -817,7 +818,7 @@ a:active { text-decoration: none; }
 		padding:20px;
 	}
 
-	.mini-card-body > h5
+	.mini-card-body > h2
 	{
 		font-size: 14px;
 	}
@@ -828,7 +829,7 @@ a:active { text-decoration: none; }
 	}
 
 	/* Offcanvas */
-	.offcanvas-body > h5
+	.offcanvas-body > h2
 	{
 		font-size: 15px;
 	}
@@ -845,7 +846,7 @@ a:active { text-decoration: none; }
 
 	/* carousel */
 
-	.carousel-caption > h5
+	.carousel-caption > h2
 	{
 		font-size: 25px;
 	}
@@ -878,7 +879,7 @@ a:active { text-decoration: none; }
 	#costa_logo h3{
 		font-size: 40px;
 	}
-	#costa_logo h4{
+	#costa_logo h1{
 		font-size: 20px;
 	}
 	/* Main Screen*/
@@ -898,10 +899,10 @@ a:active { text-decoration: none; }
 		height:300px;
 	}
 
-	#main_text > h4 {
+	#main_text > h1 {
 		font-size: 35px;
 	}
-	#main_text > h5 {
+	#main_text > h2 {
 		font-size: 25px;
 	}
 
@@ -937,7 +938,7 @@ a:active { text-decoration: none; }
 		padding:30px;
 	}
 
-	.mini-card-body > h5
+	.mini-card-body > h2
 	{
 		font-size: 16px;
 	}
@@ -948,7 +949,7 @@ a:active { text-decoration: none; }
 	}
 
 	/* Offcanvas */
-	.offcanvas-body > h5
+	.offcanvas-body > h2
 	{
 		font-size: 20px;
 	}
@@ -982,7 +983,7 @@ a:active { text-decoration: none; }
 	#costa_logo h3{
 		font-size: 60px;
 	}
-	#costa_logo h4{
+	#costa_logo h1{
 		font-size: 30px;
 	}
 
@@ -1003,10 +1004,10 @@ a:active { text-decoration: none; }
 		height:300px;
 	}
 
-	#main_text > h4 {
+	#main_text > h1 {
 		font-size: 40px;
 	}
-	#main_text > h5 {
+	#main_text > h2 {
 		font-size: 30px;
 	}
 
@@ -1042,7 +1043,7 @@ a:active { text-decoration: none; }
 	{
 		padding:40px;
 	}
-	.mini-card-body > h5
+	.mini-card-body > h2
 	{
 		font-size: 18px;
 	}
@@ -1053,7 +1054,7 @@ a:active { text-decoration: none; }
 
 
 	/* Offcanvas */
-	.offcanvas-body > h5
+	.offcanvas-body > h2
 	{
 		font-size: 20px;
 	}
@@ -1086,7 +1087,7 @@ a:active { text-decoration: none; }
 	#costa_logo h3{
 		font-size: 70px;
 	}
-	#costa_logo h4{
+	#costa_logo h1{
 		font-size: 40px;
 	}
 
@@ -1107,10 +1108,10 @@ a:active { text-decoration: none; }
 		height:300px;
 	}
 
-	#main_text > h4 {
+	#main_text > h1 {
 		font-size: 50px;
 	}
-	#main_text > h5 {
+	#main_text > h2 {
 		font-size: 40px;
 	}
 
@@ -1146,7 +1147,7 @@ a:active { text-decoration: none; }
 		padding:50px;
 	}
 
-	.mini-card-body > h5
+	.mini-card-body > h2
 	{
 		font-size: 20px;
 	}
@@ -1157,7 +1158,7 @@ a:active { text-decoration: none; }
 	}
 
 	/* Offcanvas */
-	.offcanvas-body > h5
+	.offcanvas-body > h2
 	{
 		font-size: 20px;
 	}

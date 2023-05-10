@@ -3,11 +3,11 @@
     [
         {
             "title" : "Iced Drinks",
-            "description" : "Costa Iced drinks are refreshing and delicious beverages served cold with ice. They come in a variety of flavors such as coffee, tea, and fruit-based drinks. Perfect for hot summer days or whenever you need a cool drink."
+            "description" : "Costa's Iced Drinks are the perfect beverages during a hot summer day. Our flavours range from Iced Lattes to Cold Brews and finally to Iced Chai Tea Latte. "
         },
         {
-            "title" : "Latte",
-            "description" : " Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+            "title" : "Hot Drinks",
+            "description" : " Our hot drinks are best served on a cool day of Winter. They will warm you up either on a cool morning, or as a refresher in the evening. Our drinks are all made in house, right in-front of you, allowying you to see the love put into the product. From our large array of drinks, our Lattes, Hot Chcolates and Mochas represent our most loved drinks from our selection, learn more about them!"
         },
         {
             "title" : "Canned Drinks",
@@ -41,25 +41,25 @@
     [
         {
             "title": "Iced Latte Every Day",
-            "slogan" : "Ice, ice, latte. Cool and creamy.",
+            "slogan" : "Chill a hot day with our signature drink!",
             "name" : "Iced Latte",
             "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
-            "title": "Cold Brew Every Day",
-            "slogan" : "Boldly smooth, chilled perfection.",
+            "title": "Cold Brew, Low Calories, High Energy",
+            "slogan" : "Low calories, High energy. Dark and cold, as it should be.",
             "name" : "Cold Brew",
             "description" : "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time. The result is a smooth and less acidic coffee that is perfect for hot summer days or anytime you want a refreshing iced coffee drink."
         },
         {
-            "title": "Chai Tea Latte",
-            "slogan" : "Spice up your life, on ice",
+            "title": "Chai Tea Latte, Spice up your day!",
+            "slogan" : "Not a fan of coffee? Our Chai tea latte is the perfect substitute.",
             "name" : "Chai Tea Latte",
             "description" : "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice. Its a perfect combination of sweet and spicy flavors that is perfect for hot summer days or anytime you want a unique and flavorful iced drink."
         },
         {
             "title": "Latte Every Day",
-            "slogan" : "Perfect for the coldest days",
+            "slogan" : "Perfect for the coldest days.",
             "name" : "Latte",
             "description" : "What is the best way to start the day? With a nice and warm Latte, prepared by our finest baristas!"
         },
@@ -76,19 +76,19 @@
             "description" : "Are you a fan of Coffee AND Hot Chocolate? Then, the mocha mixes the strenght of both drinks into one. The sweetness of the hot choclate with the energy punch given by coffee, all in one simple package."
         },
         {
-            "title": "Latte in a Can",
+            "title": "Latte anywhere, anytime.",
             "slogan" : "Indulge in your favorite, anytime, anywhere",
             "name" : "Latte",
             "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
-            "title": "Caramel Latte in a Can",
+            "title": "Caramel Latte, to boost your sweetness",
             "slogan" : "Indulge in your favorite, now caramelized!",
             "name" : "Caramel Latte",
             "description" : "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
         },
         {
-            "title": "Americano in a Can",
+            "title": "Americano, simple coffee, anywhere.",
             "slogan" : "Boost of energy, the American Way",
             "name" : "Americano",
             "description" : " A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness. Perfect for hot summer days or as a mid-day pick-me-up."
@@ -172,15 +172,15 @@
     [
         {
             "title":"Iced Drinks",
-            "explanation":"Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+            "explanation":"There is nothing better than drinking a nice chilled drink during a warm day. Our Iced Latte is the perfect way to get an energy boost while cooling down. Not a fan of calories? Our Cold Brew is low in calories while keeping the referesing and energizing boost of an iced latte. Our Chai Tea Latte is for anyone who wants a special, sweet drink without the energy of coffee."
         },
         {
             "title":"Hot Drinks",
-            "explanation":"Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+            "explanation":"Our hot drinks are the perfect way to keep warm during a busy day. Our Latte, arguably our most popular drink, will give you a boost in energy and make your warm at the same time. Our Hot Chocolate is for anyone who wants to sip on something sweet and warm. Our Mocha is for the fan of both coffee and hot chocolate."
         },
         {
             "title":"Canned Drinks",
-            "explanation":"Indulge in the creamy, smooth taste of a Costa latte - a rich and luxurious blend of espresso and velvety milk. Served with a beautiful, delicate foam and finished with a sprinkling of chocolate powder, our Costa latte is the perfect pick-me-up to savor throughout the day. Treat yourself to the ultimate coffee experience today!"
+            "explanation":"We understand how busy a day can get, this is why we created canned versions of our most favourite drinks. We have our original Latte flavour, perfect for a simple boost of energy. Our Caramel Latte variant, which adds that tingines of sweetness and saltiness. Lastly our Americano, a simple, dark coffee ready whenever you need."
         }
     ]
 }

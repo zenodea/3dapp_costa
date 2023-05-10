@@ -65,6 +65,7 @@ class Model
     # Database functions used to insert data onto the tables to the SQLite DB
     function dbInsertData()
     {
+        // Read the json file
         $JsonFileContent = file_get_contents(__DIR__."/data.json");
 
         // Get data from data.json
