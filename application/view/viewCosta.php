@@ -33,12 +33,12 @@
 
         <!-- Go Back Button Appears when not on the main page -->
         <div>
-        <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="javascript:swap('main_page')" style="width: 10em;display: none;">
+        <button id="goback_button" type="button" class="btn btn-danger btn-floating btn-lg fixed-bottom" onclick="swap('main_page')" style="width: 10em;display: none;">
             <i>Go Back</i>
         </button>
         </div>
 
-        <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="javascript:changeTheme();" style="font-size:50px; width:1.5em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
+        <button id="darkmode_button" type="button" class="btn btn-danger btn-floating float-right fixed-bottom" onclick="changeTheme();" style="font-size:50px; width:1.5em; position: fixed; margin-left: auto; margin-right: 0; border-color:transparent;background-color:transparent">
             <div  id="moon_icon">
                 <i class="fa fa-moon" style="color:black"></i>
             </div>
@@ -97,7 +97,7 @@
                         <h2 class="drink_description_main" id="latte_main_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('hot_latte'); swapDBinfo(4); change_flavour(4);">Learn More ></button>
+                        <button class="costa_button" onclick="swap('hot_latte'); swapDBinfo(4); change_flavour(4);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                         <h2 class="drink_description_main" id="canned_latte_main_description"></h2>
                     </div>
                     <div class="card-footer mx-auto justify-content-center">
-                        <button class="costa_button" onclick="javascript:swap('canned_latte'); swapDBinfo(7); change_flavour(7);">Learn More ></button>
+                        <button class="costa_button" onclick="swap('canned_latte'); swapDBinfo(7); change_flavour(7);">Learn More ></button>
                     </div>
                 </div>
             </div>
@@ -260,7 +260,7 @@
             <div class="col-sm-5" >
                 <div class="float-container">
                         <div class="float-child dropdown"> 
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_flavour" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-outline-dark btn-responsive dropdown-toggle" type="button" id="dropdown_flavour" data-bs-toggle="dropdown" aria-expanded="false">
                                 Flavour
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdown_flavour">
@@ -282,7 +282,7 @@
                             </ul>
                         </div>
                             <div class="float-child dropdown"> 
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-outline-dark btn-responsive dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Category 
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -385,7 +385,7 @@
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs">
                             <li class="nav-item dropdown">
-                                <a class="nav-link active">Camera Viewpoint</a>
+                                <a class="nav-link nav-link-controller active">Camera Viewpoint</a>
                             </li>
                     </div>
                     <div class="card-body">
@@ -413,13 +413,13 @@
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#p-light" aria-controls="p-light" aria-selected="true">p-light</button>
+                                <button class="nav-link-controller nav-link active" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#p-light" aria-controls="p-light" aria-selected="true">p-light</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#s-light" aria-controls="s-light" aria-selected="true">s-light</button>
+                                <button class="nav-link-controller nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#s-light" aria-controls="s-light" aria-selected="true">s-light</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#d-light" aria-controls="d-light" aria-selected="true">d-light</button>
+                                <button class="nav-link-controller nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#d-light" aria-controls="d-light" aria-selected="true">d-light</button>
                             </li>
                         </ul>
                     </div>
@@ -461,10 +461,10 @@
                     <div class="card-header" style="background-color: rgba(177, 249, 251, 0.5);"> 
                         <ul class="nav nav-tabs card-header-tabs pull-right" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link active" data-bs-toggle="tab" type="button" role="tab" href="#animation">SFX</button>
+                                <button class="nav-link nav-link-controller active" data-bs-toggle="tab" type="button" role="tab" href="#animation">SFX</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button id="camera_button" class="nav-link" data-bs-toggle="tab" type="button" role="tab" href="#render_tab" >Render</button>
+                                <button class="nav-link-controller nav-link" data-bs-toggle="tab" type="button" role="tab" href="#render_tab" >Render</button>
                             </li>
                         </ul>
                     </div>
@@ -617,12 +617,12 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion" id="accordionExample">
+            <div class="accordion" id="accordion_contact_us">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button collapsed" id="accordion_button_1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion_contact_us">
                     <div id="accordion_explanation_1" class="accordion-body"></div>
                   </div>
                 </div>
@@ -630,7 +630,7 @@
                   <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" id="accordion_button_2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></button>
                   </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion_contact_us">
                     <div id="accordion_explanation_2" class="accordion-body"></div>
                   </div>
                 </div>
@@ -638,7 +638,7 @@
                   <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" id="accordion_button_3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"></button>
                   </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion_contact_us">
                     <div class="accordion-body" id="accordion_explanation_3"></div>
                   </div>
                 </div>
@@ -821,7 +821,7 @@
                 </ul>
                 <li>Mini Cards Thumbnails (Main Page)</li>
                 <ul>
-                    <li>Iced Drinks: https://www.costa.co.uk/contact-form</li>
+                    <li>Iced Drinks: https://willowbrookshopping.co.uk/wp-content/uploads/2022/06/summer-frappe-icedlatte-range-promo-696x512-1.jpg</li>
                     <li>Hot Drinks: https://images.ctfassets.net/royi30b2qd26/78766uHKdvKc0tobv9U3Dk/2f24192e12a7bbffad18aa5cead6d399/cwc-cups-and-packaging-takeaway-cup-with-lid-rich-text-684x400.jpg</li>
                     <li>Canned Drinks: https://images.ctfassets.net/royi30b2qd26/19ixNdJRC4p1gwzFensSxY/66a5aa497f158daaf23f011291b8913c/rtd-22-latte-promo-NEW-696x512.jpg?w=700&h=515&fl=progressive&q=50&fm=jpg</li>
                 </ul>

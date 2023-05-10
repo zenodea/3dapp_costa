@@ -89,7 +89,7 @@ $(document).ready(function()
 			}
 			html+='<img src="'+jsonObj[20+i].photo_url+'" class=" img-fluid" alt="...">'
 			html+='<div class="carousel-caption d-md-block">'
-        	html+='<h5>'+jsonObj[20+i].title+'</h5><button style="background-color:white;" onclick="swap(\'iced_latte\'); swapDBINfo('+(20-20+i)+');"  type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
+        	html+='<h5>'+jsonObj[20+i].title+'</h5><button style="background-color:white;" onclick="swap(\'iced_latte\'); swapDBinfo('+(20-20+i)+');"  type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
         	html+='<p>'+jsonObj[20+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_first').html(html);
@@ -107,7 +107,7 @@ $(document).ready(function()
 			}
 			html+='<img src="'+jsonObj[23+i].photo_url+'" class="d-block w-100" alt="...">'
 			html+='<div class="carousel-caption d-md-block">'
-        	html+='<h5>'+jsonObj[23+i].title+'</h5><button style="background-color:white;" onclick="swap(\'hot_latte\'); swapDBINfo('+(23-20+i)+');" type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
+        	html+='<h5>'+jsonObj[23+i].title+'</h5><button style="background-color:white;" onclick="swap(\'hot_latte\'); swapDBinfo('+(23-20+i)+');" type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
         	html+='<p>'+jsonObj[23+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_second').html(html);
@@ -125,7 +125,7 @@ $(document).ready(function()
 			}
 			html+='<img src="'+jsonObj[26+i].photo_url+'" class="d-block w-100" alt="...">'
 			html+='<div class="carousel-caption d-md-block">'
-        	html+='<h5>'+jsonObj[26+i].title+'</h5><button style="background-color:white;" onclick="swap(\'canned_latte\'); swapDBINfo('+(26-20+i)+');" type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
+        	html+='<h5>'+jsonObj[26+i].title+'</h5><button style="background-color:white;" onclick="swap(\'canned_latte\'); swapDBinfo('+(26-20+i)+');" type="button" class="btn btn-default" data-dismiss="modal">Go To Model</button>'
         	html+='<p>'+jsonObj[26+i].explanation+'</p></div></div>'
 		}
 		$('#carousel_third').html(html);

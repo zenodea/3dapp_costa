@@ -2,6 +2,7 @@
 :root
 {
 	--costa_red_title: #6d1f37;
+	--form-control-red: rgba(109, 31, 55,0.7);
 	--costa_white: #ffffff;
 	--costa_black: #000000;
 	--bootstrap_background: #ffffff;
@@ -39,6 +40,7 @@
 /* Dark Mode Values for CSS variables */
 [data-theme='dark'] {
 	--costa_red_title: #da1f57;
+	--form-control-red: rgba(218, 31, 87, 0.7);
 	--costa_black: #ffffff;
 	--bootstrap_background: #1f1f1f;
 	--card_text: #ffffff;
@@ -155,6 +157,14 @@ body
 {
 	color: var(--bootstrap_background) !important;
 	background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.7))
+}
+.nav-link-controller {
+    color: var(--costa_red_title);
+}
+
+.nav-link-controller:hover {
+	background-color: var(--bootstrap_background);
+    color: var(--card_text);
 }
 
 .navbar-toggler-icon{
@@ -353,6 +363,25 @@ X3D, x3d {
 
   }    
 
+/* Dropdown Button CSS */
+.dropdown-menu
+{
+	color: var(--card_text);
+	background-color: var(--bootstrap_background);
+}
+
+.dropdown-item:hover
+{
+	color: var(--card_text);
+	background-color: var(--costa_red_title);
+}
+
+.dropdown-item
+{
+	color: var(--card_text);
+	font-family: costa;
+}
+
 /* Bootstrap Toast CSS configurations */
 .toast
 {
@@ -471,7 +500,12 @@ X3D, x3d {
 	border-color: var(--costa_red_title);
 	
 }
+.form-control:focus
+{
+	border-color: var(--costa_red_title);
+	box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.075), 0 0 8px var(--form-control-red);
 
+}
 .form-control::placeholder 
 { 
 	color: var(--card_text);
@@ -559,6 +593,19 @@ X3D, x3d {
 	font-weight: bold;
 	width: 180px;
 	height: 60px;
+	border-color: var(--card_text);
+}
+
+.costa_button:hover{
+	background-color: var(--bootstrap_background);
+	color: var(--card_text);
+	border-color: var(--card_text);
+}
+
+.costa_button:active{
+	background-color: var(--bootstrap_background);
+	color: var(--card_text);
+	border-color: var(--card_text);
 }
 
 #what_new_card {
@@ -566,6 +613,10 @@ X3D, x3d {
 	overflow-y: auto;
 }
 
+#what_new_card > .card-title
+{
+	padding-top: 30px;
+}
 
 /* What new */
 .what_new_card

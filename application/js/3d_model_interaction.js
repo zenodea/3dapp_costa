@@ -156,17 +156,6 @@ function lightSwitch(id)
         light.setAttribute('on','FALSE');
 }
 
-function headlight(id)
-{
-    var h = document.getElementById(id);
-    if(h.getAttribute('headlight')=='true')
-    h.setAttribute('headlight', 'false');
-    else
-        h.setAttribute('headlight', 'true');
-}
-
-
-
 // Change various flavours for the differnt models
 // Iced Drinks and Hot Drinks will change the color of the drink itself
 // Canned Drinks will change the texture of the 3d model
