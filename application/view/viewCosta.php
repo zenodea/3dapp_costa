@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="application/css/jquery.fancybox.min.css"/>
 
         <!-- Bootstrap+CSS -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
@@ -830,8 +829,10 @@
                         </ul>
                     </ul>
                 </ul>
-                <li>Costa Text</li>
+                <li>Costa</li>
                 <ul>
+                    <li>Costa Information: https://www.costa.co.uk</li>
+                    <li>Costa Logo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS79uPSvhFx-BQEVPaek44rM02t6tCAEMGp7pnciDx2&s</li>
                     <li>Carrion Information: https://www.costa.co.uk/contact-form</li>
                     <li>Costa About Me: https://www.costa.co.uk/behind-the-beans/our-story/history</li>
                 </ul>
@@ -854,19 +855,22 @@
         <?php include_once("footer.html"); ?>
 
         <!-- JQuery -->
-        <script src="application/js/jquery-3.6.4.min.js"></script>
+        <script src="application/js/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
 
         <!-- Fancybox -->
-        <script src="application/js/jquery.fancybox.min.js"></script> 
+        <script src="application/js/jquery.fancybox.min.js" crossorigin="anonymous"></script> 
+
+        <!-- Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 
         <!-- X3D -->
-        <script src="application/js/x3dom/x3dom.js"></script> 
+        <script src="application/js/x3dom/x3dom.js" crossorigin="anonymous"></script> 
 
         <!-- Bootstrap -->
-        <script src="application/js/bootstrap.min.js" ></script>
+        <script src="application/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
         <!-- Fontawesome -->
-        <script src="application/js/fontawesome-all.min.js"></script>
+        <script src="application/js/fontawesome-all.min.js" crossorigin="anonymous"></script>
 
         <!-- Custom Javascript -->
 
