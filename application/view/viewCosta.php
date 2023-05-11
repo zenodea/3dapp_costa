@@ -719,6 +719,12 @@
             <div class="going_beyond_list">
 
             <ul>
+            <li>Advanced 3D Model Interaction</li>
+                  <ul>
+                    <li>Interaction to turn on/off lights of the model</li>
+                    <li>Javascript was utilised to allow for changes in the lights colors</li>
+                    <li>Javascript was utilised to allow for changes in the material colors for the hot drinks model</li>
+                  </ul>
                 <li>The X3D models are more complex</li>
                 <ul>
                     <li>Use of html5 to change values of the x3d models</li>
@@ -749,6 +755,13 @@
                     <li>Add and update comments for individual requests</li>
                     <li>Delete specific request</li>
                 </ul>
+                <li>Updated MVC method</li>
+                  <ul>
+                      <li>Added a number of API and DB functions to improve information extraction from the DB</li>
+                      <li>Specifically, to add information to the DB automatically, a DB function was created (alongside API, called apiinsertdata) where the data.json is read, and information is inserted where appropriate.</li>
+                      <li>More advanced AJAX calls to the controller were created to extract specific information from the DB</li>
+                      <li>Most of the information on the website has been inserted inside of the DB, this was done by creating more approrpiate DB tables</li>
+                  </ul>
                 <li>I have explored other 3D Content authoring packages besides 3ds Max to create my 3D models, in the case of this project, Blender was used.</li>
                 <li>I have created an alternative export workflow for my 3D Models using Blender => X3D => X3DOM</li>
                 <ul>
@@ -765,8 +778,10 @@
                 </ul>
                 <li>Advanced usage of CSS</li>
                 <ul>
+                    <li>Use of CSS was deeply expanded from the Labs</li>
                     <li>Use of variables to make an effective light mode and dark mode for the website</li>
                     <li>Background created dynamically via CSS</li>
+                    <li>Bootstrap CSS was overwritten to maintain the theme of red (from Costa)</li>
                 </ul>
             </ul> 
             </div>
@@ -825,6 +840,11 @@
                     <li>Iced Drinks: https://willowbrookshopping.co.uk/wp-content/uploads/2022/06/summer-frappe-icedlatte-range-promo-696x512-1.jpg</li>
                     <li>Hot Drinks: https://images.ctfassets.net/royi30b2qd26/78766uHKdvKc0tobv9U3Dk/2f24192e12a7bbffad18aa5cead6d399/cwc-cups-and-packaging-takeaway-cup-with-lid-rich-text-684x400.jpg</li>
                     <li>Canned Drinks: https://images.ctfassets.net/royi30b2qd26/19ixNdJRC4p1gwzFensSxY/66a5aa497f158daaf23f011291b8913c/rtd-22-latte-promo-NEW-696x512.jpg?w=700&h=515&fl=progressive&q=50&fm=jpg</li>
+                </ul>
+                <li>Code Inspiration</li>
+                <ul>
+                    <li>Dark Mode: https://lukelowrey.com/css-variable-theme-switcher/</li>
+                    <li>Wavy CSS background: https://css-tricks.com/how-to-create-wavy-shapes-patterns-in-css/</li>
                 </ul>
             </ul>
             </div>
