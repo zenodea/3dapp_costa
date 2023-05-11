@@ -401,6 +401,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" onclick="cameraTop();">Top</a>
                                 <a class="dropdown-item" onclick="cameraBottom();">Bottom</a>
+                                <a class="dropdown-item" onclick="cameraReset();">Far Away</a>
                             </ul>
                         </div> 
                     </div>

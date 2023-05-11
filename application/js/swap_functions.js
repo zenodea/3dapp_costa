@@ -38,7 +38,6 @@ function swap(selected)
         $("#iced_fx").show();
 
         // Reset the camera each time you select one of the x3d models
-        cameraBack();
         cameraFront();
     }
 
@@ -58,7 +57,6 @@ function swap(selected)
         $("#hot_fx").show();
 
         // Reset the camera each time you select one of the x3d models
-        cameraBack();
         cameraFront();
     }
 
@@ -79,7 +77,6 @@ function swap(selected)
         $("#canned_fx").show();
 
         // Reset the camera each time you select one of the x3d models
-        cameraBack();
         cameraFront();
     }
 

@@ -48,35 +48,84 @@ function Animate(model)
 // Camera Functions
 function cameraFront()
 {
-    $('#model__CA_cameraFront').attr('bind', 'true');
+    if ($('#model__CA_cameraFront').attr('bind') == 'true')
+    {
+        cameraReset();
+        $('#model__CA_cameraFront').attr('bind', 'true');
+    }
+    else
+    {
+        $('#model__CA_cameraFront').attr('bind', 'true');
+    }
 }
 
 function cameraBack()
 {
-    $('#model__CA_cameraBack').attr('bind', 'true');
+    if ($('#model__CA_cameraBack').attr('bind') == 'true')
+    {
+        cameraReset();
+        $('#model__CA_cameraBack').attr('bind', 'true');
+    }
+    else
+    {
+        $('#model__CA_cameraBack').attr('bind', 'true');
+    }
 }
 
 function cameraLeft()
 {
-    $('#model__CA_cameraLeft').attr('bind', 'true');
+    if ($('#model__CA_cameraLeft').attr('bind') == 'true')
+    {
+        cameraReset();
+        $('#model__CA_cameraLeft').attr('bind', 'true');
+    }
+    else
+    {
+        $('#model__CA_cameraLeft').attr('bind', 'true');
+    }
 }
 
 function cameraRight()
 {
-    $('#model__CA_cameraRight').attr('bind', 'true');
+    if ($('#model__CA_cameraRight').attr('bind') == 'true')
+    {
+        cameraReset();
+        $('#model__CA_cameraRight').attr('bind', 'true');
+    }
+    else
+    {
+        $('#model__CA_cameraRight').attr('bind', 'true');
+    }
 }
 
 function cameraTop()
 {
-    $('#model__CA_cameraTop').attr('bind', 'true');
+    if ($('#model__CA_cameraTop').attr('bind') == 'true')
+    {
+        cameraReset();
+        $('#model__CA_cameraTop').attr('bind', 'true');
+    }
+    else
+    {
+        $('#model__CA_cameraTop').attr('bind', 'true');
+    }
 }
 
 function cameraBottom()
 {
-    $('#model__CA_cameraBottom').attr('bind', 'true');
+    if ( $('#model__CA_cameraBottom').attr('bind') == 'true')
+    {
+        cameraReset();
+        $('#model__CA_cameraBottom').attr('bind', 'true');
+    }
+    else
+    {
+        $('#model__CA_cameraBottom').attr('bind', 'true');
+    }
 }
 
-function cameraNormal()
+// Function used to seamlessly reset the camera of the x3d model
+function cameraReset()
 {
     $('#model__CA_cameraNormal').attr('bind', 'true');
 }

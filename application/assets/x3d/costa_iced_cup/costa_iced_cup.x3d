@@ -109,7 +109,7 @@
 			           />
 		</Transform>
 		<Transform DEF="cameraRight_TRANSFORM"
-		           translation="-0.014593 -0.306534 12.928702"
+		           translation="-0.014593 -0.306534 14.781968"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 -0.000000 0.000000 0.000000"
 		           >
@@ -133,13 +133,13 @@
 			           />
 		</Transform>
 		<Transform DEF="cameraLeft_TRANSFORM"
-		           translation="-0.014593 -0.306548 -12.869599"
+		           translation="-0.014593 -0.306548 -14.764511"
 		           scale="1.000000 1.000000 1.000000"
 		           rotation="0.000000 1.000000 -0.000000 3.141593"
 		           >
 			<Viewpoint DEF="CA_cameraLeft"
 			           centerOfRotation="0 0 0"
-			           position="0.00 -0.00 -0.00"
+			           position="0.00 -0.00 0.00"
 			           orientation="0.00 1.00 0.00 0.00"
 			           fieldOfView="0.691"
 			           />
@@ -181,18 +181,17 @@
 			           />
 		</Transform>
 		<Transform DEF="cameraNormal_TRANSFORM"
-		           translation="12.661065 5.379593 21.341877"
+		           translation="-22.047995 7.020462 14.445517"
 		           scale="1.000000 1.000000 1.000000"
-		           rotation="-0.304540 0.948273 0.089631 0.601908"
+		           rotation="-0.229424 -0.965652 -0.121984 1.006611"
 		           >
 			<Viewpoint DEF="CA_cameraNormal"
 			           centerOfRotation="0 0 0"
 			           position="-0.00 -0.00 -0.00"
-			           orientation="0.64 0.14 -0.76 0.00"
+			           orientation="0.00 0.89 -0.45 0.00"
 			           fieldOfView="0.691"
 			           />
 		</Transform>
-
 		<Transform DEF="Cylinder_002_TRANSFORM"
 		           translation="-0.033304 2.204308 -0.011013"
 		           scale="0.147871 0.147871 2.510259"
