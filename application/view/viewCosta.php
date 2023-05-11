@@ -492,9 +492,9 @@
                                     <input style="border-color:black;width:100%" type="color" id="change_cup_color" name="favcolor" value="#AD1035">
                             </div>
                             <div class="text-center lights_text" id="canned_fx" style="display:none;">
+                                    <h2>Rotate Can Animation</h2>
                                 <div class="form-check form-check-inline form-switch">
                                     <input class="form-check-input" onclick="Animate('canned_drink')" type="checkbox" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Rotate Can Animation</label>
                                 </div>
                             </div>
                         </div>
