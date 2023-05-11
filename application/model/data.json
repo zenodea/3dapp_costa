@@ -52,10 +52,10 @@
             "description" : "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time. The result is a smooth and less acidic coffee that is perfect for hot summer days or anytime you want a refreshing iced coffee drink."
         },
         {
-            "title": "Chai Tea Latte, Spice up your day!",
+            "title": "Iced Chai Tea Latte, Spice up your day!",
             "slogan" : "Not a fan of coffee? Our Chai tea latte is the perfect substitute",
-            "name" : "Chai Tea Latte",
-            "description" : "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice. Its a perfect combination of sweet and spicy flavors that is perfect for hot summer days or anytime you want a unique and flavorful iced drink."
+            "name" : "Iced Chai Tea Latte",
+            "description" : "Iced Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice. Its a perfect combination of sweet and spicy flavors that is perfect for hot summer days or anytime you want a unique and flavorful iced drink."
         },
         {
             "title": "Latte Every Day",
@@ -109,17 +109,17 @@
     [
         {
             "title": "Iced Latte",
-            "description": "A Costa iced latte is a refreshing cold drink made with shots of espresso, fresh milk, and a touch of sweetness.",
+            "description": "Have a nice Costa latte, submerged by iced cubes. The perfect drink for a hot day of summer.",
             "url": "application/assets/images/iced_latte.png"
         },
         {
             "title": "Cold Brew",
-            "description": "Cold brew is a delicious and refreshing coffee beverage that is made by steeping coffee grounds in cold water for an extended period of time.",
+            "description": "Not a fan of calories, don't worry, our cold brew will energize you with no extra sugar!",
             "url": "application/assets/images/iced_mocha.png"
         },
         {
             "title": "Iced Chai Tea Latte",
-            "description": "Chai Tea Iced Latte is a delicious and refreshing beverage made with spiced tea and milk, served over ice.",
+            "description": "Not a fan of coffee? No worries, the Iced Chai Tea Latte is a perfect summer beverage!",
             "url": "application/assets/images/iced_chai_latte.png"
         },
         {
