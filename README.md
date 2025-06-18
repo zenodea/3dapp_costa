@@ -64,7 +64,3 @@ A 3D interactive web application showcasing Costa Coffee products with immersive
 ## Development
 
 The application follows MVC architecture with clean separation of concerns. 3D models are rendered using X3DOM for cross-browser compatibility.
-
-## License
-
-This project is for educational and demonstration purposes.
