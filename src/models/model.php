@@ -5,7 +5,7 @@ class Model
 
     public function __construct()
     {
-        $dsn = 'sqlite:./db/costa_information.db';
+        $dsn = 'sqlite:' . DB_PATH;
 
         try
         {

@@ -7,7 +7,7 @@ class load
         {
             extract($data);
         }
-        include $file_name . '.php';
+        include SRC_PATH . '/views/' . $file_name . '.php';
     }
 }
 ?>
