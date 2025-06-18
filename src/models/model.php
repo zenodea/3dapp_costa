@@ -15,8 +15,8 @@ class Model
         }
         catch(PDOException $e)
         {
-            echo "Does not work!";
-            print new Exception($e->getMessage());
+            error_log("Database connection failed: " . $e->getMessage());
+            throw new Exception("Database connection failed");
         }
         
     }

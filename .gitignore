@@ -1,5 +1,46 @@
+# OS generated files
 .DS_Store
-blender_files/
-blender_files
-submission
-render_models
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+logs/
+
+# Database
+*.db-journal
+*.sqlite-journal
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# PHP
+composer.phar
+vendor/
+
+# Node modules (if using build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+dist/
+build/
